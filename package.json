@@ -3,14 +3,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
     "check": "tsc --noEmit && eslint",
+    "deploy": "npx vercel --prod",
     "db:validate": "prisma validate",
     "db:generate": "prisma generate",
-    "db:studio": "prisma studio",
     "postinstall": "prisma generate",
-    "deploy": "npx vercel --prod"
+    "db:studio": "prisma studio",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.1",
