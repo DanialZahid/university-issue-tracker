@@ -1,0 +1,16 @@
+model Attachment {
+  id            String   @id @default(cuid())
+  url           String
+  fileName      String
+  mimeType      String
+  sizeBytes     Int
+  sha256        String
+  hasCameraExif Boolean?
+  createdAt     DateTime @default(now())
+
+  complaintId String
+  complaint   Complaint @relation(fields: [complaintId], references: [id], onDelete: Cascade)
+
+  @@index([complaintId])
+  @@index([sha256])
+}

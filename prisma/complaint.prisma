@@ -1,0 +1,44 @@
+model Complaint {
+  id                     String          @id @default(cuid())
+  ticketNumber           Int             @unique @default(autoincrement())
+  title                  String
+  description            String
+  priority               Priority        @default(MEDIUM)
+  status                 ComplaintStatus @default(PENDING)
+  locationDetail         String?
+  estimatedEffortMinutes Int
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  locationId String
+  location   Location @relation(fields: [locationId], references: [id])
+
+  submittedById String
+  submittedBy   User   @relation(fields: [submittedById], references: [id])
+
+  departmentId String?
+  department   Department? @relation(fields: [departmentId], references: [id])
+  assignedAt   DateTime?
+
+  assignedStaffId String?
+  assignedStaff   StaffMember? @relation(fields: [assignedStaffId], references: [id])
+
+  duplicateOfId String?
+  duplicateOf   Complaint?  @relation("PossibleDuplicate", fields: [duplicateOfId], references: [id], onDelete: SetNull)
+  duplicates    Complaint[] @relation("PossibleDuplicate")
+
+  resolvedAt DateTime?
+  archivedAt DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  attachments Attachment[]
+  auditLogs   AuditLog[]
+
+  @@index([status, priority, createdAt])
+  @@index([submittedById])
+  @@index([departmentId, status])
+  @@index([categoryId, locationId, createdAt])
+  @@index([assignedStaffId, status])
+}

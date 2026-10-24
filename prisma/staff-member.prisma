@@ -1,0 +1,14 @@
+model StaffMember {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  departmentId String
+  department   Department @relation(fields: [departmentId], references: [id])
+
+  assignedComplaints Complaint[]
+
+  @@index([departmentId])
+}
