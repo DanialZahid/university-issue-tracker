@@ -7,7 +7,10 @@ import { ClerkProvider } from '@clerk/nextjs';
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'University Complaint and Issue Tracking Platform',
+  title: {
+    default: 'University Complaint and Issue Tracking Platform',
+    template: '%s | University Complaint and Issue Tracking Platform',
+  },
   description:
     'Submit, track and manage university complaints and issues in one place.',
 };
