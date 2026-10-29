@@ -16,7 +16,7 @@ export default async function Home() {
       </div>
 
       <p>
-        Signed in as {user.name} ({user.role})
+        Signed in as {user.name} ({user.role}).
       </p>
     </main>
   );
