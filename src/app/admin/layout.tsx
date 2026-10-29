@@ -1,3 +1,4 @@
+import { AppShell } from '@/ui/shared/layout';
 import { requireAdmin } from '@/utils/session';
 
 export default async function AdminLayout({
@@ -5,6 +6,6 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  await requireAdmin();
-  return children;
+  const user = await requireAdmin();
+  return <AppShell user={user}>{children}</AppShell>;
 }
