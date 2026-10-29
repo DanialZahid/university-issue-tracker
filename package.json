@@ -5,11 +5,11 @@
     "dev": "next dev",
     "check": "tsc --noEmit && eslint",
     "deploy": "npx vercel --prod",
+    "db:studio": "prisma studio",
     "db:migrate": "prisma migrate dev",
     "db:validate": "prisma validate",
     "db:generate": "prisma generate",
     "postinstall": "prisma generate",
-    "db:studio": "prisma studio",
     "build": "next build",
     "start": "next start"
   },
