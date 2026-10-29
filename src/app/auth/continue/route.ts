@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { auth, currentUser } from '@clerk/nextjs/server';
 import { syncUser } from '@/db/user';
 import { isAdminEmail, isUniversityEmail } from '@/utils/auth-policy';
+import { UserRole } from '@/generated/prisma/enums';
 
 export async function GET(request: Request) {
   const { userId } = await auth();
@@ -18,13 +19,17 @@ export async function GET(request: Request) {
     return NextResponse.redirect(new URL('/access-denied', request.url));
   }
 
-  await syncUser({
+  const user = await syncUser({
     clerkId: userId,
     name: clerkUser.fullName ?? email.split('@')[0],
     email: email.toLowerCase(),
     isAdmin: isAdminEmail(email),
   });
 
-  // Role-based landing pages arrive with the base layout.
-  return NextResponse.redirect(new URL('/', request.url));
+  return NextResponse.redirect(
+    new URL(
+      user.role === UserRole.ADMIN ? '/admin' : '/complaints',
+      request.url,
+    ),
+  );
 }
