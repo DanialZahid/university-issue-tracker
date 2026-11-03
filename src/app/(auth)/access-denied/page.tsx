@@ -2,6 +2,9 @@ import { SignOutButton } from '@clerk/nextjs';
 import { CircleAlert } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/ui/common/alert';
 import { Button } from '@/ui/common/button';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = { title: 'Access restricted' };
 
 export default function AccessDeniedPage() {
   const domain = process.env['UNIVERSITY_EMAIL_DOMAIN'];
