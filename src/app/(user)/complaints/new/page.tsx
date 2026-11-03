@@ -1,16 +1,22 @@
 import type { Metadata } from 'next';
 import { PageHeader } from '@/ui/shared/layout';
+import { ComplaintForm } from '@/ui/shared/complaint/ComplaintForm';
+import { getComplaintFormOptions } from '@/db/complaint';
 
 export const metadata: Metadata = { title: 'Submit a complaint' };
 
-export default function SubmitComplaintPage() {
+export default async function SubmitComplaintPage() {
+  const { categories, locations } = await getComplaintFormOptions();
+
   return (
     <>
       <PageHeader
         title='Submit a complaint'
         description='Report an issue on campus.'
       />
-      <p className='text-sm text-muted-foreground'>Coming soon.</p>
+      <div className='max-w-2xl'>
+        <ComplaintForm categories={categories} locations={locations} />
+      </div>
     </>
   );
 }
