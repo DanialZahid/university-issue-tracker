@@ -1,6 +1,7 @@
 import 'server-only';
 import { prisma } from '@/db/client';
 import type { ComplaintInput } from '@/schemas/complaint';
+import { detectPriority } from '@/automation/priority-detection';
 
 export async function getComplaintFormOptions() {
   const [categories, locations] = await Promise.all([
@@ -34,6 +35,7 @@ export async function createComplaint(
       where: { id: input.categoryId },
       select: {
         baseEffortMinutes: true,
+        name: true,
         departmentId: true,
         department: { select: { name: true } },
       },
@@ -45,11 +47,17 @@ export async function createComplaint(
   ]);
   if (!category || !location) return null;
 
+  const priority = detectPriority(
+    input.title,
+    input.description,
+    category.name,
+  );
+
   const complaint = await prisma.complaint.create({
     data: {
       title: input.title,
       description: input.description,
-      priority: input.priority,
+      priority: priority,
       locationDetail: input.locationDetail,
       estimatedEffortMinutes: category.baseEffortMinutes,
       categoryId: input.categoryId,
@@ -68,6 +76,12 @@ export async function createComplaint(
             action: 'ASSIGNED',
             toValue: category.department.name,
             note: 'Auto-assigned from category',
+            performedById: submittedById,
+          },
+          {
+            action: 'PRIORITY_CHANGED',
+            toValue: priority,
+            note: 'Set automatically',
             performedById: submittedById,
           },
         ],

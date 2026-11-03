@@ -16,7 +16,6 @@ const FIELDS = [
   'categoryId',
   'locationId',
   'locationDetail',
-  'priority',
 ] as const;
 
 export async function submitComplaint(

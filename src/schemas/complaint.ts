@@ -1,27 +1,47 @@
 import { z } from 'zod';
 
-export const PRIORITIES = ['LOW', 'MEDIUM', 'HIGH', 'CRITICAL'] as const;
+export const LIMITS = {
+  title: { min: 5, max: 120 },
+  description: { min: 20, max: 2000 },
+  locationDetail: { max: 100 },
+} as const;
 
 export const complaintSchema = z.object({
   title: z
     .string()
     .trim()
-    .min(5, 'Title must be at least 5 characters')
-    .max(120, 'Title must be 120 characters or fewer'),
+    .min(
+      LIMITS.title.min,
+      `Title must be at least ${LIMITS.title.min} characters`,
+    )
+    .max(
+      LIMITS.title.max,
+      `Title must be ${LIMITS.title.max} characters or fewer`,
+    ),
   description: z
     .string()
     .trim()
-    .min(20, 'Description must be at least 20 characters')
-    .max(2000, 'Description must be 2000 characters or fewer'),
+    .min(
+      LIMITS.description.min,
+      `Description must be at least ${LIMITS.description.min} characters`,
+    )
+    .max(
+      LIMITS.description.max,
+      `Description must be ${LIMITS.description.max} characters or fewer`,
+    ),
   categoryId: z.string().min(1, 'Choose a category'),
   locationId: z.string().min(1, 'Choose a location'),
   locationDetail: z
     .string()
     .trim()
-    .max(100, 'Keep this under 100 characters')
+    .max(
+      LIMITS.locationDetail.max,
+      `Keep this under ${LIMITS.locationDetail.max} characters`,
+    )
     .transform((value) => value || undefined),
-  priority: z.enum(PRIORITIES),
 });
+
+export type ComplaintInput = z.infer<typeof complaintSchema>;
 
 export function collectFieldErrors(error: z.ZodError): Record<string, string> {
   const fieldErrors: Record<string, string> = {};
@@ -31,5 +51,3 @@ export function collectFieldErrors(error: z.ZodError): Record<string, string> {
   }
   return fieldErrors;
 }
-
-export type ComplaintInput = z.infer<typeof complaintSchema>;
