@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
   ArrowLeft,
-  Building2,
   CalendarClock,
   CheckCircle2,
   DoorOpen,
@@ -28,6 +27,7 @@ import { cn } from '@/utils/cn';
 import { formatDateTime } from '@/utils/date';
 import { requireUser } from '@/utils/session';
 import { formatTicketNumber, parseTicketNumber } from '@/utils/ticket';
+import { departmentIcon } from '@/ui/shared/department';
 
 type Props = { params: Promise<{ ticket: string }> };
 
@@ -100,7 +100,10 @@ export default async function ComplaintDetailPage({ params }: Props) {
               <Detail icon={Tag} label='Category'>
                 {complaint.category.name}
               </Detail>
-              <Detail icon={Building2} label='Handled by'>
+              <Detail
+                icon={departmentIcon(complaint.department?.name)}
+                label='Handled by'
+              >
                 {complaint.department?.name ?? 'Not assigned yet'}
               </Detail>
               <Detail icon={MapPin} label='Location'>

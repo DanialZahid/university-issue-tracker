@@ -5,8 +5,9 @@ import { PriorityBadge } from './PriorityBadge';
 import { StatusBadge } from './StatusBadge';
 import { statusTone } from './status-tone';
 import { cn } from '@/utils/cn';
-import { formatDate } from '@/utils/date';
+import { formatDate, formatDateTime } from '@/utils/date';
 import { formatTicketNumber } from '@/utils/ticket';
+import { Hint } from '@/ui/common/Hint';
 
 type Props = {
   ticketNumber: number;
@@ -55,10 +56,12 @@ export function ComplaintListItem({
               <Tag className='size-3.5' />
               {categoryName}
             </span>
-            <span className='inline-flex items-center gap-1.5'>
-              <CalendarClock className='size-3.5' />
-              {formatDate(createdAt)}
-            </span>
+            <Hint label={formatDateTime(createdAt)}>
+              <span className='inline-flex items-center gap-1.5'>
+                <CalendarClock className='size-3.5' />
+                {formatDate(createdAt)}
+              </span>
+            </Hint>
             {status !== 'RESOLVED' && <PriorityBadge priority={priority} />}
           </div>
         </div>

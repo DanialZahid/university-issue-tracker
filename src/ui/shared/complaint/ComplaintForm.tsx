@@ -23,6 +23,8 @@ import { NativeSelect } from '@/ui/common/NativeSelect';
 import { Textarea } from '@/ui/common/textarea';
 import { detectPriority } from '@/automation/priority-detection';
 import { PriorityBadge } from './PriorityBadge';
+import { Hint } from '@/ui/common/Hint';
+import { DepartmentIcon } from '@/ui/shared/department';
 
 type Option = { id: string; name: string };
 type CategoryOption = Option & { departmentName: string };
@@ -200,8 +202,14 @@ function ComplaintFormFields({
           ))}
         </NativeSelect>
         <div className='flex flex-wrap items-center justify-between gap-2 text-sm'>
-          <p>
-            <span className='text-muted-foreground'>Handled by: </span>
+          <p className='inline-flex items-center gap-1.5'>
+            <span className='text-muted-foreground'>Handled by:</span>
+            {department && (
+              <DepartmentIcon
+                name={department}
+                className='size-4 text-muted-foreground'
+              />
+            )}
             <span className='font-medium'>
               {department ?? 'Not selected yet'}
             </span>
@@ -277,7 +285,11 @@ function ComplaintFormFields({
 
       <div className='flex flex-wrap items-center gap-2 text-sm'>
         <span className='text-muted-foreground'>Priority:</span>
-        <PriorityBadge priority={priority} />
+        <Hint label='Based on your title, description and category.'>
+          <span className='inline-flex'>
+            <PriorityBadge priority={priority} />
+          </span>
+        </Hint>
         <span className='text-muted-foreground'>
           Set automatically. The department may adjust it.
         </span>
