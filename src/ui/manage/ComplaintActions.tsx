@@ -1,6 +1,11 @@
 'use client';
 
-import { useActionState, useState, type ReactNode } from 'react';
+import {
+  startTransition,
+  useActionState,
+  useState,
+  type ReactNode,
+} from 'react';
 import { CheckCircle2, CircleAlert } from 'lucide-react';
 import {
   updatePriority,
@@ -69,8 +74,16 @@ function UpdateForm({
   const [selected, setSelected] = useState(value);
 
   return (
-    <form action={formAction} className='space-y-2'>
+    <form
+      className='space-y-2'
+      onSubmit={(e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        startTransition(() => formAction(formData));
+      }}
+    >
       <input type='hidden' name='ticketNumber' value={ticketNumber} />
+      <input type='hidden' name='expected' value={value} />
       <Label htmlFor={name}>{label}</Label>
       <div className='flex gap-2'>
         <Select

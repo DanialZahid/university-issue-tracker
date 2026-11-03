@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useActionState, useState } from 'react';
+import { startTransition, useActionState, useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import {
   submitComplaint,
@@ -138,7 +138,11 @@ function ComplaintFormFields({
 
   return (
     <form
-      action={formAction}
+      onSubmit={(e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        startTransition(() => formAction(formData));
+      }}
       noValidate
       className='space-y-6 rounded-xl border bg-card p-6 shadow-xs'
     >
