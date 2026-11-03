@@ -1,7 +1,11 @@
 import 'server-only';
 import { prisma } from '@/db/client';
 import type { Prisma } from '@/generated/prisma/client';
-import { UserRole, type ComplaintStatus } from '@/generated/prisma/enums';
+import {
+  UserRole,
+  type ComplaintStatus,
+  type Priority,
+} from '@/generated/prisma/enums';
 import type { QueueFilters } from '@/schemas/queue-filters';
 import { parseTicketNumber } from '@/utils/ticket';
 import { campusDayStart } from '@/utils/date';
@@ -9,6 +13,7 @@ import { campusDayStart } from '@/utils/date';
 export const QUEUE_PAGE_SIZE = 25;
 
 type ScopeUser = { role: UserRole; departmentId: string | null };
+type ActingUser = ScopeUser & { id: string };
 
 export function managerScope(
   user: ScopeUser,
@@ -178,4 +183,109 @@ export async function getFilterOptions(user: ScopeUser) {
   ]);
 
   return { categories, departments };
+}
+
+export async function getComplaintForManager(
+  ticketNumber: number,
+  user: ScopeUser,
+) {
+  return prisma.complaint.findFirst({
+    where: { AND: [managerScope(user), { ticketNumber }] },
+    select: {
+      ticketNumber: true,
+      title: true,
+      description: true,
+      status: true,
+      priority: true,
+      locationDetail: true,
+      createdAt: true,
+      resolvedAt: true,
+      archivedAt: true,
+      category: { select: { name: true } },
+      location: { select: { name: true } },
+      department: { select: { name: true } },
+      submittedBy: { select: { name: true, email: true } },
+      auditLogs: {
+        orderBy: [{ createdAt: 'asc' }, { action: 'asc' }],
+        select: {
+          id: true,
+          action: true,
+          fromValue: true,
+          toValue: true,
+          note: true,
+          createdAt: true,
+          performedBy: { select: { name: true } },
+        },
+      },
+    },
+  });
+}
+
+export type UpdateOutcome =
+  'ok' | 'unchanged' | 'not-found' | 'archived' | 'conflict';
+
+async function findEditable(user: ActingUser, ticketNumber: number) {
+  return prisma.complaint.findFirst({
+    where: { AND: [managerScope(user), { ticketNumber }] },
+    select: { id: true, status: true, priority: true, archivedAt: true },
+  });
+}
+
+export async function changeStatus(
+  user: ActingUser,
+  ticketNumber: number,
+  status: ComplaintStatus,
+): Promise<UpdateOutcome> {
+  const c = await findEditable(user, ticketNumber);
+  if (!c) return 'not-found';
+  if (c.archivedAt) return 'archived';
+  if (c.status === status) return 'unchanged';
+
+  return prisma.$transaction(async (tx) => {
+    // Only applies if nobody changed the status since we read it.
+    const { count } = await tx.complaint.updateMany({
+      where: { id: c.id, status: c.status },
+      data: { status, resolvedAt: status === 'RESOLVED' ? new Date() : null },
+    });
+    if (count === 0) return 'conflict';
+    await tx.auditLog.create({
+      data: {
+        action: 'STATUS_CHANGED',
+        fromValue: c.status,
+        toValue: status,
+        complaintId: c.id,
+        performedById: user.id,
+      },
+    });
+    return 'ok';
+  });
+}
+
+export async function changePriority(
+  user: ActingUser,
+  ticketNumber: number,
+  priority: Priority,
+): Promise<UpdateOutcome> {
+  const c = await findEditable(user, ticketNumber);
+  if (!c) return 'not-found';
+  if (c.archivedAt) return 'archived';
+  if (c.priority === priority) return 'unchanged';
+
+  return prisma.$transaction(async (tx) => {
+    const { count } = await tx.complaint.updateMany({
+      where: { id: c.id, priority: c.priority },
+      data: { priority },
+    });
+    if (count === 0) return 'conflict';
+    await tx.auditLog.create({
+      data: {
+        action: 'PRIORITY_CHANGED',
+        fromValue: c.priority,
+        toValue: priority,
+        complaintId: c.id,
+        performedById: user.id,
+      },
+    });
+    return 'ok';
+  });
 }
