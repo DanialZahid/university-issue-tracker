@@ -84,3 +84,10 @@ export function detectPriority(
   if (LOW.some((rx) => rx.test(text))) return 'LOW';
   return 'MEDIUM';
 }
+
+export const priorityLabels: Record<PriorityLevel, string> = {
+  LOW: 'Low',
+  MEDIUM: 'Medium',
+  HIGH: 'High',
+  CRITICAL: 'Critical',
+};

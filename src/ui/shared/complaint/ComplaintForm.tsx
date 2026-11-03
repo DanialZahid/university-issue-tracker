@@ -21,6 +21,11 @@ import { FormField } from '@/ui/common/FormField';
 import { Input } from '@/ui/common/input';
 import { NativeSelect } from '@/ui/common/NativeSelect';
 import { Textarea } from '@/ui/common/textarea';
+import {
+  detectPriority,
+  priorityLabels,
+} from '@/automation/priority-detection';
+import { Badge } from '@/ui/common/badge';
 
 type Option = { id: string; name: string };
 type CategoryOption = Option & { departmentName: string };
@@ -68,6 +73,8 @@ function ComplaintFormFields({
   const department = categories.find(
     (c) => c.id === categoryId,
   )?.departmentName;
+  const categoryName = categories.find((c) => c.id === categoryId)?.name ?? '';
+  const priority = detectPriority(title, description, categoryName);
 
   const suggestedRoom = detectRoom(title, description) ?? '';
   const roomDetail = manualRoom ?? suggestedRoom;
@@ -268,9 +275,13 @@ function ComplaintFormFields({
         <Input id='image' type='file' accept='image/*' disabled />
       </FormField>
 
-      <p className='text-sm text-muted-foreground'>
-        Priority is set automatically and may be adjusted by the department.
-      </p>
+      <div className='flex flex-wrap items-center gap-2 text-sm'>
+        <span className='text-muted-foreground'>Priority:</span>
+        <Badge variant='outline'>{priorityLabels[priority]}</Badge>
+        <span className='text-muted-foreground'>
+          Set automatically. The department may adjust it.
+        </span>
+      </div>
 
       <Button type='submit' disabled={pending}>
         {pending ? 'Submitting...' : 'Submit complaint'}
