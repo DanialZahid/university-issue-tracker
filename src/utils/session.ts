@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { auth } from '@clerk/nextjs/server';
 import { getUserByClerkId } from '@/db/user';
 import { UserRole } from '@/generated/prisma/enums';
+import { isManager } from '@/utils/role';
 
 const getCurrentUser = cache(async (clerkId: string) =>
   getUserByClerkId(clerkId),
@@ -19,8 +20,14 @@ export async function requireUser() {
   return user;
 }
 
-export async function requireAdmin() {
+export async function requireManager() {
   const user = await requireUser();
-  if (user.role !== UserRole.ADMIN) redirect('/');
+  if (!isManager(user.role)) redirect('/');
+  return user;
+}
+
+export async function requireSuperuser() {
+  const user = await requireUser();
+  if (user.role !== UserRole.SUPERUSER) redirect('/');
   return user;
 }

@@ -6,39 +6,36 @@ type SyncUserInput = {
   clerkId: string;
   name: string;
   email: string;
-  isAdmin: boolean;
+  isSuperuser: boolean;
 };
 
 export async function syncUser({
   clerkId,
   name,
   email,
-  isAdmin,
+  isSuperuser,
 }: SyncUserInput) {
-  const existing = await prisma.user.findFirst({
-    where: { OR: [{ clerkId }, { email }] },
-  });
+  const [existing, headOf] = await Promise.all([
+    prisma.user.findFirst({ where: { OR: [{ clerkId }, { email }] } }),
+    prisma.department.findUnique({ where: { headEmail: email } }),
+  ]);
 
-  if (!existing) {
-    return prisma.user.create({
-      data: {
-        clerkId,
-        name,
-        email,
-        role: isAdmin ? UserRole.ADMIN : UserRole.STUDENT,
-      },
-    });
+  // Superuser and head status come only from configuration, never from the user.
+  let role: UserRole = UserRole.STUDENT;
+  let departmentId: string | null = null;
+  if (isSuperuser) {
+    role = UserRole.SUPERUSER;
+  } else if (headOf) {
+    role = UserRole.DEPARTMENT_HEAD;
+    departmentId = headOf.id;
+  } else if (existing?.role === UserRole.FACULTY) {
+    role = UserRole.FACULTY;
   }
 
-  // Admin comes only from ADMIN_EMAILS. Faculty and Student are left as they are.
-  let role = existing.role;
-  if (isAdmin) role = UserRole.ADMIN;
-  else if (existing.role === UserRole.ADMIN) role = UserRole.STUDENT;
-
-  return prisma.user.update({
-    where: { id: existing.id },
-    data: { clerkId, name, email, role },
-  });
+  const data = { clerkId, name, email, role, departmentId };
+  return existing
+    ? prisma.user.update({ where: { id: existing.id }, data })
+    : prisma.user.create({ data });
 }
 
 export function getUserByClerkId(clerkId: string) {

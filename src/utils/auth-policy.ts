@@ -6,10 +6,10 @@ export function isUniversityEmail(email: string) {
   return email.trim().toLowerCase().endsWith(`@${domain}`);
 }
 
-export function isAdminEmail(email: string) {
-  const admins = (process.env['ADMIN_EMAILS'] ?? '')
+export function isSuperuserEmail(email: string) {
+  const list = (process.env['SUPERUSER_EMAILS'] ?? '')
     .split(',')
     .map((entry) => entry.trim().toLowerCase())
     .filter(Boolean);
-  return admins.includes(email.trim().toLowerCase());
+  return list.includes(email.trim().toLowerCase());
 }
