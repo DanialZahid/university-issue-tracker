@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import type { QueueItem } from '@/db/manage';
+import type { SortKey } from '@/schemas/queue-filters';
+import { Hint } from '@/ui/common/Hint';
 import {
   Table,
   TableBody,
@@ -13,15 +15,24 @@ import {
   PriorityBadge,
   StatusBadge,
 } from '@/ui/shared/complaint';
+import { DepartmentIcon } from '@/ui/shared/department';
 import { formatAge, formatDateTime } from '@/utils/date';
 import { formatTicketNumber } from '@/utils/ticket';
+import { SortableHead } from './SortableHead';
 
-type Props = { items: QueueItem[]; showDepartment: boolean };
+type Props = {
+  items: QueueItem[];
+  showDepartment: boolean;
+  sort?: SortKey;
+  dir?: 'asc' | 'desc';
+  query: Record<string, string | undefined>;
+};
 
 const hrefFor = (ticket: string) => `/manage/complaints/${ticket}`;
 
-export function QueueTable({ items, showDepartment }: Props) {
+export function QueueTable({ items, showDepartment, sort, dir, query }: Props) {
   const now = new Date();
+  const sortProps = { sort, dir, query };
 
   return (
     <>
@@ -30,14 +41,45 @@ export function QueueTable({ items, showDepartment }: Props) {
         <Table>
           <TableHeader>
             <TableRow className='bg-muted/50 hover:bg-muted/50'>
-              <TableHead className='w-28 pl-4'>Ticket</TableHead>
+              <SortableHead
+                label='Ticket'
+                column='ticket'
+                firstDir='asc'
+                className='w-28 pl-4'
+                {...sortProps}
+              />
               <TableHead>Complaint</TableHead>
-              <TableHead className='w-28'>Priority</TableHead>
-              <TableHead className='w-32'>Status</TableHead>
+              <SortableHead
+                label='Priority'
+                column='priority'
+                firstDir='desc'
+                className='w-28'
+                {...sortProps}
+              />
+              <SortableHead
+                label='Status'
+                column='status'
+                firstDir='asc'
+                className='w-32'
+                {...sortProps}
+              />
               {showDepartment && (
-                <TableHead className='w-36'>Department</TableHead>
+                <SortableHead
+                  label='Department'
+                  column='department'
+                  firstDir='asc'
+                  className='w-40'
+                  {...sortProps}
+                />
               )}
-              <TableHead className='w-24 pr-4 text-right'>Age</TableHead>
+              <SortableHead
+                label='Age'
+                column='age'
+                firstDir='desc'
+                align='right'
+                className='w-24 pr-4 text-right'
+                {...sortProps}
+              />
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -73,14 +115,23 @@ export function QueueTable({ items, showDepartment }: Props) {
                   </TableCell>
                   {showDepartment && (
                     <TableCell className='text-sm'>
-                      {c.department?.name ?? 'Unassigned'}
+                      {c.department ? (
+                        <span className='inline-flex items-center gap-1.5'>
+                          <DepartmentIcon
+                            name={c.department.name}
+                            className='size-3.5 text-muted-foreground'
+                          />
+                          {c.department.name}
+                        </span>
+                      ) : (
+                        'Unassigned'
+                      )}
                     </TableCell>
                   )}
-                  <TableCell
-                    className='pr-4 text-right text-sm text-muted-foreground tabular-nums'
-                    title={formatDateTime(c.createdAt)}
-                  >
-                    {formatAge(c.createdAt, now)}
+                  <TableCell className='pr-4 text-right text-sm text-muted-foreground tabular-nums'>
+                    <Hint label={formatDateTime(c.createdAt)}>
+                      <span>{formatAge(c.createdAt, now)}</span>
+                    </Hint>
                   </TableCell>
                 </TableRow>
               );

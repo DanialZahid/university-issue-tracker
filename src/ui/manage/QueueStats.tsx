@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import {
+  Check,
   CheckCircle2,
   Clock,
   Loader,
   TriangleAlert,
   type LucideIcon,
 } from 'lucide-react';
+import { Hint } from '@/ui/common/Hint';
 import { statusTone } from '@/ui/shared/complaint';
 import { cn } from '@/utils/cn';
 import { withQuery } from '@/utils/query';
@@ -17,21 +19,22 @@ type Counts = {
   criticalOpen: number;
 };
 
+type Props = {
+  counts: Counts;
+  department?: string;
+  active: { status: string; priority?: string };
+};
+
 type Stat = {
   label: string;
   value: number;
   icon: LucideIcon;
   tone: string;
   query: Record<string, string>;
+  isActive: boolean;
 };
 
-export function QueueStats({
-  counts,
-  department,
-}: {
-  counts: Counts;
-  department?: string;
-}) {
+export function QueueStats({ counts, department, active }: Props) {
   const stats: Stat[] = [
     {
       label: 'Pending',
@@ -39,6 +42,7 @@ export function QueueStats({
       icon: Clock,
       tone: statusTone.PENDING.soft,
       query: { status: 'PENDING' },
+      isActive: active.status === 'PENDING',
     },
     {
       label: 'In progress',
@@ -46,6 +50,7 @@ export function QueueStats({
       icon: Loader,
       tone: statusTone.IN_PROGRESS.soft,
       query: { status: 'IN_PROGRESS' },
+      isActive: active.status === 'IN_PROGRESS',
     },
     {
       label: 'Resolved',
@@ -53,6 +58,7 @@ export function QueueStats({
       icon: CheckCircle2,
       tone: statusTone.RESOLVED.soft,
       query: { status: 'RESOLVED' },
+      isActive: active.status === 'RESOLVED',
     },
     {
       label: 'Critical and open',
@@ -60,32 +66,53 @@ export function QueueStats({
       icon: TriangleAlert,
       tone: 'bg-red-100 text-red-800',
       query: { priority: 'CRITICAL' },
+      isActive: active.priority === 'CRITICAL',
     },
   ];
 
   return (
     <div className='grid gap-3 sm:grid-cols-2 lg:grid-cols-4'>
-      {stats.map(({ label, value, icon: Icon, tone, query }) => (
-        <Link
+      {stats.map(({ label, value, icon: Icon, tone, query, isActive }) => (
+        <Hint
           key={label}
-          href={withQuery('/manage', { ...query, department })}
-          className='flex items-center gap-4 rounded-xl border bg-card p-4 transition-colors outline-none hover:bg-accent/40 focus-visible:ring-[3px] focus-visible:ring-ring/50'
+          label={
+            isActive
+              ? 'Click to remove this filter'
+              : `Show ${label.toLowerCase()} only`
+          }
         >
-          <span
+          <Link
+            href={withQuery(
+              '/manage',
+              isActive ? { department } : { ...query, department },
+            )}
+            aria-current={isActive ? 'true' : undefined}
             className={cn(
-              'flex size-10 shrink-0 items-center justify-center rounded-lg',
-              tone,
+              'flex items-center gap-4 rounded-xl border bg-card p-4 transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50',
+              isActive
+                ? 'border-primary/50 bg-primary/5 ring-2 ring-primary/25'
+                : 'hover:bg-accent/40',
             )}
           >
-            <Icon className='size-5' />
-          </span>
-          <div>
-            <p className='text-2xl font-semibold tabular-nums'>
-              {value.toLocaleString('en-US')}
-            </p>
-            <p className='text-sm text-muted-foreground'>{label}</p>
-          </div>
-        </Link>
+            <span
+              className={cn(
+                'flex size-10 shrink-0 items-center justify-center rounded-lg',
+                tone,
+              )}
+            >
+              <Icon className='size-5' />
+            </span>
+            <div>
+              <p className='text-2xl font-semibold tabular-nums'>
+                {value.toLocaleString('en-US')}
+              </p>
+              <p className='text-sm text-muted-foreground'>{label}</p>
+            </div>
+            {isActive && (
+              <Check className='ml-auto size-4 self-start text-primary' />
+            )}
+          </Link>
+        </Hint>
       ))}
     </div>
   );

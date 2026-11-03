@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
-import { Building2, Inbox, LayoutDashboard } from 'lucide-react';
+import { Inbox, LayoutDashboard } from 'lucide-react';
 import {
   QUEUE_PAGE_SIZE,
   getFilterOptions,
@@ -16,6 +16,8 @@ import { PageHeader } from '@/ui/shared/layout';
 import { QueueFilters, QueueStats, QueueTable } from '@/ui/manage';
 import { withQuery } from '@/utils/query';
 import { requireManager } from '@/utils/session';
+import { Hint } from '@/ui/common/Hint';
+import { DepartmentIcon } from '@/ui/shared/department';
 
 export const metadata: Metadata = { title: 'Department dashboard' };
 
@@ -48,6 +50,8 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
     category: filters.category,
     department: isSuperuser ? filters.department : undefined,
     q: filters.q || undefined,
+    sort: filters.sort,
+    dir: filters.sort ? filters.dir : undefined,
   };
 
   const totalPages = Math.max(1, Math.ceil(queue.total / QUEUE_PAGE_SIZE));
@@ -77,14 +81,20 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
         title='Department dashboard'
         description='Track and act on incoming complaints.'
         actions={
-          <span className='inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary'>
-            <Building2 className='size-4' />
-            {scopeLabel}
-          </span>
+          <Hint label='Complaints shown on this dashboard'>
+            <span className='inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary'>
+              <DepartmentIcon name={scopeLabel} className='size-4' />
+              {scopeLabel}
+            </span>
+          </Hint>
         }
       />
       <div className='space-y-6'>
-        <QueueStats counts={counts} department={query.department} />
+        <QueueStats
+          counts={counts}
+          department={query.department}
+          active={{ status: filters.status, priority: filters.priority }}
+        />
         <QueueFilters
           categories={options.categories.map(toOption)}
           departments={isSuperuser ? options.departments.map(toOption) : []}
@@ -100,7 +110,13 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
             <p className='text-sm text-muted-foreground'>
               {queue.total.toLocaleString('en-US')} complaints
             </p>
-            <QueueTable items={queue.items} showDepartment={isSuperuser} />
+            <QueueTable
+              items={queue.items}
+              showDepartment={isSuperuser}
+              sort={filters.sort}
+              dir={filters.dir}
+              query={query}
+            />
             <PageNav
               page={filters.page}
               totalPages={totalPages}
