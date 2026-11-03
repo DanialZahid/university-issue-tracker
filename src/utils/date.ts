@@ -31,3 +31,21 @@ export function formatAge(date: Date, now: Date = new Date()): string {
   const days = Math.floor(hours / 24);
   return days === 1 ? '1 day' : `${days} days`;
 }
+
+// 'YYYY-MM-DD' from a calendar date (browser local day).
+export function toYmd(date: Date): string {
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${date.getFullYear()}-${m}-${d}`;
+}
+
+// Noon UTC, so the same calendar day in both UTC and Pakistan time.
+export function fromYmd(value: string): Date {
+  const [y, m, d] = value.split('-').map(Number);
+  return new Date(Date.UTC(y ?? 1970, (m ?? 1) - 1, d ?? 1, 12));
+}
+
+// Start of a campus day. Pakistan is UTC+5 all year (no daylight saving).
+export function campusDayStart(value: string): Date {
+  return new Date(`${value}T00:00:00+05:00`);
+}

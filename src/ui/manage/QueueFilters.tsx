@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from '@/ui/common/select';
 import { cn } from '@/utils/cn';
+import { DateRangePicker, formatRange } from '@/ui/common/DateRangePicker';
 
 type Option = { value: string; label: string };
 type Props = { categories: Option[]; departments: Option[] };
@@ -160,6 +161,15 @@ export function QueueFilters({ categories, departments }: Props) {
       clear: { department: null },
     });
   }
+  const from = params.get('from');
+  const to = params.get('to');
+  if (from && to) {
+    chips.push({
+      key: 'date',
+      label: `Date: ${formatRange(from, to)}`,
+      clear: { from: null, to: null },
+    });
+  }
   if (urlQ) {
     chips.push({ key: 'q', label: `Search: "${urlQ}"`, clear: { q: null } });
   }
@@ -235,6 +245,11 @@ export function QueueFilters({ categories, departments }: Props) {
             onChange={(v) => setParams({ department: v })}
           />
         )}
+        <DateRangePicker
+          from={from ?? undefined}
+          to={to ?? undefined}
+          onChange={(f, t) => setParams({ from: f, to: t })}
+        />
       </div>
 
       {chips.length > 0 && (

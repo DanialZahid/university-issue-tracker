@@ -50,6 +50,8 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
     category: filters.category,
     department: isSuperuser ? filters.department : undefined,
     q: filters.q || undefined,
+    from: filters.from,
+    to: filters.to,
     sort: filters.sort,
     dir: filters.sort ? filters.dir : undefined,
   };

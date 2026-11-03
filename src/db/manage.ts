@@ -4,6 +4,7 @@ import type { Prisma } from '@/generated/prisma/client';
 import { UserRole, type ComplaintStatus } from '@/generated/prisma/enums';
 import type { QueueFilters } from '@/schemas/queue-filters';
 import { parseTicketNumber } from '@/utils/ticket';
+import { campusDayStart } from '@/utils/date';
 
 export const QUEUE_PAGE_SIZE = 25;
 
@@ -105,6 +106,19 @@ function orderFor(
     : [{ priority: 'desc' }, { createdAt: 'asc' }];
 }
 
+const DAY_MS = 86_400_000;
+
+function dateWhere(from?: string, to?: string): Prisma.ComplaintWhereInput {
+  if (!from && !to) return {};
+  const [start, end] = from && to && from > to ? [to, from] : [from, to];
+  return {
+    createdAt: {
+      ...(start ? { gte: campusDayStart(start) } : {}),
+      ...(end ? { lt: new Date(campusDayStart(end).getTime() + DAY_MS) } : {}),
+    },
+  };
+}
+
 export async function listQueue(
   scope: Prisma.ComplaintWhereInput,
   filters: QueueFilters,
@@ -116,6 +130,7 @@ export async function listQueue(
       searchWhere(filters.q),
       filters.priority ? { priority: filters.priority } : {},
       filters.category ? { categoryId: filters.category } : {},
+      dateWhere(filters.from, filters.to),
     ],
   };
 
