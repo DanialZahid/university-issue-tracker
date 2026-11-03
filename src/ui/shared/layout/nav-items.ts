@@ -2,7 +2,6 @@ import {
   ClipboardList,
   FilePlus2,
   LayoutDashboard,
-  ListChecks,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -27,6 +26,5 @@ export const navItems: Record<NavVariant, NavItem[]> = {
   ],
   manage: [
     { label: 'Dashboard', href: '/manage', icon: LayoutDashboard, exact: true },
-    { label: 'All complaints', href: '/manage/complaints', icon: ListChecks },
   ],
 };
