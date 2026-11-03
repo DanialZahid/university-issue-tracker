@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { CalendarClock, ChevronRight, Tag } from 'lucide-react';
 import type { ComplaintStatus, Priority } from '@/generated/prisma/enums';
-import { PriorityBadge } from '@/ui/shared/complaint/PriorityBadge';
-import { StatusBadge } from '@/ui/shared/complaint/StatusBadge';
-import { statusTone } from '@/ui/shared/complaint/status-tone';
+import { PriorityBadge } from './PriorityBadge';
+import { StatusBadge } from './StatusBadge';
+import { statusTone } from './status-tone';
 import { cn } from '@/utils/cn';
 import { formatDate } from '@/utils/date';
 import { formatTicketNumber } from '@/utils/ticket';

@@ -4,7 +4,7 @@ import { listUserComplaints } from '@/db/complaint';
 import { Button } from '@/ui/common/button';
 import { ClipboardList } from 'lucide-react';
 import { PageNav } from '@/ui/common/PageNav';
-import { ComplaintListItem } from '@/ui/shared/complaint/ComplaintListItem';
+import { ComplaintListItem } from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout/PageHeader';
 import { requireUser } from '@/utils/session';
 import { EmptyState } from '@/ui/common/EmptyState';

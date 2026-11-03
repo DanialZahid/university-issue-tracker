@@ -7,7 +7,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import type { AuditAction } from '@/generated/prisma/enums';
-import { statusTone } from '@/ui/shared/complaint/status-tone';
+import { statusTone } from './status-tone';
 import { statusLabel } from '@/utils/complaint-labels';
 import { formatDateTime } from '@/utils/date';
 import { cn } from '@/utils/cn';

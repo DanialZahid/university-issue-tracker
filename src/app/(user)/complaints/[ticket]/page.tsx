@@ -17,10 +17,12 @@ import {
 import { getComplaintForSubmitter } from '@/db/complaint';
 import { Button } from '@/ui/common/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
-import { ComplaintTimeline } from '@/ui/shared/complaint/ComplaintTimeline';
-import { PriorityBadge } from '@/ui/shared/complaint/PriorityBadge';
-import { StatusBadge } from '@/ui/shared/complaint/StatusBadge';
-import { statusTone } from '@/ui/shared/complaint/status-tone';
+import {
+  ComplaintTimeline,
+  PriorityBadge,
+  StatusBadge,
+  statusTone,
+} from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout/PageHeader';
 import { cn } from '@/utils/cn';
 import { formatDateTime } from '@/utils/date';

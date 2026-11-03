@@ -1,7 +1,7 @@
 import { CheckCircle2, Clock, Loader, type LucideIcon } from 'lucide-react';
 import type { ComplaintStatus } from '@/generated/prisma/enums';
 import { Badge } from '@/ui/common/badge';
-import { statusTone } from '@/ui/shared/complaint/status-tone';
+import { statusTone } from './status-tone';
 import { cn } from '@/utils/cn';
 import { statusLabels } from '@/utils/complaint-labels';
 

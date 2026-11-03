@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { PageHeader } from '@/ui/shared/layout';
-import { ComplaintForm } from '@/ui/shared/complaint/ComplaintForm';
+import { ComplaintForm } from '@/ui/shared/complaint';
 import { getComplaintFormOptions } from '@/db/complaint';
 import { FilePlus2 } from 'lucide-react';
 

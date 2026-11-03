@@ -22,7 +22,7 @@ import { Input } from '@/ui/common/input';
 import { NativeSelect } from '@/ui/common/NativeSelect';
 import { Textarea } from '@/ui/common/textarea';
 import { detectPriority } from '@/automation/priority-detection';
-import { PriorityBadge } from '@/ui/shared/complaint/PriorityBadge';
+import { PriorityBadge } from './PriorityBadge';
 
 type Option = { id: string; name: string };
 type CategoryOption = Option & { departmentName: string };
