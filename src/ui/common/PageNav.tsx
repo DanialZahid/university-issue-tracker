@@ -1,12 +1,19 @@
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/ui/common/button';
+import { withQuery } from '@/utils/query';
 
-type Props = { page: number; totalPages: number; basePath: string };
+type Props = {
+  page: number;
+  totalPages: number;
+  basePath: string;
+  query?: Record<string, string | undefined>;
+};
 
-export function PageNav({ page, totalPages, basePath }: Props) {
+export function PageNav({ page, totalPages, basePath, query }: Props) {
   if (totalPages <= 1) return null;
-  const href = (p: number) => `${basePath}?page=${p}`;
+  const href = (p: number) =>
+    withQuery(basePath, { ...query, page: p > 1 ? p : undefined });
 
   return (
     <nav

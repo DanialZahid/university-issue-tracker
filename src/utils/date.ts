@@ -23,3 +23,11 @@ export function formatDate(date: Date): string {
 export function formatDateTime(date: Date): string {
   return clean(dateTimeFormatter.format(date));
 }
+
+export function formatAge(date: Date, now: Date = new Date()): string {
+  const hours = Math.floor((now.getTime() - date.getTime()) / 3_600_000);
+  if (hours < 1) return 'Just now';
+  if (hours < 24) return hours === 1 ? '1 hour' : `${hours} hours`;
+  const days = Math.floor(hours / 24);
+  return days === 1 ? '1 day' : `${days} days`;
+}
