@@ -15,6 +15,7 @@ type Props = {
   priority: Priority;
   categoryName: string;
   createdAt: Date;
+  href?: string;
 };
 
 export function ComplaintListItem({
@@ -24,13 +25,14 @@ export function ComplaintListItem({
   priority,
   categoryName,
   createdAt,
+  href,
 }: Props) {
   const ticket = formatTicketNumber(ticketNumber);
 
   return (
     <li>
       <Link
-        href={`/complaints/${ticket}`}
+        href={href ?? `/complaints/${ticket}`}
         className='group relative flex items-center gap-3 overflow-hidden rounded-xl border bg-card py-4 pr-4 pl-6 transition-colors outline-none hover:bg-accent/40 focus-visible:ring-[3px] focus-visible:ring-ring/50'
       >
         <span
