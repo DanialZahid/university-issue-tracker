@@ -1,8 +1,11 @@
 model Department {
-  id           String @id @default(cuid())
-  name         String @unique
-  contactEmail String
+  id        String @id @default(cuid())
+  name      String @unique
+  headName  String
+  headEmail String @unique
 
+  categories Category[]
   staff      StaffMember[]
   complaints Complaint[]
+  users      User[]
 }

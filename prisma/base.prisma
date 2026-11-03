@@ -10,7 +10,8 @@ datasource db {
 enum UserRole {
   STUDENT
   FACULTY
-  ADMIN
+  DEPARTMENT_HEAD
+  SUPERUSER
 }
 
 enum ComplaintStatus {

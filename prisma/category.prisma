@@ -5,4 +5,9 @@ model Category {
   baseEffortMinutes Int     @default(60)
 
   complaints Complaint[]
+
+  departmentId String
+  department   Department @relation(fields: [departmentId], references: [id])
+
+  @@index([departmentId])
 }
