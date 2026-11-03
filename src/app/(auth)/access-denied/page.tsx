@@ -1,8 +1,7 @@
+import type { Metadata } from 'next';
 import { SignOutButton } from '@clerk/nextjs';
-import { CircleAlert } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle } from '@/ui/common/alert';
+import { ShieldAlert } from 'lucide-react';
 import { Button } from '@/ui/common/button';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = { title: 'Access restricted' };
 
@@ -10,18 +9,21 @@ export default function AccessDeniedPage() {
   const domain = process.env['UNIVERSITY_EMAIL_DOMAIN'];
 
   return (
-    <main className='flex min-h-svh items-center justify-center p-4'>
-      <div className='w-full max-w-md space-y-4'>
-        <Alert variant='destructive'>
-          <CircleAlert />
-          <AlertTitle>Access restricted</AlertTitle>
-          <AlertDescription>
-            Only university accounts can sign in. Please use your @{domain}{' '}
-            Google account.
-          </AlertDescription>
-        </Alert>
+    <main className='flex min-h-svh items-center justify-center bg-linear-to-b from-primary/10 via-background to-background p-4'>
+      <div className='w-full max-w-md rounded-2xl border bg-card p-8 text-center shadow-sm'>
+        <span className='mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-red-100 text-red-700'>
+          <ShieldAlert className='size-7' />
+        </span>
+        <h1 className='text-xl font-semibold tracking-tight'>
+          Access restricted
+        </h1>
+        <p className='mt-2 text-sm text-muted-foreground'>
+          Only university accounts can sign in. Please use your{' '}
+          <span className='font-medium text-foreground'>@{domain}</span> Google
+          account.
+        </p>
         <SignOutButton redirectUrl='/sign-in'>
-          <Button className='w-full'>Try another account</Button>
+          <Button className='mt-6 w-full'>Try another account</Button>
         </SignOutButton>
       </div>
     </main>
