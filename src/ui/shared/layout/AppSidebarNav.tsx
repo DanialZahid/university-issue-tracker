@@ -27,7 +27,11 @@ export function AppSidebarNav({ variant }: { variant: NavVariant }) {
 
             return (
               <SidebarMenuItem key={item.href}>
-                <SidebarMenuButton asChild isActive={isActive}>
+                <SidebarMenuButton
+                  asChild
+                  isActive={isActive}
+                  className='h-10 gap-3 px-3 text-[15px] [&>svg]:size-5'
+                >
                   <Link href={item.href} onClick={() => setOpenMobile(false)}>
                     <item.icon />
                     <span>{item.label}</span>
