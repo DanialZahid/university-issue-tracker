@@ -19,7 +19,13 @@ import { Button } from '@/ui/common/button';
 import { Card, CardContent } from '@/ui/common/card';
 import { FormField } from '@/ui/common/FormField';
 import { Input } from '@/ui/common/input';
-import { NativeSelect } from '@/ui/common/NativeSelect';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/ui/common/select';
 import { Textarea } from '@/ui/common/textarea';
 import { detectPriority } from '@/automation/priority-detection';
 import { PriorityBadge } from './PriorityBadge';
@@ -186,21 +192,27 @@ function ComplaintFormFields({
             : undefined
         }
       >
-        <NativeSelect
-          id='categoryId'
+        <Select
           name='categoryId'
           value={categoryId}
-          onChange={(e) => setManualCategoryId(e.target.value)}
-          aria-invalid={!!errors['categoryId']}
-          aria-describedby={describedBy('categoryId')}
+          onValueChange={setManualCategoryId}
         >
-          <option value=''>Select a category</option>
-          {categories.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.name}
-            </option>
-          ))}
-        </NativeSelect>
+          <SelectTrigger
+            id='categoryId'
+            className='w-full'
+            aria-invalid={!!errors['categoryId']}
+            aria-describedby={describedBy('categoryId')}
+          >
+            <SelectValue placeholder='Select a category' />
+          </SelectTrigger>
+          <SelectContent>
+            {categories.map((c) => (
+              <SelectItem key={c.id} value={c.id}>
+                {c.name}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
         <div className='flex flex-wrap items-center justify-between gap-2 text-sm'>
           <p className='inline-flex items-center gap-1.5'>
             <span className='text-muted-foreground'>Handled by:</span>
@@ -234,21 +246,27 @@ function ComplaintFormFields({
           required
           error={errors['locationId']}
         >
-          <NativeSelect
-            id='locationId'
+          <Select
             name='locationId'
             value={locationId}
-            onChange={(e) => setLocationId(e.target.value)}
-            aria-invalid={!!errors['locationId']}
-            aria-describedby={describedBy('locationId')}
+            onValueChange={setLocationId}
           >
-            <option value=''>Select a location</option>
-            {locations.map((l) => (
-              <option key={l.id} value={l.id}>
-                {l.name}
-              </option>
-            ))}
-          </NativeSelect>
+            <SelectTrigger
+              id='locationId'
+              className='w-full'
+              aria-invalid={!!errors['locationId']}
+              aria-describedby={describedBy('locationId')}
+            >
+              <SelectValue placeholder='Select a location' />
+            </SelectTrigger>
+            <SelectContent>
+              {locations.map((l) => (
+                <SelectItem key={l.id} value={l.id}>
+                  {l.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </FormField>
 
         <FormField
