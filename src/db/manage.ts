@@ -80,6 +80,31 @@ export async function getQueueCounts(scope: Prisma.ComplaintWhereInput) {
   };
 }
 
+function orderFor(
+  filters: QueueFilters,
+): Prisma.ComplaintOrderByWithRelationInput[] {
+  const dir = filters.dir ?? 'asc';
+  switch (filters.sort) {
+    case 'ticket':
+      return [{ ticketNumber: dir }];
+    case 'priority':
+      return [{ priority: dir }, { createdAt: 'asc' }];
+    case 'status':
+      return [{ status: dir }, { createdAt: 'asc' }];
+    case 'department':
+      return [{ department: { name: dir } }, { createdAt: 'asc' }];
+    case 'age':
+      // Larger age = older, so "age descending" means oldest first.
+      return [{ createdAt: dir === 'asc' ? 'desc' : 'asc' }];
+  }
+  // Default: open work by urgency then oldest; finished work newest first.
+  const finished =
+    filters.status === 'RESOLVED' || filters.status === 'ARCHIVED';
+  return finished
+    ? [{ createdAt: 'desc' }]
+    : [{ priority: 'desc' }, { createdAt: 'asc' }];
+}
+
 export async function listQueue(
   scope: Prisma.ComplaintWhereInput,
   filters: QueueFilters,
@@ -94,19 +119,11 @@ export async function listQueue(
     ],
   };
 
-  // Open work: most urgent first, then oldest first.
-  // Finished work: most recently resolved first.
-  const finished =
-    filters.status === 'RESOLVED' || filters.status === 'ARCHIVED';
-  const orderBy: Prisma.ComplaintOrderByWithRelationInput[] = finished
-    ? [{ resolvedAt: 'desc' }]
-    : [{ priority: 'desc' }, { createdAt: 'asc' }];
-
   const [total, items] = await Promise.all([
     prisma.complaint.count({ where }),
     prisma.complaint.findMany({
       where,
-      orderBy,
+      orderBy: orderFor(filters),
       skip: (filters.page - 1) * QUEUE_PAGE_SIZE,
       take: QUEUE_PAGE_SIZE,
       select: {
