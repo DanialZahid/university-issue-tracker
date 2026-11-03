@@ -20,11 +20,6 @@ export default function SignInPage() {
       </div>
       <SignIn
         appearance={{
-          variables: {
-            colorPrimary: '#155dfc',
-            borderRadius: '0.625rem',
-            fontFamily: 'inherit',
-          },
           elements: {
             header: { display: 'none' },
             footerAction: { display: 'none' },

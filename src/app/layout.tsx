@@ -22,7 +22,17 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={cn('h-full', 'antialiased', 'font-sans', inter.variable)}
     >
       <body className='flex min-h-full flex-col'>
-        <ClerkProvider>{children}</ClerkProvider>
+        <ClerkProvider
+          appearance={{
+            variables: {
+              colorPrimary: '#155dfc',
+              borderRadius: '0.625rem',
+              fontFamily: 'inherit',
+            },
+          }}
+        >
+          {children}
+        </ClerkProvider>
       </body>
     </html>
   );
