@@ -2,7 +2,7 @@ import type { ComplaintStatus } from '@/generated/prisma/enums';
 
 export const statusLabels: Record<ComplaintStatus, string> = {
   PENDING: 'Pending',
-  IN_PROGRESS: 'In Progress',
+  IN_PROGRESS: 'In progress',
   RESOLVED: 'Resolved',
 };
 

@@ -1,32 +1,27 @@
-import { ComplaintStatus } from '@/generated/prisma/enums';
+import { CheckCircle2, Clock, Loader, type LucideIcon } from 'lucide-react';
+import type { ComplaintStatus } from '@/generated/prisma/enums';
 import { Badge } from '@/ui/common/badge';
+import { statusTone } from '@/ui/shared/complaint/status-tone';
 import { cn } from '@/utils/cn';
+import { statusLabels } from '@/utils/complaint-labels';
 
-const statusStyles: Record<
-  ComplaintStatus,
-  { label: string; className: string }
-> = {
-  PENDING: {
-    label: 'Pending',
-    className: 'border-transparent bg-amber-100 text-amber-900',
-  },
-  IN_PROGRESS: {
-    label: 'In progress',
-    className: 'border-transparent bg-blue-100 text-blue-900',
-  },
-  RESOLVED: {
-    label: 'Resolved',
-    className: 'border-transparent bg-green-100 text-green-900',
-  },
+const icons: Record<ComplaintStatus, LucideIcon> = {
+  PENDING: Clock,
+  IN_PROGRESS: Loader,
+  RESOLVED: CheckCircle2,
 };
 
 type StatusBadgeProps = { status: ComplaintStatus; className?: string };
 
 export function StatusBadge({ status, className }: StatusBadgeProps) {
-  const style = statusStyles[status];
+  const Icon = icons[status];
   return (
-    <Badge variant='outline' className={cn(style.className, className)}>
-      {style.label}
+    <Badge
+      variant='outline'
+      className={cn('border-transparent', statusTone[status].soft, className)}
+    >
+      <Icon />
+      {statusLabels[status]}
     </Badge>
   );
 }
