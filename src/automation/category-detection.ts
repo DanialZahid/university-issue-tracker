@@ -1,4 +1,5 @@
 import { normalizeText as normalize, phraseRegex } from './text';
+import { hasEmergency } from './emergency';
 
 export const CATEGORY_NAMES = [
   'IT / Equipment',
@@ -175,6 +176,10 @@ function scoreText(text: string, regexes: RegExp[]): number {
 export type Detection = { category: CategoryName; score: number };
 
 export function detectCategory(title: string, description: string): Detection {
+  if (hasEmergency(`${title} ${description}`)) {
+    return { category: 'Safety', score: 100 };
+  }
+
   const t = normalize(title);
   const d = normalize(description);
 

@@ -1,25 +1,14 @@
 import { normalizeText, phraseRegex } from './text';
+import { hasEmergency } from './emergency';
 
 export type PriorityLevel = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
 
 const CRITICAL_WORDS = [
-  'fire',
-  'smoke',
-  'gas leak',
-  'short circuit',
-  'electric shock',
-  'sparks',
-  'sparking',
   'flood',
   'flooding',
   'collapse',
   'collapsed',
-  'injured',
-  'injury',
-  'unconscious',
-  'ambulance',
   'emergency',
-  'assault',
   'threat',
   'harassment',
 ];
@@ -77,7 +66,10 @@ export function detectPriority(
     'extinguisher',
   );
 
-  if (CRITICAL.some((rx) => rx.test(text))) return 'CRITICAL';
+  if (hasEmergency(text) || CRITICAL.some((rx) => rx.test(text))) {
+    return 'CRITICAL';
+  }
+
   if (categoryName === 'Safety' || HIGH.some((rx) => rx.test(text))) {
     return 'HIGH';
   }
