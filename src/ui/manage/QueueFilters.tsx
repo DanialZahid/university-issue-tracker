@@ -66,7 +66,7 @@ function FilterSelect({
       <SelectTrigger aria-label={label} className='w-full bg-card sm:w-44'>
         <SelectValue />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent position='popper'>
         {options.map((o) => (
           <SelectItem key={o.value} value={o.value}>
             {o.label}

@@ -31,6 +31,7 @@ import { detectPriority } from '@/automation/priority-detection';
 import { PriorityBadge } from './PriorityBadge';
 import { Hint } from '@/ui/common/Hint';
 import { DepartmentIcon } from '@/ui/shared/department';
+import { detectLocation } from '@/automation/location-detection';
 
 type Option = { id: string; name: string };
 type CategoryOption = Option & { departmentName: string };
@@ -63,7 +64,7 @@ function ComplaintFormFields({
   // (React resets uncontrolled fields after a form action).
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [locationId, setLocationId] = useState('');
+  const [manualLocationId, setManualLocationId] = useState<string | null>(null);
   const [manualRoom, setManualRoom] = useState<string | null>(null);
   const [manualCategoryId, setManualCategoryId] = useState<string | null>(null);
 
@@ -83,6 +84,15 @@ function ComplaintFormFields({
 
   const suggestedRoom = detectRoom(title, description) ?? '';
   const roomDetail = manualRoom ?? suggestedRoom;
+
+  const suggestedLocationName = detectLocation(
+    title,
+    description,
+    locations.map((l) => l.name),
+  );
+  const suggestedLocationId =
+    locations.find((l) => l.name === suggestedLocationName)?.id ?? '';
+  const locationId = manualLocationId ?? suggestedLocationId;
 
   const live = complaintSchema.safeParse({
     title,
@@ -205,7 +215,7 @@ function ComplaintFormFields({
           >
             <SelectValue placeholder='Select a category' />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent position='popper'>
             {categories.map((c) => (
               <SelectItem key={c.id} value={c.id}>
                 {c.name}
@@ -245,11 +255,16 @@ function ComplaintFormFields({
           htmlFor='locationId'
           required
           error={errors['locationId']}
+          hint={
+            manualLocationId === null && suggestedLocationId
+              ? 'Suggested from your text. You can change it.'
+              : undefined
+          }
         >
           <Select
             name='locationId'
             value={locationId}
-            onValueChange={setLocationId}
+            onValueChange={setManualLocationId}
           >
             <SelectTrigger
               id='locationId'
@@ -259,7 +274,7 @@ function ComplaintFormFields({
             >
               <SelectValue placeholder='Select a location' />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent position='popper'>
               {locations.map((l) => (
                 <SelectItem key={l.id} value={l.id}>
                   {l.name}
