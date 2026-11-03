@@ -203,7 +203,7 @@ export async function getComplaintForManager(
       archivedAt: true,
       category: { select: { name: true } },
       location: { select: { name: true } },
-      department: { select: { name: true } },
+      department: { select: { id: true, name: true } },
       submittedBy: { select: { name: true, email: true } },
       auditLogs: {
         orderBy: [{ createdAt: 'asc' }, { action: 'asc' }],
@@ -222,12 +222,25 @@ export async function getComplaintForManager(
 }
 
 export type UpdateOutcome =
-  'ok' | 'unchanged' | 'not-found' | 'archived' | 'conflict';
+  | 'ok'
+  | 'unchanged'
+  | 'not-found'
+  | 'archived'
+  | 'conflict'
+  | 'invalid'
+  | 'not-resolved';
 
 async function findEditable(user: ActingUser, ticketNumber: number) {
   return prisma.complaint.findFirst({
     where: { AND: [managerScope(user), { ticketNumber }] },
-    select: { id: true, status: true, priority: true, archivedAt: true },
+    select: {
+      id: true,
+      status: true,
+      priority: true,
+      archivedAt: true,
+      departmentId: true,
+      department: { select: { name: true } },
+    },
   });
 }
 
@@ -286,6 +299,104 @@ export async function changePriority(
         action: 'PRIORITY_CHANGED',
         fromValue: c.priority,
         toValue: priority,
+        complaintId: c.id,
+        performedById: user.id,
+      },
+    });
+    return 'ok';
+  });
+}
+
+export async function listDepartments() {
+  return prisma.department.findMany({
+    select: { id: true, name: true },
+    orderBy: { name: 'asc' },
+  });
+}
+
+export async function forwardComplaint(
+  user: ActingUser,
+  ticketNumber: number,
+  departmentId: string,
+  expected: string,
+  reason?: string,
+): Promise<UpdateOutcome> {
+  const c = await findEditable(user, ticketNumber);
+  if (!c) return 'not-found';
+  if (c.archivedAt) return 'archived';
+  if (c.departmentId !== expected) return 'conflict';
+  if (c.departmentId === departmentId) return 'unchanged';
+
+  const target = await prisma.department.findUnique({
+    where: { id: departmentId },
+    select: { name: true },
+  });
+  if (!target) return 'invalid';
+
+  return prisma.$transaction(async (tx) => {
+    const { count } = await tx.complaint.updateMany({
+      where: { id: c.id, departmentId: expected },
+      // Staff belong to a department, so the old assignment no longer applies.
+      data: { departmentId, assignedAt: new Date(), assignedStaffId: null },
+    });
+    if (count === 0) return 'conflict';
+    await tx.auditLog.create({
+      data: {
+        action: 'ASSIGNED',
+        fromValue: c.department?.name ?? null,
+        toValue: target.name,
+        note: reason ?? null,
+        complaintId: c.id,
+        performedById: user.id,
+      },
+    });
+    return 'ok';
+  });
+}
+
+export async function addNote(
+  user: ActingUser,
+  ticketNumber: number,
+  note: string,
+): Promise<UpdateOutcome> {
+  const c = await findEditable(user, ticketNumber);
+  if (!c) return 'not-found';
+  await prisma.auditLog.create({
+    data: {
+      action: 'NOTE_ADDED',
+      note,
+      complaintId: c.id,
+      performedById: user.id,
+    },
+  });
+  return 'ok';
+}
+
+export async function setArchived(
+  user: ActingUser,
+  ticketNumber: number,
+  archive: boolean,
+): Promise<UpdateOutcome> {
+  const c = await findEditable(user, ticketNumber);
+  if (!c) return 'not-found';
+  if (archive) {
+    if (c.archivedAt) return 'unchanged';
+    if (c.status !== 'RESOLVED') return 'not-resolved';
+  } else if (!c.archivedAt) {
+    return 'unchanged';
+  }
+
+  return prisma.$transaction(async (tx) => {
+    const { count } = await tx.complaint.updateMany({
+      where: archive
+        ? { id: c.id, archivedAt: null, status: 'RESOLVED' }
+        : { id: c.id, archivedAt: { not: null } },
+      data: { archivedAt: archive ? new Date() : null },
+    });
+    if (count === 0) return 'conflict';
+    await tx.auditLog.create({
+      data: {
+        action: archive ? 'ARCHIVED' : 'UNARCHIVED',
         complaintId: c.id,
         performedById: user.id,
       },
