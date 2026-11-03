@@ -8,6 +8,12 @@ import {
   type SubmitComplaintState,
 } from '@/actions/complaint';
 import { detectCategory } from '@/automation/category-detection';
+import { detectRoom } from '@/automation/room-detection';
+import {
+  LIMITS,
+  collectFieldErrors,
+  complaintSchema,
+} from '@/schemas/complaint';
 import { Alert, AlertDescription } from '@/ui/common/alert';
 import { Button } from '@/ui/common/button';
 import { Card, CardContent } from '@/ui/common/card';
@@ -15,20 +21,12 @@ import { FormField } from '@/ui/common/FormField';
 import { Input } from '@/ui/common/input';
 import { NativeSelect } from '@/ui/common/NativeSelect';
 import { Textarea } from '@/ui/common/textarea';
-import { collectFieldErrors, complaintSchema } from '@/schemas/complaint';
 
 type Option = { id: string; name: string };
 type CategoryOption = Option & { departmentName: string };
 type Props = { categories: CategoryOption[]; locations: Option[] };
 
 const initialState: SubmitComplaintState = { status: 'idle' };
-
-const PRIORITY_OPTIONS = [
-  { value: 'LOW', label: 'Low' },
-  { value: 'MEDIUM', label: 'Medium' },
-  { value: 'HIGH', label: 'High' },
-  { value: 'CRITICAL', label: 'Critical' },
-];
 
 export function ComplaintForm(props: Props) {
   const [formKey, setFormKey] = useState(0);
@@ -56,8 +54,7 @@ function ComplaintFormFields({
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [locationId, setLocationId] = useState('');
-  const [locationDetail, setLocationDetail] = useState('');
-  const [priority, setPriority] = useState('MEDIUM');
+  const [manualRoom, setManualRoom] = useState<string | null>(null);
   const [manualCategoryId, setManualCategoryId] = useState<string | null>(null);
 
   // Detection runs locally and is cheap, so it is derived on every render.
@@ -72,19 +69,20 @@ function ComplaintFormFields({
     (c) => c.id === categoryId,
   )?.departmentName;
 
+  const suggestedRoom = detectRoom(title, description) ?? '';
+  const roomDetail = manualRoom ?? suggestedRoom;
+
   const live = complaintSchema.safeParse({
     title,
     description,
     categoryId,
     locationId,
-    locationDetail,
-    priority,
+    locationDetail: roomDetail,
   });
   const errors: Record<string, string> =
     state.status === 'error' && !live.success
       ? collectFieldErrors(live.error)
       : {};
-
   const describedBy = (field: string) =>
     errors[field] ? `${field}-error` : undefined;
 
@@ -118,19 +116,30 @@ function ComplaintFormFields({
 
   return (
     <form action={formAction} noValidate className='space-y-6'>
+      <p className='text-sm text-muted-foreground'>
+        Fields marked <span className='text-destructive'>*</span> are required.
+      </p>
+
       {state.status === 'error' && state.message && (
         <Alert variant='destructive'>
           <AlertDescription>{state.message}</AlertDescription>
         </Alert>
       )}
 
-      <FormField label='Title' htmlFor='title' error={errors['title']}>
+      <FormField
+        label='Title'
+        htmlFor='title'
+        required
+        error={errors['title']}
+        hint={`${LIMITS.title.min} to ${LIMITS.title.max} characters`}
+        count={{ current: title.length, max: LIMITS.title.max }}
+      >
         <Input
           id='title'
           name='title'
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          maxLength={120}
+          maxLength={LIMITS.title.max}
           aria-invalid={!!errors['title']}
           aria-describedby={describedBy('title')}
         />
@@ -139,7 +148,10 @@ function ComplaintFormFields({
       <FormField
         label='Description'
         htmlFor='description'
+        required
         error={errors['description']}
+        hint={`${LIMITS.description.min} to ${LIMITS.description.max} characters`}
+        count={{ current: description.length, max: LIMITS.description.max }}
       >
         <Textarea
           id='description'
@@ -147,7 +159,7 @@ function ComplaintFormFields({
           rows={5}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          maxLength={2000}
+          maxLength={LIMITS.description.max}
           aria-invalid={!!errors['description']}
           aria-describedby={describedBy('description')}
         />
@@ -156,6 +168,7 @@ function ComplaintFormFields({
       <FormField
         label='Category'
         htmlFor='categoryId'
+        required
         error={errors['categoryId']}
         hint={
           manualCategoryId === null
@@ -202,6 +215,7 @@ function ComplaintFormFields({
         <FormField
           label='Location'
           htmlFor='locationId'
+          required
           error={errors['locationId']}
         >
           <NativeSelect
@@ -226,33 +240,24 @@ function ComplaintFormFields({
           htmlFor='locationDetail'
           optional
           error={errors['locationDetail']}
+          hint={
+            manualRoom === null && suggestedRoom
+              ? 'Suggested from your text. You can change it.'
+              : undefined
+          }
+          count={{ current: roomDetail.length, max: LIMITS.locationDetail.max }}
         >
           <Input
             id='locationDetail'
             name='locationDetail'
-            value={locationDetail}
-            onChange={(e) => setLocationDetail(e.target.value)}
-            maxLength={100}
+            value={roomDetail}
+            onChange={(e) => setManualRoom(e.target.value)}
+            maxLength={LIMITS.locationDetail.max}
             aria-invalid={!!errors['locationDetail']}
             aria-describedby={describedBy('locationDetail')}
           />
         </FormField>
       </div>
-
-      <FormField label='Priority' htmlFor='priority' error={errors['priority']}>
-        <NativeSelect
-          id='priority'
-          name='priority'
-          value={priority}
-          onChange={(e) => setPriority(e.target.value)}
-        >
-          {PRIORITY_OPTIONS.map((p) => (
-            <option key={p.value} value={p.value}>
-              {p.label}
-            </option>
-          ))}
-        </NativeSelect>
-      </FormField>
 
       <FormField
         label='Attach an image'
@@ -262,6 +267,10 @@ function ComplaintFormFields({
       >
         <Input id='image' type='file' accept='image/*' disabled />
       </FormField>
+
+      <p className='text-sm text-muted-foreground'>
+        Priority is set automatically and may be adjusted by the department.
+      </p>
 
       <Button type='submit' disabled={pending}>
         {pending ? 'Submitting...' : 'Submit complaint'}
