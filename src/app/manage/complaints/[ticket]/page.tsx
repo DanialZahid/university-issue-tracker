@@ -9,16 +9,23 @@ import {
   Ticket,
   UserRound,
 } from 'lucide-react';
-import { getComplaintForManager } from '@/db/manage';
+import { getComplaintForManager, listDepartments } from '@/db/manage';
 import { Button } from '@/ui/common/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
+import { Separator } from '@/ui/common/separator';
 import {
   ComplaintSummary,
   ComplaintTimeline,
   DetailItem,
 } from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout';
-import { ComplaintActions } from '@/ui/manage';
+import {
+  ArchiveControl,
+  ComplaintActions,
+  ComplaintChecks,
+  ForwardForm,
+  NoteForm,
+} from '@/ui/manage';
 import { formatDateTime } from '@/utils/date';
 import { requireManager } from '@/utils/session';
 import { formatTicketNumber, parseTicketNumber } from '@/utils/ticket';
@@ -38,8 +45,14 @@ export default async function ManageComplaintPage({ params }: Props) {
   const ticketNumber = parseTicketNumber(ticket);
   if (ticketNumber === null) notFound();
 
-  const complaint = await getComplaintForManager(ticketNumber, user);
+  const [complaint, departments] = await Promise.all([
+    getComplaintForManager(ticketNumber, user),
+    listDepartments(),
+  ]);
+
   if (!complaint) notFound();
+
+  const archived = complaint.archivedAt !== null;
 
   return (
     <>
@@ -92,15 +105,32 @@ export default async function ManageComplaintPage({ params }: Props) {
                 Actions
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className='space-y-6'>
               <ComplaintActions
                 ticketNumber={complaint.ticketNumber}
                 status={complaint.status}
                 priority={complaint.priority}
-                archived={complaint.archivedAt !== null}
+                archived={archived}
+              />
+              <Separator />
+              <ForwardForm
+                ticketNumber={complaint.ticketNumber}
+                currentDepartmentId={complaint.department?.id ?? ''}
+                departments={departments}
+                disabled={archived}
+              />
+              <Separator />
+              <NoteForm ticketNumber={complaint.ticketNumber} />
+              <Separator />
+              <ArchiveControl
+                ticketNumber={complaint.ticketNumber}
+                archived={archived}
+                resolved={complaint.status === 'RESOLVED'}
               />
             </CardContent>
           </Card>
+
+          <ComplaintChecks />
         </aside>
       </div>
     </>

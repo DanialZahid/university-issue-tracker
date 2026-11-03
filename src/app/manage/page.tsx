@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
-import { Inbox, LayoutDashboard } from 'lucide-react';
+import { Inbox, LayoutDashboard, ArrowRightLeft } from 'lucide-react';
 import {
   QUEUE_PAGE_SIZE,
   getFilterOptions,
@@ -18,6 +18,8 @@ import { withQuery } from '@/utils/query';
 import { requireManager } from '@/utils/session';
 import { Hint } from '@/ui/common/Hint';
 import { DepartmentIcon } from '@/ui/shared/department';
+import { Alert, AlertDescription, AlertTitle } from '@/ui/common/alert';
+import { formatTicketNumber, parseTicketNumber } from '@/utils/ticket';
 
 export const metadata: Metadata = { title: 'Department dashboard' };
 
@@ -28,6 +30,11 @@ type Props = {
 export default async function DepartmentDashboardPage({ searchParams }: Props) {
   const user = await requireManager();
   const raw = await searchParams;
+  const forwardedParam = raw['forwarded'];
+  const forwarded =
+    typeof forwardedParam === 'string'
+      ? parseTicketNumber(forwardedParam)
+      : null;
   const filters = queueFiltersSchema.parse(
     Object.fromEntries(
       Object.entries(raw).map(([k, v]) => [k, Array.isArray(v) ? v[0] : v]),
@@ -92,6 +99,17 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
         }
       />
       <div className='space-y-6'>
+        {forwarded !== null && (
+          <Alert>
+            <ArrowRightLeft />
+            <AlertTitle>Complaint forwarded</AlertTitle>
+            <AlertDescription>
+              {formatTicketNumber(forwarded)} is now with another department and
+              no longer appears here.
+            </AlertDescription>
+          </Alert>
+        )}
+
         <QueueStats
           counts={counts}
           department={query.department}

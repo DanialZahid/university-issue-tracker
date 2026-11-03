@@ -1,11 +1,6 @@
 'use client';
 
-import {
-  startTransition,
-  useActionState,
-  useState,
-  type ReactNode,
-} from 'react';
+import { useActionState, useState, type ReactNode } from 'react';
 import { CheckCircle2, CircleAlert } from 'lucide-react';
 import {
   updatePriority,
@@ -24,6 +19,7 @@ import {
 } from '@/ui/common/select';
 import { PriorityBadge, StatusBadge } from '@/ui/shared/complaint';
 import { cn } from '@/utils/cn';
+import { submitWithoutReset } from './form-submit';
 
 type Action = (
   prev: ManageActionState,
@@ -74,14 +70,7 @@ function UpdateForm({
   const [selected, setSelected] = useState(value);
 
   return (
-    <form
-      className='space-y-2'
-      onSubmit={(e) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        startTransition(() => formAction(formData));
-      }}
-    >
+    <form className='space-y-2' onSubmit={submitWithoutReset(formAction)}>
       <input type='hidden' name='ticketNumber' value={ticketNumber} />
       <input type='hidden' name='expected' value={value} />
       <Label htmlFor={name}>{label}</Label>

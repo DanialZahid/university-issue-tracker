@@ -104,6 +104,7 @@ export function QueueFilters({ categories, departments }: Props) {
       else next.set(key, value);
     }
     next.delete('page');
+    next.delete('forwarded');
     navigate(next);
   }
 
