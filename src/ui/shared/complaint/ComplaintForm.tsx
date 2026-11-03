@@ -179,7 +179,7 @@ function ComplaintFormFields({
         required
         error={errors['categoryId']}
         hint={
-          manualCategoryId === null
+          manualCategoryId === null && suggestedCategoryId
             ? 'Suggested from your text. You can change it.'
             : undefined
         }
@@ -251,7 +251,7 @@ function ComplaintFormFields({
           hint={
             manualRoom === null && suggestedRoom
               ? 'Suggested from your text. You can change it.'
-              : undefined
+              : 'For example AC-103 or C-Lab 04'
           }
         >
           <Input
@@ -270,11 +270,7 @@ function ComplaintFormFields({
         label='Attach an image'
         htmlFor='image'
         optional
-        hint={
-          manualRoom === null && suggestedRoom
-            ? 'Suggested from your text. You can change it.'
-            : 'For example AC-103 or C-Lab 04'
-        }
+        hint='Image attachments are coming soon.'
       >
         <Input id='image' type='file' accept='image/*' disabled />
       </FormField>
