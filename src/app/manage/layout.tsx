@@ -1,11 +1,11 @@
 import { AppShell } from '@/ui/shared/layout';
-import { requireAdmin } from '@/utils/session';
+import { requireManager } from '@/utils/session';
 
-export default async function AdminLayout({
+export default async function ManageLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const user = await requireAdmin();
+  const user = await requireManager();
   return <AppShell user={user}>{children}</AppShell>;
 }

@@ -4,7 +4,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/ui/common/sidebar';
-import { roleLabels } from '@/utils/role';
+import { isManager, roleLabels } from '@/utils/role';
 import { AppSidebar } from './AppSidebar';
 
 type AppShellProps = {
@@ -16,7 +16,7 @@ export function AppShell({ user, children }: AppShellProps) {
   return (
     <SidebarProvider>
       <AppSidebar
-        variant={user.role === UserRole.ADMIN ? 'admin' : 'user'}
+        variant={isManager(user.role) ? 'manage' : 'user'}
         userName={user.name}
         userEmail={user.email}
         roleLabel={roleLabels[user.role]}

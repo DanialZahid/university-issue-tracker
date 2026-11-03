@@ -6,7 +6,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
-export type NavVariant = 'admin' | 'user';
+export type NavVariant = 'manage' | 'user';
 
 export type NavItem = {
   label: string;
@@ -25,8 +25,8 @@ export const navItems: Record<NavVariant, NavItem[]> = {
     },
     { label: 'Submit a complaint', href: '/complaints/new', icon: FilePlus2 },
   ],
-  admin: [
-    { label: 'Dashboard', href: '/admin', icon: LayoutDashboard, exact: true },
-    { label: 'All complaints', href: '/admin/complaints', icon: ListChecks },
+  manage: [
+    { label: 'Dashboard', href: '/manage', icon: LayoutDashboard, exact: true },
+    { label: 'All complaints', href: '/manage/complaints', icon: ListChecks },
   ],
 };
