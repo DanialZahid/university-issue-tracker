@@ -140,7 +140,13 @@ export async function getComplaintForSubmitter(
       auditLogs: {
         where: { action: { in: ['CREATED', 'ASSIGNED', 'STATUS_CHANGED'] } },
         orderBy: [{ createdAt: 'asc' }, { action: 'asc' }],
-        select: { id: true, action: true, toValue: true, createdAt: true },
+        select: {
+          id: true,
+          action: true,
+          fromValue: true,
+          toValue: true,
+          createdAt: true,
+        },
       },
     },
   });
