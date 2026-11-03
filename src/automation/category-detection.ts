@@ -68,6 +68,10 @@ const KEYWORDS: Record<Exclude<CategoryName, 'Other'>, string[]> = {
     'cctv',
     'emergency',
     'danger',
+    'fight',
+    'fighting',
+    'violence',
+    'violent',
   ],
   Maintenance: [
     'leak',

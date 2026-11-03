@@ -65,7 +65,7 @@ export function ComplaintListItem({
             {status !== 'RESOLVED' && <PriorityBadge priority={priority} />}
           </div>
         </div>
-        <ChevronRight className='size-3.5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5' />
+        <ChevronRight className='size-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5' />
       </Link>
     </li>
   );
