@@ -235,16 +235,18 @@ export async function changeStatus(
   user: ActingUser,
   ticketNumber: number,
   status: ComplaintStatus,
+  expected: ComplaintStatus,
 ): Promise<UpdateOutcome> {
   const c = await findEditable(user, ticketNumber);
   if (!c) return 'not-found';
   if (c.archivedAt) return 'archived';
+  if (c.status !== expected) return 'conflict';
   if (c.status === status) return 'unchanged';
 
   return prisma.$transaction(async (tx) => {
     // Only applies if nobody changed the status since we read it.
     const { count } = await tx.complaint.updateMany({
-      where: { id: c.id, status: c.status },
+      where: { id: c.id, status: expected },
       data: { status, resolvedAt: status === 'RESOLVED' ? new Date() : null },
     });
     if (count === 0) return 'conflict';
@@ -265,15 +267,17 @@ export async function changePriority(
   user: ActingUser,
   ticketNumber: number,
   priority: Priority,
+  expected: Priority,
 ): Promise<UpdateOutcome> {
   const c = await findEditable(user, ticketNumber);
   if (!c) return 'not-found';
   if (c.archivedAt) return 'archived';
-  if (c.priority === priority) return 'unchanged';
+  if (c.status !== expected) return 'conflict';
+  if (c.status === status) return 'unchanged';
 
   return prisma.$transaction(async (tx) => {
     const { count } = await tx.complaint.updateMany({
-      where: { id: c.id, priority: c.priority },
+      where: { id: c.id, priority: expected },
       data: { priority },
     });
     if (count === 0) return 'conflict';

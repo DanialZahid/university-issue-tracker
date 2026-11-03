@@ -45,11 +45,12 @@ export async function updateStatus(
   const parsed = statusUpdateSchema.safeParse({
     ticketNumber: formData.get('ticketNumber'),
     status: formData.get('status'),
+    expected: formData.get('expected'),
   });
   if (!parsed.success) return { status: 'error', message: 'Invalid request.' };
 
-  const { ticketNumber, status } = parsed.data;
-  const outcome = await changeStatus(user, ticketNumber, status);
+  const { ticketNumber, status, expected } = parsed.data;
+  const outcome = await changeStatus(user, ticketNumber, status, expected);
   return finish(
     outcome,
     ticketNumber,
@@ -65,11 +66,12 @@ export async function updatePriority(
   const parsed = priorityUpdateSchema.safeParse({
     ticketNumber: formData.get('ticketNumber'),
     priority: formData.get('priority'),
+    expected: formData.get('expected'),
   });
   if (!parsed.success) return { status: 'error', message: 'Invalid request.' };
 
-  const { ticketNumber, priority } = parsed.data;
-  const outcome = await changePriority(user, ticketNumber, priority);
+  const { ticketNumber, priority, expected } = parsed.data;
+  const outcome = await changePriority(user, ticketNumber, priority, expected);
   return finish(
     outcome,
     ticketNumber,
