@@ -260,7 +260,9 @@ async function main(): Promise<void> {
         ? `${baseTitle} in ${location.name}`
         : baseTitle;
       const room = faker.datatype.boolean({ probability: 0.6 })
-        ? `Room ${faker.number.int({ min: 101, max: 420 })}`
+        ? faker.datatype.boolean({ probability: 0.3 })
+          ? `C-Lab ${String(faker.number.int({ min: 1, max: 8 })).padStart(2, '0')}`
+          : `AC-${faker.number.int({ min: 101, max: 420 })}`
         : null;
       const [d1, d2] = faker.helpers.arrayElements(template.details, 2);
       const description = `${baseTitle} at ${location.name}${
