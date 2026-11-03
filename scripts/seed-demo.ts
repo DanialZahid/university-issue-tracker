@@ -15,6 +15,7 @@ import {
   templateFor,
 } from './lib/demo-data';
 import { createClient } from './lib/prisma';
+import { detectPriority } from '../src/automation/priority-detection';
 
 const SEED = 20261106;
 const HOUR = 3_600_000;
@@ -268,6 +269,7 @@ async function main(): Promise<void> {
       const description = `${baseTitle} at ${location.name}${
         room ? `, ${room}` : ''
       }. ${d1 ?? ''} ${d2 ?? ''}`.trim();
+      const priority = detectPriority(title, description, category.name);
 
       const deptStaff = staffByDepartment.get(category.departmentId) ?? [];
       const assignedStaffId =
@@ -290,6 +292,15 @@ async function main(): Promise<void> {
         null,
         category.department.name,
         'Auto-assigned from category',
+      );
+      log(
+        id,
+        'PRIORITY_CHANGED',
+        submitter.id,
+        createdAt,
+        null,
+        priority,
+        'Set automatically',
       );
 
       if (status !== 'PENDING') {
@@ -328,12 +339,7 @@ async function main(): Promise<void> {
         id,
         title: title.slice(0, 120),
         description,
-        priority: faker.helpers.weightedArrayElement<Priority>([
-          { weight: 20, value: 'LOW' },
-          { weight: 45, value: 'MEDIUM' },
-          { weight: 25, value: 'HIGH' },
-          { weight: 10, value: 'CRITICAL' },
-        ]),
+        priority,
         status,
         locationDetail: room,
         estimatedEffortMinutes: category.baseEffortMinutes,
