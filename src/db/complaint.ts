@@ -92,3 +92,55 @@ export async function createComplaint(
 
   return complaint.ticketNumber;
 }
+
+const PAGE_SIZE = 20;
+
+export async function listUserComplaints(userId: string, page: number) {
+  const where = { submittedById: userId };
+  const [total, items] = await Promise.all([
+    prisma.complaint.count({ where }),
+    prisma.complaint.findMany({
+      where,
+      orderBy: { createdAt: 'desc' },
+      skip: (page - 1) * PAGE_SIZE,
+      take: PAGE_SIZE,
+      select: {
+        ticketNumber: true,
+        title: true,
+        status: true,
+        createdAt: true,
+        category: { select: { name: true } },
+      },
+    }),
+  ]);
+  return { total, items, pageSize: PAGE_SIZE };
+}
+
+// Matches on ticket AND submitter, so another user's ticket simply returns null.
+// Only submitter-safe history is selected: no notes, no priority changes.
+export async function getComplaintForSubmitter(
+  ticketNumber: number,
+  userId: string,
+) {
+  return prisma.complaint.findFirst({
+    where: { ticketNumber, submittedById: userId },
+    select: {
+      ticketNumber: true,
+      title: true,
+      description: true,
+      status: true,
+      priority: true,
+      locationDetail: true,
+      createdAt: true,
+      resolvedAt: true,
+      category: { select: { name: true } },
+      location: { select: { name: true } },
+      department: { select: { name: true } },
+      auditLogs: {
+        where: { action: { in: ['CREATED', 'ASSIGNED', 'STATUS_CHANGED'] } },
+        orderBy: [{ createdAt: 'asc' }, { action: 'asc' }],
+        select: { id: true, action: true, toValue: true, createdAt: true },
+      },
+    },
+  });
+}
