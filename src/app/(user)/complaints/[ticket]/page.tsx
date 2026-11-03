@@ -11,6 +11,7 @@ import {
   History as HistoryIcon,
   MapPin,
   Tag,
+  Ticket,
   type LucideIcon,
 } from 'lucide-react';
 import { getComplaintForSubmitter } from '@/db/complaint';
@@ -71,6 +72,7 @@ export default async function ComplaintDetailPage({ params }: Props) {
       <PageHeader
         title={formatTicketNumber(complaint.ticketNumber)}
         description='Complaint details'
+        icon={Ticket}
       />
       <div className='max-w-3xl space-y-6'>
         <Button asChild variant='ghost' size='sm' className='-ml-2'>

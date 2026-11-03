@@ -119,7 +119,11 @@ function ComplaintFormFields({
   }
 
   return (
-    <form action={formAction} noValidate className='space-y-6'>
+    <form
+      action={formAction}
+      noValidate
+      className='space-y-6 rounded-xl border bg-card p-6 shadow-xs'
+    >
       <p className='text-sm text-muted-foreground'>
         Fields marked <span className='text-destructive'>*</span> are required.
       </p>
