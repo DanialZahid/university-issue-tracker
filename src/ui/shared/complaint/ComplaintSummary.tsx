@@ -32,7 +32,9 @@ export function DetailItem({
       </span>
       <div className='min-w-0'>
         <dt className='text-xs text-muted-foreground'>{label}</dt>
-        <dd className='mt-0.5 text-sm font-medium break-words'>{children}</dd>
+        <dd className='mt-0.5 text-sm font-medium wrap-break-word'>
+          {children}
+        </dd>
       </div>
     </div>
   );
