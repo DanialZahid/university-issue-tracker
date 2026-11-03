@@ -1,6 +1,5 @@
 import { CheckCircle2, Clock, Loader, type LucideIcon } from 'lucide-react';
 import type { ComplaintStatus } from '@/generated/prisma/enums';
-import { Badge } from '@/ui/common/badge';
 import { statusTone } from './status-tone';
 import { cn } from '@/utils/cn';
 import { statusLabels } from '@/utils/complaint-labels';
@@ -16,16 +15,15 @@ type StatusBadgeProps = { status: ComplaintStatus; className?: string };
 export function StatusBadge({ status, className }: StatusBadgeProps) {
   const Icon = icons[status];
   return (
-    <Badge
-      variant='outline'
+    <span
       className={cn(
-        'gap-1.5 border-transparent px-2.5 py-0.5 text-[13px] [&>svg]:size-3.5',
+        'inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[13px] leading-none font-medium whitespace-nowrap',
         statusTone[status].soft,
         className,
       )}
     >
-      <Icon />
+      <Icon className='size-3.5' />
       {statusLabels[status]}
-    </Badge>
+    </span>
   );
 }

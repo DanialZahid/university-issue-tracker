@@ -9,7 +9,6 @@ import {
   priorityLabels,
   type PriorityLevel,
 } from '@/automation/priority-detection';
-import { Badge } from '@/ui/common/badge';
 import { cn } from '@/utils/cn';
 
 // Icon plus label, so priority never depends on color alone.
@@ -24,15 +23,14 @@ const styles: Record<PriorityLevel, { icon: LucideIcon; className: string }> = {
 export function PriorityBadge({ priority }: { priority: PriorityLevel }) {
   const { icon: Icon, className } = styles[priority];
   return (
-    <Badge
-      variant='outline'
+    <span
       className={cn(
-        'gap-1.5 border-transparent px-2.5 py-0.5 text-[13px] [&>svg]:size-3.5',
+        'inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[13px] leading-none font-medium whitespace-nowrap',
         className,
       )}
     >
-      <Icon />
+      <Icon className='size-3.5' />
       {priorityLabels[priority]}
-    </Badge>
+    </span>
   );
 }

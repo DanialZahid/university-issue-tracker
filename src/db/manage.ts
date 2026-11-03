@@ -272,8 +272,8 @@ export async function changePriority(
   const c = await findEditable(user, ticketNumber);
   if (!c) return 'not-found';
   if (c.archivedAt) return 'archived';
-  if (c.status !== expected) return 'conflict';
-  if (c.status === status) return 'unchanged';
+  if (c.priority !== expected) return 'conflict';
+  if (c.priority === priority) return 'unchanged';
 
   return prisma.$transaction(async (tx) => {
     const { count } = await tx.complaint.updateMany({
