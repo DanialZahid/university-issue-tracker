@@ -28,6 +28,7 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
       <PageHeader
         title='My complaints'
         description='Track the issues you have reported.'
+        icon={ClipboardList}
       />
       <div className='max-w-3xl space-y-4'>
         {items.length === 0 ? (
@@ -50,6 +51,7 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
                   title={c.title}
                   status={c.status}
                   categoryName={c.category.name}
+                  priority={c.priority}
                   createdAt={c.createdAt}
                 />
               ))}

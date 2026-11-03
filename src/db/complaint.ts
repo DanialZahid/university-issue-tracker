@@ -108,6 +108,7 @@ export async function listUserComplaints(userId: string, page: number) {
         ticketNumber: true,
         title: true,
         status: true,
+        priority: true,
         createdAt: true,
         category: { select: { name: true } },
       },
