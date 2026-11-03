@@ -24,7 +24,13 @@ const styles: Record<PriorityLevel, { icon: LucideIcon; className: string }> = {
 export function PriorityBadge({ priority }: { priority: PriorityLevel }) {
   const { icon: Icon, className } = styles[priority];
   return (
-    <Badge variant='outline' className={cn('border-transparent', className)}>
+    <Badge
+      variant='outline'
+      className={cn(
+        'gap-1.5 border-transparent px-2.5 py-0.5 text-[13px] [&>svg]:size-3.5',
+        className,
+      )}
+    >
       <Icon />
       {priorityLabels[priority]}
     </Badge>

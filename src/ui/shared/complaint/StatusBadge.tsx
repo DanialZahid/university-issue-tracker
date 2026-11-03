@@ -18,7 +18,11 @@ export function StatusBadge({ status, className }: StatusBadgeProps) {
   return (
     <Badge
       variant='outline'
-      className={cn('border-transparent', statusTone[status].soft, className)}
+      className={cn(
+        'gap-1.5 border-transparent px-2.5 py-0.5 text-[13px] [&>svg]:size-3.5',
+        statusTone[status].soft,
+        className,
+      )}
     >
       <Icon />
       {statusLabels[status]}

@@ -119,8 +119,8 @@ export function ComplaintTimeline({ events, showActor = false }: Props) {
               <Icon className='size-4' />
             </span>
             <div className='min-w-0 flex-1 pt-1'>
-              <p className='text-sm font-medium'>{describe(event)}</p>
-              <p className='text-xs text-muted-foreground'>
+              <p className='text-[15px] font-medium'>{describe(event)}</p>
+              <p className='text-[13px] text-muted-foreground'>
                 {formatDateTime(event.createdAt)}
                 {showActor && actor ? ` · ${actor}` : ''}
               </p>
