@@ -1,3 +1,5 @@
+import { normalizeText as normalize, phraseRegex } from './text';
+
 export const CATEGORY_NAMES = [
   'IT / Equipment',
   'Software and Network',
@@ -155,23 +157,12 @@ const KEYWORDS: Record<Exclude<CategoryName, 'Other'>, string[]> = {
   ],
 };
 
-function escapeRegex(value: string): string {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
 // Whole word or phrase, with optional plural ('printer' matches 'printers',
 // but 'class' does not match 'classroom').
 const PATTERNS = Object.entries(KEYWORDS).map(([category, words]) => ({
   category: category as Exclude<CategoryName, 'Other'>,
-  regexes: words.map(
-    (word) =>
-      new RegExp(`(?<![a-z0-9])${escapeRegex(word)}(?:s|es)?(?![a-z0-9])`),
-  ),
+  regexes: words.map((word) => phraseRegex(word)),
 }));
-
-function normalize(text: string): string {
-  return text.toLowerCase().replace(/\s+/g, ' ').trim();
-}
 
 function scoreText(text: string, regexes: RegExp[]): number {
   let hits = 0;
