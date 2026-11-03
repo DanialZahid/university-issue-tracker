@@ -24,7 +24,7 @@ export function AppSidebar({
 }: AppSidebarProps) {
   return (
     <Sidebar>
-      <SidebarHeader className='p-4'>
+      <SidebarHeader className='bg-linear-to-b from-primary/10 to-transparent p-4'>
         <div className='flex items-start gap-3'>
           <div className='flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground'>
             <GraduationCap className='size-5' />
@@ -33,7 +33,9 @@ export function AppSidebar({
             <p className='text-sm leading-tight font-semibold'>
               University Complaint and Issue Tracking Platform
             </p>
-            <p className='mt-1 text-xs text-muted-foreground'>{roleLabel}</p>
+            <span className='mt-1.5 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary'>
+              {roleLabel}
+            </span>
           </div>
         </div>
       </SidebarHeader>
