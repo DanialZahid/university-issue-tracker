@@ -21,11 +21,8 @@ import { FormField } from '@/ui/common/FormField';
 import { Input } from '@/ui/common/input';
 import { NativeSelect } from '@/ui/common/NativeSelect';
 import { Textarea } from '@/ui/common/textarea';
-import {
-  detectPriority,
-  priorityLabels,
-} from '@/automation/priority-detection';
-import { Badge } from '@/ui/common/badge';
+import { detectPriority } from '@/automation/priority-detection';
+import { PriorityBadge } from '@/ui/shared/complaint/PriorityBadge';
 
 type Option = { id: string; name: string };
 type CategoryOption = Option & { departmentName: string };
@@ -243,7 +240,7 @@ function ComplaintFormFields({
         </FormField>
 
         <FormField
-          label='Room or details'
+          label='Room'
           htmlFor='locationDetail'
           optional
           error={errors['locationDetail']}
@@ -252,7 +249,6 @@ function ComplaintFormFields({
               ? 'Suggested from your text. You can change it.'
               : undefined
           }
-          count={{ current: roomDetail.length, max: LIMITS.locationDetail.max }}
         >
           <Input
             id='locationDetail'
@@ -270,14 +266,18 @@ function ComplaintFormFields({
         label='Attach an image'
         htmlFor='image'
         optional
-        hint='Image attachments are coming soon.'
+        hint={
+          manualRoom === null && suggestedRoom
+            ? 'Suggested from your text. You can change it.'
+            : 'For example AC-103 or C-Lab 04'
+        }
       >
         <Input id='image' type='file' accept='image/*' disabled />
       </FormField>
 
       <div className='flex flex-wrap items-center gap-2 text-sm'>
         <span className='text-muted-foreground'>Priority:</span>
-        <Badge variant='outline'>{priorityLabels[priority]}</Badge>
+        <PriorityBadge priority={priority} />
         <span className='text-muted-foreground'>
           Set automatically. The department may adjust it.
         </span>

@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const LIMITS = {
   title: { min: 5, max: 120 },
   description: { min: 20, max: 2000 },
-  locationDetail: { max: 100 },
+  locationDetail: { max: 30 },
 } as const;
 
 export const complaintSchema = z.object({
