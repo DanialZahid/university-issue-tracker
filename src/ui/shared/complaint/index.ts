@@ -4,3 +4,4 @@ export { ComplaintTimeline, type TimelineEvent } from './ComplaintTimeline';
 export { PriorityBadge } from './PriorityBadge';
 export { StatusBadge } from './StatusBadge';
 export { statusTone } from './status-tone';
+export { ComplaintSummary, DetailItem } from './ComplaintSummary';
