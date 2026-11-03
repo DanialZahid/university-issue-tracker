@@ -2,11 +2,12 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { listUserComplaints } from '@/db/complaint';
 import { Button } from '@/ui/common/button';
-import { Card, CardContent } from '@/ui/common/card';
+import { ClipboardList } from 'lucide-react';
 import { PageNav } from '@/ui/common/PageNav';
 import { ComplaintListItem } from '@/ui/shared/complaint/ComplaintListItem';
 import { PageHeader } from '@/ui/shared/layout/PageHeader';
 import { requireUser } from '@/utils/session';
+import { EmptyState } from '@/ui/common/EmptyState';
 import { Metadata } from 'next';
 
 type Props = { searchParams: Promise<{ page?: string }> };
@@ -30,17 +31,15 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
       />
       <div className='max-w-3xl space-y-4'>
         {items.length === 0 ? (
-          <Card>
-            <CardContent className='flex flex-col items-start gap-3'>
-              <p className='font-medium'>No complaints yet</p>
-              <p className='text-sm text-muted-foreground'>
-                Report an issue on campus and you can follow its progress here.
-              </p>
-              <Button asChild>
-                <Link href='/complaints/new'>Submit your first complaint</Link>
-              </Button>
-            </CardContent>
-          </Card>
+          <EmptyState
+            icon={ClipboardList}
+            title='No complaints yet'
+            description='Report an issue on campus and you can follow its progress here.'
+          >
+            <Button asChild>
+              <Link href='/complaints/new'>Submit your first complaint</Link>
+            </Button>
+          </EmptyState>
         ) : (
           <>
             <ul className='space-y-3'>
