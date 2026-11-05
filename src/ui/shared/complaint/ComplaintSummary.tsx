@@ -61,7 +61,12 @@ type Props = {
 export function ComplaintSummary({ complaint: c, children }: Props) {
   return (
     <div className='overflow-hidden rounded-xl border bg-card'>
-      <div className={cn('h-1.5', statusTone[c.status].bar)} />
+      <div
+        className={cn(
+          'h-1.5 transition-colors duration-700',
+          statusTone[c.status].bar,
+        )}
+      />
       <div className='space-y-6 p-6'>
         <div className='flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between'>
           <h2 className='min-w-0 flex-1 text-2xl font-semibold wrap-break-word'>

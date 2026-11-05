@@ -184,7 +184,11 @@
     background-size: 22px 22px;
     mask-image:
       radial-gradient(ellipse 45% 40% at 100% 0%, black, transparent 70%),
-      radial-gradient(ellipse 40% 45% at 0% 100%, black, transparent 70%);
+      radial-gradient(
+        ellipse 40% 45% at var(--backdrop-left) 100%,
+        black,
+        transparent 70%
+      );
   }
 
   .app-backdrop::after {
@@ -193,15 +197,45 @@
     inset: 0;
     background:
       radial-gradient(30% 35% at 92% 6%, var(--backdrop-a), transparent 70%),
-      radial-gradient(28% 32% at 8% 96%, var(--backdrop-b), transparent 70%);
+      radial-gradient(
+        28% 32% at calc(var(--backdrop-left) + 6%) 94%,
+        var(--backdrop-b),
+        transparent 70%
+      );
     filter: blur(40px);
   }
 }
 
-/* Backdrop colors: brand by default, the complaint's state on complaint pages. */
+/* Backdrop colors: brand by default, the complaint's state on complaint pages.
+   Registered as colors so a change fades instead of jumping. */
+@property --backdrop-a {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+@property --backdrop-b {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
 :root {
   --backdrop-a: oklch(0.75 0.13 260 / 0.22);
   --backdrop-b: oklch(0.8 0.1 330 / 0.18);
+  /* The bottom-left light starts at the sidebar edge, not under it. */
+  --backdrop-left: 16rem;
+  transition:
+    --backdrop-a 0.8s ease,
+    --backdrop-b 0.8s ease;
+}
+@media (max-width: 767px) {
+  :root {
+    --backdrop-left: 0%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    transition: none;
+  }
 }
 :root[data-backdrop='pending'] {
   --backdrop-a: oklch(0.83 0.13 80 / 0.3);

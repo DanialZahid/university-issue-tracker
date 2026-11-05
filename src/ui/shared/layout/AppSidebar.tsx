@@ -44,7 +44,7 @@ export function AppSidebar({
         <AppSidebarNav variant={variant} />
       </SidebarContent>
 
-      {/* Who is signed in: avatar and name, then role and department below. */}
+      {/* Who is signed in: avatar and name, then their role below. */}
       <SidebarFooter className='gap-2.5 border-t bg-linear-to-t from-primary/8 to-transparent p-4'>
         <Hint label={userEmail} side='top'>
           <div className='flex min-w-0 items-center gap-3'>
@@ -52,20 +52,23 @@ export function AppSidebar({
             <p className='truncate text-sm font-medium'>{userName}</p>
           </div>
         </Hint>
-        <div className='flex flex-wrap items-center justify-between gap-1.5'>
-          <span className='inline-flex max-w-full items-center rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary'>
-            <span className='truncate'>{roleLabel}</span>
-          </span>
-          {departmentName && (
-            <span className='inline-flex max-w-full items-center gap-1 rounded-full bg-card px-2.5 py-1 text-xs font-medium text-foreground ring-1 ring-border'>
+        {/* One pill: "Head of Administration" for heads, the role for everyone else. */}
+        <span className='inline-flex max-w-full items-center gap-1.5 self-start rounded-full bg-card px-2.5 py-1 text-xs font-medium shadow-xs ring-1 ring-primary/20'>
+          {departmentName ? (
+            <>
               <DepartmentIcon
                 name={departmentName}
-                className='size-3.5 shrink-0 text-muted-foreground'
+                className='size-3.5 shrink-0 text-primary'
               />
-              <span className='truncate'>{departmentName}</span>
-            </span>
+              <span className='truncate'>
+                <span className='text-primary'>Head of</span>{' '}
+                <span className='text-foreground'>{departmentName}</span>
+              </span>
+            </>
+          ) : (
+            <span className='truncate text-primary'>{roleLabel}</span>
           )}
-        </div>
+        </span>
       </SidebarFooter>
     </Sidebar>
   );
