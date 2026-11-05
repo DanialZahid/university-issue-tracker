@@ -21,7 +21,8 @@ type Counts = {
 
 type Props = {
   counts: Counts;
-  department?: string;
+  // The current filters, so a card only swaps its own value and keeps the rest.
+  query: Record<string, string | undefined>;
   active: { status: string; priority?: string };
 };
 
@@ -34,7 +35,7 @@ type Stat = {
   isActive: boolean;
 };
 
-export function QueueStats({ counts, department, active }: Props) {
+export function QueueStats({ counts, query: current, active }: Props) {
   const stats: Stat[] = [
     {
       label: 'Pending',
@@ -82,10 +83,14 @@ export function QueueStats({ counts, department, active }: Props) {
           }
         >
           <Link
-            href={withQuery(
-              '/manage',
-              isActive ? { department } : { ...query, department },
-            )}
+            href={withQuery('/manage', {
+              ...current,
+              ...(isActive
+                ? Object.fromEntries(
+                    Object.keys(query).map((k) => [k, undefined]),
+                  )
+                : query),
+            })}
             aria-current={isActive ? 'true' : undefined}
             className={cn(
               'flex items-center gap-4 rounded-xl border bg-card p-4 transition-colors outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50',

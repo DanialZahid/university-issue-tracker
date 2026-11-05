@@ -54,17 +54,41 @@ function searchWhere(q?: string): Prisma.ComplaintWhereInput {
   };
 }
 
-export async function getQueueCounts(scope: Prisma.ComplaintWhereInput) {
+// Filters every view shares: search, category, location and date.
+// Status and priority are left out because the stat cards set those.
+function sharedWhere(filters: QueueFilters): Prisma.ComplaintWhereInput[] {
+  return [
+    searchWhere(filters.q),
+    filters.category ? { categoryId: filters.category } : {},
+    filters.location ? { locationId: filters.location } : {},
+    dateWhere(filters.from, filters.to),
+  ];
+}
+
+// Counts follow the active filters, so the cards always match the table.
+export async function getQueueCounts(
+  scope: Prisma.ComplaintWhereInput,
+  filters: QueueFilters,
+) {
+  const shared = sharedWhere(filters);
   const [groups, criticalOpen] = await Promise.all([
     prisma.complaint.groupBy({
       by: ['status'],
-      where: { AND: [scope, { archivedAt: null }] },
+      where: {
+        AND: [
+          scope,
+          ...shared,
+          { archivedAt: null },
+          filters.priority ? { priority: filters.priority } : {},
+        ],
+      },
       _count: { _all: true },
     }),
     prisma.complaint.count({
       where: {
         AND: [
           scope,
+          ...shared,
           {
             archivedAt: null,
             priority: 'CRITICAL',
@@ -132,11 +156,8 @@ export async function listQueue(
     AND: [
       scope,
       statusWhere(filters.status),
-      searchWhere(filters.q),
       filters.priority ? { priority: filters.priority } : {},
-      filters.category ? { categoryId: filters.category } : {},
-      filters.location ? { locationId: filters.location } : {},
-      dateWhere(filters.from, filters.to),
+      ...sharedWhere(filters),
     ],
   };
 

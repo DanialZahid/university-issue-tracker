@@ -45,7 +45,7 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
   const scope = managerScope(user, filters.department);
 
   const [counts, queue, options] = await Promise.all([
-    getQueueCounts(scope),
+    getQueueCounts(scope, filters),
     listQueue(scope, filters),
     getFilterOptions(user),
   ]);
@@ -113,7 +113,7 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
 
         <QueueStats
           counts={counts}
-          department={query.department}
+          query={query}
           active={{ status: filters.status, priority: filters.priority }}
         />
         <QueueFilters
