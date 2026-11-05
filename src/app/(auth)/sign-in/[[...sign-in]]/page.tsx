@@ -23,6 +23,7 @@ export default function SignInPage() {
           appearance={{
             elements: {
               header: { display: 'none' },
+              cardBox: { boxShadow: 'none', border: '1px solid var(--border)' },
               footerAction: { display: 'none' },
             },
           }}
