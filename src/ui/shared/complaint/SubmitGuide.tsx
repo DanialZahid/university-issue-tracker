@@ -1,4 +1,5 @@
 import {
+  Check,
   CheckCircle2,
   Lightbulb,
   ListChecks,
@@ -83,7 +84,7 @@ export function SubmitGuide() {
                 className='flex gap-2 text-sm text-muted-foreground'
               >
                 <span className='flex h-5 w-5 shrink-0 items-center justify-center'>
-                  <span className='size-1.5 rounded-full bg-amber-500' />
+                  <Check className='size-4 text-amber-600' />
                 </span>
                 {tip}
               </li>
