@@ -25,7 +25,7 @@ export function AppShell({ user, children }: AppShellProps) {
         <header className='sticky top-0 z-10 flex h-14 items-center border-b bg-background px-4'>
           <SidebarTrigger />
         </header>
-        <main className='mx-auto w-full max-w-6xl flex-1 p-4 md:p-6'>
+        <main className='mx-auto w-full max-w-7xl flex-1 p-4 md:p-6'>
           {children}
         </main>
       </SidebarInset>

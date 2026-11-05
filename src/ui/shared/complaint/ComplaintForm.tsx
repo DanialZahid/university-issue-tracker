@@ -1,6 +1,7 @@
 'use client';
 
 import { startTransition, useActionState, useState } from 'react';
+import { Loader2, Send } from 'lucide-react';
 import {
   submitComplaint,
   type SubmitComplaintState,
@@ -287,6 +288,7 @@ export function ComplaintForm({ categories, locations }: Props) {
       </div>
 
       <Button type='submit' disabled={pending}>
+        {pending ? <Loader2 className='animate-spin' /> : <Send />}
         {pending ? 'Submitting...' : 'Submit complaint'}
       </Button>
     </form>

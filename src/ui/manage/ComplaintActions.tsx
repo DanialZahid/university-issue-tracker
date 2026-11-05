@@ -1,7 +1,7 @@
 'use client';
 
 import { useActionState, useState, type ReactNode } from 'react';
-import { CheckCircle2, CircleAlert } from 'lucide-react';
+import { CheckCircle2, CircleAlert, Loader2, Save } from 'lucide-react';
 import {
   updatePriority,
   updateStatus,
@@ -96,6 +96,7 @@ function UpdateForm({
           type='submit'
           disabled={disabled || pending || selected === value}
         >
+          {pending ? <Loader2 className='animate-spin' /> : <Save />}
           {pending ? 'Saving...' : 'Save'}
         </Button>
       </div>

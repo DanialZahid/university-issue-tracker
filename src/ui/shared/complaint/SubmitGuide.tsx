@@ -39,7 +39,7 @@ export function SubmitGuide() {
     <aside className='space-y-6'>
       <Card>
         <CardHeader>
-          <CardTitle className='text-lg font-semibold'>How it works</CardTitle>
+          <CardTitle>How it works</CardTitle>
         </CardHeader>
         <CardContent>
           <ol>
@@ -48,7 +48,7 @@ export function SubmitGuide() {
                 {index < steps.length - 1 && (
                   <span
                     aria-hidden='true'
-                    className='absolute top-11 bottom-1 left-5 w-px bg-primary/20'
+                    className='absolute top-10 bottom-0 left-5 w-px bg-primary/20'
                   />
                 )}
                 <span className='relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary'>
@@ -66,7 +66,7 @@ export function SubmitGuide() {
 
       <Card className='bg-amber-50/50'>
         <CardHeader>
-          <CardTitle className='flex items-center gap-2 text-lg font-semibold'>
+          <CardTitle className='flex items-center gap-2'>
             <Lightbulb className='size-5 text-amber-600' />
             Tips for a quick fix
           </CardTitle>
@@ -74,8 +74,13 @@ export function SubmitGuide() {
         <CardContent>
           <ul className='space-y-3'>
             {tips.map((tip) => (
-              <li key={tip} className='flex gap-3 text-sm text-muted-foreground'>
-                <span className='mt-2 size-1.5 shrink-0 rounded-full bg-amber-500' />
+              <li
+                key={tip}
+                className='flex gap-2 text-sm text-muted-foreground'
+              >
+                <span className='flex h-5 w-5 shrink-0 items-center justify-center'>
+                  <span className='size-1.5 rounded-full bg-amber-500' />
+                </span>
                 {tip}
               </li>
             ))}

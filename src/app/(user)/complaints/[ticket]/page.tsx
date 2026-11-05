@@ -46,7 +46,7 @@ export default async function ComplaintDetailPage({
         description='Complaint details'
         icon={Ticket}
       />
-      <div className='max-w-3xl space-y-6'>
+      <div className='space-y-6'>
         {submitted === '1' ? (
           <SubmittedBanner department={complaint.department?.name} />
         ) : (
@@ -58,19 +58,21 @@ export default async function ComplaintDetailPage({
           </Button>
         )}
 
-        <ComplaintSummary complaint={complaint} />
+        <div className='grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_24rem]'>
+          <ComplaintSummary complaint={complaint} />
 
-        <Card>
-          <CardHeader>
-            <CardTitle className='flex items-center gap-2 text-lg font-semibold'>
-              <HistoryIcon className='size-5' />
-              History
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ComplaintTimeline events={complaint.auditLogs} />
-          </CardContent>
-        </Card>
+          <Card className='xl:sticky xl:top-20'>
+            <CardHeader>
+              <CardTitle className='flex items-center gap-2'>
+                <HistoryIcon className='size-5' />
+                History
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ComplaintTimeline events={complaint.auditLogs} />
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </>
   );

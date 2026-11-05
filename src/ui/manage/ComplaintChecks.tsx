@@ -20,19 +20,19 @@ export function ComplaintChecks() {
     <Card>
       <CardHeader>
         <CardTitle className='flex items-center gap-2'>
-          <ShieldCheck className='size-4' />
+          <ShieldCheck className='size-5' />
           Automated checks
         </CardTitle>
       </CardHeader>
-      <CardContent className='space-y-4'>
+      <CardContent className='space-y-5'>
         {CHECKS.map(({ icon: Icon, label, text }) => (
-          <div key={label} className='flex items-start gap-3'>
-            <span className='flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground'>
-              <Icon className='size-4' />
+          <div key={label} className='flex items-start gap-3.5'>
+            <span className='flex size-11 shrink-0 items-center justify-center rounded-xl bg-muted text-muted-foreground'>
+              <Icon className='size-5' />
             </span>
             <div>
-              <p className='text-sm font-medium'>{label}</p>
-              <p className='text-[13px] text-muted-foreground'>{text}</p>
+              <p className='font-medium'>{label}</p>
+              <p className='mt-0.5 text-sm text-muted-foreground'>{text}</p>
             </div>
           </div>
         ))}

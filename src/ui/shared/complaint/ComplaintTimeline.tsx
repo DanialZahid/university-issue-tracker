@@ -107,7 +107,7 @@ export function ComplaintTimeline({ events, showActor = false }: Props) {
             {!isLast && (
               <span
                 aria-hidden='true'
-                className='absolute top-11 bottom-1 left-5 w-px bg-border'
+                className='absolute top-10 bottom-0 left-5 w-px bg-border'
               />
             )}
             <span

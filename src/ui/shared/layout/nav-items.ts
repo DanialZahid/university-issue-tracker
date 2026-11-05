@@ -26,5 +26,12 @@ export const navItems: Record<NavVariant, NavItem[]> = {
   ],
   manage: [
     { label: 'Dashboard', href: '/manage', icon: LayoutDashboard, exact: true },
+    {
+      label: 'My complaints',
+      href: '/complaints',
+      icon: ClipboardList,
+      exact: true,
+    },
+    { label: 'Submit a complaint', href: '/complaints/new', icon: FilePlus2 },
   ],
 };

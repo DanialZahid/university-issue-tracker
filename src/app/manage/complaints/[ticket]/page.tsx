@@ -68,12 +68,12 @@ export default async function ManageComplaintPage({ params }: Props) {
         </Link>
       </Button>
 
-      <div className='grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]'>
+      <div className='grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]'>
         <div className='space-y-6'>
           <ComplaintSummary complaint={complaint}>
             <DetailItem icon={UserRound} label='Submitted by'>
               {complaint.submittedBy.name}
-              <span className='block text-xs font-normal text-muted-foreground'>
+              <span className='block text-sm font-normal text-muted-foreground'>
                 {complaint.submittedBy.email}
               </span>
             </DetailItem>
@@ -86,7 +86,7 @@ export default async function ManageComplaintPage({ params }: Props) {
 
           <Card>
             <CardHeader>
-              <CardTitle className='flex items-center gap-2 text-lg font-semibold'>
+              <CardTitle className='flex items-center gap-2'>
                 <HistoryIcon className='size-5' />
                 Audit trail
               </CardTitle>
@@ -101,7 +101,7 @@ export default async function ManageComplaintPage({ params }: Props) {
           <Card>
             <CardHeader>
               <CardTitle className='flex items-center gap-2'>
-                <Settings2 className='size-4' />
+                <Settings2 className='size-5' />
                 Actions
               </CardTitle>
             </CardHeader>

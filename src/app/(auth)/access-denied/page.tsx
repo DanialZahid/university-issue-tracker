@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { SignOutButton } from '@clerk/nextjs';
-import { ShieldAlert } from 'lucide-react';
+import { LogOut, ShieldAlert } from 'lucide-react';
 import { Button } from '@/ui/common/button';
 
 export const metadata: Metadata = { title: 'Access restricted' };
@@ -24,7 +24,10 @@ export default function AccessDeniedPage() {
             Google account.
           </p>
           <SignOutButton redirectUrl='/sign-in'>
-            <Button className='mt-6 w-full'>Try another account</Button>
+            <Button className='mt-6 w-full'>
+              <LogOut />
+              Try another account
+            </Button>
           </SignOutButton>
         </div>
       </div>

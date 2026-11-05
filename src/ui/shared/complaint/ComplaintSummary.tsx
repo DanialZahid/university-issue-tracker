@@ -63,9 +63,13 @@ export function ComplaintSummary({ complaint: c, children }: Props) {
     <div className='overflow-hidden rounded-xl border bg-card'>
       <div className={cn('h-1.5', statusTone[c.status].bar)} />
       <div className='space-y-6 p-6'>
-        <div className='flex flex-wrap items-start justify-between gap-3'>
-          <h2 className='text-2xl font-semibold'>{c.title}</h2>
-          <StatusBadge status={c.status} />
+        <div className='flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between'>
+          <h2 className='min-w-0 flex-1 text-2xl font-semibold wrap-break-word'>
+            {c.title}
+          </h2>
+          <span className='shrink-0 sm:mt-1.5'>
+            <StatusBadge status={c.status} />
+          </span>
         </div>
 
         <div className='rounded-xl bg-muted/40 p-5'>

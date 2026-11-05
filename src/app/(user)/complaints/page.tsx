@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { listUserComplaints } from '@/db/complaint';
 import { Button } from '@/ui/common/button';
-import { ClipboardList } from 'lucide-react';
+import { ClipboardList, FilePlus2 } from 'lucide-react';
 import { PageNav } from '@/ui/common/PageNav';
 import { ComplaintListItem } from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout/PageHeader';
@@ -38,7 +38,10 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
             description='Report an issue on campus and you can follow its progress here.'
           >
             <Button asChild>
-              <Link href='/complaints/new'>Submit your first complaint</Link>
+              <Link href='/complaints/new'>
+                <FilePlus2 />
+                Submit your first complaint
+              </Link>
             </Button>
           </EmptyState>
         ) : (
