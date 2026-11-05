@@ -21,7 +21,8 @@ import { ResultsBar } from '@/ui/common/ResultsBar';
 import { CopyButton } from '@/ui/common/CopyButton';
 import { EmptyState } from '@/ui/common/EmptyState';
 import { PageNav } from '@/ui/common/PageNav';
-import { PageHeader } from '@/ui/shared/layout';
+import { Greeting, PageHeader } from '@/ui/shared/layout';
+import { plural } from '@/utils/greeting';
 import { QueueFilters, QueueStats, QueueTable } from '@/ui/manage';
 import { withQuery } from '@/utils/query';
 import { requireManager } from '@/utils/session';
@@ -56,8 +57,10 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
   const isSuperuser = user.role === UserRole.SUPERUSER;
   const scope = managerScope(user, filters.department);
 
-  const [counts, queue, options, forwardedTo] = await Promise.all([
+  const [counts, home, queue, options, forwardedTo] = await Promise.all([
     getQueueCounts(scope, filters),
+    // Unfiltered totals for the greeting line.
+    getQueueCounts(managerScope(user, undefined), queueFiltersSchema.parse({})),
     listQueue(scope, filters),
     getFilterOptions(user),
     forwarded !== null ? getForwardDestination(forwarded, user.id) : null,
@@ -99,6 +102,7 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
     );
   }
 
+  const homeLabel = options.departments[0]?.name ?? 'your department';
   const scopeLabel = isSuperuser
     ? (options.departments.find((d) => d.id === filters.department)?.name ??
       'All departments')
@@ -111,6 +115,18 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
 
   return (
     <>
+      <Greeting
+        name={user.name}
+        summary={
+          <>
+            {home.criticalOpen > 0
+              ? `${plural(home.criticalOpen, 'critical complaint is', 'critical complaints are')} open`
+              : 'No critical complaints are open'}{' '}
+            {isSuperuser ? 'across all departments' : `in ${homeLabel}`}, and{' '}
+            {plural(home.pending, 'is', 'are')} pending.
+          </>
+        }
+      />
       <PageHeader
         icon={LayoutDashboard}
         title='Department dashboard'

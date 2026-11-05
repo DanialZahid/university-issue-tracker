@@ -151,3 +151,19 @@ export async function getComplaintForSubmitter(
     },
   });
 }
+
+// Open complaints by status, for the greeting on My complaints.
+export async function getUserOpenCounts(userId: string) {
+  const groups = await prisma.complaint.groupBy({
+    by: ['status'],
+    where: {
+      submittedById: userId,
+      archivedAt: null,
+      status: { in: ['PENDING', 'IN_PROGRESS'] },
+    },
+    _count: { _all: true },
+  });
+  const count = (status: string) =>
+    groups.find((g) => g.status === status)?._count._all ?? 0;
+  return { pending: count('PENDING'), inProgress: count('IN_PROGRESS') };
+}

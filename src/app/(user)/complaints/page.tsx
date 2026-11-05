@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { listUserComplaints } from '@/db/complaint';
+import { getUserOpenCounts, listUserComplaints } from '@/db/complaint';
 import { Button } from '@/ui/common/button';
 import { ClipboardList, FilePlus2 } from 'lucide-react';
 import { PageNav } from '@/ui/common/PageNav';
 import { ResultsBar } from '@/ui/common/ResultsBar';
 import { ComplaintListItem } from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout/PageHeader';
+import { Greeting } from '@/ui/shared/layout';
+import { plural } from '@/utils/greeting';
 import { requireUser } from '@/utils/session';
 import { EmptyState } from '@/ui/common/EmptyState';
 import { Metadata } from 'next';
@@ -20,12 +22,36 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
   const { page: rawPage } = await searchParams;
   const page = Math.max(1, Number.parseInt(rawPage ?? '1', 10) || 1);
 
-  const { items, total, pageSize } = await listUserComplaints(user.id, page);
+  const [{ items, total, pageSize }, open] = await Promise.all([
+    listUserComplaints(user.id, page),
+    getUserOpenCounts(user.id),
+  ]);
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   if (page > totalPages) redirect(`/complaints?page=${totalPages}`);
 
   return (
     <>
+      <Greeting
+        name={user.name}
+        summary={
+          open.inProgress + open.pending === 0
+            ? total === 0
+              ? 'Report an issue on campus and follow it here.'
+              : 'You have no open complaints right now.'
+            : [
+                open.inProgress > 0 &&
+                  `${plural(open.inProgress, 'complaint is', 'complaints are')} being worked on`,
+                open.pending > 0 &&
+                  `${
+                    open.inProgress > 0
+                      ? plural(open.pending, 'is', 'are')
+                      : plural(open.pending, 'complaint is', 'complaints are')
+                  } waiting to be picked up`,
+              ]
+                .filter(Boolean)
+                .join(', ') + '.'
+        }
+      />
       <PageHeader
         title='My complaints'
         description='Track the issues you have reported.'
