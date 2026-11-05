@@ -20,6 +20,7 @@ import {
   DetailItem,
 } from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout';
+import { BackdropTone, complaintTone } from '@/ui/shared/layout/BackdropTone';
 import {
   ArchiveControl,
   ComplaintActions,
@@ -87,6 +88,9 @@ export default async function ManageComplaintPage({
 
       <div className='grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]'>
         <div className='space-y-6'>
+          <BackdropTone
+            tone={complaintTone(complaint.status, complaint.priority)}
+          />
           <ComplaintSummary complaint={complaint}>
             <DetailItem icon={UserRound} label='Submitted by'>
               {complaint.submittedBy.name}

@@ -192,16 +192,30 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(
-        30% 35% at 92% 6%,
-        oklch(0.75 0.13 260 / 0.22),
-        transparent 70%
-      ),
-      radial-gradient(
-        28% 32% at 8% 96%,
-        oklch(0.8 0.1 330 / 0.18),
-        transparent 70%
-      );
+      radial-gradient(30% 35% at 92% 6%, var(--backdrop-a), transparent 70%),
+      radial-gradient(28% 32% at 8% 96%, var(--backdrop-b), transparent 70%);
     filter: blur(40px);
   }
+}
+
+/* Backdrop colors: brand by default, the complaint's state on complaint pages. */
+:root {
+  --backdrop-a: oklch(0.75 0.13 260 / 0.22);
+  --backdrop-b: oklch(0.8 0.1 330 / 0.18);
+}
+:root[data-backdrop='pending'] {
+  --backdrop-a: oklch(0.83 0.13 80 / 0.3);
+  --backdrop-b: oklch(0.85 0.1 80 / 0.2);
+}
+:root[data-backdrop='in-progress'] {
+  --backdrop-a: oklch(0.75 0.12 230 / 0.28);
+  --backdrop-b: oklch(0.8 0.09 230 / 0.2);
+}
+:root[data-backdrop='resolved'] {
+  --backdrop-a: oklch(0.78 0.14 150 / 0.28);
+  --backdrop-b: oklch(0.82 0.1 150 / 0.2);
+}
+:root[data-backdrop='critical'] {
+  --backdrop-a: oklch(0.72 0.17 25 / 0.26);
+  --backdrop-b: oklch(0.78 0.12 25 / 0.18);
 }

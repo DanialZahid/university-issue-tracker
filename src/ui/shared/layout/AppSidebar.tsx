@@ -44,31 +44,27 @@ export function AppSidebar({
         <AppSidebarNav variant={variant} />
       </SidebarContent>
 
-      {/* Who is signed in: name, role and (for heads) department. */}
-      <SidebarFooter className='border-t p-4'>
-        <div className='flex items-start gap-3'>
-          <span className='pt-0.5'>
+      {/* Who is signed in: avatar and name, then role and department below. */}
+      <SidebarFooter className='gap-2.5 border-t bg-linear-to-t from-primary/8 to-transparent p-4'>
+        <Hint label={userEmail} side='top'>
+          <div className='flex min-w-0 items-center gap-3'>
             <UserButton />
+            <p className='truncate text-sm font-medium'>{userName}</p>
+          </div>
+        </Hint>
+        <div className='flex flex-wrap items-center justify-between gap-1.5'>
+          <span className='inline-flex max-w-full items-center rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary'>
+            <span className='truncate'>{roleLabel}</span>
           </span>
-          <Hint label={userEmail} side='top'>
-            <div className='min-w-0'>
-              <p className='truncate text-sm font-medium'>{userName}</p>
-              <div className='mt-1.5 flex flex-wrap gap-1'>
-                <span className='inline-flex max-w-full items-center rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary'>
-                  <span className='truncate'>{roleLabel}</span>
-                </span>
-                {departmentName && (
-                  <span className='inline-flex max-w-full items-center gap-1 rounded-full bg-card px-2 py-0.5 text-[11px] font-medium text-foreground ring-1 ring-border'>
-                    <DepartmentIcon
-                      name={departmentName}
-                      className='size-3 shrink-0 text-muted-foreground'
-                    />
-                    <span className='truncate'>{departmentName}</span>
-                  </span>
-                )}
-              </div>
-            </div>
-          </Hint>
+          {departmentName && (
+            <span className='inline-flex max-w-full items-center gap-1 rounded-full bg-card px-2 py-0.5 text-[11px] font-medium text-foreground ring-1 ring-border'>
+              <DepartmentIcon
+                name={departmentName}
+                className='size-3 shrink-0 text-muted-foreground'
+              />
+              <span className='truncate'>{departmentName}</span>
+            </span>
+          )}
         </div>
       </SidebarFooter>
     </Sidebar>
