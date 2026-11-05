@@ -1,3 +1,4 @@
+import { getDepartmentName } from '@/db/user';
 import { UserRole } from '@/generated/prisma/enums';
 import {
   SidebarInset,
@@ -10,11 +11,21 @@ import { PageFade } from '@/ui/motion';
 import { AppSidebar } from './AppSidebar';
 
 type AppShellProps = {
-  user: { name: string; email: string; role: UserRole };
+  user: {
+    name: string;
+    email: string;
+    role: UserRole;
+    departmentId: string | null;
+  };
   children: React.ReactNode;
 };
 
-export function AppShell({ user, children }: AppShellProps) {
+export async function AppShell({ user, children }: AppShellProps) {
+  const departmentName =
+    user.role === UserRole.DEPARTMENT_HEAD
+      ? await getDepartmentName(user.departmentId)
+      : null;
+
   return (
     <SidebarProvider>
       <AppSidebar
@@ -22,6 +33,7 @@ export function AppShell({ user, children }: AppShellProps) {
         userName={user.name}
         userEmail={user.email}
         roleLabel={roleLabels[user.role]}
+        departmentName={departmentName}
       />
       <SidebarInset>
         <header className='sticky top-0 z-10 flex h-14 items-center border-b bg-background px-4'>

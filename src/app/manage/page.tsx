@@ -74,6 +74,17 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
   };
 
   const totalPages = Math.max(1, Math.ceil(queue.total / filters.size));
+  // An invalid or default ?size= falls back to 25: tidy the address to match.
+  const rawSize = raw['size'];
+  if (typeof rawSize === 'string' && rawSize !== query.size) {
+    redirect(
+      withQuery('/manage', {
+        ...query,
+        page: filters.page > 1 ? filters.page : undefined,
+      }),
+    );
+  }
+
   if (filters.page > totalPages) {
     redirect(
       withQuery('/manage', {

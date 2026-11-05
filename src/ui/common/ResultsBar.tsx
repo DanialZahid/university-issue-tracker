@@ -13,9 +13,10 @@ type Props = {
   query?: Record<string, string | number | undefined>;
   sizes?: readonly number[];
   defaultSize?: number;
+  noun?: [singular: string, plural: string];
 };
 
-// "Showing 26–50 of 3,509", rows per page and quick previous/next above a list.
+// "6,051 complaints · Page 2 of 243", rows per page and quick previous/next.
 export function ResultsBar({
   id,
   page,
@@ -25,10 +26,9 @@ export function ResultsBar({
   query,
   sizes,
   defaultSize,
+  noun = ['complaint', 'complaints'],
 }: Props) {
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
-  const first = total === 0 ? 0 : (page - 1) * pageSize + 1;
-  const last = Math.min(page * pageSize, total);
   const step = (p: number, label: string, Icon: typeof ChevronLeft) => {
     const enabled = p >= 1 && p <= totalPages && p !== page;
     const cls = cn(
@@ -55,15 +55,21 @@ export function ResultsBar({
       id={id}
       className='flex scroll-mt-20 flex-wrap items-center justify-between gap-3'
     >
-      <p className='text-sm text-muted-foreground'>
-        Showing{' '}
-        <span className='font-medium text-foreground tabular-nums'>
-          {first.toLocaleString('en-US')}–{last.toLocaleString('en-US')}
-        </span>{' '}
-        of{' '}
-        <span className='font-medium text-foreground tabular-nums'>
-          {total.toLocaleString('en-US')}
+      <p className='flex flex-wrap items-baseline gap-x-2 text-sm text-muted-foreground'>
+        <span>
+          <span className='font-semibold text-foreground tabular-nums'>
+            {total.toLocaleString('en-US')}
+          </span>{' '}
+          {total === 1 ? noun[0] : noun[1]}
         </span>
+        {totalPages > 1 && (
+          <>
+            <span aria-hidden='true'>·</span>
+            <span className='tabular-nums'>
+              Page {page} of {totalPages.toLocaleString('en-US')}
+            </span>
+          </>
+        )}
       </p>
       <div className='flex items-center gap-3'>
         {sizes && defaultSize && (

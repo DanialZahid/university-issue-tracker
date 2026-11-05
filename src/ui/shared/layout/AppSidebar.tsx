@@ -6,6 +6,7 @@ import {
   SidebarFooter,
   SidebarHeader,
 } from '@/ui/common/sidebar';
+import { DepartmentIcon } from '@/ui/shared/department';
 import { AppSidebarNav } from './AppSidebarNav';
 import type { NavVariant } from './nav-items';
 
@@ -14,6 +15,7 @@ type AppSidebarProps = {
   userName: string;
   userEmail: string;
   roleLabel: string;
+  departmentName?: string | null;
 };
 
 export function AppSidebar({
@@ -21,6 +23,7 @@ export function AppSidebar({
   userName,
   userEmail,
   roleLabel,
+  departmentName,
 }: AppSidebarProps) {
   return (
     <Sidebar>
@@ -33,9 +36,20 @@ export function AppSidebar({
             <p className='text-sm leading-tight font-semibold'>
               University Complaint and Issue Tracking Platform
             </p>
-            <span className='mt-1.5 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary'>
-              {roleLabel}
-            </span>
+            <div className='mt-1.5 flex flex-wrap gap-1'>
+              <span className='inline-block rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary'>
+                {roleLabel}
+              </span>
+              {departmentName && (
+                <span className='inline-flex items-center gap-1 rounded-full bg-card px-2 py-0.5 text-xs font-medium text-foreground ring-1 ring-border'>
+                  <DepartmentIcon
+                    name={departmentName}
+                    className='size-3.5 text-muted-foreground'
+                  />
+                  {departmentName}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </SidebarHeader>

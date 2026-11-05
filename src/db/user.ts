@@ -41,3 +41,12 @@ export async function syncUser({
 export function getUserByClerkId(clerkId: string) {
   return prisma.user.findUnique({ where: { clerkId } });
 }
+
+export async function getDepartmentName(id: string | null) {
+  if (!id) return null;
+  const department = await prisma.department.findUnique({
+    where: { id },
+    select: { name: true },
+  });
+  return department?.name ?? null;
+}

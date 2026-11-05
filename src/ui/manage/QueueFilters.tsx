@@ -295,7 +295,11 @@ export function QueueFilters({ categories, locations, departments }: Props) {
             size='sm'
             onClick={() => {
               setText('');
-              navigate(new URLSearchParams());
+              // Rows per page is a view setting, not a filter: keep it.
+              const keep = new URLSearchParams();
+              const size = params.get('size');
+              if (size) keep.set('size', size);
+              navigate(keep);
             }}
           >
             <X />
