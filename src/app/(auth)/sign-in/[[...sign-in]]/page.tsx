@@ -18,14 +18,16 @@ export default function SignInPage() {
           Sign in with your university Google account to continue.
         </p>
       </div>
-      <SignIn
-        appearance={{
-          elements: {
-            header: { display: 'none' },
-            footerAction: { display: 'none' },
-          },
-        }}
-      />
+      <div className='glow'>
+        <SignIn
+          appearance={{
+            elements: {
+              header: { display: 'none' },
+              footerAction: { display: 'none' },
+            },
+          }}
+        />
+      </div>
     </main>
   );
 }

@@ -15,7 +15,7 @@ export function EmptyState({
   children,
 }: Props) {
   return (
-    <div className='flex flex-col items-center rounded-xl border border-dashed bg-muted/30 px-6 py-14 text-center'>
+    <div className='glow flex flex-col items-center rounded-xl border border-dashed bg-muted/30 px-6 py-14 text-center'>
       <div className='mb-4 flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary'>
         <Icon className='size-7' />
       </div>
