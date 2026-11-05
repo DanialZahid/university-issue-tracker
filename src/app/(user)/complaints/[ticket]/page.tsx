@@ -62,8 +62,8 @@ export default async function ComplaintDetailPage({
 
         <Card>
           <CardHeader>
-            <CardTitle className='flex items-center gap-2'>
-              <HistoryIcon className='size-4' />
+            <CardTitle className='flex items-center gap-2 text-lg font-semibold'>
+              <HistoryIcon className='size-5' />
               History
             </CardTitle>
           </CardHeader>

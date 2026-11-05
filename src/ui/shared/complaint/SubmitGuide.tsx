@@ -39,21 +39,24 @@ export function SubmitGuide() {
     <aside className='space-y-6'>
       <Card>
         <CardHeader>
-          <CardTitle className='text-base'>How it works</CardTitle>
+          <CardTitle className='text-lg font-semibold'>How it works</CardTitle>
         </CardHeader>
         <CardContent>
-          <ol className='space-y-4'>
-            {steps.map(({ icon: Icon, title, text }, i) => (
-              <li key={title} className='flex gap-3'>
-                <span className='relative flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary'>
-                  <Icon className='size-4' />
-                  {i < steps.length - 1 && (
-                    <span className='absolute top-9 left-1/2 h-3 w-px -translate-x-1/2 bg-border' />
-                  )}
+          <ol>
+            {steps.map(({ icon: Icon, title, text }, index) => (
+              <li key={title} className='relative flex gap-4 pb-7 last:pb-0'>
+                {index < steps.length - 1 && (
+                  <span
+                    aria-hidden='true'
+                    className='absolute top-11 bottom-1 left-5 w-px bg-primary/20'
+                  />
+                )}
+                <span className='relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary'>
+                  <Icon className='size-5' />
                 </span>
-                <div>
-                  <p className='text-sm font-medium'>{title}</p>
-                  <p className='text-sm text-muted-foreground'>{text}</p>
+                <div className='pt-0.5'>
+                  <p className='font-medium'>{title}</p>
+                  <p className='mt-0.5 text-sm text-muted-foreground'>{text}</p>
                 </div>
               </li>
             ))}
@@ -63,15 +66,18 @@ export function SubmitGuide() {
 
       <Card className='bg-amber-50/50'>
         <CardHeader>
-          <CardTitle className='flex items-center gap-2 text-base'>
-            <Lightbulb className='size-4 text-amber-600' />
+          <CardTitle className='flex items-center gap-2 text-lg font-semibold'>
+            <Lightbulb className='size-5 text-amber-600' />
             Tips for a quick fix
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className='list-disc space-y-1.5 pl-5 text-sm text-muted-foreground'>
+          <ul className='space-y-3'>
             {tips.map((tip) => (
-              <li key={tip}>{tip}</li>
+              <li key={tip} className='flex gap-3 text-sm text-muted-foreground'>
+                <span className='mt-2 size-1.5 shrink-0 rounded-full bg-amber-500' />
+                {tip}
+              </li>
             ))}
           </ul>
         </CardContent>

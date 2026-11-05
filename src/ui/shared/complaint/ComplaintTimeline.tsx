@@ -103,24 +103,24 @@ export function ComplaintTimeline({ events, showActor = false }: Props) {
         const actor = automatic ? 'Automatic' : event.performedBy?.name;
 
         return (
-          <li key={event.id} className='relative flex gap-4 pb-6 last:pb-0'>
+          <li key={event.id} className='relative flex gap-4 pb-7 last:pb-0'>
             {!isLast && (
               <span
                 aria-hidden='true'
-                className='absolute top-9 bottom-1 left-4 w-px bg-border'
+                className='absolute top-11 bottom-1 left-5 w-px bg-border'
               />
             )}
             <span
               className={cn(
-                'relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full',
+                'relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full',
                 tone,
               )}
             >
-              <Icon className='size-4' />
+              <Icon className='size-5' />
             </span>
-            <div className='min-w-0 flex-1 pt-1'>
-              <p className='text-[15px] font-medium'>{describe(event)}</p>
-              <p className='text-[13px] text-muted-foreground'>
+            <div className='min-w-0 flex-1 pt-0.5'>
+              <p className='text-base font-medium'>{describe(event)}</p>
+              <p className='text-sm text-muted-foreground'>
                 {formatDateTime(event.createdAt)}
                 {showActor && actor ? ` · ${actor}` : ''}
               </p>

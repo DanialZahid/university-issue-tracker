@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { CheckCircle2, ClipboardList, FilePlus2 } from 'lucide-react';
 import { Button } from '@/ui/common/button';
@@ -5,6 +8,11 @@ import { Button } from '@/ui/common/button';
 type Props = { department?: string };
 
 export function SubmittedBanner({ department }: Props) {
+  // Drop ?submitted=1 from the address so Back or a refresh shows the normal page.
+  useEffect(() => {
+    window.history.replaceState(null, '', window.location.pathname);
+  }, []);
+
   return (
     <div className='glow'>
       <div
@@ -37,7 +45,7 @@ export function SubmittedBanner({ department }: Props) {
               Submit another
             </Link>
           </Button>
-          <Button variant='outline' asChild>
+          <Button asChild>
             <Link href='/complaints'>
               <ClipboardList />
               My complaints

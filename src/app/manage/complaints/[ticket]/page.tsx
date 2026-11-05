@@ -86,8 +86,8 @@ export default async function ManageComplaintPage({ params }: Props) {
 
           <Card>
             <CardHeader>
-              <CardTitle className='flex items-center gap-2'>
-                <HistoryIcon className='size-4' />
+              <CardTitle className='flex items-center gap-2 text-lg font-semibold'>
+                <HistoryIcon className='size-5' />
                 Audit trail
               </CardTitle>
             </CardHeader>

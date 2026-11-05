@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import {
+  AlignLeft,
   CalendarClock,
   CheckCircle2,
   DoorOpen,
@@ -26,13 +27,13 @@ export function DetailItem({
   children: ReactNode;
 }) {
   return (
-    <div className='flex items-start gap-3'>
-      <span className='flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground'>
-        <Icon className='size-4' />
+    <div className='flex items-start gap-3.5'>
+      <span className='flex size-11 shrink-0 items-center justify-center rounded-xl bg-muted text-muted-foreground'>
+        <Icon className='size-5' />
       </span>
       <div className='min-w-0'>
-        <dt className='text-xs text-muted-foreground'>{label}</dt>
-        <dd className='mt-0.5 text-sm font-medium wrap-break-word'>
+        <dt className='text-sm text-muted-foreground'>{label}</dt>
+        <dd className='mt-0.5 text-base font-medium wrap-break-word'>
           {children}
         </dd>
       </div>
@@ -63,15 +64,19 @@ export function ComplaintSummary({ complaint: c, children }: Props) {
       <div className={cn('h-1.5', statusTone[c.status].bar)} />
       <div className='space-y-6 p-6'>
         <div className='flex flex-wrap items-start justify-between gap-3'>
-          <h2 className='text-xl font-semibold'>{c.title}</h2>
+          <h2 className='text-2xl font-semibold'>{c.title}</h2>
           <StatusBadge status={c.status} />
         </div>
 
-        <p className='rounded-lg bg-muted/40 p-4 text-sm whitespace-pre-wrap'>
-          {c.description}
-        </p>
+        <div className='rounded-xl bg-muted/40 p-5'>
+          <p className='mb-2 flex items-center gap-2 text-sm text-muted-foreground'>
+            <AlignLeft className='size-4' />
+            Description
+          </p>
+          <p className='text-base whitespace-pre-wrap'>{c.description}</p>
+        </div>
 
-        <dl className='grid gap-5 sm:grid-cols-2'>
+        <dl className='grid gap-6 sm:grid-cols-2'>
           <DetailItem icon={Tag} label='Category'>
             {c.category.name}
           </DetailItem>
