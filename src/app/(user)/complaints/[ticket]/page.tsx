@@ -1,7 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, History as HistoryIcon, Ticket } from 'lucide-react';
+import {
+  ArrowLeft,
+  History as HistoryIcon,
+  MessageSquareWarning,
+} from 'lucide-react';
 import { getComplaintForSubmitter } from '@/db/complaint';
 import { Button } from '@/ui/common/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
@@ -44,7 +48,7 @@ export default async function ComplaintDetailPage({
       <PageHeader
         title={formatTicketNumber(complaint.ticketNumber)}
         description='Complaint details'
-        icon={Ticket}
+        icon={MessageSquareWarning}
       />
       <div className='space-y-6'>
         {submitted === '1' ? (

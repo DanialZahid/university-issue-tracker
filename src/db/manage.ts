@@ -135,6 +135,7 @@ export async function listQueue(
       searchWhere(filters.q),
       filters.priority ? { priority: filters.priority } : {},
       filters.category ? { categoryId: filters.category } : {},
+      filters.location ? { locationId: filters.location } : {},
       dateWhere(filters.from, filters.to),
     ],
   };
@@ -169,7 +170,7 @@ export async function getFilterOptions(user: ScopeUser) {
   const isSuperuser = user.role === UserRole.SUPERUSER;
   const ownDepartment = { departmentId: user.departmentId ?? '' };
 
-  const [categories, departments] = await Promise.all([
+  const [categories, departments, locations] = await Promise.all([
     prisma.category.findMany({
       where: isSuperuser ? {} : ownDepartment,
       select: { id: true, name: true },
@@ -180,9 +181,13 @@ export async function getFilterOptions(user: ScopeUser) {
       select: { id: true, name: true },
       orderBy: { name: 'asc' },
     }),
+    prisma.location.findMany({
+      select: { id: true, name: true },
+      orderBy: { name: 'asc' },
+    }),
   ]);
 
-  return { categories, departments };
+  return { categories, departments, locations };
 }
 
 export async function getComplaintForManager(

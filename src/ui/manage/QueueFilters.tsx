@@ -16,7 +16,11 @@ import { cn } from '@/utils/cn';
 import { DateRangePicker, formatRange } from '@/ui/common/DateRangePicker';
 
 type Option = { value: string; label: string };
-type Props = { categories: Option[]; departments: Option[] };
+type Props = {
+  categories: Option[];
+  locations: Option[];
+  departments: Option[];
+};
 
 const ANY = 'any';
 const SEARCH_DELAY_MS = 350;
@@ -79,7 +83,7 @@ function FilterSelect({
 
 type Chip = { key: string; label: string; clear: Record<string, null> };
 
-export function QueueFilters({ categories, departments }: Props) {
+export function QueueFilters({ categories, locations, departments }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -152,6 +156,14 @@ export function QueueFilters({ categories, departments }: Props) {
       key: 'category',
       label: `Category: ${labelOf(categories, category)}`,
       clear: { category: null },
+    });
+  }
+  const location = params.get('location');
+  if (location) {
+    chips.push({
+      key: 'location',
+      label: `Location: ${labelOf(locations, location)}`,
+      clear: { location: null },
     });
   }
   const department = params.get('department');
@@ -237,6 +249,12 @@ export function QueueFilters({ categories, departments }: Props) {
           value={category ?? ANY}
           options={[{ value: ANY, label: 'Any category' }, ...categories]}
           onChange={(v) => setParams({ category: v })}
+        />
+        <FilterSelect
+          label='Location'
+          value={location ?? ANY}
+          options={[{ value: ANY, label: 'Any location' }, ...locations]}
+          onChange={(v) => setParams({ location: v })}
         />
         {departments.length > 0 && (
           <FilterSelect

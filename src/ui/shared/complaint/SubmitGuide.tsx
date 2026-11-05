@@ -1,6 +1,7 @@
 import {
   CheckCircle2,
   Lightbulb,
+  ListChecks,
   Route,
   Send,
   Wrench,
@@ -37,9 +38,12 @@ const tips = [
 export function SubmitGuide() {
   return (
     <aside className='space-y-6'>
-      <Card>
+      <Card className='bg-blue-50/50'>
         <CardHeader>
-          <CardTitle>How it works</CardTitle>
+          <CardTitle className='flex items-center gap-2'>
+            <ListChecks className='size-5 text-primary' />
+            How it works
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <ol>
@@ -51,7 +55,7 @@ export function SubmitGuide() {
                     className='absolute top-10 bottom-0 left-5 w-px bg-primary/20'
                   />
                 )}
-                <span className='relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary'>
+                <span className='relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full bg-card text-primary ring-1 ring-primary/15'>
                   <Icon className='size-5' />
                 </span>
                 <div className='pt-0.5'>

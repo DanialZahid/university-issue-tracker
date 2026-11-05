@@ -35,6 +35,7 @@ export const queueFiltersSchema = z.object({
     .optional()
     .catch(undefined),
   category: optionalId,
+  location: optionalId,
   department: optionalId,
   q: z.string().trim().max(100).optional().catch(undefined),
   sort: z.enum(SORT_KEYS).optional().catch(undefined),

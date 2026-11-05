@@ -55,6 +55,7 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
     status: filters.status === 'OPEN' ? undefined : filters.status,
     priority: filters.priority,
     category: filters.category,
+    location: filters.location,
     department: isSuperuser ? filters.department : undefined,
     q: filters.q || undefined,
     from: filters.from,
@@ -117,6 +118,7 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
         />
         <QueueFilters
           categories={options.categories.map(toOption)}
+          locations={options.locations.map(toOption)}
           departments={isSuperuser ? options.departments.map(toOption) : []}
         />
         {queue.items.length === 0 ? (

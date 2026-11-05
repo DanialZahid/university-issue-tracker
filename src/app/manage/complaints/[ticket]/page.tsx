@@ -6,7 +6,7 @@ import {
   ArrowLeft,
   History as HistoryIcon,
   Settings2,
-  Ticket,
+  MessageSquareWarning,
   UserRound,
 } from 'lucide-react';
 import { getComplaintForManager, listDepartments } from '@/db/manage';
@@ -59,7 +59,7 @@ export default async function ManageComplaintPage({ params }: Props) {
       <PageHeader
         title={formatTicketNumber(complaint.ticketNumber)}
         description='Review and update this complaint.'
-        icon={Ticket}
+        icon={MessageSquareWarning}
       />
       <Button asChild variant='ghost' size='sm' className='mb-4 -ml-2'>
         <Link href='/manage'>

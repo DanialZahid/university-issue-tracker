@@ -32,6 +32,9 @@ export type TimelineEvent = {
 };
 
 const NEUTRAL = 'bg-slate-100 text-slate-700';
+const SUBMITTED = 'bg-blue-100 text-blue-700';
+const ROUTED = 'bg-sky-100 text-sky-700';
+const NOTE = 'bg-amber-100 text-amber-800';
 const AUTOMATIC_NOTES = new Set([
   'Set automatically',
   'Auto-assigned from category',
@@ -44,13 +47,13 @@ function priorityLabel(value: string | null | undefined): string {
 function visual(event: TimelineEvent): { icon: LucideIcon; tone: string } {
   switch (event.action) {
     case 'CREATED':
-      return { icon: FilePlus2, tone: NEUTRAL };
+      return { icon: FilePlus2, tone: SUBMITTED };
     case 'ASSIGNED':
-      return { icon: event.fromValue ? ArrowRightLeft : Send, tone: NEUTRAL };
+      return { icon: event.fromValue ? ArrowRightLeft : Send, tone: ROUTED };
     case 'PRIORITY_CHANGED':
       return { icon: Flag, tone: 'bg-violet-100 text-violet-800' };
     case 'NOTE_ADDED':
-      return { icon: StickyNote, tone: NEUTRAL };
+      return { icon: StickyNote, tone: NOTE };
     case 'ARCHIVED':
       return { icon: Archive, tone: NEUTRAL };
     case 'UNARCHIVED':
