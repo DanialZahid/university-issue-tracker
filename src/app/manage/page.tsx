@@ -1,15 +1,18 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
-import { Inbox, LayoutDashboard, ArrowRightLeft } from 'lucide-react';
+import { Inbox, LayoutDashboard, ArrowRightLeft, X } from 'lucide-react';
+import Link from 'next/link';
 import {
   QUEUE_PAGE_SIZE,
   getFilterOptions,
+  getForwardDestination,
   getQueueCounts,
   listQueue,
   managerScope,
 } from '@/db/manage';
 import { UserRole } from '@/generated/prisma/enums';
 import { queueFiltersSchema } from '@/schemas/queue-filters';
+import { CopyButton } from '@/ui/common/CopyButton';
 import { EmptyState } from '@/ui/common/EmptyState';
 import { PageNav } from '@/ui/common/PageNav';
 import { PageHeader } from '@/ui/shared/layout';
@@ -44,10 +47,11 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
   const isSuperuser = user.role === UserRole.SUPERUSER;
   const scope = managerScope(user, filters.department);
 
-  const [counts, queue, options] = await Promise.all([
+  const [counts, queue, options, forwardedTo] = await Promise.all([
     getQueueCounts(scope, filters),
     listQueue(scope, filters),
     getFilterOptions(user),
+    forwarded !== null ? getForwardDestination(forwarded, user.id) : null,
   ]);
 
   // Filters kept in links and pagination (defaults left out).
@@ -101,13 +105,33 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
       />
       <div className='space-y-6'>
         {forwarded !== null && (
-          <Alert>
-            <ArrowRightLeft />
+          <Alert className='relative border-sky-600/20 bg-sky-50/60 pr-12'>
+            <ArrowRightLeft className='text-sky-700' />
             <AlertTitle>Complaint forwarded</AlertTitle>
             <AlertDescription>
-              {formatTicketNumber(forwarded)} is now with another department and
-              no longer appears here.
+              <p className='flex flex-wrap items-center gap-x-1'>
+                <span className='inline-flex items-center font-medium text-foreground'>
+                  {formatTicketNumber(forwarded)}
+                  <CopyButton
+                    value={formatTicketNumber(forwarded)}
+                    label='Copy ticket number'
+                    className='size-7'
+                  />
+                </span>
+                is now with{' '}
+                <span className='font-medium text-foreground'>
+                  {forwardedTo ?? 'another department'}
+                </span>{' '}
+                and no longer appears here.
+              </p>
             </AlertDescription>
+            <Link
+              href={withQuery('/manage', query)}
+              aria-label='Dismiss'
+              className='absolute top-3 right-3 rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground'
+            >
+              <X className='size-4' />
+            </Link>
           </Alert>
         )}
 

@@ -333,6 +333,23 @@ export async function changePriority(
   });
 }
 
+// Where a complaint went, shown only to the person who forwarded it.
+export async function getForwardDestination(
+  ticketNumber: number,
+  userId: string,
+) {
+  const entry = await prisma.auditLog.findFirst({
+    where: {
+      action: 'ASSIGNED',
+      performedById: userId,
+      complaint: { ticketNumber },
+    },
+    orderBy: { createdAt: 'desc' },
+    select: { toValue: true },
+  });
+  return entry?.toValue ?? null;
+}
+
 export async function listDepartments() {
   return prisma.department.findMany({
     select: { id: true, name: true },

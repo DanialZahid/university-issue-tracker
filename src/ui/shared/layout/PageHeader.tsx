@@ -5,6 +5,8 @@ type PageHeaderProps = {
   description?: string;
   icon?: LucideIcon;
   actions?: React.ReactNode;
+  // Small control shown right after the title, such as a copy button.
+  titleAction?: React.ReactNode;
 };
 
 export function PageHeader({
@@ -12,6 +14,7 @@ export function PageHeader({
   description,
   icon: Icon,
   actions,
+  titleAction,
 }: PageHeaderProps) {
   return (
     <div className='mb-6 flex flex-wrap items-start justify-between gap-3'>
@@ -22,7 +25,10 @@ export function PageHeader({
           </span>
         )}
         <div>
-          <h1 className='text-2xl font-semibold tracking-tight'>{title}</h1>
+          <div className='flex items-center gap-1'>
+            <h1 className='text-2xl font-semibold tracking-tight'>{title}</h1>
+            {titleAction}
+          </div>
           {description && (
             <p className='mt-0.5 text-sm text-muted-foreground'>
               {description}

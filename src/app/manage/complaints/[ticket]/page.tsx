@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { getComplaintForManager, listDepartments } from '@/db/manage';
 import { Button } from '@/ui/common/button';
+import { CopyButton } from '@/ui/common/CopyButton';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
 import { Separator } from '@/ui/common/separator';
 import {
@@ -58,6 +59,12 @@ export default async function ManageComplaintPage({ params }: Props) {
     <>
       <PageHeader
         title={formatTicketNumber(complaint.ticketNumber)}
+        titleAction={
+          <CopyButton
+            value={formatTicketNumber(complaint.ticketNumber)}
+            label='Copy ticket number'
+          />
+        }
         description='Review and update this complaint.'
         icon={MessageSquareWarning}
       />
