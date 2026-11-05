@@ -17,6 +17,7 @@ import {
 } from '@/ui/shared/complaint';
 import { DepartmentIcon } from '@/ui/shared/department';
 import { formatAge, formatDateTime } from '@/utils/date';
+import { withQuery } from '@/utils/query';
 import { formatTicketNumber } from '@/utils/ticket';
 import { SortableHead } from './SortableHead';
 
@@ -28,9 +29,11 @@ type Props = {
   query: Record<string, string | undefined>;
 };
 
-const hrefFor = (ticket: string) => `/manage/complaints/${ticket}`;
-
 export function QueueTable({ items, showDepartment, sort, dir, query }: Props) {
+  // Carry the current filters so the complaint page can link back to them.
+  const back = withQuery('', query).slice(1) || undefined;
+  const hrefFor = (ticket: string) =>
+    withQuery(`/manage/complaints/${ticket}`, { back });
   const now = new Date();
   const sortProps = { sort, dir, query };
 

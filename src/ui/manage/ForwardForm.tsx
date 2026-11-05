@@ -24,6 +24,8 @@ type Props = {
   currentDepartmentId: string;
   departments: { id: string; name: string }[];
   disabled: boolean;
+  // Dashboard filters to return to after forwarding.
+  back?: string;
 };
 
 export function ForwardForm({
@@ -31,6 +33,7 @@ export function ForwardForm({
   currentDepartmentId,
   departments,
   disabled,
+  back,
 }: Props) {
   const [state, formAction, pending] = useActionState(
     forwardToDepartment,
@@ -50,6 +53,7 @@ export function ForwardForm({
     <form onSubmit={submitWithoutReset(formAction)} className='space-y-2'>
       <input type='hidden' name='ticketNumber' value={ticketNumber} />
       <input type='hidden' name='expected' value={currentDepartmentId} />
+      {back && <input type='hidden' name='back' value={back} />}
       <Label htmlFor='departmentId'>Forward to another department</Label>
       <Select
         name='departmentId'

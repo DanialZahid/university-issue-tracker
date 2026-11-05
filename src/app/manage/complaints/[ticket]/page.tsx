@@ -27,11 +27,16 @@ import {
   ForwardForm,
   NoteForm,
 } from '@/ui/manage';
+import { backQuery } from '@/schemas/queue-filters';
 import { formatDateTime } from '@/utils/date';
+import { withQuery } from '@/utils/query';
 import { requireManager } from '@/utils/session';
 import { formatTicketNumber, parseTicketNumber } from '@/utils/ticket';
 
-type Props = { params: Promise<{ ticket: string }> };
+type Props = {
+  params: Promise<{ ticket: string }>;
+  searchParams: Promise<{ back?: string }>;
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ticket } = await params;
@@ -39,8 +44,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: number === null ? 'Complaint' : formatTicketNumber(number) };
 }
 
-export default async function ManageComplaintPage({ params }: Props) {
+export default async function ManageComplaintPage({
+  params,
+  searchParams,
+}: Props) {
   const { ticket } = await params;
+  const { back } = await searchParams;
+  const backTo = backQuery(back);
   const user = await requireManager();
 
   const ticketNumber = parseTicketNumber(ticket);
@@ -69,7 +79,7 @@ export default async function ManageComplaintPage({ params }: Props) {
         icon={MessageSquareWarning}
       />
       <Button asChild variant='ghost' size='sm' className='mb-4 -ml-2'>
-        <Link href='/manage'>
+        <Link href={withQuery('/manage', backTo)}>
           <ArrowLeft />
           Back to dashboard
         </Link>
@@ -125,6 +135,7 @@ export default async function ManageComplaintPage({ params }: Props) {
                 currentDepartmentId={complaint.department?.id ?? ''}
                 departments={departments}
                 disabled={archived}
+                back={back}
               />
               <Separator />
               <NoteForm ticketNumber={complaint.ticketNumber} />

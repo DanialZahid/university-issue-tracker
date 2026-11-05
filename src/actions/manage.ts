@@ -23,6 +23,7 @@ import { formatTicketNumber } from '@/utils/ticket';
 import { redirect } from 'next/navigation';
 import { UserRole } from '@/generated/prisma/enums';
 import { withQuery } from '@/utils/query';
+import { backQuery } from '@/schemas/queue-filters';
 
 export type ManageActionState =
   { status: 'idle' } | { status: 'success' | 'error'; message: string };
@@ -125,7 +126,10 @@ export async function forwardToDepartment(
   if (outcome === 'ok' && user.role !== UserRole.SUPERUSER) {
     revalidatePath('/manage');
     redirect(
-      withQuery('/manage', { forwarded: formatTicketNumber(ticketNumber) }),
+      withQuery('/manage', {
+        ...backQuery(formData.get('back')),
+        forwarded: formatTicketNumber(ticketNumber),
+      }),
     );
   }
   return finish(outcome, ticketNumber, 'Complaint forwarded.');

@@ -46,3 +46,29 @@ export const queueFiltersSchema = z.object({
 });
 
 export type QueueFilters = z.infer<typeof queueFiltersSchema>;
+
+// Dashboard filters carried into a complaint page as ?back=..., so "Back" and
+// forwarding return to the same filtered view. Only known keys are kept.
+const BACK_KEYS = [
+  'status',
+  'priority',
+  'category',
+  'location',
+  'department',
+  'q',
+  'from',
+  'to',
+  'sort',
+  'dir',
+] as const;
+
+export function backQuery(back: unknown): Record<string, string> {
+  if (typeof back !== 'string' || back.length > 500) return {};
+  const params = new URLSearchParams(back);
+  const out: Record<string, string> = {};
+  for (const key of BACK_KEYS) {
+    const value = params.get(key);
+    if (value) out[key] = value.slice(0, 100);
+  }
+  return out;
+}
