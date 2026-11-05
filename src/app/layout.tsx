@@ -30,6 +30,18 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
               borderRadius: '0.625rem',
               fontFamily: 'inherit',
             },
+            elements: {
+              userButtonPopoverCard: {
+                border: '1px solid var(--border)',
+                boxShadow:
+                  '0 1px 2px rgb(0 0 0 / 0.04), 0 12px 32px -16px rgb(21 93 252 / 0.25)',
+              },
+              userButtonPopoverMain: {
+                boxShadow: 'none',
+                borderRadius: 0,
+                borderBottom: '1px solid var(--border)',
+              },
+            },
           }}
         >
           <TooltipProvider>{children}</TooltipProvider>
