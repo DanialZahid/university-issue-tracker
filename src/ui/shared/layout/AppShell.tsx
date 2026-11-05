@@ -4,6 +4,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/ui/common/sidebar';
+import { ViewAsBar } from '@/demo/ViewAsBar'; // TEMPORARY demo
 import { isManager, roleLabels } from '@/utils/role';
 import { AppSidebar } from './AppSidebar';
 
@@ -24,6 +25,7 @@ export function AppShell({ user, children }: AppShellProps) {
       <SidebarInset>
         <header className='sticky top-0 z-10 flex h-14 items-center border-b bg-background px-4'>
           <SidebarTrigger />
+          <ViewAsBar />
         </header>
         <main className='mx-auto w-full max-w-7xl flex-1 p-4 md:p-6'>
           {children}
