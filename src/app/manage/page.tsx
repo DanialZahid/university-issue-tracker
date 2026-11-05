@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { Inbox, LayoutDashboard, ArrowRightLeft, X } from 'lucide-react';
 import Link from 'next/link';
@@ -12,6 +13,7 @@ import {
 import { UserRole } from '@/generated/prisma/enums';
 import {
   DEFAULT_PAGE_SIZE,
+  PAGE_SIZE_COOKIE,
   PAGE_SIZES,
   queueFiltersSchema,
 } from '@/schemas/queue-filters';
@@ -42,11 +44,14 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
     typeof forwardedParam === 'string'
       ? parseTicketNumber(forwardedParam)
       : null;
-  const filters = queueFiltersSchema.parse(
-    Object.fromEntries(
+  const savedSize = (await cookies()).get(PAGE_SIZE_COOKIE)?.value;
+  const filters = queueFiltersSchema.parse({
+    // The address wins; otherwise use the rows per page chosen last time.
+    size: savedSize,
+    ...Object.fromEntries(
       Object.entries(raw).map(([k, v]) => [k, Array.isArray(v) ? v[0] : v]),
     ),
-  );
+  });
 
   const isSuperuser = user.role === UserRole.SUPERUSER;
   const scope = managerScope(user, filters.department);
@@ -178,6 +183,7 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
               query={query}
               sizes={PAGE_SIZES}
               defaultSize={DEFAULT_PAGE_SIZE}
+              sizeCookie={PAGE_SIZE_COOKIE}
             />
             <QueueTable
               items={queue.items}

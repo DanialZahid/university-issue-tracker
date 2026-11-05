@@ -9,7 +9,6 @@ import {
 import { ViewAsBar } from '@/demo/ViewAsBar'; // TEMPORARY demo
 import { isManager, roleLabels } from '@/utils/role';
 import { PageFade } from '@/ui/motion';
-import { Separator } from '@/ui/common/separator';
 import { AppSidebar } from './AppSidebar';
 import { Breadcrumbs } from './Breadcrumbs';
 
@@ -41,7 +40,10 @@ export async function AppShell({ user, children }: AppShellProps) {
       <SidebarInset>
         <header className='sticky top-0 z-10 flex h-14 items-center gap-1 border-b bg-background/90 px-4 backdrop-blur'>
           <SidebarTrigger />
-          <Separator orientation='vertical' className='mx-3 h-5!' />
+          <span
+            aria-hidden='true'
+            className='mx-3 h-5 w-px shrink-0 bg-border'
+          />
           <Suspense>
             <Breadcrumbs />
           </Suspense>

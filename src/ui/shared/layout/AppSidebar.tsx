@@ -44,28 +44,27 @@ export function AppSidebar({
         <AppSidebarNav variant={variant} />
       </SidebarContent>
 
-      {/* Who is signed in: name, then role and department on one line. */}
+      {/* Who is signed in: name, role and (for heads) department. */}
       <SidebarFooter className='border-t p-4'>
-        <div className='flex items-center gap-3'>
-          <UserButton />
+        <div className='flex items-start gap-3'>
+          <span className='pt-0.5'>
+            <UserButton />
+          </span>
           <Hint label={userEmail} side='top'>
             <div className='min-w-0'>
               <p className='truncate text-sm font-medium'>{userName}</p>
-              <p className='flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground'>
-                <span className='shrink-0 font-medium text-primary'>
-                  {roleLabel}
-                </span>
-                {departmentName && (
-                  <>
-                    <span aria-hidden='true'>·</span>
-                    <DepartmentIcon
-                      name={departmentName}
-                      className='size-3.5 shrink-0'
-                    />
-                    <span className='truncate'>{departmentName}</span>
-                  </>
-                )}
+              <p className='truncate text-xs font-medium text-primary'>
+                {roleLabel}
               </p>
+              {departmentName && (
+                <p className='mt-0.5 flex min-w-0 items-center gap-1 text-xs text-muted-foreground'>
+                  <DepartmentIcon
+                    name={departmentName}
+                    className='size-3.5 shrink-0'
+                  />
+                  <span className='truncate'>{departmentName}</span>
+                </p>
+              )}
             </div>
           </Hint>
         </div>

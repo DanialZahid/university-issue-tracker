@@ -10,10 +10,16 @@ import {
   SelectValue,
 } from '@/ui/common/select';
 
-type Props = { value: number; sizes: readonly number[]; fallback: number };
+type Props = {
+  value: number;
+  sizes: readonly number[];
+  fallback: number;
+  // Cookie that remembers the choice for next time.
+  cookie?: string;
+};
 
 // Rows per page, kept in the URL as ?size= (the default is left out).
-export function PageSizeSelect({ value, sizes, fallback }: Props) {
+export function PageSizeSelect({ value, sizes, fallback, cookie }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -24,6 +30,12 @@ export function PageSizeSelect({ value, sizes, fallback }: Props) {
       value={String(value)}
       disabled={pending}
       onValueChange={(next) => {
+        if (cookie) {
+          document.cookie =
+            Number(next) === fallback
+              ? `${cookie}=; path=/; max-age=0; samesite=lax`
+              : `${cookie}=${next}; path=/; max-age=31536000; samesite=lax`;
+        }
         const query = new URLSearchParams(params.toString());
         if (Number(next) === fallback) query.delete('size');
         else query.set('size', next);

@@ -14,6 +14,7 @@ type Props = {
   sizes?: readonly number[];
   defaultSize?: number;
   noun?: [singular: string, plural: string];
+  sizeCookie?: string;
 };
 
 // "6,051 complaints · Page 2 of 243", rows per page and quick previous/next.
@@ -27,6 +28,7 @@ export function ResultsBar({
   sizes,
   defaultSize,
   noun = ['complaint', 'complaints'],
+  sizeCookie,
 }: Props) {
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   const step = (p: number, label: string, Icon: typeof ChevronLeft) => {
@@ -79,6 +81,7 @@ export function ResultsBar({
               value={pageSize}
               sizes={sizes}
               fallback={defaultSize}
+              cookie={sizeCookie}
             />
           </label>
         )}
