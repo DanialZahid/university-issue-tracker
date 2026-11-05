@@ -110,45 +110,47 @@ function ComplaintFormFields({
 
   if (state.status === 'success') {
     return (
-      <Card>
-        <CardContent className='flex flex-col gap-6'>
-          <div className='flex items-start gap-4'>
-            <div className='flex size-12 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-600 ring-1 ring-green-600/15'>
-              <CheckCircle2 className='size-6' />
+      <div className='glow'>
+        <Card>
+          <CardContent className='flex flex-col gap-6'>
+            <div className='flex items-start gap-4'>
+              <div className='flex size-12 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-600 ring-1 ring-green-600/15'>
+                <CheckCircle2 className='size-6' />
+              </div>
+              <div className='space-y-1'>
+                <p className='text-lg font-semibold'>Complaint submitted</p>
+                <p className='text-sm text-muted-foreground'>
+                  Your ticket number is{' '}
+                  <span className='font-medium text-foreground'>
+                    {state.ticket}
+                  </span>
+                  . It has been sent to the responsible department.
+                </p>
+              </div>
             </div>
-            <div className='space-y-1'>
-              <p className='text-lg font-semibold'>Complaint submitted</p>
-              <p className='text-sm text-muted-foreground'>
-                Your ticket number is{' '}
-                <span className='font-medium text-foreground'>
-                  {state.ticket}
-                </span>
-                . It has been sent to the responsible department.
-              </p>
-            </div>
-          </div>
-          <div className='flex flex-col gap-2 border-t pt-4 sm:flex-row sm:items-center sm:justify-between'>
-            <Button asChild>
-              <Link href={`/complaints/${state.ticket}`}>
-                <Eye />
-                View complaint
-              </Link>
-            </Button>
-            <div className='flex flex-col gap-2 sm:flex-row'>
-              <Button variant='outline' onClick={onSubmitAnother}>
-                <FilePlus2 />
-                Submit another
-              </Button>
-              <Button variant='outline' asChild>
-                <Link href='/complaints'>
-                  <ClipboardList />
-                  My complaints
+            <div className='flex flex-col gap-2 border-t pt-4 sm:flex-row sm:items-center sm:justify-between'>
+              <Button asChild>
+                <Link href={`/complaints/${state.ticket}`}>
+                  <Eye />
+                  View complaint
                 </Link>
               </Button>
+              <div className='flex flex-col gap-2 sm:flex-row'>
+                <Button variant='outline' onClick={onSubmitAnother}>
+                  <FilePlus2 />
+                  Submit another
+                </Button>
+                <Button variant='outline' asChild>
+                  <Link href='/complaints'>
+                    <ClipboardList />
+                    My complaints
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     );
   }
 
