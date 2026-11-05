@@ -11,6 +11,7 @@ import { Hint } from '@/ui/common/Hint';
 import { statusTone } from '@/ui/shared/complaint';
 import { cn } from '@/utils/cn';
 import { withQuery } from '@/utils/query';
+import { CountUp } from '@/ui/motion';
 
 type Counts = {
   pending: number;
@@ -109,7 +110,7 @@ export function QueueStats({ counts, query: current, active }: Props) {
             </span>
             <div>
               <p className='text-2xl font-semibold tabular-nums'>
-                {value.toLocaleString('en-US')}
+                <CountUp value={value} />
               </p>
               <p className='text-sm text-muted-foreground'>{label}</p>
             </div>

@@ -1,6 +1,12 @@
 'use client';
 
-import { useActionState, useState, type ReactNode } from 'react';
+import {
+  useActionState,
+  useState,
+  type ReactNode,
+  useEffect,
+  useEffectEvent,
+} from 'react';
 import { CheckCircle2, CircleAlert, Loader2, Save } from 'lucide-react';
 import {
   updatePriority,
@@ -19,6 +25,7 @@ import {
 } from '@/ui/common/select';
 import { PriorityBadge, StatusBadge } from '@/ui/shared/complaint';
 import { cn } from '@/utils/cn';
+import { celebrate } from '@/ui/motion';
 import { submitWithoutReset } from './form-submit';
 
 type Action = (
@@ -57,6 +64,7 @@ function UpdateForm({
   value,
   options,
   disabled,
+  onSaved,
 }: {
   label: string;
   name: string;
@@ -65,9 +73,15 @@ function UpdateForm({
   value: string;
   options: { value: string; content: ReactNode }[];
   disabled: boolean;
+  onSaved?: (value: string) => void;
 }) {
   const [state, formAction, pending] = useActionState(action, idle);
   const [selected, setSelected] = useState(value);
+  // Runs after a successful save (for example, confetti when resolved).
+  const notifySaved = useEffectEvent(() => onSaved?.(selected));
+  useEffect(() => {
+    if (state.status === 'success') notifySaved();
+  }, [state]);
 
   return (
     <form className='space-y-2' onSubmit={submitWithoutReset(formAction)}>
@@ -132,6 +146,9 @@ export function ComplaintActions({
         ticketNumber={ticketNumber}
         value={status}
         disabled={archived}
+        onSaved={(saved) => {
+          if (saved === 'RESOLVED') void celebrate();
+        }}
         options={STATUSES.map((s) => ({
           value: s,
           content: <StatusBadge status={s} />,

@@ -6,6 +6,7 @@ import {
 } from '@/ui/common/sidebar';
 import { ViewAsBar } from '@/demo/ViewAsBar'; // TEMPORARY demo
 import { isManager, roleLabels } from '@/utils/role';
+import { PageFade } from '@/ui/motion';
 import { AppSidebar } from './AppSidebar';
 
 type AppShellProps = {
@@ -28,7 +29,7 @@ export function AppShell({ user, children }: AppShellProps) {
           <ViewAsBar />
         </header>
         <main className='mx-auto w-full max-w-7xl flex-1 p-4 md:p-6'>
-          {children}
+          <PageFade>{children}</PageFade>
         </main>
       </SidebarInset>
     </SidebarProvider>

@@ -16,6 +16,7 @@ import {
   SubmittedBanner,
 } from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout';
+import { ResolvedCelebration } from '@/ui/motion';
 import { requireUser } from '@/utils/session';
 import { formatTicketNumber, parseTicketNumber } from '@/utils/ticket';
 
@@ -71,6 +72,11 @@ export default async function ComplaintDetailPage({
 
         <div className='grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_24rem]'>
           <ComplaintSummary complaint={complaint} />
+          {complaint.status === 'RESOLVED' && (
+            <ResolvedCelebration
+              ticket={formatTicketNumber(complaint.ticketNumber)}
+            />
+          )}
 
           <Card className='xl:sticky xl:top-20'>
             <CardHeader>

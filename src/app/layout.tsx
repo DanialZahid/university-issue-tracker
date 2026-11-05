@@ -4,6 +4,7 @@ import './globals.css';
 import { cn } from '@/utils/cn';
 import { ClerkProvider } from '@clerk/nextjs';
 import { TooltipProvider } from '@/ui/common/tooltip';
+import { MotionProvider } from '@/ui/motion';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -44,7 +45,9 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             },
           }}
         >
-          <TooltipProvider>{children}</TooltipProvider>
+          <MotionProvider>
+            <TooltipProvider>{children}</TooltipProvider>
+          </MotionProvider>
         </ClerkProvider>
       </body>
     </html>
