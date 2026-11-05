@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { getDepartmentName } from '@/db/user';
 import { UserRole } from '@/generated/prisma/enums';
 import {
@@ -8,7 +9,9 @@ import {
 import { ViewAsBar } from '@/demo/ViewAsBar'; // TEMPORARY demo
 import { isManager, roleLabels } from '@/utils/role';
 import { PageFade } from '@/ui/motion';
+import { Separator } from '@/ui/common/separator';
 import { AppSidebar } from './AppSidebar';
+import { Breadcrumbs } from './Breadcrumbs';
 
 type AppShellProps = {
   user: {
@@ -36,8 +39,12 @@ export async function AppShell({ user, children }: AppShellProps) {
         departmentName={departmentName}
       />
       <SidebarInset>
-        <header className='sticky top-0 z-10 flex h-14 items-center border-b bg-background px-4'>
+        <header className='sticky top-0 z-10 flex h-14 items-center gap-1 border-b bg-background/90 px-4 backdrop-blur'>
           <SidebarTrigger />
+          <Separator orientation='vertical' className='mx-3 h-5!' />
+          <Suspense>
+            <Breadcrumbs />
+          </Suspense>
           <ViewAsBar />
         </header>
         <main className='mx-auto w-full max-w-7xl flex-1 p-4 md:p-6'>
