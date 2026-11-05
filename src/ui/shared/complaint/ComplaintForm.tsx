@@ -1,8 +1,6 @@
 'use client';
 
-import Link from 'next/link';
 import { startTransition, useActionState, useState } from 'react';
-import { CheckCircle2, ClipboardList, Eye, FilePlus2 } from 'lucide-react';
 import {
   submitComplaint,
   type SubmitComplaintState,
@@ -16,7 +14,6 @@ import {
 } from '@/schemas/complaint';
 import { Alert, AlertDescription } from '@/ui/common/alert';
 import { Button } from '@/ui/common/button';
-import { Card, CardContent } from '@/ui/common/card';
 import { FormField } from '@/ui/common/FormField';
 import { Input } from '@/ui/common/input';
 import {
@@ -39,22 +36,7 @@ type Props = { categories: CategoryOption[]; locations: Option[] };
 
 const initialState: SubmitComplaintState = { status: 'idle' };
 
-export function ComplaintForm(props: Props) {
-  const [formKey, setFormKey] = useState(0);
-  return (
-    <ComplaintFormFields
-      key={formKey}
-      {...props}
-      onSubmitAnother={() => setFormKey((k) => k + 1)}
-    />
-  );
-}
-
-function ComplaintFormFields({
-  categories,
-  locations,
-  onSubmitAnother,
-}: Props & { onSubmitAnother: () => void }) {
+export function ComplaintForm({ categories, locations }: Props) {
   const [state, formAction, pending] = useActionState(
     submitComplaint,
     initialState,
@@ -107,52 +89,6 @@ function ComplaintFormFields({
       : {};
   const describedBy = (field: string) =>
     errors[field] ? `${field}-error` : undefined;
-
-  if (state.status === 'success') {
-    return (
-      <div className='glow'>
-        <Card>
-          <CardContent className='flex flex-col gap-6'>
-            <div className='flex items-start gap-4'>
-              <div className='flex size-12 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-600 ring-1 ring-green-600/15'>
-                <CheckCircle2 className='size-6' />
-              </div>
-              <div className='space-y-1'>
-                <p className='text-lg font-semibold'>Complaint submitted</p>
-                <p className='text-sm text-muted-foreground'>
-                  Your ticket number is{' '}
-                  <span className='font-medium text-foreground'>
-                    {state.ticket}
-                  </span>
-                  . It has been sent to the responsible department.
-                </p>
-              </div>
-            </div>
-            <div className='flex flex-col gap-2 border-t pt-4 sm:flex-row sm:items-center sm:justify-between'>
-              <Button asChild>
-                <Link href={`/complaints/${state.ticket}`}>
-                  <Eye />
-                  View complaint
-                </Link>
-              </Button>
-              <div className='flex flex-col gap-2 sm:flex-row'>
-                <Button variant='outline' onClick={onSubmitAnother}>
-                  <FilePlus2 />
-                  Submit another
-                </Button>
-                <Button variant='outline' asChild>
-                  <Link href='/complaints'>
-                    <ClipboardList />
-                    My complaints
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
 
   return (
     <form

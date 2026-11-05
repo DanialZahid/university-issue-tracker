@@ -5,12 +5,19 @@ import { ArrowLeft, History as HistoryIcon, Ticket } from 'lucide-react';
 import { getComplaintForSubmitter } from '@/db/complaint';
 import { Button } from '@/ui/common/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
-import { ComplaintSummary, ComplaintTimeline } from '@/ui/shared/complaint';
+import {
+  ComplaintSummary,
+  ComplaintTimeline,
+  SubmittedBanner,
+} from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout';
 import { requireUser } from '@/utils/session';
 import { formatTicketNumber, parseTicketNumber } from '@/utils/ticket';
 
-type Props = { params: Promise<{ ticket: string }> };
+type Props = {
+  params: Promise<{ ticket: string }>;
+  searchParams: Promise<{ submitted?: string }>;
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ticket } = await params;
@@ -18,8 +25,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: number === null ? 'Complaint' : formatTicketNumber(number) };
 }
 
-export default async function ComplaintDetailPage({ params }: Props) {
+export default async function ComplaintDetailPage({
+  params,
+  searchParams,
+}: Props) {
   const { ticket } = await params;
+  const { submitted } = await searchParams;
   const user = await requireUser();
 
   const ticketNumber = parseTicketNumber(ticket);
@@ -36,12 +47,16 @@ export default async function ComplaintDetailPage({ params }: Props) {
         icon={Ticket}
       />
       <div className='max-w-3xl space-y-6'>
-        <Button asChild variant='ghost' size='sm' className='-ml-2'>
-          <Link href='/complaints'>
-            <ArrowLeft />
-            Back to my complaints
-          </Link>
-        </Button>
+        {submitted === '1' ? (
+          <SubmittedBanner department={complaint.department?.name} />
+        ) : (
+          <Button asChild variant='ghost' size='sm' className='-ml-2'>
+            <Link href='/complaints'>
+              <ArrowLeft />
+              Back to my complaints
+            </Link>
+          </Button>
+        )}
 
         <ComplaintSummary complaint={complaint} />
 

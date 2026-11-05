@@ -5,3 +5,5 @@ export { PriorityBadge } from './PriorityBadge';
 export { StatusBadge } from './StatusBadge';
 export { statusTone } from './status-tone';
 export { ComplaintSummary, DetailItem } from './ComplaintSummary';
+export { SubmittedBanner } from './SubmittedBanner';
+export { SubmitGuide } from './SubmitGuide';

@@ -1,5 +1,6 @@
 'use server';
 
+import { redirect } from 'next/navigation';
 import { createComplaint } from '@/db/complaint';
 import { complaintSchema, collectFieldErrors } from '@/schemas/complaint';
 import { formatTicketNumber } from '@/utils/ticket';
@@ -7,8 +8,7 @@ import { requireUser } from '@/utils/session';
 
 export type SubmitComplaintState =
   | { status: 'idle' }
-  | { status: 'error'; message?: string; fieldErrors?: Record<string, string> }
-  | { status: 'success'; ticket: string };
+  | { status: 'error'; message?: string; fieldErrors?: Record<string, string> };
 
 const FIELDS = [
   'title',
@@ -38,5 +38,5 @@ export async function submitComplaint(
     return { status: 'error', message: 'Invalid category or location.' };
   }
 
-  return { status: 'success', ticket: formatTicketNumber(ticketNumber) };
+  redirect(`/complaints/${formatTicketNumber(ticketNumber)}?submitted=1`);
 }
