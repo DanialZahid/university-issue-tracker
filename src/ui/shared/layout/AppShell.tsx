@@ -38,6 +38,8 @@ export async function AppShell({ user, children }: AppShellProps) {
         departmentName={departmentName}
       />
       <SidebarInset>
+        {/* Decorative dot grid and soft color behind every page. */}
+        <div aria-hidden='true' className='app-backdrop' />
         <header className='sticky top-0 z-10 flex h-14 items-center gap-1 border-b bg-background/90 px-4 backdrop-blur'>
           <SidebarTrigger />
           <span
@@ -49,7 +51,7 @@ export async function AppShell({ user, children }: AppShellProps) {
           </Suspense>
           <ViewAsBar />
         </header>
-        <main className='mx-auto w-full max-w-7xl flex-1 p-4 md:p-6'>
+        <main className='relative z-[1] mx-auto w-full max-w-7xl flex-1 p-4 md:p-6'>
           <PageFade>{children}</PageFade>
         </main>
       </SidebarInset>

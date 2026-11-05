@@ -53,18 +53,20 @@ export function AppSidebar({
           <Hint label={userEmail} side='top'>
             <div className='min-w-0'>
               <p className='truncate text-sm font-medium'>{userName}</p>
-              <p className='truncate text-xs font-medium text-primary'>
-                {roleLabel}
-              </p>
-              {departmentName && (
-                <p className='mt-0.5 flex min-w-0 items-center gap-1 text-xs text-muted-foreground'>
-                  <DepartmentIcon
-                    name={departmentName}
-                    className='size-3.5 shrink-0'
-                  />
-                  <span className='truncate'>{departmentName}</span>
-                </p>
-              )}
+              <div className='mt-1.5 flex flex-wrap gap-1'>
+                <span className='inline-flex max-w-full items-center rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary'>
+                  <span className='truncate'>{roleLabel}</span>
+                </span>
+                {departmentName && (
+                  <span className='inline-flex max-w-full items-center gap-1 rounded-full bg-card px-2 py-0.5 text-[11px] font-medium text-foreground ring-1 ring-border'>
+                    <DepartmentIcon
+                      name={departmentName}
+                      className='size-3 shrink-0 text-muted-foreground'
+                    />
+                    <span className='truncate'>{departmentName}</span>
+                  </span>
+                )}
+              </div>
             </div>
           </Hint>
         </div>

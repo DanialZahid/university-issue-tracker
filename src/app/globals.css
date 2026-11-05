@@ -161,3 +161,47 @@
     filter: blur(48px);
   }
 }
+
+/* App background: a faint dot grid in two corners plus soft blue and pink light.
+   Fixed, behind content, never clickable. */
+@layer components {
+  .app-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .app-backdrop::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      oklch(0.55 0.08 262 / 0.22) 1px,
+      transparent 1.5px
+    );
+    background-size: 22px 22px;
+    mask-image:
+      radial-gradient(ellipse 45% 40% at 100% 0%, black, transparent 70%),
+      radial-gradient(ellipse 40% 45% at 0% 100%, black, transparent 70%);
+  }
+
+  .app-backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        30% 35% at 92% 6%,
+        oklch(0.75 0.13 260 / 0.22),
+        transparent 70%
+      ),
+      radial-gradient(
+        28% 32% at 8% 96%,
+        oklch(0.8 0.1 330 / 0.18),
+        transparent 70%
+      );
+    filter: blur(40px);
+  }
+}
