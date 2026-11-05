@@ -19,6 +19,9 @@ export const SORT_KEYS = [
 
 export type SortKey = (typeof SORT_KEYS)[number];
 
+export const PAGE_SIZES = [10, 25, 50, 100] as const;
+export const DEFAULT_PAGE_SIZE = 25;
+
 const optionalId = z.string().trim().min(1).max(40).optional().catch(undefined);
 
 const ymd = z
@@ -43,6 +46,10 @@ export const queueFiltersSchema = z.object({
   from: ymd,
   to: ymd,
   page: z.coerce.number().int().min(1).catch(1),
+  size: z.coerce
+    .number()
+    .refine((n) => (PAGE_SIZES as readonly number[]).includes(n))
+    .catch(DEFAULT_PAGE_SIZE),
 });
 
 export type QueueFilters = z.infer<typeof queueFiltersSchema>;
@@ -60,6 +67,7 @@ const BACK_KEYS = [
   'to',
   'sort',
   'dir',
+  'size',
 ] as const;
 
 export function backQuery(back: unknown): Record<string, string> {

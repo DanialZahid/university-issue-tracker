@@ -40,9 +40,10 @@ export function QueueTable({ items, showDepartment, sort, dir, query }: Props) {
   return (
     <>
       {/* Desktop: table for scanning many rows. */}
-      <div className='hidden overflow-hidden rounded-xl border bg-card md:block'>
+      {/* overflow-clip (not hidden) keeps the rounded corners without breaking the sticky header. */}
+      <div className='hidden overflow-clip rounded-xl border bg-card md:block [&_[data-slot=table-container]]:overflow-visible'>
         <Table>
-          <TableHeader>
+          <TableHeader className='sticky top-14 z-10 bg-card shadow-[0_1px_0_var(--border)]'>
             <TableRow className='bg-muted/50 hover:bg-muted/50'>
               <SortableHead
                 label='Ticket'

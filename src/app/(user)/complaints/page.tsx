@@ -4,6 +4,7 @@ import { listUserComplaints } from '@/db/complaint';
 import { Button } from '@/ui/common/button';
 import { ClipboardList, FilePlus2 } from 'lucide-react';
 import { PageNav } from '@/ui/common/PageNav';
+import { ResultsBar } from '@/ui/common/ResultsBar';
 import { ComplaintListItem } from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout/PageHeader';
 import { requireUser } from '@/utils/session';
@@ -46,6 +47,13 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
           </EmptyState>
         ) : (
           <>
+            <ResultsBar
+              id='results'
+              page={page}
+              pageSize={pageSize}
+              total={total}
+              basePath='/complaints'
+            />
             <ul className='space-y-3'>
               {items.map((c) => (
                 <ComplaintListItem
@@ -63,6 +71,7 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
               page={page}
               totalPages={totalPages}
               basePath='/complaints'
+              anchor='results'
             />
           </>
         )}

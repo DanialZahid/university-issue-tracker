@@ -10,8 +10,6 @@ import type { QueueFilters } from '@/schemas/queue-filters';
 import { parseTicketNumber } from '@/utils/ticket';
 import { campusDayStart } from '@/utils/date';
 
-export const QUEUE_PAGE_SIZE = 25;
-
 type ScopeUser = { role: UserRole; departmentId: string | null };
 type ActingUser = ScopeUser & { id: string };
 
@@ -166,8 +164,8 @@ export async function listQueue(
     prisma.complaint.findMany({
       where,
       orderBy: orderFor(filters),
-      skip: (filters.page - 1) * QUEUE_PAGE_SIZE,
-      take: QUEUE_PAGE_SIZE,
+      skip: (filters.page - 1) * filters.size,
+      take: filters.size,
       select: {
         ticketNumber: true,
         title: true,

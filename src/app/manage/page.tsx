@@ -3,7 +3,6 @@ import { redirect } from 'next/navigation';
 import { Inbox, LayoutDashboard, ArrowRightLeft, X } from 'lucide-react';
 import Link from 'next/link';
 import {
-  QUEUE_PAGE_SIZE,
   getFilterOptions,
   getForwardDestination,
   getQueueCounts,
@@ -11,7 +10,12 @@ import {
   managerScope,
 } from '@/db/manage';
 import { UserRole } from '@/generated/prisma/enums';
-import { queueFiltersSchema } from '@/schemas/queue-filters';
+import {
+  DEFAULT_PAGE_SIZE,
+  PAGE_SIZES,
+  queueFiltersSchema,
+} from '@/schemas/queue-filters';
+import { ResultsBar } from '@/ui/common/ResultsBar';
 import { CopyButton } from '@/ui/common/CopyButton';
 import { EmptyState } from '@/ui/common/EmptyState';
 import { PageNav } from '@/ui/common/PageNav';
@@ -66,9 +70,10 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
     to: filters.to,
     sort: filters.sort,
     dir: filters.sort ? filters.dir : undefined,
+    size: filters.size === DEFAULT_PAGE_SIZE ? undefined : String(filters.size),
   };
 
-  const totalPages = Math.max(1, Math.ceil(queue.total / QUEUE_PAGE_SIZE));
+  const totalPages = Math.max(1, Math.ceil(queue.total / filters.size));
   if (filters.page > totalPages) {
     redirect(
       withQuery('/manage', {
@@ -153,9 +158,16 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
           />
         ) : (
           <>
-            <p className='text-sm text-muted-foreground'>
-              {queue.total.toLocaleString('en-US')} complaints
-            </p>
+            <ResultsBar
+              id='results'
+              page={filters.page}
+              pageSize={filters.size}
+              total={queue.total}
+              basePath='/manage'
+              query={query}
+              sizes={PAGE_SIZES}
+              defaultSize={DEFAULT_PAGE_SIZE}
+            />
             <QueueTable
               items={queue.items}
               showDepartment={isSuperuser}
@@ -168,6 +180,7 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
               totalPages={totalPages}
               basePath='/manage'
               query={query}
+              anchor='results'
             />
           </>
         )}
