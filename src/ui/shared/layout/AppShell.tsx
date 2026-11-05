@@ -34,6 +34,7 @@ export async function AppShell({ user, children }: AppShellProps) {
         variant={isManager(user.role) ? 'manage' : 'user'}
         userName={user.name}
         userEmail={user.email}
+        role={user.role}
         roleLabel={roleLabels[user.role]}
         departmentName={departmentName}
       />

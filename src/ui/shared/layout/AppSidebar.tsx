@@ -8,13 +8,16 @@ import {
   SidebarHeader,
 } from '@/ui/common/sidebar';
 import { DepartmentIcon } from '@/ui/shared/department';
+import type { UserRole } from '@/generated/prisma/enums';
 import { AppSidebarNav } from './AppSidebarNav';
+import { RoleIcon } from './RoleIcon';
 import type { NavVariant } from './nav-items';
 
 type AppSidebarProps = {
   variant: NavVariant;
   userName: string;
   userEmail: string;
+  role: UserRole;
   roleLabel: string;
   departmentName?: string | null;
 };
@@ -23,6 +26,7 @@ export function AppSidebar({
   variant,
   userName,
   userEmail,
+  role,
   roleLabel,
   departmentName,
 }: AppSidebarProps) {
@@ -66,7 +70,13 @@ export function AppSidebar({
               </span>
             </>
           ) : (
-            <span className='truncate text-primary'>{roleLabel}</span>
+            <>
+              <RoleIcon
+                role={role}
+                className='size-3.5 shrink-0 text-primary'
+              />
+              <span className='truncate text-primary'>{roleLabel}</span>
+            </>
           )}
         </span>
       </SidebarFooter>
