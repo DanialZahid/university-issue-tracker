@@ -20,7 +20,8 @@ import {
   DetailItem,
 } from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout';
-import { BackdropTone, complaintTone } from '@/ui/shared/layout/BackdropTone';
+import { BackdropTone } from '@/ui/shared/layout/BackdropTone';
+import { complaintTone } from '@/ui/shared/layout/complaint-tone';
 import {
   ArchiveControl,
   ComplaintActions,

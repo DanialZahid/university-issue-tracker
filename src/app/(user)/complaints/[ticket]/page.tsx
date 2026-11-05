@@ -16,7 +16,8 @@ import {
   SubmittedBanner,
 } from '@/ui/shared/complaint';
 import { PageHeader } from '@/ui/shared/layout';
-import { BackdropTone, complaintTone } from '@/ui/shared/layout/BackdropTone';
+import { BackdropTone } from '@/ui/shared/layout/BackdropTone';
+import { complaintTone } from '@/ui/shared/layout/complaint-tone';
 import { ResolvedCelebration } from '@/ui/motion';
 import { requireUser } from '@/utils/session';
 import { formatTicketNumber, parseTicketNumber } from '@/utils/ticket';

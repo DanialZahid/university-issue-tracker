@@ -53,14 +53,14 @@ export function AppSidebar({
           </div>
         </Hint>
         <div className='flex flex-wrap items-center justify-between gap-1.5'>
-          <span className='inline-flex max-w-full items-center rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary'>
+          <span className='inline-flex max-w-full items-center rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary'>
             <span className='truncate'>{roleLabel}</span>
           </span>
           {departmentName && (
-            <span className='inline-flex max-w-full items-center gap-1 rounded-full bg-card px-2 py-0.5 text-[11px] font-medium text-foreground ring-1 ring-border'>
+            <span className='inline-flex max-w-full items-center gap-1 rounded-full bg-card px-2.5 py-1 text-xs font-medium text-foreground ring-1 ring-border'>
               <DepartmentIcon
                 name={departmentName}
-                className='size-3 shrink-0 text-muted-foreground'
+                className='size-3.5 shrink-0 text-muted-foreground'
               />
               <span className='truncate'>{departmentName}</span>
             </span>
