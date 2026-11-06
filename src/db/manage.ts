@@ -517,9 +517,8 @@ export async function getInsights(scope: Prisma.ComplaintWhereInput) {
 
   const [resolved, openCount, byCategory, byLocation, categories, locations] =
     await Promise.all([
-      prisma.complaint.findMany({
+      prisma.complaint.count({
         where: { AND: [scope, { resolvedAt: { gte: since } }] },
-        select: { createdAt: true, resolvedAt: true },
       }),
       prisma.complaint.count({ where: open }),
       prisma.complaint.groupBy({
@@ -536,20 +535,6 @@ export async function getInsights(scope: Prisma.ComplaintWhereInput) {
       prisma.location.findMany({ select: { id: true, name: true } }),
     ]);
 
-  const hours = resolved.map(
-    (c) => ((c.resolvedAt?.getTime() ?? 0) - c.createdAt.getTime()) / 3_600_000,
-  );
-  // Median, not mean: one complaint left open for months would drag an
-  // average up, while the median shows what a typical complaint takes.
-  const sorted = [...hours].sort((a, b) => a - b);
-  const mid = Math.floor(sorted.length / 2);
-  const medianResolveHours =
-    sorted.length === 0
-      ? null
-      : sorted.length % 2
-        ? sorted[mid]
-        : (sorted[mid - 1] + sorted[mid]) / 2;
-
   const named = (
     rows: { id: string; count: number }[],
     names: { id: string; name: string }[],
@@ -563,8 +548,7 @@ export async function getInsights(scope: Prisma.ComplaintWhereInput) {
       .sort((a, b) => b.count - a.count);
 
   return {
-    resolvedCount: resolved.length,
-    medianResolveHours,
+    resolvedCount: resolved,
     openCount,
     byCategory: named(
       byCategory.map((g) => ({ id: g.categoryId, count: g._count._all })),

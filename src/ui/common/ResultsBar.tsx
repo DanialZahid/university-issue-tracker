@@ -3,6 +3,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { pageHref } from './PageNav';
 import { PageSizeSelect } from './PageSizeSelect';
+import { ViewToggle } from './ViewToggle';
+import type { ListView } from '@/ui/shared/complaint/list-view';
 
 type Props = {
   id: string;
@@ -15,6 +17,7 @@ type Props = {
   defaultSize?: number;
   noun?: [singular: string, plural: string];
   sizeCookie?: string;
+  view?: { value: ListView; cookie: string };
 };
 
 // "6,051 complaints · Page 2 of 243", rows per page and quick previous/next.
@@ -29,6 +32,7 @@ export function ResultsBar({
   defaultSize,
   noun = ['complaint', 'complaints'],
   sizeCookie,
+  view,
 }: Props) {
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   const step = (p: number, label: string, Icon: typeof ChevronLeft) => {
@@ -74,6 +78,7 @@ export function ResultsBar({
         )}
       </p>
       <div className='flex items-center gap-3'>
+        {view && <ViewToggle value={view.value} cookie={view.cookie} />}
         {sizes && defaultSize && (
           <label className='flex items-center gap-2 text-sm text-muted-foreground'>
             Rows

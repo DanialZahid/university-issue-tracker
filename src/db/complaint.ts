@@ -111,6 +111,8 @@ export async function listUserComplaints(userId: string, page: number) {
         priority: true,
         createdAt: true,
         category: { select: { name: true } },
+        location: { select: { name: true } },
+        locationDetail: true,
       },
     }),
   ]);

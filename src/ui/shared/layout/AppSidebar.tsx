@@ -1,6 +1,7 @@
 import { UserButton } from '@clerk/nextjs';
 import { GraduationCap } from 'lucide-react';
 import { Hint } from '@/ui/common/Hint';
+import { TruncatedText } from '@/ui/common/TruncatedText';
 import {
   Sidebar,
   SidebarContent,
@@ -64,10 +65,10 @@ export function AppSidebar({
                 name={departmentName}
                 className='size-3.5 shrink-0 text-primary'
               />
-              <span className='truncate'>
+              <TruncatedText>
                 <span className='text-primary'>Head of</span>{' '}
                 <span className='text-foreground'>{departmentName}</span>
-              </span>
+              </TruncatedText>
             </>
           ) : (
             <>

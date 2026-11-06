@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import {
   CheckCircle2,
+  FilePlus2,
   ChartNoAxesCombined,
   Inbox,
   MapPin,
   Tag,
-  Timer,
   type LucideIcon,
 } from 'lucide-react';
 import { getDailyTrend, getInsights, managerScope } from '@/db/manage';
@@ -16,13 +16,6 @@ import { PageHeader } from '@/ui/shared/layout';
 import { requireManager } from '@/utils/session';
 
 export const metadata: Metadata = { title: 'Insights' };
-
-function formatDuration(hours: number | null) {
-  if (hours === null) return 'No data yet';
-  if (hours < 24) return `${Math.max(1, Math.round(hours))} hours`;
-  const days = hours / 24;
-  return `${days < 10 ? days.toFixed(1) : Math.round(days)} days`;
-}
 
 function Tile({
   icon: Icon,
@@ -78,16 +71,18 @@ export default async function InsightsPage() {
             tone='bg-amber-100 text-amber-700'
           />
           <Tile
+            icon={FilePlus2}
+            label='Submitted in the last 30 days'
+            value={trend
+              .reduce((sum, p) => sum + p.submitted, 0)
+              .toLocaleString('en-US')}
+            tone='bg-sky-100 text-sky-700'
+          />
+          <Tile
             icon={CheckCircle2}
             label='Resolved in the last 30 days'
             value={insights.resolvedCount.toLocaleString('en-US')}
             tone='bg-green-100 text-green-700'
-          />
-          <Tile
-            icon={Timer}
-            label='Typical time to resolve (median, 30 days)'
-            value={formatDuration(insights.medianResolveHours)}
-            tone='bg-sky-100 text-sky-700'
           />
         </div>
         <TrendChart points={trend} />

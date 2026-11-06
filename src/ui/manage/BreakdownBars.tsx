@@ -1,5 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
+import { TruncatedText } from '@/ui/common/TruncatedText';
 
 type Row = { name: string; count: number };
 type Props = { title: string; icon: LucideIcon; rows: Row[]; limit?: number };
@@ -31,9 +32,9 @@ export function BreakdownBars({ title, icon: Icon, rows, limit = 8 }: Props) {
                 key={`${i}-${r.name}`}
                 className='grid grid-cols-[9rem_1fr_3rem] items-center gap-3 text-sm'
               >
-                <span className='truncate text-muted-foreground' title={r.name}>
+                <TruncatedText className='text-muted-foreground'>
                   {r.name}
-                </span>
+                </TruncatedText>
                 <span className='h-2.5 overflow-hidden rounded-full bg-muted'>
                   <span
                     className='block h-full rounded-full'

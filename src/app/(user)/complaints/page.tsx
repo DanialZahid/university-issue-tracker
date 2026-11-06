@@ -5,7 +5,14 @@ import { Button } from '@/ui/common/button';
 import { ClipboardList, FilePlus2 } from 'lucide-react';
 import { PageNav } from '@/ui/common/PageNav';
 import { ResultsBar } from '@/ui/common/ResultsBar';
-import { ComplaintListItem } from '@/ui/shared/complaint';
+import { cookies } from 'next/headers';
+import {
+  ComplaintCompactList,
+  ComplaintListItem,
+  ComplaintSimpleTable,
+} from '@/ui/shared/complaint';
+import { VIEW_COOKIES, parseView } from '@/ui/shared/complaint/list-view';
+import { formatTicketNumber } from '@/utils/ticket';
 import { PageHeader } from '@/ui/shared/layout/PageHeader';
 import { Greeting } from '@/ui/shared/layout';
 import { plural } from '@/utils/greeting';
@@ -26,6 +33,21 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
     listUserComplaints(user.id, page),
     getUserOpenCounts(user.id),
   ]);
+  const view = parseView(
+    (await cookies()).get(VIEW_COOKIES.mine)?.value,
+    'cards',
+  );
+  const rows = items.map((c) => ({
+    ticketNumber: c.ticketNumber,
+    title: c.title,
+    status: c.status,
+    priority: c.priority,
+    categoryName: c.category.name,
+    locationName: c.location.name,
+    locationDetail: c.locationDetail,
+    createdAt: c.createdAt,
+    href: `/complaints/${formatTicketNumber(c.ticketNumber)}`,
+  }));
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   if (page > totalPages) redirect(`/complaints?page=${totalPages}`);
 
@@ -57,7 +79,7 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
         description='Track the issues you have reported.'
         icon={ClipboardList}
       />
-      <div className='max-w-3xl space-y-4'>
+      <div className='max-w-5xl space-y-4'>
         {items.length === 0 ? (
           <EmptyState
             icon={ClipboardList}
@@ -79,20 +101,27 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
               pageSize={pageSize}
               total={total}
               basePath='/complaints'
+              view={{ value: view, cookie: VIEW_COOKIES.mine }}
             />
-            <ul className='space-y-3'>
-              {items.map((c) => (
-                <ComplaintListItem
-                  key={c.ticketNumber}
-                  ticketNumber={c.ticketNumber}
-                  title={c.title}
-                  status={c.status}
-                  categoryName={c.category.name}
-                  priority={c.priority}
-                  createdAt={c.createdAt}
-                />
-              ))}
-            </ul>
+            {view === 'table' ? (
+              <ComplaintSimpleTable rows={rows} />
+            ) : view === 'compact' ? (
+              <ComplaintCompactList rows={rows} />
+            ) : (
+              <ul className='space-y-3'>
+                {items.map((c) => (
+                  <ComplaintListItem
+                    key={c.ticketNumber}
+                    ticketNumber={c.ticketNumber}
+                    title={c.title}
+                    status={c.status}
+                    categoryName={c.category.name}
+                    priority={c.priority}
+                    createdAt={c.createdAt}
+                  />
+                ))}
+              </ul>
+            )}
             <PageNav
               page={page}
               totalPages={totalPages}

@@ -11,13 +11,17 @@ import {
   TableRow,
 } from '@/ui/common/table';
 import {
+  ComplaintCompactList,
   ComplaintListItem,
   PriorityBadge,
   StatusBadge,
 } from '@/ui/shared/complaint';
+import type { ListView } from '@/ui/shared/complaint/list-view';
+import { TruncatedText } from '@/ui/common/TruncatedText';
 import { DepartmentIcon } from '@/ui/shared/department';
 import { formatAge, formatDateTime } from '@/utils/date';
 import { withQuery } from '@/utils/query';
+import { cn } from '@/utils/cn';
 import { formatTicketNumber } from '@/utils/ticket';
 import { SortableHead } from './SortableHead';
 
@@ -27,15 +31,59 @@ type Props = {
   sort?: SortKey;
   dir?: 'asc' | 'desc';
   query: Record<string, string | undefined>;
+  view: ListView;
 };
 
-export function QueueTable({ items, showDepartment, sort, dir, query }: Props) {
+export function QueueTable({
+  items,
+  showDepartment,
+  sort,
+  dir,
+  query,
+  view,
+}: Props) {
   // Carry the current filters so the complaint page can link back to them.
   const back = withQuery('', query).slice(1) || undefined;
   const hrefFor = (ticket: string) =>
     withQuery(`/manage/complaints/${ticket}`, { back });
   const now = new Date();
   const sortProps = { sort, dir, query };
+
+  const cards = (className?: string) => (
+    <ul className={cn('space-y-3', className)}>
+      {items.map((c) => (
+        <ComplaintListItem
+          key={c.ticketNumber}
+          href={hrefFor(formatTicketNumber(c.ticketNumber))}
+          ticketNumber={c.ticketNumber}
+          title={c.title}
+          status={c.status}
+          priority={c.priority}
+          categoryName={c.category.name}
+          createdAt={c.createdAt}
+        />
+      ))}
+    </ul>
+  );
+
+  if (view === 'cards') return cards();
+  if (view === 'compact') {
+    return (
+      <ComplaintCompactList
+        rows={items.map((c) => ({
+          ticketNumber: c.ticketNumber,
+          title: c.title,
+          status: c.status,
+          priority: c.priority,
+          categoryName: c.category.name,
+          locationName: c.location.name,
+          locationDetail: c.locationDetail,
+          createdAt: c.createdAt,
+          href: hrefFor(formatTicketNumber(c.ticketNumber)),
+        }))}
+      />
+    );
+  }
 
   return (
     <>
@@ -106,10 +154,10 @@ export function QueueTable({ items, showDepartment, sort, dir, query }: Props) {
                     >
                       {c.title}
                     </Link>
-                    <p className='mt-0.5 truncate text-xs text-muted-foreground'>
+                    <TruncatedText className='mt-0.5 text-xs text-muted-foreground'>
                       {c.category.name} · {c.location.name}
                       {c.locationDetail ? `, ${c.locationDetail}` : ''}
-                    </p>
+                    </TruncatedText>
                   </TableCell>
                   <TableCell>
                     <PriorityBadge priority={c.priority} />
@@ -144,21 +192,8 @@ export function QueueTable({ items, showDepartment, sort, dir, query }: Props) {
         </Table>
       </div>
 
-      {/* Mobile: the same cards as My complaints. */}
-      <ul className='space-y-3 md:hidden'>
-        {items.map((c) => (
-          <ComplaintListItem
-            key={c.ticketNumber}
-            href={hrefFor(formatTicketNumber(c.ticketNumber))}
-            ticketNumber={c.ticketNumber}
-            title={c.title}
-            status={c.status}
-            priority={c.priority}
-            categoryName={c.category.name}
-            createdAt={c.createdAt}
-          />
-        ))}
-      </ul>
+      {/* Phones: the table becomes cards. */}
+      {cards('md:hidden')}
     </>
   );
 }

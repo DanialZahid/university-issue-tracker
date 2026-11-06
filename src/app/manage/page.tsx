@@ -18,6 +18,7 @@ import {
   queueFiltersSchema,
 } from '@/schemas/queue-filters';
 import { ResultsBar } from '@/ui/common/ResultsBar';
+import { VIEW_COOKIES, parseView } from '@/ui/shared/complaint/list-view';
 import { CopyButton } from '@/ui/common/CopyButton';
 import { EmptyState } from '@/ui/common/EmptyState';
 import { PageNav } from '@/ui/common/PageNav';
@@ -45,7 +46,9 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
     typeof forwardedParam === 'string'
       ? parseTicketNumber(forwardedParam)
       : null;
-  const savedSize = (await cookies()).get(PAGE_SIZE_COOKIE)?.value;
+  const store = await cookies();
+  const savedSize = store.get(PAGE_SIZE_COOKIE)?.value;
+  const view = parseView(store.get(VIEW_COOKIES.queue)?.value, 'table');
   const filters = queueFiltersSchema.parse({
     // The address wins; otherwise use the rows per page chosen last time.
     size: savedSize,
@@ -200,8 +203,10 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
               sizes={PAGE_SIZES}
               defaultSize={DEFAULT_PAGE_SIZE}
               sizeCookie={PAGE_SIZE_COOKIE}
+              view={{ value: view, cookie: VIEW_COOKIES.queue }}
             />
             <QueueTable
+              view={view}
               items={queue.items}
               showDepartment={isSuperuser}
               sort={filters.sort}
