@@ -8,7 +8,7 @@ import {
 } from '@/generated/prisma/enums';
 import type { QueueFilters } from '@/schemas/queue-filters';
 import { parseTicketNumber } from '@/utils/ticket';
-import { campusDayStart } from '@/utils/date';
+import { campusDayStart, campusYmd, formatShortDay } from '@/utils/date';
 
 type ScopeUser = { role: UserRole; departmentId: string | null };
 type ActingUser = ScopeUser & { id: string };
@@ -444,4 +444,63 @@ export async function setArchived(
     });
     return 'ok';
   });
+}
+
+export type TrendPoint = {
+  day: string;
+  label: string;
+  submitted: number;
+  resolved: number;
+};
+
+// New and resolved complaints per campus day, for the dashboard chart.
+// Follows search, category, location and priority (not status or the date
+// filter: the chart has its own 30-day window).
+export async function getDailyTrend(
+  scope: Prisma.ComplaintWhereInput,
+  filters: QueueFilters,
+  days = 30,
+): Promise<TrendPoint[]> {
+  const todayStart = campusDayStart(campusYmd(new Date()));
+  const start = new Date(todayStart.getTime() - (days - 1) * DAY_MS);
+  const base: Prisma.ComplaintWhereInput[] = [
+    scope,
+    searchWhere(filters.q),
+    filters.category ? { categoryId: filters.category } : {},
+    filters.location ? { locationId: filters.location } : {},
+    filters.priority ? { priority: filters.priority } : {},
+  ];
+
+  const [created, resolved] = await Promise.all([
+    prisma.complaint.findMany({
+      where: { AND: [...base, { createdAt: { gte: start } }] },
+      select: { createdAt: true },
+    }),
+    prisma.complaint.findMany({
+      where: { AND: [...base, { resolvedAt: { gte: start } }] },
+      select: { resolvedAt: true },
+    }),
+  ]);
+
+  const points = new Map<string, TrendPoint>();
+  for (let i = 0; i < days; i++) {
+    const date = new Date(start.getTime() + i * DAY_MS + DAY_MS / 2);
+    const day = campusYmd(date);
+    points.set(day, {
+      day,
+      label: formatShortDay(date),
+      submitted: 0,
+      resolved: 0,
+    });
+  }
+  for (const c of created) {
+    const p = points.get(campusYmd(c.createdAt));
+    if (p) p.submitted++;
+  }
+  for (const c of resolved) {
+    if (!c.resolvedAt) continue;
+    const p = points.get(campusYmd(c.resolvedAt));
+    if (p) p.resolved++;
+  }
+  return [...points.values()];
 }

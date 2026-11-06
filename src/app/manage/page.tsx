@@ -6,6 +6,7 @@ import Link from 'next/link';
 import {
   getFilterOptions,
   getForwardDestination,
+  getDailyTrend,
   getQueueCounts,
   listQueue,
   managerScope,
@@ -23,7 +24,7 @@ import { EmptyState } from '@/ui/common/EmptyState';
 import { PageNav } from '@/ui/common/PageNav';
 import { Greeting, PageHeader } from '@/ui/shared/layout';
 import { plural } from '@/utils/greeting';
-import { QueueFilters, QueueStats, QueueTable } from '@/ui/manage';
+import { QueueFilters, QueueStats, QueueTable, TrendChart } from '@/ui/manage';
 import { withQuery } from '@/utils/query';
 import { requireManager } from '@/utils/session';
 import { Hint } from '@/ui/common/Hint';
@@ -57,13 +58,14 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
   const isSuperuser = user.role === UserRole.SUPERUSER;
   const scope = managerScope(user, filters.department);
 
-  const [counts, home, queue, options, forwardedTo] = await Promise.all([
+  const [counts, home, queue, options, forwardedTo, trend] = await Promise.all([
     getQueueCounts(scope, filters),
     // Unfiltered totals for the greeting line.
     getQueueCounts(managerScope(user, undefined), queueFiltersSchema.parse({})),
     listQueue(scope, filters),
     getFilterOptions(user),
     forwarded !== null ? getForwardDestination(forwarded, user.id) : null,
+    getDailyTrend(scope, filters),
   ]);
 
   // Filters kept in links and pagination (defaults left out).
@@ -177,6 +179,7 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
           query={query}
           active={{ status: filters.status, priority: filters.priority }}
         />
+        <TrendChart points={trend} />
         <QueueFilters
           categories={options.categories.map(toOption)}
           locations={options.locations.map(toOption)}

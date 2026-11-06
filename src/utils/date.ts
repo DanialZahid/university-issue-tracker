@@ -49,3 +49,20 @@ export function fromYmd(value: string): Date {
 export function campusDayStart(value: string): Date {
   return new Date(`${value}T00:00:00+05:00`);
 }
+
+const ymdFormatter = new Intl.DateTimeFormat('en-CA', { timeZone: TIME_ZONE });
+const shortDayFormatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  day: 'numeric',
+  timeZone: TIME_ZONE,
+});
+
+// Campus calendar day of a moment, as 'YYYY-MM-DD'.
+export function campusYmd(date: Date): string {
+  return ymdFormatter.format(date);
+}
+
+// 'Nov 6' for chart axes and tooltips.
+export function formatShortDay(date: Date): string {
+  return shortDayFormatter.format(date);
+}
