@@ -504,3 +504,67 @@ export async function getDailyTrend(
   }
   return [...points.values()];
 }
+
+// Open work and resolution speed for the Insights page.
+export async function getInsights(scope: Prisma.ComplaintWhereInput) {
+  const since = new Date(Date.now() - 30 * DAY_MS);
+  const open: Prisma.ComplaintWhereInput = {
+    AND: [
+      scope,
+      { archivedAt: null, status: { in: ['PENDING', 'IN_PROGRESS'] } },
+    ],
+  };
+
+  const [resolved, openCount, byCategory, byLocation, categories, locations] =
+    await Promise.all([
+      prisma.complaint.findMany({
+        where: { AND: [scope, { resolvedAt: { gte: since } }] },
+        select: { createdAt: true, resolvedAt: true },
+      }),
+      prisma.complaint.count({ where: open }),
+      prisma.complaint.groupBy({
+        by: ['categoryId'],
+        where: open,
+        _count: { _all: true },
+      }),
+      prisma.complaint.groupBy({
+        by: ['locationId'],
+        where: open,
+        _count: { _all: true },
+      }),
+      prisma.category.findMany({ select: { id: true, name: true } }),
+      prisma.location.findMany({ select: { id: true, name: true } }),
+    ]);
+
+  const hours = resolved.map(
+    (c) => ((c.resolvedAt?.getTime() ?? 0) - c.createdAt.getTime()) / 3_600_000,
+  );
+  const avgResolveHours =
+    hours.length > 0 ? hours.reduce((a, b) => a + b, 0) / hours.length : null;
+
+  const named = (
+    rows: { id: string; count: number }[],
+    names: { id: string; name: string }[],
+  ) =>
+    rows
+      .map((r) => ({
+        name: names.find((n) => n.id === r.id)?.name ?? 'Unknown',
+        count: r.count,
+      }))
+      .filter((r) => r.count > 0)
+      .sort((a, b) => b.count - a.count);
+
+  return {
+    resolvedCount: resolved.length,
+    avgResolveHours,
+    openCount,
+    byCategory: named(
+      byCategory.map((g) => ({ id: g.categoryId, count: g._count._all })),
+      categories,
+    ),
+    byLocation: named(
+      byLocation.map((g) => ({ id: g.locationId, count: g._count._all })),
+      locations,
+    ),
+  };
+}

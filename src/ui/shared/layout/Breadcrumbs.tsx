@@ -19,6 +19,7 @@ function crumbsFor(pathname: string, back: string | null): Crumb[] {
         back ? Object.fromEntries(new URLSearchParams(back)) : {},
       ),
     };
+    if (parts[1] === 'insights') return [{ label: 'Insights' }];
     if (parts[1] === 'complaints' && parts[2]) {
       return [dashboard, { label: parts[2].toUpperCase() }];
     }

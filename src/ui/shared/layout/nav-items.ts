@@ -1,4 +1,5 @@
 import {
+  ChartNoAxesCombined,
   ClipboardList,
   FilePlus2,
   LayoutDashboard,
@@ -26,6 +27,7 @@ export const navItems: Record<NavVariant, NavItem[]> = {
   ],
   manage: [
     { label: 'Dashboard', href: '/manage', icon: LayoutDashboard, exact: true },
+    { label: 'Insights', href: '/manage/insights', icon: ChartNoAxesCombined },
     {
       label: 'My complaints',
       href: '/complaints',

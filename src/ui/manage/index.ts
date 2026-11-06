@@ -7,3 +7,4 @@ export { ComplaintChecks } from './ComplaintChecks';
 export { ForwardForm } from './ForwardForm';
 export { NoteForm } from './NoteForm';
 export { TrendChart } from './TrendChart';
+export { BreakdownBars } from './BreakdownBars';
