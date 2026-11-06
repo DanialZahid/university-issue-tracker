@@ -8,4 +8,3 @@ export { ComplaintSummary, DetailItem } from './ComplaintSummary';
 export { SubmittedBanner } from './SubmittedBanner';
 export { SubmitGuide } from './SubmitGuide';
 export { ComplaintCompactList } from './ComplaintCompactList';
-export { ComplaintSimpleTable } from './ComplaintSimpleTable';

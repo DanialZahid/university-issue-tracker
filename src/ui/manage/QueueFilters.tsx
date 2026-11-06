@@ -20,6 +20,9 @@ type Props = {
   categories: Option[];
   locations: Option[];
   departments: Option[];
+  // My complaints shows everything by default; the dashboard shows open work.
+  statusOptions?: Option[];
+  defaultStatus?: string;
 };
 
 const ANY = 'any';
@@ -83,7 +86,21 @@ function FilterSelect({
 
 type Chip = { key: string; label: string; clear: Record<string, null> };
 
-export function QueueFilters({ categories, locations, departments }: Props) {
+export const MINE_STATUS_OPTIONS: Option[] = [
+  { value: 'ANY', label: 'Any status' },
+  { value: 'OPEN', label: 'Open' },
+  { value: 'PENDING', label: 'Pending' },
+  { value: 'IN_PROGRESS', label: 'In progress' },
+  { value: 'RESOLVED', label: 'Resolved' },
+];
+
+export function QueueFilters({
+  categories,
+  locations,
+  departments,
+  statusOptions = STATUS_OPTIONS,
+  defaultStatus = 'OPEN',
+}: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -103,7 +120,7 @@ export function QueueFilters({ categories, locations, departments }: Props) {
         value === null ||
         value === '' ||
         value === ANY ||
-        (key === 'status' && value === 'OPEN');
+        (key === 'status' && value === defaultStatus);
       if (isDefault) next.delete(key);
       else next.set(key, value);
     }
@@ -138,7 +155,7 @@ export function QueueFilters({ categories, locations, departments }: Props) {
   if (status) {
     chips.push({
       key: 'status',
-      label: `Status: ${labelOf(STATUS_OPTIONS, status)}`,
+      label: `Status: ${labelOf(statusOptions, status)}`,
       clear: { status: null },
     });
   }
@@ -234,8 +251,8 @@ export function QueueFilters({ categories, locations, departments }: Props) {
 
         <FilterSelect
           label='Status'
-          value={status ?? 'OPEN'}
-          options={STATUS_OPTIONS}
+          value={status ?? defaultStatus}
+          options={statusOptions}
           onChange={(v) => setParams({ status: v })}
         />
         <FilterSelect

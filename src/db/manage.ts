@@ -34,6 +34,8 @@ function statusWhere(
       return { archivedAt: { not: null } };
     case 'ALL':
       return { archivedAt: null };
+    case 'ANY':
+      return {};
     default:
       return { archivedAt: null, status };
   }
@@ -110,6 +112,7 @@ export async function getQueueCounts(
 
 function orderFor(
   filters: QueueFilters,
+  newestFirst = false,
 ): Prisma.ComplaintOrderByWithRelationInput[] {
   const dir = filters.dir ?? 'asc';
   switch (filters.sort) {
@@ -127,7 +130,9 @@ function orderFor(
   }
   // Default: open work by urgency then oldest; finished work newest first.
   const finished =
-    filters.status === 'RESOLVED' || filters.status === 'ARCHIVED';
+    newestFirst ||
+    filters.status === 'RESOLVED' ||
+    filters.status === 'ARCHIVED';
   return finished
     ? [{ createdAt: 'desc' }]
     : [{ priority: 'desc' }, { createdAt: 'asc' }];
@@ -146,9 +151,12 @@ function dateWhere(from?: string, to?: string): Prisma.ComplaintWhereInput {
   };
 }
 
+// Used by the dashboard and by My complaints (scoped to the submitter,
+// newest first by default).
 export async function listQueue(
   scope: Prisma.ComplaintWhereInput,
   filters: QueueFilters,
+  { newestFirst = false }: { newestFirst?: boolean } = {},
 ) {
   const where: Prisma.ComplaintWhereInput = {
     AND: [
@@ -163,7 +171,7 @@ export async function listQueue(
     prisma.complaint.count({ where }),
     prisma.complaint.findMany({
       where,
-      orderBy: orderFor(filters),
+      orderBy: orderFor(filters, newestFirst),
       skip: (filters.page - 1) * filters.size,
       take: filters.size,
       select: {

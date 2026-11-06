@@ -93,32 +93,6 @@ export async function createComplaint(
   return complaint.ticketNumber;
 }
 
-const PAGE_SIZE = 20;
-
-export async function listUserComplaints(userId: string, page: number) {
-  const where = { submittedById: userId };
-  const [total, items] = await Promise.all([
-    prisma.complaint.count({ where }),
-    prisma.complaint.findMany({
-      where,
-      orderBy: { createdAt: 'desc' },
-      skip: (page - 1) * PAGE_SIZE,
-      take: PAGE_SIZE,
-      select: {
-        ticketNumber: true,
-        title: true,
-        status: true,
-        priority: true,
-        createdAt: true,
-        category: { select: { name: true } },
-        location: { select: { name: true } },
-        locationDetail: true,
-      },
-    }),
-  ]);
-  return { total, items, pageSize: PAGE_SIZE };
-}
-
 // Matches on ticket AND submitter, so another user's ticket simply returns null.
 // Only submitter-safe history is selected: no notes, no priority changes.
 export async function getComplaintForSubmitter(

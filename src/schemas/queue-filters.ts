@@ -7,6 +7,8 @@ export const STATUS_FILTERS = [
   'RESOLVED',
   'ARCHIVED',
   'ALL',
+  // Everything, archived included (the default on My complaints).
+  'ANY',
 ] as const;
 
 export const SORT_KEYS = [
@@ -71,6 +73,9 @@ const BACK_KEYS = [
   'dir',
   'size',
 ] as const;
+
+// Rows per page on My complaints, remembered separately from the dashboard.
+export const MINE_SIZE_COOKIE = 'mine-size';
 
 export function backQuery(back: unknown): Record<string, string> {
   if (typeof back !== 'string' || back.length > 500) return {};

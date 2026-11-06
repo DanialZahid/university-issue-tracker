@@ -1,55 +1,78 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { getUserOpenCounts, listUserComplaints } from '@/db/complaint';
+import { ClipboardList, FilePlus2, SearchX } from 'lucide-react';
+import { getUserOpenCounts } from '@/db/complaint';
+import { getFilterOptions, listQueue } from '@/db/manage';
+import {
+  DEFAULT_PAGE_SIZE,
+  MINE_SIZE_COOKIE,
+  PAGE_SIZES,
+  queueFiltersSchema,
+} from '@/schemas/queue-filters';
 import { Button } from '@/ui/common/button';
-import { ClipboardList, FilePlus2 } from 'lucide-react';
+import { EmptyState } from '@/ui/common/EmptyState';
 import { PageNav } from '@/ui/common/PageNav';
 import { ResultsBar } from '@/ui/common/ResultsBar';
-import { cookies } from 'next/headers';
-import {
-  ComplaintCompactList,
-  ComplaintListItem,
-  ComplaintSimpleTable,
-} from '@/ui/shared/complaint';
+import { MINE_STATUS_OPTIONS, QueueFilters, QueueTable } from '@/ui/manage';
 import { VIEW_COOKIES, parseView } from '@/ui/shared/complaint/list-view';
-import { formatTicketNumber } from '@/utils/ticket';
-import { PageHeader } from '@/ui/shared/layout/PageHeader';
-import { Greeting } from '@/ui/shared/layout';
+import { Greeting, PageHeader } from '@/ui/shared/layout';
 import { plural } from '@/utils/greeting';
+import { withQuery } from '@/utils/query';
 import { requireUser } from '@/utils/session';
-import { EmptyState } from '@/ui/common/EmptyState';
-import { Metadata } from 'next';
-
-type Props = { searchParams: Promise<{ page?: string }> };
 
 export const metadata: Metadata = { title: 'My complaints' };
 
+type Props = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+const toOption = (o: { id: string; name: string }) => ({
+  value: o.id,
+  label: o.name,
+});
+
 export default async function MyComplaintsPage({ searchParams }: Props) {
   const user = await requireUser();
-  const { page: rawPage } = await searchParams;
-  const page = Math.max(1, Number.parseInt(rawPage ?? '1', 10) || 1);
-
-  const [{ items, total, pageSize }, open] = await Promise.all([
-    listUserComplaints(user.id, page),
-    getUserOpenCounts(user.id),
-  ]);
-  const view = parseView(
-    (await cookies()).get(VIEW_COOKIES.mine)?.value,
-    'cards',
+  const raw = await searchParams;
+  const store = await cookies();
+  const flat = Object.fromEntries(
+    Object.entries(raw).map(([k, v]) => [k, Array.isArray(v) ? v[0] : v]),
   );
-  const rows = items.map((c) => ({
-    ticketNumber: c.ticketNumber,
-    title: c.title,
-    status: c.status,
-    priority: c.priority,
-    categoryName: c.category.name,
-    locationName: c.location.name,
-    locationDetail: c.locationDetail,
-    createdAt: c.createdAt,
-    href: `/complaints/${formatTicketNumber(c.ticketNumber)}`,
-  }));
-  const totalPages = Math.max(1, Math.ceil(total / pageSize));
-  if (page > totalPages) redirect(`/complaints?page=${totalPages}`);
+  // Same filters as the dashboard, but every status by default and the
+  // student's own rows-per-page choice.
+  const filters = queueFiltersSchema.parse({
+    size: store.get(MINE_SIZE_COOKIE)?.value,
+    ...flat,
+    status: flat['status'] ?? 'ANY',
+  });
+  const view = parseView(store.get(VIEW_COOKIES.mine)?.value, 'cards');
+
+  const [queue, open, options] = await Promise.all([
+    listQueue({ submittedById: user.id }, filters, { newestFirst: true }),
+    getUserOpenCounts(user.id),
+    getFilterOptions(user),
+  ]);
+
+  const query = {
+    status: filters.status === 'ANY' ? undefined : filters.status,
+    priority: filters.priority,
+    category: filters.category,
+    location: filters.location,
+    q: filters.q,
+    from: filters.from,
+    to: filters.to,
+    sort: filters.sort,
+    dir: filters.sort ? filters.dir : undefined,
+    size: filters.size === DEFAULT_PAGE_SIZE ? undefined : String(filters.size),
+  };
+  const totalPages = Math.max(1, Math.ceil(queue.total / filters.size));
+  if (filters.page > totalPages) {
+    redirect(withQuery('/complaints', { ...query, page: totalPages }));
+  }
+  const filtered = Object.keys(flat).some((k) => !['page', 'size'].includes(k));
+  const nothingYet = queue.total === 0 && !filtered;
 
   return (
     <>
@@ -57,7 +80,7 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
         name={user.name}
         summary={
           open.inProgress + open.pending === 0
-            ? total === 0
+            ? nothingYet
               ? 'Report an issue on campus and follow it here.'
               : 'You have no open complaints right now.'
             : [
@@ -79,58 +102,66 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
         description='Track the issues you have reported.'
         icon={ClipboardList}
       />
-      <div className='max-w-5xl space-y-4'>
-        {items.length === 0 ? (
-          <EmptyState
-            icon={ClipboardList}
-            title='No complaints yet'
-            description='Report an issue on campus and you can follow its progress here.'
-          >
-            <Button asChild>
-              <Link href='/complaints/new'>
-                <FilePlus2 />
-                Submit your first complaint
-              </Link>
-            </Button>
-          </EmptyState>
-        ) : (
-          <>
-            <ResultsBar
-              id='results'
-              page={page}
-              pageSize={pageSize}
-              total={total}
-              basePath='/complaints'
-              view={{ value: view, cookie: VIEW_COOKIES.mine }}
+      {nothingYet ? (
+        <EmptyState
+          icon={ClipboardList}
+          title='No complaints yet'
+          description='Report an issue on campus and you can follow its progress here.'
+        >
+          <Button asChild>
+            <Link href='/complaints/new'>
+              <FilePlus2 />
+              Submit your first complaint
+            </Link>
+          </Button>
+        </EmptyState>
+      ) : (
+        <div className='space-y-4'>
+          <QueueFilters
+            categories={options.categories.map(toOption)}
+            locations={options.locations.map(toOption)}
+            departments={[]}
+            statusOptions={MINE_STATUS_OPTIONS}
+            defaultStatus='ANY'
+          />
+          <ResultsBar
+            id='results'
+            page={filters.page}
+            pageSize={filters.size}
+            total={queue.total}
+            basePath='/complaints'
+            query={query}
+            sizes={PAGE_SIZES}
+            defaultSize={DEFAULT_PAGE_SIZE}
+            sizeCookie={MINE_SIZE_COOKIE}
+            view={{ value: view, cookie: VIEW_COOKIES.mine }}
+          />
+          {queue.items.length === 0 ? (
+            <EmptyState
+              icon={SearchX}
+              title='No complaints match'
+              description='Try a different status or clear the filters.'
             />
-            {view === 'table' ? (
-              <ComplaintSimpleTable rows={rows} />
-            ) : view === 'compact' ? (
-              <ComplaintCompactList rows={rows} />
-            ) : (
-              <ul className='space-y-3'>
-                {items.map((c) => (
-                  <ComplaintListItem
-                    key={c.ticketNumber}
-                    ticketNumber={c.ticketNumber}
-                    title={c.title}
-                    status={c.status}
-                    categoryName={c.category.name}
-                    priority={c.priority}
-                    createdAt={c.createdAt}
-                  />
-                ))}
-              </ul>
-            )}
-            <PageNav
-              page={page}
-              totalPages={totalPages}
+          ) : (
+            <QueueTable
+              view={view}
               basePath='/complaints'
-              anchor='results'
+              items={queue.items}
+              showDepartment={false}
+              sort={filters.sort}
+              dir={filters.dir}
+              query={query}
             />
-          </>
-        )}
-      </div>
+          )}
+          <PageNav
+            page={filters.page}
+            totalPages={totalPages}
+            basePath='/complaints'
+            query={query}
+            anchor='results'
+          />
+        </div>
+      )}
     </>
   );
 }

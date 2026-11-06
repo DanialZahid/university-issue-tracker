@@ -16,6 +16,7 @@ type Props = {
   query: Record<string, string | undefined>;
   align?: 'left' | 'right';
   className?: string;
+  basePath?: string;
 };
 
 export function SortableHead({
@@ -27,6 +28,7 @@ export function SortableHead({
   query,
   align = 'left',
   className,
+  basePath = '/manage',
 }: Props) {
   const active = sort === column;
   const current: Dir | undefined = active ? (dir ?? 'asc') : undefined;
@@ -41,7 +43,7 @@ export function SortableHead({
       }
     >
       <Link
-        href={withQuery('/manage', { ...query, sort: column, dir: nextDir })}
+        href={withQuery(basePath, { ...query, sort: column, dir: nextDir })}
         scroll={false}
         className={cn(
           'inline-flex items-center gap-1 rounded transition-colors hover:text-foreground',

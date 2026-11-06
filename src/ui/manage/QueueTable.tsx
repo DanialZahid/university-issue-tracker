@@ -32,6 +32,8 @@ type Props = {
   dir?: 'asc' | 'desc';
   query: Record<string, string | undefined>;
   view: ListView;
+  // '/manage' for the dashboard, '/complaints' for My complaints.
+  basePath?: string;
 };
 
 export function QueueTable({
@@ -41,13 +43,17 @@ export function QueueTable({
   dir,
   query,
   view,
+  basePath = '/manage',
 }: Props) {
   // Carry the current filters so the complaint page can link back to them.
   const back = withQuery('', query).slice(1) || undefined;
+  const mine = basePath === '/complaints';
   const hrefFor = (ticket: string) =>
-    withQuery(`/manage/complaints/${ticket}`, { back });
+    mine
+      ? `/complaints/${ticket}`
+      : withQuery(`/manage/complaints/${ticket}`, { back });
   const now = new Date();
-  const sortProps = { sort, dir, query };
+  const sortProps = { sort, dir, query, basePath };
 
   const cards = (className?: string) => (
     <ul className={cn('space-y-3', className)}>

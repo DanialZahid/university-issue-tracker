@@ -29,7 +29,7 @@ export function ComplaintCompactList({ rows }: { rows: ComplaintRow[] }) {
                   statusTone[c.status].bar,
                 )}
               />
-              <span className='w-20 shrink-0 text-muted-foreground tabular-nums'>
+              <span className='w-24 shrink-0 whitespace-nowrap text-muted-foreground tabular-nums'>
                 {formatTicketNumber(c.ticketNumber)}
               </span>
               <span className='min-w-0 flex-1 font-medium'>
