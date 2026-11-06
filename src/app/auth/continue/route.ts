@@ -16,7 +16,7 @@ export async function GET(request: Request) {
   const isVerified = emailAddress?.verification?.status === 'verified';
 
   if (!clerkUser || !email || !isVerified || !isUniversityEmail(email)) {
-    return NextResponse.redirect(new URL('/access-denied', request.url));
+    return NextResponse.redirect(new URL('/access-restricted', request.url));
   }
 
   const user = await syncUser({

@@ -8,7 +8,9 @@ type Props = { title: string; icon: LucideIcon; rows: Row[]; limit?: number };
 export function BreakdownBars({ title, icon: Icon, rows, limit = 8 }: Props) {
   const shown = rows.slice(0, limit);
   const rest = rows.slice(limit).reduce((sum, r) => sum + r.count, 0);
-  const all = rest > 0 ? [...shown, { name: 'Other', count: rest }] : shown;
+  // "All others", not "Other": a real category is already called Other.
+  const all =
+    rest > 0 ? [...shown, { name: 'All others', count: rest }] : shown;
   const max = Math.max(1, ...all.map((r) => r.count));
 
   return (
@@ -24,9 +26,9 @@ export function BreakdownBars({ title, icon: Icon, rows, limit = 8 }: Props) {
           <p className='text-sm text-muted-foreground'>No open complaints.</p>
         ) : (
           <ul className='space-y-3'>
-            {all.map((r) => (
+            {all.map((r, i) => (
               <li
-                key={r.name}
+                key={`${i}-${r.name}`}
                 className='grid grid-cols-[9rem_1fr_3rem] items-center gap-3 text-sm'
               >
                 <span className='truncate text-muted-foreground' title={r.name}>

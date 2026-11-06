@@ -5,7 +5,7 @@ import { Button } from '@/ui/common/button';
 
 export const metadata: Metadata = { title: 'Access restricted' };
 
-export default function AccessDeniedPage() {
+export default function AccessRestrictedPage() {
   const domain = process.env['UNIVERSITY_EMAIL_DOMAIN'];
 
   return (

@@ -85,8 +85,8 @@ export default async function InsightsPage() {
           />
           <Tile
             icon={Timer}
-            label='Average time to resolve (30 days)'
-            value={formatDuration(insights.avgResolveHours)}
+            label='Typical time to resolve (median, 30 days)'
+            value={formatDuration(insights.medianResolveHours)}
             tone='bg-sky-100 text-sky-700'
           />
         </div>
