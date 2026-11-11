@@ -143,3 +143,32 @@ export async function getUserOpenCounts(userId: string) {
     groups.find((g) => g.status === status)?._count._all ?? 0;
   return { pending: count('PENDING'), inProgress: count('IN_PROGRESS') };
 }
+
+// Open complaints in the same category and location from the last 30 days:
+// the candidates for "similar issues" while a new complaint is typed.
+export async function listSimilarCandidates(
+  categoryId: string,
+  locationId: string,
+) {
+  const since = new Date(Date.now() - 30 * 86_400_000);
+  return prisma.complaint.findMany({
+    where: {
+      categoryId,
+      locationId,
+      archivedAt: null,
+      status: { in: ['PENDING', 'IN_PROGRESS'] },
+      createdAt: { gte: since },
+    },
+    orderBy: { createdAt: 'desc' },
+    take: 50,
+    select: {
+      ticketNumber: true,
+      title: true,
+      status: true,
+      locationDetail: true,
+      createdAt: true,
+      submittedById: true,
+      category: { select: { name: true } },
+    },
+  });
+}

@@ -16,10 +16,9 @@ export default async function SubmitComplaintPage() {
         description='Report an issue on campus.'
         icon={FilePlus2}
       />
-      <div className='grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]'>
-        <ComplaintForm categories={categories} locations={locations} />
+      <ComplaintForm categories={categories} locations={locations}>
         <SubmitGuide />
-      </div>
+      </ComplaintForm>
     </>
   );
 }
