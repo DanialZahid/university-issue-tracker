@@ -54,10 +54,10 @@ export function SimilarIssues({ title, categoryId, locationId, room }: Props) {
   if (!ready || results.length === 0) return null;
 
   return (
-    <Card className='border-sky-600/25 bg-sky-50/60'>
+    <Card className='border-violet-600/20 bg-violet-50/60'>
       <CardHeader>
         <CardTitle className='flex items-center gap-2'>
-          <CopyCheck className='size-5 text-sky-700' />
+          <CopyCheck className='size-5 text-violet-700' />
           Already reported?
         </CardTitle>
         <p className='text-sm text-muted-foreground'>
