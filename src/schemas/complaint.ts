@@ -1,5 +1,9 @@
 import { z } from 'zod';
 
+// Location used when the submitter leaves Location empty
+// (website, online services, or issues across the whole campus).
+export const NO_PLACE = 'No specific place';
+
 export const LIMITS = {
   title: { min: 5, max: 120 },
   description: { min: 20, max: 2000 },
@@ -30,7 +34,8 @@ export const complaintSchema = z.object({
       `Description must be ${LIMITS.description.max} characters or fewer`,
     ),
   categoryId: z.string().min(1, 'Choose a category'),
-  locationId: z.string().min(1, 'Choose a location'),
+  // Optional: empty means the issue has no physical place (see NO_PLACE).
+  locationId: z.string().max(40),
   locationDetail: z
     .string()
     .trim()

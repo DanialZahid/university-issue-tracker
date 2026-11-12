@@ -15,6 +15,7 @@ import { detectCategory } from '@/automation/category-detection';
 import { detectRoom } from '@/automation/room-detection';
 import {
   LIMITS,
+  NO_PLACE,
   collectFieldErrors,
   complaintSchema,
 } from '@/schemas/complaint';
@@ -97,6 +98,12 @@ export function ComplaintForm({
   const suggestedLocationId =
     locations.find((l) => l.name === suggestedLocationName)?.id ?? '';
   const locationId = manualLocationId ?? suggestedLocationId;
+  // Empty Location is saved as "No specific place"; similar issues use it too.
+  const noPlaceId = locations.find((l) => l.name === NO_PLACE)?.id ?? '';
+  const placeOptions = [
+    ...locations.filter((l) => l.name !== NO_PLACE),
+    ...locations.filter((l) => l.name === NO_PLACE),
+  ];
 
   const live = complaintSchema.safeParse({
     title,
@@ -235,12 +242,12 @@ export function ComplaintForm({
           <FormField
             label='Location'
             htmlFor='locationId'
-            required
+            optional
             error={errors['locationId']}
             hint={
               manualLocationId === null && suggestedLocationId
                 ? 'Suggested from your text. You can change it.'
-                : undefined
+                : 'Leave empty for website, online, or campus-wide issues.'
             }
           >
             <Select
@@ -254,10 +261,10 @@ export function ComplaintForm({
                 aria-invalid={!!errors['locationId']}
                 aria-describedby={describedBy('locationId')}
               >
-                <SelectValue placeholder='Select a location' />
+                <SelectValue placeholder={NO_PLACE} />
               </SelectTrigger>
               <SelectContent position='popper'>
-                {locations.map((l) => (
+                {placeOptions.map((l) => (
                   <SelectItem key={l.id} value={l.id}>
                     {l.name}
                   </SelectItem>
@@ -293,7 +300,7 @@ export function ComplaintForm({
           label='Images'
           htmlFor='images'
           optional
-          hint={`Up to ${IMAGE_LIMITS.maxFiles} JPG, PNG or WebP images, ${IMAGE_LIMITS.maxInputBytes / (1024 * 1024)} MB each. They are resized before upload.`}
+          hint={`Up to ${IMAGE_LIMITS.maxFiles} JPG, PNG, or WebP images, ${IMAGE_LIMITS.maxInputBytes / (1024 * 1024)} MB each.`}
         >
           <ImagePicker
             uploaderId={uploaderId}
@@ -331,7 +338,7 @@ export function ComplaintForm({
         <SimilarIssues
           title={title}
           categoryId={categoryId}
-          locationId={locationId}
+          locationId={locationId || noPlaceId}
           room={roomDetail}
         />
         {children}

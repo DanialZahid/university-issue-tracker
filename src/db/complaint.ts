@@ -1,6 +1,6 @@
 import 'server-only';
 import { prisma } from '@/db/client';
-import type { ComplaintInput } from '@/schemas/complaint';
+import { NO_PLACE, type ComplaintInput } from '@/schemas/complaint';
 import type { AttachmentInput } from '@/schemas/attachment';
 import { detectPriority } from '@/automation/priority-detection';
 
@@ -55,7 +55,7 @@ export async function createComplaint(
       },
     }),
     prisma.location.findUnique({
-      where: { id: input.locationId },
+      where: input.locationId ? { id: input.locationId } : { name: NO_PLACE },
       select: { id: true },
     }),
   ]);
@@ -75,7 +75,7 @@ export async function createComplaint(
       locationDetail: input.locationDetail,
       estimatedEffortMinutes: category.baseEffortMinutes,
       categoryId: input.categoryId,
-      locationId: input.locationId,
+      locationId: location.id,
       submittedById,
       departmentId: category.departmentId,
       assignedAt: new Date(),

@@ -117,6 +117,7 @@ const locations = [
   'Hostel',
   'Parking Area',
   'Main Gate',
+  'No specific place',
 ];
 
 async function main() {
