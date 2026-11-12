@@ -5,6 +5,7 @@ import { cn } from '@/utils/cn';
 import { ClerkProvider } from '@clerk/nextjs';
 import { TooltipProvider } from '@/ui/common/tooltip';
 import { MotionProvider } from '@/ui/motion';
+import { Toaster } from '@/ui/common/sonner';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         >
           <MotionProvider>
             <TooltipProvider>{children}</TooltipProvider>
+            <Toaster />
           </MotionProvider>
         </ClerkProvider>
       </body>

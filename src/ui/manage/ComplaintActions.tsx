@@ -7,7 +7,8 @@ import {
   useEffect,
   useEffectEvent,
 } from 'react';
-import { CheckCircle2, CircleAlert, Loader2, Save } from 'lucide-react';
+import { CircleAlert, Loader2, Save } from 'lucide-react';
+import { toast } from 'sonner';
 import {
   updatePriority,
   updateStatus,
@@ -24,7 +25,6 @@ import {
   SelectValue,
 } from '@/ui/common/select';
 import { PriorityBadge, StatusBadge } from '@/ui/shared/complaint';
-import { cn } from '@/utils/cn';
 import { celebrate } from '@/ui/motion';
 import { submitWithoutReset } from './form-submit';
 
@@ -38,19 +38,20 @@ const idle: ManageActionState = { status: 'idle' };
 const STATUSES: ComplaintStatus[] = ['PENDING', 'IN_PROGRESS', 'RESOLVED'];
 const PRIORITIES: Priority[] = ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW'];
 
+// Success becomes a toast (the page itself already shows the new value).
+// Errors stay inline next to the control, so they can't be missed.
 export function ActionMessage({ state }: { state: ManageActionState }) {
-  if (state.status === 'idle') return null;
-  const isError = state.status === 'error';
-  const Icon = isError ? CircleAlert : CheckCircle2;
+  useEffect(() => {
+    if (state.status === 'success') toast.success(state.message);
+  }, [state]);
+
+  if (state.status !== 'error') return null;
   return (
     <p
-      role='status'
-      className={cn(
-        'flex items-center gap-1.5 text-sm',
-        isError ? 'text-destructive' : 'text-green-700',
-      )}
+      role='alert'
+      className='flex items-center gap-1.5 text-sm text-destructive'
     >
-      <Icon className='size-4 shrink-0' />
+      <CircleAlert className='size-4 shrink-0' />
       {state.message}
     </p>
   );
