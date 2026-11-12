@@ -28,12 +28,29 @@ const HIGH_WORDS = [
   'theft',
   'stolen',
   'unsafe',
+  'as soon as possible',
+  'right away',
+  'quickly',
+  'high priority',
+  'extinguisher',
   'cannot access',
   'cannot log in',
-  'unable to access',
+  'cannot use',
   'all students',
+  'many students',
+  'hundreds',
+  'all users',
+  'no one can',
+  'nobody can',
   'whole class',
   'everyone',
+];
+
+// Common ways of writing the same thing, so one word list covers them.
+const SPELLINGS: [RegExp, string][] = [
+  [/[\u2018\u2019]/g, "'"],
+  [/\b(?:can't|cant|can not|unable to)\b/g, 'cannot'],
+  [/\b(?:sign[\s-]?in|log[\s-]?in|login)\b/g, 'log in'],
 ];
 
 const LOW_WORDS = [
@@ -61,9 +78,12 @@ export function detectPriority(
   categoryName: string,
 ): PriorityLevel {
   // "Fire extinguisher expired" is a safety check, not a fire.
-  const text = normalizeText(`${title} ${description}`).replace(
-    /fire extinguishers?/g,
-    'extinguisher',
+  const text = SPELLINGS.reduce(
+    (t, [rx, to]) => t.replace(rx, to),
+    normalizeText(`${title} ${description}`).replace(
+      /fire extinguishers?/g,
+      'extinguisher',
+    ),
   );
 
   if (hasEmergency(text) || CRITICAL.some((rx) => rx.test(text))) {
