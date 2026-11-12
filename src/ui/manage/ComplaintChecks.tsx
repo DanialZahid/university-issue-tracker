@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+import Link from 'next/link';
 import {
   Camera,
   Copy,
@@ -9,15 +11,20 @@ import {
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
 import { cn } from '@/utils/cn';
+import { formatTicketNumber } from '@/utils/ticket';
 
 type Props = {
-  images: { total: number; withCamera: number; reused: number };
+  images: {
+    total: number;
+    withCamera: number;
+    reused: { images: number; tickets: number[]; elsewhere: number };
+  };
 };
 
 type Check = {
   icon: LucideIcon;
   label: string;
-  text: string;
+  text: ReactNode;
   tone: 'muted' | 'good' | 'warn';
 };
 
@@ -26,6 +33,32 @@ const TONES = {
   good: 'bg-emerald-50 text-emerald-700',
   warn: 'bg-amber-50 text-amber-700',
 };
+
+const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
+
+function ReusedText({ reused }: { reused: Props['images']['reused'] }) {
+  const { images, tickets, elsewhere } = reused;
+  return (
+    <>
+      {images === 1 ? 'This image is' : `${images} images are`} also attached to{' '}
+      {tickets.map((t, i) => (
+        <span key={t}>
+          {i > 0 && ', '}
+          <Link
+            href={`/manage/complaints/${formatTicketNumber(t)}`}
+            className='font-medium text-foreground underline-offset-4 hover:underline'
+          >
+            {formatTicketNumber(t)}
+          </Link>
+        </span>
+      ))}
+      {tickets.length > 0 && elsewhere > 0 && ' and '}
+      {elsewhere > 0 &&
+        `${plural(elsewhere, 'complaint')} in other departments`}
+      .
+    </>
+  );
+}
 
 function imageChecks({ total, withCamera, reused }: Props['images']): Check[] {
   if (total === 0) {
@@ -38,8 +71,7 @@ function imageChecks({ total, withCamera, reused }: Props['images']): Check[] {
       },
     ];
   }
-  const plural = (n: number, word: string) =>
-    `${n} ${word}${n === 1 ? '' : 's'}`;
+  const found = reused.images > 0;
   return [
     {
       icon: withCamera > 0 ? Camera : ImageIcon,
@@ -51,13 +83,14 @@ function imageChecks({ total, withCamera, reused }: Props['images']): Check[] {
       tone: withCamera > 0 ? 'good' : 'muted',
     },
     {
-      icon: reused > 0 ? CopyX : Copy,
+      icon: found ? CopyX : Copy,
       label: 'Reused images',
-      text:
-        reused > 0
-          ? `${plural(reused, 'image')} also attached to another complaint.`
-          : 'Not attached to any other complaint.',
-      tone: reused > 0 ? 'warn' : 'good',
+      text: found ? (
+        <ReusedText reused={reused} />
+      ) : (
+        'Not attached to any other complaint.'
+      ),
+      tone: found ? 'warn' : 'good',
     },
   ];
 }

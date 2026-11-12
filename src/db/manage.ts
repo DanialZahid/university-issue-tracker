@@ -571,20 +571,41 @@ export async function getInsights(scope: Prisma.ComplaintWhereInput) {
   };
 }
 
-// How many of these images (by fingerprint) are also attached to other
-// complaints. A reused picture can mean a copied or recycled report.
-export async function countReusedImages(
+// Other complaints that carry any of these images (matched by fingerprint).
+// A reused picture can mean a copied or recycled report. Tickets the viewer
+// can open are listed; the rest are only counted.
+export async function findReusedImages(
   ticketNumber: number,
   sha256s: string[],
-): Promise<number> {
-  if (sha256s.length === 0) return 0;
+  user: ScopeUser,
+): Promise<{ images: number; tickets: number[]; elsewhere: number }> {
+  const none = { images: 0, tickets: [], elsewhere: 0 };
+  if (sha256s.length === 0) return none;
   const rows = await prisma.attachment.findMany({
     where: {
       sha256: { in: sha256s },
       complaint: { ticketNumber: { not: ticketNumber } },
     },
-    distinct: ['sha256'],
-    select: { sha256: true },
+    select: {
+      sha256: true,
+      complaint: { select: { ticketNumber: true, departmentId: true } },
+    },
+    orderBy: { createdAt: 'desc' },
+    take: 50,
   });
-  return rows.length;
+  if (rows.length === 0) return none;
+
+  const visible = new Set<number>();
+  const hidden = new Set<number>();
+  for (const { complaint } of rows) {
+    const canOpen =
+      user.role === UserRole.SUPERUSER ||
+      complaint.departmentId === user.departmentId;
+    (canOpen ? visible : hidden).add(complaint.ticketNumber);
+  }
+  return {
+    images: new Set(rows.map((r) => r.sha256)).size,
+    tickets: [...visible],
+    elsewhere: hidden.size,
+  };
 }

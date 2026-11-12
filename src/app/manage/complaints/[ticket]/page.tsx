@@ -10,7 +10,7 @@ import {
   UserRound,
 } from 'lucide-react';
 import {
-  countReusedImages,
+  findReusedImages,
   getComplaintForManager,
   listDepartments,
 } from '@/db/manage';
@@ -70,9 +70,10 @@ export default async function ManageComplaintPage({
 
   if (!complaint) notFound();
 
-  const reusedImages = await countReusedImages(
+  const reused = await findReusedImages(
     complaint.ticketNumber,
     complaint.attachments.map((a) => a.sha256),
+    user,
   );
 
   const archived = complaint.archivedAt !== null;
@@ -169,7 +170,7 @@ export default async function ManageComplaintPage({
               total: complaint.attachments.length,
               withCamera: complaint.attachments.filter((a) => a.hasCameraExif)
                 .length,
-              reused: reusedImages,
+              reused,
             }}
           />
         </aside>
