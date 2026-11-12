@@ -5,7 +5,6 @@ import { TruncatedText } from '@/ui/common/TruncatedText';
 type Row = { name: string; count: number };
 type Props = { title: string; icon: LucideIcon; rows: Row[]; limit?: number };
 
-// Horizontal bars, one hue, values always written next to the bar.
 export function BreakdownBars({ title, icon: Icon, rows, limit = 8 }: Props) {
   const shown = rows.slice(0, limit);
   const rest = rows.slice(limit).reduce((sum, r) => sum + r.count, 0);

@@ -24,7 +24,6 @@ type Item = {
 type Props = {
   uploaderId: string;
   disabled?: boolean;
-  // Lets the form hold the submit button while an upload is running.
   onBusyChange: (busy: boolean) => void;
 };
 
@@ -47,7 +46,6 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
   const busy = items.some((i) => i.status === 'uploading');
   useEffect(() => onBusyChange(busy), [busy, onBusyChange]);
 
-  // Free the preview URLs when the picker goes away.
   const itemsRef = useRef(items);
   useEffect(() => {
     itemsRef.current = items;
@@ -112,7 +110,7 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
     const accepted: { file: File; item: Item }[] = [];
     for (const file of picked.slice(0, Math.max(0, room))) {
       if (!(IMAGE_LIMITS.inputTypes as readonly string[]).includes(file.type)) {
-        setNotice('Only JPG, PNG and WebP images can be attached.');
+        setNotice('Only JPG, PNG, or WebP images can be attached.');
         continue;
       }
       if (file.size > IMAGE_LIMITS.maxInputBytes) {
@@ -167,7 +165,6 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
             key={item.key}
             className='group relative size-24 overflow-hidden rounded-lg border bg-muted'
           >
-            {/* Local preview of the picked file, before upload finishes. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={item.preview}

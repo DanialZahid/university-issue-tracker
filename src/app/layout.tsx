@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: '%s | University Complaint and Issue Tracking Platform',
   },
   description:
-    'Submit, track and manage university complaints and issues in one place.',
+    'Submit, track, and manage university complaints and issues in one place.',
 };
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {

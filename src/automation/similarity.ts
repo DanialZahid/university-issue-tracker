@@ -1,6 +1,3 @@
-// Rule-based "is this the same issue?" check, used while a complaint is typed.
-// Pure functions, so they can be tested and explained without a database.
-
 const STOP_WORDS = new Set([
   // Short filler words ("ac" and "pc" are kept on purpose).
   'in',

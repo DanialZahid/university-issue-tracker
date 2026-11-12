@@ -45,9 +45,7 @@ type CategoryOption = Option & { departmentName: string };
 type Props = {
   categories: CategoryOption[];
   locations: Option[];
-  // Signed-in user's id; images upload into their own folder.
   uploaderId: string;
-  // Shown beside the form, under the similar issues panel.
   children?: ReactNode;
 };
 
@@ -73,7 +71,6 @@ export function ComplaintForm({
   const [manualRoom, setManualRoom] = useState<string | null>(null);
   const [manualCategoryId, setManualCategoryId] = useState<string | null>(null);
 
-  // Detection runs locally and is cheap, so it is derived on every render.
   const suggestedCategoryId =
     title.trim().length >= 3
       ? (categories.find(
@@ -146,7 +143,7 @@ export function ComplaintForm({
           htmlFor='title'
           required
           error={errors['title']}
-          hint={`${LIMITS.title.min} to ${LIMITS.title.max} characters`}
+          hint={`${LIMITS.title.min} to ${LIMITS.title.max} characters.`}
           count={{ current: title.length, max: LIMITS.title.max }}
         >
           <Input
@@ -165,7 +162,7 @@ export function ComplaintForm({
           htmlFor='description'
           required
           error={errors['description']}
-          hint={`${LIMITS.description.min} to ${LIMITS.description.max} characters`}
+          hint={`${LIMITS.description.min} to ${LIMITS.description.max} characters.`}
           count={{ current: description.length, max: LIMITS.description.max }}
         >
           <Textarea
@@ -281,7 +278,7 @@ export function ComplaintForm({
             hint={
               manualRoom === null && suggestedRoom
                 ? 'Suggested from your text. You can change it.'
-                : 'For example AC-103 or C-Lab 04'
+                : 'For example: AC-103 or C-Lab 04.'
             }
           >
             <Input
@@ -311,7 +308,7 @@ export function ComplaintForm({
 
         <div className='flex flex-wrap items-center gap-2 text-sm'>
           <span className='text-muted-foreground'>Priority:</span>
-          <Hint label='Based on your title, description and category.'>
+          <Hint label='Based on your title, description, and category.'>
             <span className='inline-flex'>
               <PriorityBadge priority={priority} />
             </span>

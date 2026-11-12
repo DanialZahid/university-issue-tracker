@@ -2,7 +2,6 @@
 
 import { motion } from 'motion/react';
 
-// Waves once on load. Still when "reduce motion" is on (MotionConfig).
 export function WaveHand() {
   return (
     <motion.span

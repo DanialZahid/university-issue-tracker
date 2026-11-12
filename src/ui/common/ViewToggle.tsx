@@ -15,7 +15,6 @@ const OPTIONS: { value: ListView; label: string; icon: LucideIcon }[] = [
 
 type Props = { value: ListView; cookie: string };
 
-// Cards, table or compact list. Remembered for a year in a cookie.
 export function ViewToggle({ value, cookie }: Props) {
   const router = useRouter();
   const [pending, startTransition] = useTransition();

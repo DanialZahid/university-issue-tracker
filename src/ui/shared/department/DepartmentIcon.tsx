@@ -7,7 +7,6 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
-// Keyed by department name. Unknown names get the generic icon.
 const icons: Record<string, LucideIcon> = {
   IT: Monitor,
   Administration: Landmark,

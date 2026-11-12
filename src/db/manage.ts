@@ -66,7 +66,6 @@ function sharedWhere(filters: QueueFilters): Prisma.ComplaintWhereInput[] {
   ];
 }
 
-// Counts follow the active filters, so the cards always match the table.
 export async function getQueueCounts(
   scope: Prisma.ComplaintWhereInput,
   filters: QueueFilters,
@@ -152,8 +151,6 @@ function dateWhere(from?: string, to?: string): Prisma.ComplaintWhereInput {
   };
 }
 
-// Used by the dashboard and by My complaints (scoped to the submitter,
-// newest first by default).
 export async function listQueue(
   scope: Prisma.ComplaintWhereInput,
   filters: QueueFilters,
@@ -515,7 +512,6 @@ export async function getDailyTrend(
   return [...points.values()];
 }
 
-// Open work and resolution speed for the Insights page.
 export async function getInsights(scope: Prisma.ComplaintWhereInput) {
   const since = new Date(Date.now() - 30 * DAY_MS);
   const open: Prisma.ComplaintWhereInput = {

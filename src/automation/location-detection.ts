@@ -1,6 +1,5 @@
 import { phraseRegex } from './text';
 
-// Extra ways people refer to a location. Names not listed match by name only.
 const ALIASES: Record<string, string[]> = {
   'Administration Building': [
     'administration building',

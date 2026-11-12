@@ -40,8 +40,6 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
   const flat = Object.fromEntries(
     Object.entries(raw).map(([k, v]) => [k, Array.isArray(v) ? v[0] : v]),
   );
-  // Same filters as the dashboard, but every status by default and the
-  // student's own rows-per-page choice.
   const filters = queueFiltersSchema.parse({
     size: store.get(MINE_SIZE_COOKIE)?.value,
     ...flat,
@@ -106,7 +104,7 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
         <EmptyState
           icon={ClipboardList}
           title='No complaints yet'
-          description='Report an issue on campus and you can follow its progress here.'
+          description='Report an issue on campus and follow its progress here.'
         >
           <Button asChild>
             <Link href='/complaints/new'>

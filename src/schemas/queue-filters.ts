@@ -23,7 +23,6 @@ export type SortKey = (typeof SORT_KEYS)[number];
 
 export const PAGE_SIZES = [10, 25, 50, 100] as const;
 export const DEFAULT_PAGE_SIZE = 25;
-// Remembers the chosen rows per page between visits (read on the server).
 export const PAGE_SIZE_COOKIE = 'queue-size';
 
 const optionalId = z.string().trim().min(1).max(40).optional().catch(undefined);
@@ -74,7 +73,6 @@ const BACK_KEYS = [
   'size',
 ] as const;
 
-// Rows per page on My complaints, remembered separately from the dashboard.
 export const MINE_SIZE_COOKIE = 'mine-size';
 
 export function backQuery(back: unknown): Record<string, string> {

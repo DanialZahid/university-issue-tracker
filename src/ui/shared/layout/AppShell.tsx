@@ -39,7 +39,6 @@ export async function AppShell({ user, children }: AppShellProps) {
         departmentName={departmentName}
       />
       <SidebarInset>
-        {/* Decorative dot grid and soft color behind every page. */}
         <div aria-hidden='true' className='app-backdrop' />
         <header className='sticky top-0 z-10 flex h-14 items-center gap-1 border-b bg-background/90 px-4 backdrop-blur'>
           <SidebarTrigger />

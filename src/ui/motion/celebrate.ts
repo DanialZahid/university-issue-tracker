@@ -1,6 +1,5 @@
 'use client';
 
-// A small confetti burst, skipped when the user prefers reduced motion.
 export async function celebrate() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const { default: confetti } = await import('canvas-confetti');

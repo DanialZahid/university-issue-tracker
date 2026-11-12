@@ -30,7 +30,6 @@ function size(bytes: number) {
 const roundButton =
   'grid size-10 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:outline-none';
 
-// Images attached to a complaint, with an in-page viewer.
 export function ComplaintImages({ images }: { images: ComplaintImage[] }) {
   const [open, setOpen] = useState<number | null>(null);
   if (images.length === 0) return null;

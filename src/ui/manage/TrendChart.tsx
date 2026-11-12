@@ -12,9 +12,6 @@ type Point = {
 };
 type Props = { points: Point[] };
 
-// Categorical slots 1 and 3 of the data-viz palette (validated as a pair).
-// The aqua is below 3:1 on white, so every value is also in the legend
-// totals, the tooltip and the table view.
 const SERIES = [
   { key: 'submitted', label: 'Submitted', color: '#2a78d6' },
   { key: 'resolved', label: 'Resolved', color: '#1baf7a' },
@@ -26,7 +23,6 @@ const PAD = { top: 12, right: 84, bottom: 26, left: 36 };
 function niceMax(value: number) {
   if (value <= 4) return 4;
   const step = 10 ** Math.floor(Math.log10(value));
-  // Smallest round number that fits, so the gridlines get whole labels.
   const nice = [1, 2, 3, 4, 5, 6, 8, 10].find((m) => m * step >= value) ?? 10;
   return nice * step;
 }
@@ -188,7 +184,6 @@ export function TrendChart({ points }: Props) {
                 ))}
               </g>
             )}
-            {/* Hit area: the whole plot, so the pointer never has to land on a line. */}
             <rect
               x={PAD.left}
               y={PAD.top}

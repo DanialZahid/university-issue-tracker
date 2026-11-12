@@ -32,7 +32,6 @@ type Props = {
   dir?: 'asc' | 'desc';
   query: Record<string, string | undefined>;
   view: ListView;
-  // '/manage' for the dashboard, '/complaints' for My complaints.
   basePath?: string;
 };
 
@@ -45,7 +44,6 @@ export function QueueTable({
   view,
   basePath = '/manage',
 }: Props) {
-  // Carry the current filters so the complaint page can link back to them.
   const back = withQuery('', query).slice(1) || undefined;
   const mine = basePath === '/complaints';
   const hrefFor = (ticket: string) =>
@@ -93,7 +91,6 @@ export function QueueTable({
 
   return (
     <>
-      {/* Desktop: table for scanning many rows. */}
       {/* overflow-clip (not hidden) keeps the rounded corners without breaking the sticky header. */}
       <div className='hidden overflow-clip rounded-xl border bg-card md:block [&_[data-slot=table-container]]:overflow-visible'>
         <Table>
@@ -198,7 +195,6 @@ export function QueueTable({
         </Table>
       </div>
 
-      {/* Phones: the table becomes cards. */}
       {cards('md:hidden')}
     </>
   );

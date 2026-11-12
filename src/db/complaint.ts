@@ -79,7 +79,6 @@ export async function createComplaint(
       submittedById,
       departmentId: category.departmentId,
       assignedAt: new Date(),
-      // The image itself lives in Blob storage; the row keeps its details.
       attachments: {
         create: attachments.map((a) => ({
           url: a.url,
@@ -154,7 +153,6 @@ export async function getComplaintForSubmitter(
   });
 }
 
-// Open complaints by status, for the greeting on My complaints.
 export async function getUserOpenCounts(userId: string) {
   const groups = await prisma.complaint.groupBy({
     by: ['status'],

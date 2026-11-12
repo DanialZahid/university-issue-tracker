@@ -1,7 +1,7 @@
 import { Backpack, Presentation, ShieldCheck, UserRound } from 'lucide-react';
 import type { UserRole } from '@/generated/prisma/enums';
 
-// A switch (not a lookup) so ESLint's static-components rule stays happy.
+// A switch, not a lookup object: ESLint's static-components rule rejects the lookup.
 export function RoleIcon({
   role,
   className,

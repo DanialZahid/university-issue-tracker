@@ -1,6 +1,5 @@
 import type { ComplaintStatus } from '@/generated/prisma/enums';
 
-// Same palette as the status badges. soft = icon circles, bar = accent stripes.
 export const statusTone: Record<
   ComplaintStatus,
   { soft: string; bar: string }

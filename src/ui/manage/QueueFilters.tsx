@@ -20,7 +20,6 @@ type Props = {
   categories: Option[];
   locations: Option[];
   departments: Option[];
-  // My complaints shows everything by default; the dashboard shows open work.
   statusOptions?: Option[];
   defaultStatus?: string;
 };
@@ -129,7 +128,6 @@ export function QueueFilters({
     navigate(next);
   }
 
-  // Live search: applied once typing pauses.
   const urlQ = params.get('q') ?? '';
   const [text, setText] = useState(urlQ);
   const [syncedQ, setSyncedQ] = useState(urlQ);
@@ -149,7 +147,6 @@ export function QueueFilters({
     return () => clearTimeout(id);
   }, [text, urlQ]);
 
-  // Everything currently applied, shown as removable chips.
   const chips: Chip[] = [];
   const status = params.get('status');
   if (status) {
@@ -230,7 +227,7 @@ export function QueueFilters({
           <Input
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder='Search title, text or ticket'
+            placeholder='Search title, text, or ticket'
             aria-label='Search complaints'
             className='bg-card pr-9 pl-9'
           />

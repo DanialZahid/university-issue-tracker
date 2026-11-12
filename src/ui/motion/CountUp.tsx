@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, useReducedMotion } from 'motion/react';
 
-// Counts from the previous number to the new one.
 export function CountUp({ value }: { value: number }) {
   const reduce = useReducedMotion();
   const [display, setDisplay] = useState(0);

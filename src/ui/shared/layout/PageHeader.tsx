@@ -5,7 +5,6 @@ type PageHeaderProps = {
   description?: string;
   icon?: LucideIcon;
   actions?: React.ReactNode;
-  // Small control shown right after the title, such as a copy button.
   titleAction?: React.ReactNode;
 };
 

@@ -95,8 +95,6 @@ function imageChecks({ total, withCamera, reused }: Props['images']): Check[] {
   ];
 }
 
-// Automated checks on the evidence. Advisory only: they inform the head,
-// they never block or change the complaint.
 export function ComplaintChecks({ images }: Props) {
   const checks: Check[] = [
     ...imageChecks(images),

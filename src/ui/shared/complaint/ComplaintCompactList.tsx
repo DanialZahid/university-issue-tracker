@@ -9,7 +9,6 @@ import { PriorityBadge } from './PriorityBadge';
 import { StatusBadge } from './StatusBadge';
 import { statusTone } from './status-tone';
 
-// One dense line per complaint: the middle ground between cards and table.
 export function ComplaintCompactList({ rows }: { rows: ComplaintRow[] }) {
   const now = new Date();
   return (

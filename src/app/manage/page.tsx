@@ -62,14 +62,12 @@ export default async function DepartmentDashboardPage({ searchParams }: Props) {
 
   const [counts, home, queue, options, forwardedTo] = await Promise.all([
     getQueueCounts(scope, filters),
-    // Unfiltered totals for the greeting line.
     getQueueCounts(managerScope(user, undefined), queueFiltersSchema.parse({})),
     listQueue(scope, filters),
     getFilterOptions(user),
     forwarded !== null ? getForwardDestination(forwarded, user.id) : null,
   ]);
 
-  // Filters kept in links and pagination (defaults left out).
   const query = {
     status: filters.status === 'OPEN' ? undefined : filters.status,
     priority: filters.priority,

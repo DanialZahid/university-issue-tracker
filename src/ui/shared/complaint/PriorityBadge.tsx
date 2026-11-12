@@ -11,8 +11,6 @@ import {
 } from '@/automation/priority-detection';
 import { cn } from '@/utils/cn';
 
-// Icon plus label, so priority never depends on color alone.
-// Medium is violet, not blue, so it doesn't read as "In Progress".
 const styles: Record<PriorityLevel, { icon: LucideIcon; className: string }> = {
   LOW: { icon: ArrowDown, className: 'bg-slate-100 text-slate-700' },
   MEDIUM: { icon: Minus, className: 'bg-violet-100 text-violet-800' },

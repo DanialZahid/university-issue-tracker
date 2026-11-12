@@ -163,7 +163,6 @@ async function main(): Promise<void> {
     const now = Date.now();
     const usedNames = new Set<string>();
 
-    // Users: one synthetic head per department plus students and faculty.
     const heads: UserRow[] = departments.map((d, i) => ({
       id: randomUUID(),
       clerkId: `${SEED_PREFIX}head_${i}`,

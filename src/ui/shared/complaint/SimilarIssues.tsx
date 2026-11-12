@@ -25,7 +25,6 @@ function reportedLabel(createdAt: Date) {
   return age === 'Just now' ? 'Reported just now' : `Reported ${age} ago`;
 }
 
-// Looks for open complaints like the one being typed, once typing pauses.
 export function SimilarIssues({ title, categoryId, locationId, room }: Props) {
   const [results, setResults] = useState<SimilarComplaint[]>([]);
   const latest = useRef(0);
@@ -89,7 +88,7 @@ export function SimilarIssues({ title, categoryId, locationId, room }: Props) {
                       href={`/complaints/${c.ticket}`}
                       className='font-medium text-primary hover:underline'
                     >
-                      Yours, open it
+                      Open your complaint
                     </Link>
                   </>
                 )}

@@ -54,7 +54,6 @@ type Props = {
     location: { name: string };
     department: { name: string } | null;
   };
-  // Extra detail items (for example the submitter, on the manager view).
   children?: ReactNode;
 };
 

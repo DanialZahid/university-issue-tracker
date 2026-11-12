@@ -49,7 +49,6 @@ export function AppSidebar({
         <AppSidebarNav variant={variant} />
       </SidebarContent>
 
-      {/* Who is signed in: avatar and name, then their role below. */}
       <SidebarFooter className='gap-2.5 border-t bg-linear-to-t from-primary/8 to-transparent p-4'>
         <Hint label={userEmail} side='top'>
           <div className='flex min-w-0 items-center gap-3'>

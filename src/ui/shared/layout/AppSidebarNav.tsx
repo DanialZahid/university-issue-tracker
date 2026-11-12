@@ -44,7 +44,6 @@ export function AppSidebarNav({ variant }: { variant: NavVariant }) {
                     onClick={() => setOpenMobile(false)}
                   >
                     {isActive && (
-                      // One shared highlight that glides to the active item.
                       <motion.span
                         layoutId='sidebar-active'
                         aria-hidden='true'

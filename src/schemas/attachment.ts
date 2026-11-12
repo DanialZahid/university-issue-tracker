@@ -1,6 +1,5 @@
 import { z } from 'zod';
 
-// Shared by the browser (before upload) and the server (when saving).
 export const IMAGE_LIMITS = {
   maxFiles: 3,
   // Size of the file the user picks, before it is compressed.
@@ -12,7 +11,6 @@ export const IMAGE_LIMITS = {
   storedTypes: ['image/webp', 'image/jpeg'],
 } as const;
 
-// Every upload goes under the uploader's own folder.
 export function uploadFolder(userId: string) {
   return `uploads/${userId}/`;
 }

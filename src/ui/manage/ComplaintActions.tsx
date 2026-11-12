@@ -38,8 +38,6 @@ const idle: ManageActionState = { status: 'idle' };
 const STATUSES: ComplaintStatus[] = ['PENDING', 'IN_PROGRESS', 'RESOLVED'];
 const PRIORITIES: Priority[] = ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW'];
 
-// Success becomes a toast (the page itself already shows the new value).
-// Errors stay inline next to the control, so they can't be missed.
 export function ActionMessage({ state }: { state: ManageActionState }) {
   useEffect(() => {
     if (state.status === 'success') toast.success(state.message);
@@ -78,7 +76,6 @@ function UpdateForm({
 }) {
   const [state, formAction, pending] = useActionState(action, idle);
   const [selected, setSelected] = useState(value);
-  // Runs after a successful save (for example, confetti when resolved).
   const notifySaved = useEffectEvent(() => onSaved?.(selected));
   useEffect(() => {
     if (state.status === 'success') notifySaved();

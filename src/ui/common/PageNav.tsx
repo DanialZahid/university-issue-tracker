@@ -17,7 +17,6 @@ type Props = {
   totalPages: number;
   basePath: string;
   query?: Query;
-  // Element id to scroll to after changing page (the top of the results).
   anchor?: string;
 };
 
@@ -107,7 +106,6 @@ export function PageNav({ page, totalPages, basePath, query, anchor }: Props) {
       />
       <StepLink icon={ChevronLeft} label='Previous page' href={prev} />
 
-      {/* Wider screens: numbered pages. */}
       <ol className='hidden items-center gap-1 sm:flex'>
         {pageItems(page, totalPages).map((item, i) =>
           item === 'gap' ? (
@@ -144,7 +142,6 @@ export function PageNav({ page, totalPages, basePath, query, anchor }: Props) {
         )}
       </ol>
 
-      {/* Phones: compact counter. */}
       <span className='px-2 text-sm text-muted-foreground sm:hidden'>
         Page {page} of {totalPages}
       </span>

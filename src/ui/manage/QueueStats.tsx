@@ -22,7 +22,6 @@ type Counts = {
 
 type Props = {
   counts: Counts;
-  // The current filters, so a card only swaps its own value and keeps the rest.
   query: Record<string, string | undefined>;
   active: { status: string; priority?: string };
 };
@@ -78,9 +77,7 @@ export function QueueStats({ counts, query: current, active }: Props) {
         <Hint
           key={label}
           label={
-            isActive
-              ? 'Click to remove this filter'
-              : `Show ${label.toLowerCase()} only`
+            isActive ? 'Remove this filter' : `Show ${label.toLowerCase()} only`
           }
         >
           <Link

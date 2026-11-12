@@ -20,7 +20,6 @@ type Props = {
   view?: { value: ListView; cookie: string };
 };
 
-// "6,051 complaints · Page 2 of 243", rows per page and quick previous/next.
 export function ResultsBar({
   id,
   page,

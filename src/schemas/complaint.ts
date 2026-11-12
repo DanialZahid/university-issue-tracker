@@ -16,32 +16,31 @@ export const complaintSchema = z.object({
     .trim()
     .min(
       LIMITS.title.min,
-      `Title must be at least ${LIMITS.title.min} characters`,
+      `Title must be at least ${LIMITS.title.min} characters.`,
     )
     .max(
       LIMITS.title.max,
-      `Title must be ${LIMITS.title.max} characters or fewer`,
+      `Title must be ${LIMITS.title.max} characters or fewer.`,
     ),
   description: z
     .string()
     .trim()
     .min(
       LIMITS.description.min,
-      `Description must be at least ${LIMITS.description.min} characters`,
+      `Description must be at least ${LIMITS.description.min} characters.`,
     )
     .max(
       LIMITS.description.max,
-      `Description must be ${LIMITS.description.max} characters or fewer`,
+      `Description must be ${LIMITS.description.max} characters or fewer.`,
     ),
-  categoryId: z.string().min(1, 'Choose a category'),
-  // Optional: empty means the issue has no physical place (see NO_PLACE).
+  categoryId: z.string().min(1, 'Choose a category.'),
   locationId: z.string().max(40),
   locationDetail: z
     .string()
     .trim()
     .max(
       LIMITS.locationDetail.max,
-      `Keep this under ${LIMITS.locationDetail.max} characters`,
+      `Keep this under ${LIMITS.locationDetail.max} characters.`,
     )
     .transform((value) => value || undefined),
 });

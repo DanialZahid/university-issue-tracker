@@ -7,7 +7,6 @@ import { withQuery } from '@/utils/query';
 
 type Crumb = { label: string; href?: string };
 
-// Built from the address, so no page has to pass anything in.
 function crumbsFor(pathname: string, back: string | null): Crumb[] {
   const parts = pathname.split('/').filter(Boolean);
 

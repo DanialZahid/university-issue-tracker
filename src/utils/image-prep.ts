@@ -1,6 +1,3 @@
-// Runs in the browser before an image is uploaded:
-// read camera data, shrink and compress, then fingerprint the result.
-
 import { IMAGE_LIMITS } from '@/schemas/attachment';
 
 // True when a JPEG carries a camera make or model in its EXIF data.
@@ -40,7 +37,6 @@ function readMakeOrModel(view: DataView, tiff: number): boolean {
   return false;
 }
 
-// Longest side down to 2048px, saved as WebP (JPEG if the browser can't).
 export async function compressImage(
   file: File,
 ): Promise<{ blob: Blob; type: 'image/webp' | 'image/jpeg' }> {
@@ -69,7 +65,6 @@ export async function compressImage(
   return { blob: jpeg, type: 'image/jpeg' };
 }
 
-// Fingerprint used to spot the same picture attached to different complaints.
 export async function sha256Hex(blob: Blob): Promise<string> {
   const digest = await crypto.subtle.digest(
     'SHA-256',

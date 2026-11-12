@@ -14,11 +14,9 @@ type Props = {
   value: number;
   sizes: readonly number[];
   fallback: number;
-  // Cookie that remembers the choice for next time.
   cookie?: string;
 };
 
-// Rows per page, kept in the URL as ?size= (the default is left out).
 export function PageSizeSelect({ value, sizes, fallback, cookie }: Props) {
   const router = useRouter();
   const pathname = usePathname();

@@ -32,7 +32,6 @@ export function formatAge(date: Date, now: Date = new Date()): string {
   return days === 1 ? '1 day' : `${days} days`;
 }
 
-// 'YYYY-MM-DD' from a calendar date (browser local day).
 export function toYmd(date: Date): string {
   const m = String(date.getMonth() + 1).padStart(2, '0');
   const d = String(date.getDate()).padStart(2, '0');
@@ -57,12 +56,10 @@ const shortDayFormatter = new Intl.DateTimeFormat('en-US', {
   timeZone: TIME_ZONE,
 });
 
-// Campus calendar day of a moment, as 'YYYY-MM-DD'.
 export function campusYmd(date: Date): string {
   return ymdFormatter.format(date);
 }
 
-// 'Nov 6' for chart axes and tooltips.
 export function formatShortDay(date: Date): string {
   return shortDayFormatter.format(date);
 }

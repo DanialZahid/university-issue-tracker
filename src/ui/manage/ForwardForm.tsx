@@ -24,7 +24,6 @@ type Props = {
   currentDepartmentId: string;
   departments: { id: string; name: string }[];
   disabled: boolean;
-  // Dashboard filters to return to after forwarding.
   back?: string;
 };
 

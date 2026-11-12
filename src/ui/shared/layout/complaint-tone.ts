@@ -1,6 +1,5 @@
 import type { ComplaintStatus, Priority } from '@/generated/prisma/enums';
 
-// Plain helper (not a client file), so server pages can call it.
 export type Tone = 'pending' | 'in-progress' | 'resolved' | 'critical';
 
 // Resolved wins, then Critical, then the status itself.

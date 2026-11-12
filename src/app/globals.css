@@ -162,8 +162,6 @@
   }
 }
 
-/* App background: a faint dot grid in two corners plus soft blue and pink light.
-   Fixed, behind content, never clickable. */
 @layer components {
   .app-backdrop {
     position: fixed;
