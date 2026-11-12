@@ -33,6 +33,8 @@ import { Textarea } from '@/ui/common/textarea';
 import { detectPriority } from '@/automation/priority-detection';
 import { PriorityBadge } from './PriorityBadge';
 import { SimilarIssues } from './SimilarIssues';
+import { ImagePicker } from './ImagePicker';
+import { IMAGE_LIMITS } from '@/schemas/attachment';
 import { Hint } from '@/ui/common/Hint';
 import { DepartmentIcon } from '@/ui/shared/department';
 import { detectLocation } from '@/automation/location-detection';
@@ -42,17 +44,25 @@ type CategoryOption = Option & { departmentName: string };
 type Props = {
   categories: CategoryOption[];
   locations: Option[];
+  // Signed-in user's id; images upload into their own folder.
+  uploaderId: string;
   // Shown beside the form, under the similar issues panel.
   children?: ReactNode;
 };
 
 const initialState: SubmitComplaintState = { status: 'idle' };
 
-export function ComplaintForm({ categories, locations, children }: Props) {
+export function ComplaintForm({
+  categories,
+  locations,
+  uploaderId,
+  children,
+}: Props) {
   const [state, formAction, pending] = useActionState(
     submitComplaint,
     initialState,
   );
+  const [uploading, setUploading] = useState(false);
 
   // All fields are controlled so values survive a failed submit
   // (React resets uncontrolled fields after a form action).
@@ -280,12 +290,16 @@ export function ComplaintForm({ categories, locations, children }: Props) {
         </div>
 
         <FormField
-          label='Attach an image'
-          htmlFor='image'
+          label='Images'
+          htmlFor='images'
           optional
-          hint='Image attachments are coming soon.'
+          hint={`Up to ${IMAGE_LIMITS.maxFiles} JPG, PNG or WebP images, ${IMAGE_LIMITS.maxInputBytes / (1024 * 1024)} MB each. They are resized before upload.`}
         >
-          <Input id='image' type='file' accept='image/*' disabled />
+          <ImagePicker
+            uploaderId={uploaderId}
+            disabled={pending}
+            onBusyChange={setUploading}
+          />
         </FormField>
 
         <div className='flex flex-wrap items-center gap-2 text-sm'>
@@ -300,9 +314,17 @@ export function ComplaintForm({ categories, locations, children }: Props) {
           </span>
         </div>
 
-        <Button type='submit' disabled={pending}>
-          {pending ? <Loader2 className='animate-spin' /> : <Send />}
-          {pending ? 'Submitting...' : 'Submit complaint'}
+        <Button type='submit' disabled={pending || uploading}>
+          {pending || uploading ? (
+            <Loader2 className='animate-spin' />
+          ) : (
+            <Send />
+          )}
+          {pending
+            ? 'Submitting...'
+            : uploading
+              ? 'Uploading images...'
+              : 'Submit complaint'}
         </Button>
       </form>
       <div className='space-y-6'>

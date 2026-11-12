@@ -11,6 +11,7 @@ import { Button } from '@/ui/common/button';
 import { CopyButton } from '@/ui/common/CopyButton';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
 import {
+  ComplaintImages,
   ComplaintSummary,
   ComplaintTimeline,
   SubmittedBanner,
@@ -76,7 +77,10 @@ export default async function ComplaintDetailPage({
           <BackdropTone
             tone={complaintTone(complaint.status, complaint.priority)}
           />
-          <ComplaintSummary complaint={complaint} />
+          <div className='space-y-6'>
+            <ComplaintSummary complaint={complaint} />
+            <ComplaintImages images={complaint.attachments} />
+          </div>
           {complaint.status === 'RESOLVED' && (
             <ResolvedCelebration
               ticket={formatTicketNumber(complaint.ticketNumber)}

@@ -9,12 +9,17 @@ import {
   MessageSquareWarning,
   UserRound,
 } from 'lucide-react';
-import { getComplaintForManager, listDepartments } from '@/db/manage';
+import {
+  countReusedImages,
+  getComplaintForManager,
+  listDepartments,
+} from '@/db/manage';
 import { Button } from '@/ui/common/button';
 import { CopyButton } from '@/ui/common/CopyButton';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
 import { Separator } from '@/ui/common/separator';
 import {
+  ComplaintImages,
   ComplaintSummary,
   ComplaintTimeline,
   DetailItem,
@@ -65,6 +70,11 @@ export default async function ManageComplaintPage({
 
   if (!complaint) notFound();
 
+  const reusedImages = await countReusedImages(
+    complaint.ticketNumber,
+    complaint.attachments.map((a) => a.sha256),
+  );
+
   const archived = complaint.archivedAt !== null;
 
   return (
@@ -105,6 +115,7 @@ export default async function ManageComplaintPage({
               </DetailItem>
             )}
           </ComplaintSummary>
+          <ComplaintImages images={complaint.attachments} />
 
           <Card>
             <CardHeader>
@@ -153,7 +164,14 @@ export default async function ManageComplaintPage({
             </CardContent>
           </Card>
 
-          <ComplaintChecks />
+          <ComplaintChecks
+            images={{
+              total: complaint.attachments.length,
+              withCamera: complaint.attachments.filter((a) => a.hasCameraExif)
+                .length,
+              reused: reusedImages,
+            }}
+          />
         </aside>
       </div>
     </>

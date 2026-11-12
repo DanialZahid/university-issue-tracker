@@ -1,6 +1,7 @@
 import 'server-only';
 import { prisma } from '@/db/client';
 import type { ComplaintInput } from '@/schemas/complaint';
+import type { AttachmentInput } from '@/schemas/attachment';
 import { detectPriority } from '@/automation/priority-detection';
 
 export async function getComplaintFormOptions() {
@@ -25,10 +26,23 @@ export async function getComplaintFormOptions() {
   };
 }
 
+export const ATTACHMENT_SELECT = {
+  orderBy: { createdAt: 'asc' },
+  select: {
+    id: true,
+    url: true,
+    fileName: true,
+    sizeBytes: true,
+    sha256: true,
+    hasCameraExif: true,
+  },
+} as const;
+
 // Returns the new ticket number, or null if the category or location is invalid.
 export async function createComplaint(
   input: ComplaintInput,
   submittedById: string,
+  attachments: AttachmentInput[] = [],
 ): Promise<number | null> {
   const [category, location] = await Promise.all([
     prisma.category.findUnique({
@@ -65,6 +79,17 @@ export async function createComplaint(
       submittedById,
       departmentId: category.departmentId,
       assignedAt: new Date(),
+      // The image itself lives in Blob storage; the row keeps its details.
+      attachments: {
+        create: attachments.map((a) => ({
+          url: a.url,
+          fileName: a.fileName,
+          mimeType: a.mimeType,
+          sizeBytes: a.sizeBytes,
+          sha256: a.sha256,
+          hasCameraExif: a.hasCameraExif,
+        })),
+      },
       auditLogs: {
         create: [
           {
@@ -113,6 +138,7 @@ export async function getComplaintForSubmitter(
       category: { select: { name: true } },
       location: { select: { name: true } },
       department: { select: { name: true } },
+      attachments: ATTACHMENT_SELECT,
       auditLogs: {
         where: { action: { in: ['CREATED', 'ASSIGNED', 'STATUS_CHANGED'] } },
         orderBy: [{ createdAt: 'asc' }, { action: 'asc' }],

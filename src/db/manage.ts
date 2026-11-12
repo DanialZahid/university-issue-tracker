@@ -8,6 +8,7 @@ import {
 } from '@/generated/prisma/enums';
 import type { QueueFilters } from '@/schemas/queue-filters';
 import { parseTicketNumber } from '@/utils/ticket';
+import { ATTACHMENT_SELECT } from '@/db/complaint';
 import { campusDayStart, campusYmd, formatShortDay } from '@/utils/date';
 
 type ScopeUser = { role: UserRole; departmentId: string | null };
@@ -233,6 +234,7 @@ export async function getComplaintForManager(
       createdAt: true,
       resolvedAt: true,
       archivedAt: true,
+      attachments: ATTACHMENT_SELECT,
       category: { select: { name: true } },
       location: { select: { name: true } },
       department: { select: { id: true, name: true } },
@@ -567,4 +569,22 @@ export async function getInsights(scope: Prisma.ComplaintWhereInput) {
       locations,
     ),
   };
+}
+
+// How many of these images (by fingerprint) are also attached to other
+// complaints. A reused picture can mean a copied or recycled report.
+export async function countReusedImages(
+  ticketNumber: number,
+  sha256s: string[],
+): Promise<number> {
+  if (sha256s.length === 0) return 0;
+  const rows = await prisma.attachment.findMany({
+    where: {
+      sha256: { in: sha256s },
+      complaint: { ticketNumber: { not: ticketNumber } },
+    },
+    distinct: ['sha256'],
+    select: { sha256: true },
+  });
+  return rows.length;
 }
