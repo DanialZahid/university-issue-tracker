@@ -73,8 +73,8 @@ export default function SignInPage() {
               className='rise-in mt-5 max-w-lg text-lg text-muted-foreground xl:text-xl'
               style={rise(0.1)}
             >
-              Each complaint goes straight to the department that handles it,
-              with its priority set for you.
+              Describe the issue in your own words. Category, department,
+              location, and priority are filled in for you.
             </p>
 
             <div className='rise-in mt-8 w-full max-w-xl' style={rise(0.2)}>
