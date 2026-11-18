@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type DragEvent } from 'react';
 import { upload } from '@vercel/blob/client';
 import { CircleAlert, ImagePlus, Loader2, Camera, X } from 'lucide-react';
 import { Button } from '@/ui/common/button';
 import { Hint } from '@/ui/common/Hint';
+import { cn } from '@/utils/cn';
 import {
   IMAGE_LIMITS,
   uploadFolder,
@@ -42,6 +43,9 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
   const input = useRef<HTMLInputElement>(null);
   const [items, setItems] = useState<Item[]>([]);
   const [notice, setNotice] = useState<string | null>(null);
+  const [dragging, setDragging] = useState(false);
+  // dragenter and dragleave fire for every child, so count them.
+  const dragDepth = useRef(0);
 
   const busy = items.some((i) => i.status === 'uploading');
   useEffect(() => onBusyChange(busy), [busy, onBusyChange]);
@@ -143,11 +147,49 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
     });
   }
 
+  const canDrop = !disabled && items.length < IMAGE_LIMITS.maxFiles;
+
+  function onDragEnter(e: DragEvent) {
+    if (!e.dataTransfer.types.includes('Files')) return;
+    e.preventDefault();
+    dragDepth.current += 1;
+    setDragging(true);
+  }
+
+  function onDragLeave() {
+    dragDepth.current = Math.max(0, dragDepth.current - 1);
+    if (dragDepth.current === 0) setDragging(false);
+  }
+
+  function onDragOver(e: DragEvent) {
+    if (!e.dataTransfer.types.includes('Files')) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = canDrop ? 'copy' : 'none';
+  }
+
+  function onDrop(e: DragEvent) {
+    e.preventDefault();
+    dragDepth.current = 0;
+    setDragging(false);
+    if (canDrop) onPick(e.dataTransfer.files);
+  }
+
   const ready = items.flatMap((i) => (i.attachment ? [i.attachment] : []));
   const full = items.length >= IMAGE_LIMITS.maxFiles;
 
   return (
-    <div className='space-y-3'>
+    <div
+      className={cn(
+        '-m-2 space-y-3 rounded-xl p-2 transition-colors',
+        dragging &&
+          canDrop &&
+          'bg-primary/5 outline-2 outline-primary/40 outline-dashed',
+      )}
+      onDragEnter={onDragEnter}
+      onDragLeave={onDragLeave}
+      onDragOver={onDragOver}
+      onDrop={onDrop}
+    >
       <input type='hidden' name='attachments' value={JSON.stringify(ready)} />
       <input
         ref={input}
@@ -210,7 +252,9 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
             onClick={() => input.current?.click()}
           >
             <ImagePlus className='size-5' />
-            <span className='text-xs'>Add image</span>
+            <span className='text-xs'>
+              {dragging ? 'Drop here' : 'Add or drop'}
+            </span>
           </Button>
         )}
       </div>
