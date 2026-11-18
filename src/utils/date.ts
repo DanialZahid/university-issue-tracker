@@ -25,8 +25,10 @@ export function formatDateTime(date: Date): string {
 }
 
 export function formatAge(date: Date, now: Date = new Date()): string {
-  const hours = Math.floor((now.getTime() - date.getTime()) / 3_600_000);
-  if (hours < 1) return 'Just now';
+  const minutes = Math.floor((now.getTime() - date.getTime()) / 60_000);
+  if (minutes < 1) return 'Just now';
+  if (minutes < 60) return minutes === 1 ? '1 minute' : `${minutes} minutes`;
+  const hours = Math.floor(minutes / 60);
   if (hours < 24) return hours === 1 ? '1 hour' : `${hours} hours`;
   const days = Math.floor(hours / 24);
   return days === 1 ? '1 day' : `${days} days`;

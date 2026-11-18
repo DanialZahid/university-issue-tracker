@@ -28,7 +28,9 @@ export function AppSidebarNav({ variant }: { variant: NavVariant }) {
           <Button
             asChild
             className={cn(
-              'mb-3 h-10 w-full justify-start gap-3 px-3 text-[15px] shadow-sm [&_svg]:size-5',
+              // bg-clip-border: the base button leaves a transparent 1px border that
+              // shows the sidebar through it as a light edge.
+              'mb-3 h-10 w-full justify-start gap-3 bg-clip-border px-3 text-[15px] shadow-sm [&_svg]:size-5',
               actionActive && 'bg-primary/80 shadow-none',
             )}
           >
