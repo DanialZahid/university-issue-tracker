@@ -385,6 +385,15 @@ function FormBody({
             htmlFor='locationId'
             optional
             error={errors['locationId']}
+            action={
+              manualLocationId !== null &&
+              suggestedLocationId &&
+              manualLocationId !== suggestedLocationId && (
+                <SuggestionLink onClick={() => setManualLocationId(null)}>
+                  Use suggested location
+                </SuggestionLink>
+              )
+            }
             hint={
               manualLocationId === null && suggestedLocationId
                 ? 'Suggested from your text. You can change it.'
@@ -412,13 +421,6 @@ function FormBody({
                 ))}
               </SelectContent>
             </Select>
-            {manualLocationId !== null &&
-              suggestedLocationId &&
-              manualLocationId !== suggestedLocationId && (
-                <SuggestionLink onClick={() => setManualLocationId(null)}>
-                  Use suggested location
-                </SuggestionLink>
-              )}
           </FormField>
 
           <FormField
@@ -426,6 +428,15 @@ function FormBody({
             htmlFor='locationDetail'
             optional
             error={errors['locationDetail']}
+            action={
+              manualRoom !== null &&
+              suggestedRoom &&
+              manualRoom !== suggestedRoom && (
+                <SuggestionLink onClick={() => setManualRoom(null)}>
+                  Use suggested room
+                </SuggestionLink>
+              )
+            }
             hint={
               manualRoom === null && suggestedRoom
                 ? 'Suggested from your text. You can change it.'
@@ -441,13 +452,6 @@ function FormBody({
               aria-invalid={!!errors['locationDetail']}
               aria-describedby={describedBy('locationDetail')}
             />
-            {manualRoom !== null &&
-              suggestedRoom &&
-              manualRoom !== suggestedRoom && (
-                <SuggestionLink onClick={() => setManualRoom(null)}>
-                  Use suggested room
-                </SuggestionLink>
-              )}
           </FormField>
         </div>
 
@@ -515,16 +519,14 @@ function SuggestionLink({
   children: ReactNode;
 }) {
   return (
-    <div className='flex justify-end'>
-      <Button
-        type='button'
-        variant='link'
-        size='sm'
-        className='h-auto p-0'
-        onClick={onClick}
-      >
-        {children}
-      </Button>
-    </div>
+    <Button
+      type='button'
+      variant='link'
+      size='sm'
+      className='h-auto shrink-0 p-0'
+      onClick={onClick}
+    >
+      {children}
+    </Button>
   );
 }

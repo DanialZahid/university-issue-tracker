@@ -9,6 +9,8 @@ type Props = {
   optional?: boolean;
   required?: boolean;
   count?: { current: number; max: number };
+  // Shown at the end of the hint row, for example a small link button.
+  action?: ReactNode;
   children: ReactNode;
 };
 
@@ -20,6 +22,7 @@ export function FormField({
   optional,
   required,
   count,
+  action,
   children,
 }: Props) {
   return (
@@ -37,7 +40,7 @@ export function FormField({
         )}
       </Label>
       {children}
-      {(error || hint || count) && (
+      {(error || hint || count || action) && (
         <div className='flex items-start justify-between gap-4 text-sm'>
           {error ? (
             <p id={`${htmlFor}-error`} className='text-destructive'>
@@ -48,6 +51,7 @@ export function FormField({
           ) : (
             <span />
           )}
+          {action}
           {count && (
             <p className='shrink-0 text-muted-foreground tabular-nums'>
               {count.current}/{count.max}
