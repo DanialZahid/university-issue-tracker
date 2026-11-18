@@ -8,6 +8,7 @@ const ALIASES: Record<string, string[]> = {
   ],
   'Computer Labs': ['computer lab'],
   Cafeteria: ['cafeteria', 'cafe', 'canteen'],
+  Garden: ['garden', 'lawn', 'green area'],
   'Parking Area': ['parking'],
   'Sports Complex': ['sports complex', 'gym'],
   'Main Gate': ['main gate', 'gate'],

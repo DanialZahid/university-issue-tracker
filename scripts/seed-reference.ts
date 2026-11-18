@@ -111,6 +111,7 @@ const locations = [
   'Computer Labs',
   'Library',
   'Cafeteria',
+  'Garden',
   'Auditorium',
   'Administration Building',
   'Sports Complex',
