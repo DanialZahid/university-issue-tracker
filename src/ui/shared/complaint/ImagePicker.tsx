@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type DragEvent } from 'react';
 import { upload } from '@vercel/blob/client';
-import { CircleAlert, ImagePlus, Loader2, Camera, X } from 'lucide-react';
+import { Camera, CircleAlert, ImagePlus, Info, Loader2, X } from 'lucide-react';
 import { Button } from '@/ui/common/button';
 import { Hint } from '@/ui/common/Hint';
 import { cn } from '@/utils/cn';
@@ -71,7 +71,9 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
       if (blob.size > IMAGE_LIMITS.maxStoredBytes) {
         throw new Error('Still too large after compression.');
       }
-      const sha256 = await sha256Hex(blob);
+      // Fingerprint the original file. Canvas output can differ between
+      // browsers and devices, so the compressed copy of one photo may not match.
+      const sha256 = await sha256Hex(file);
       const ext = type === 'image/webp' ? 'webp' : 'jpg';
       const fileName = `${baseName(file.name)}.${ext}`;
       const result = await upload(
@@ -180,10 +182,11 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
   return (
     <div
       className={cn(
-        '-m-2 space-y-3 rounded-xl p-2 transition-colors',
+        'space-y-3 rounded-lg pb-1 outline-offset-4 transition-colors',
         dragging &&
-          canDrop &&
-          'bg-primary/5 outline-2 outline-primary/40 outline-dashed',
+          (canDrop
+            ? 'bg-primary/5 outline-2 outline-primary/40 outline-dashed'
+            : 'outline-2 outline-destructive/40 outline-dashed'),
       )}
       onDragEnter={onDragEnter}
       onDragLeave={onDragLeave}
@@ -258,7 +261,7 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
           </Button>
         )}
       </div>
-      {notice && (
+      {notice ? (
         <p
           role='alert'
           className='flex items-center gap-1.5 text-sm text-destructive'
@@ -266,6 +269,13 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
           <CircleAlert className='size-4 shrink-0' />
           {notice}
         </p>
+      ) : (
+        full && (
+          <p className='flex items-center gap-1.5 text-sm text-muted-foreground'>
+            <Info className='size-4 shrink-0' />
+            {`${IMAGE_LIMITS.maxFiles} of ${IMAGE_LIMITS.maxFiles} images added. Remove one to add another.`}
+          </p>
+        )
       )}
     </div>
   );
