@@ -75,7 +75,7 @@ export function SampleComplaints() {
   }, [live]);
 
   return (
-    <div aria-hidden='true' className='relative h-[34rem]'>
+    <div aria-hidden='true' className='relative h-[34rem] xl:h-[38rem]'>
       {SAMPLES.map((s, i) => {
         const status = i === 1 ? live : s.status;
         return (
@@ -83,7 +83,7 @@ export function SampleComplaints() {
             key={s.ticket}
             ref={i === 1 ? liveCard : undefined}
             className={cn(
-              'float-card absolute w-[21rem] overflow-hidden rounded-xl border bg-card py-4 pr-4 pl-6 shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)]',
+              'float-card absolute w-[21rem] overflow-hidden rounded-xl border bg-card py-4 pr-4 pl-6 shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)] xl:w-[23rem]',
               s.place,
             )}
             style={

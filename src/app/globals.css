@@ -317,8 +317,8 @@
   0% {
     stroke-dashoffset: 100;
   }
-  35%,
-  85% {
+  30%,
+  90% {
     stroke-dashoffset: 0;
   }
   100% {

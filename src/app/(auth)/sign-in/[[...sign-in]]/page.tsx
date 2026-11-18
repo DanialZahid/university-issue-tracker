@@ -33,7 +33,7 @@ export default function SignInPage() {
         <div className='signin-dots' />
       </div>
 
-      <div className='mx-auto flex min-h-svh max-w-6xl flex-col px-6 sm:px-10'>
+      <div className='mx-auto flex min-h-svh max-w-7xl flex-col px-6 sm:px-10'>
         <header className='flex items-center gap-4 py-7'>
           <span className='relative grid size-11 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-[0_10px_30px_-10px_rgb(21_93_252/0.6)]'>
             <span aria-hidden='true' className='logo-ring' />
@@ -49,24 +49,24 @@ export default function SignInPage() {
           </span>
         </header>
 
-        <div className='grid flex-1 items-center gap-12 pb-16 lg:grid-cols-2'>
+        <div className='grid flex-1 items-center gap-12 pb-16 lg:grid-cols-2 xl:gap-24'>
           <section aria-labelledby='signin-heading'>
             <h1
               id='signin-heading'
-              className='rise-in text-4xl leading-tight font-bold tracking-tight text-balance sm:text-5xl'
+              className='rise-in text-4xl leading-tight font-bold tracking-tight text-balance sm:text-5xl xl:text-6xl'
             >
               Report campus issues.{' '}
               <span className='block text-primary'>Track them to done.</span>
             </h1>
             <p
-              className='rise-in mt-5 max-w-md text-lg text-muted-foreground'
+              className='rise-in mt-5 max-w-lg text-lg text-muted-foreground xl:text-xl'
               style={rise(0.1)}
             >
               Each complaint goes straight to the department that handles it,
               with its priority set for you.
             </p>
 
-            <div className='rise-in mt-8 w-full max-w-md' style={rise(0.2)}>
+            <div className='rise-in mt-8 w-full max-w-xl' style={rise(0.2)}>
               <SignIn
                 appearance={{
                   elements: {
@@ -87,16 +87,21 @@ export default function SignInPage() {
                   },
                 }}
               />
-              <p className='mt-3 text-center text-sm text-muted-foreground'>
+              {/* Outside the card: Clerk does not allow custom text inside it. */}
+              <p className='mt-4 text-center text-sm text-muted-foreground'>
                 Use your university email. Other accounts are not accepted.
               </p>
             </div>
 
-            <ul className='rise-in mt-8 flex flex-wrap gap-2' style={rise(0.3)}>
+            {/* Equal widths; a chip left alone on a row stretches to fill it. */}
+            <ul
+              className='rise-in mt-8 flex max-w-xl flex-wrap gap-2'
+              style={rise(0.3)}
+            >
               {FEATURES.map(({ icon: Icon, label, color }, i) => (
                 <li
                   key={label}
-                  className='inline-flex items-center gap-2 rounded-full border bg-card/80 px-3.5 py-1.5 text-sm'
+                  className='inline-flex min-w-fit flex-1 items-center justify-center gap-2 rounded-full border bg-card/80 px-3 py-1.5 text-sm whitespace-nowrap'
                 >
                   <Icon
                     aria-hidden='true'
