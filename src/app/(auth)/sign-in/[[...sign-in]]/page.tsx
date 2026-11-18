@@ -59,13 +59,13 @@ export default function SignInPage() {
           <section aria-labelledby='signin-heading'>
             <h1
               id='signin-heading'
-              className='rise-in text-4xl leading-tight font-bold tracking-tight sm:text-5xl lg:text-4xl xl:text-5xl'
+              className='rise-in text-[2rem] leading-tight font-bold tracking-tight sm:text-5xl lg:text-4xl xl:text-5xl'
             >
-              {/* One line each from tablet width up. */}
-              <span className='block sm:whitespace-nowrap'>
+              {/* One line each, except on the narrowest phones. */}
+              <span className='block min-[400px]:whitespace-nowrap'>
                 Report campus issues.
               </span>{' '}
-              <span className='block text-primary sm:whitespace-nowrap'>
+              <span className='block text-primary min-[400px]:whitespace-nowrap'>
                 Track them to done.
               </span>
             </h1>
@@ -79,12 +79,13 @@ export default function SignInPage() {
 
             <div className='rise-in mt-8 w-full max-w-xl' style={rise(0.2)}>
               {/* The placeholder and Clerk's card share one grid cell. The
-                  placeholder holds the height from the first paint, so nothing
-                  moves when the real card arrives on top of it and fades in. */}
+                  placeholder holds the height from the first paint, and the
+                  real card fades in on top of it and covers it, so nothing
+                  moves. No CSS here depends on Clerk's inner markup. */}
               <div className='grid'>
                 <div
                   aria-hidden='true'
-                  className='signin-placeholder col-start-1 row-start-1 overflow-hidden rounded-xl border bg-card shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)]'
+                  className='col-start-1 row-start-1 overflow-hidden rounded-xl border bg-card'
                 >
                   <div className='px-10 py-7'>
                     <div className='h-10 animate-pulse rounded-md border bg-muted/50' />

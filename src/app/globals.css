@@ -310,13 +310,6 @@
   .sample-status[data-status='IN_PROGRESS'] svg {
     animation: sample-spin 4s linear infinite;
   }
-  /* Hidden once Clerk's card is on the page (Clerk adds the cl- classes). */
-  .signin-placeholder {
-    transition: opacity 0.4s ease-out;
-  }
-  .grid:has(.cl-cardBox) > .signin-placeholder {
-    opacity: 0;
-  }
   .type-caret {
     display: inline-block;
     width: 2px;
