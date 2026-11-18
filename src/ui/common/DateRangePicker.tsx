@@ -16,12 +16,16 @@ type Props = {
 };
 
 const PRESETS = [
+  { label: 'Today', days: 1 },
   { label: 'Last 7 days', days: 7 },
   { label: 'Last 30 days', days: 30 },
   { label: 'Last 90 days', days: 90 },
 ];
 
 export function formatRange(from: string, to: string): string {
+  if (from === to) {
+    return from === toYmd(new Date()) ? 'Today' : formatDate(fromYmd(from));
+  }
   return `${formatDate(fromYmd(from))} to ${formatDate(fromYmd(to))}`;
 }
 
