@@ -310,6 +310,28 @@
   .sample-status[data-status='IN_PROGRESS'] svg {
     animation: sample-spin 4s linear infinite;
   }
+  /* Feature chip: a faint border in the icon's color, with a brighter
+     stretch of it travelling round the edge. Two backgrounds: the card
+     fill inside, and the border ring (tint plus moving highlight). */
+  .chip-glow {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      conic-gradient(
+          from var(--chip-angle),
+          transparent 0 70%,
+          color-mix(in oklch, var(--chip-tone) 70%, transparent) 85%,
+          transparent 100%
+        )
+        border-box,
+      linear-gradient(
+          color-mix(in oklch, var(--chip-tone) 22%, var(--border)),
+          color-mix(in oklch, var(--chip-tone) 22%, var(--border))
+        )
+        border-box;
+    animation: chip-spin 4.5s linear infinite;
+    animation-delay: var(--chip-delay, 0s);
+  }
   .type-caret {
     display: inline-block;
     width: 2px;
@@ -358,6 +380,16 @@
     translate: 0 -10px;
   }
 }
+@property --chip-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes chip-spin {
+  to {
+    --chip-angle: 360deg;
+  }
+}
 @keyframes sample-spin {
   to {
     rotate: 360deg;
@@ -390,6 +422,7 @@
   .signin-blob,
   .logo-ring,
   .icon-draw :is(path, circle, line, polyline, rect),
+  .chip-glow,
   .float-card,
   .rise-in,
   .fade-in,

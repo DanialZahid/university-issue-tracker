@@ -13,10 +13,31 @@ import { SampleComplaints } from '@/ui/shared/auth/SampleComplaints';
 
 export const metadata: Metadata = { title: 'Sign in' };
 
-const FEATURES: { icon: LucideIcon; label: string; color: string }[] = [
-  { icon: Route, label: 'Routed automatically', color: 'text-primary' },
-  { icon: CopyCheck, label: 'Similar issues shown', color: 'text-violet-600' },
-  { icon: CircleCheck, label: 'Track every step', color: 'text-green-600' },
+// tone: the same color as a CSS value, for the chip's tinted border.
+const FEATURES: {
+  icon: LucideIcon;
+  label: string;
+  color: string;
+  tone: string;
+}[] = [
+  {
+    icon: Route,
+    label: 'Routed automatically',
+    color: 'text-primary',
+    tone: 'var(--primary)',
+  },
+  {
+    icon: CopyCheck,
+    label: 'Similar issues shown',
+    color: 'text-violet-600',
+    tone: 'var(--color-violet-600)',
+  },
+  {
+    icon: CircleCheck,
+    label: 'Track every step',
+    color: 'text-green-600',
+    tone: 'var(--color-green-600)',
+  },
 ];
 
 // Clerk shows a "Development mode" strip with test keys; the placeholder
@@ -130,10 +151,16 @@ export default function SignInPage() {
               className='rise-in mt-8 flex flex-wrap gap-2 xl:inline-grid xl:auto-cols-fr xl:grid-flow-col'
               style={rise(0.3)}
             >
-              {FEATURES.map(({ icon: Icon, label, color }, i) => (
+              {FEATURES.map(({ icon: Icon, label, color, tone }, i) => (
                 <li
                   key={label}
-                  className='inline-flex min-w-fit flex-1 items-center justify-center gap-2 rounded-full border bg-card/80 px-3 py-1.5 text-sm whitespace-nowrap'
+                  className='chip-glow inline-flex min-w-fit flex-1 items-center justify-center gap-2 rounded-full px-3 py-1.5 text-sm whitespace-nowrap'
+                  style={
+                    {
+                      '--chip-tone': tone,
+                      '--chip-delay': `${i * 1.3}s`,
+                    } as CSSProperties
+                  }
                 >
                   <Icon
                     aria-hidden='true'
