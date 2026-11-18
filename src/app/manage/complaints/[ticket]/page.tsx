@@ -35,7 +35,7 @@ import {
   NoteForm,
 } from '@/ui/manage';
 import { backQuery } from '@/schemas/queue-filters';
-import { formatDateTime } from '@/utils/date';
+import { formatDateTime, isoDate } from '@/utils/date';
 import { withQuery } from '@/utils/query';
 import { requireManager } from '@/utils/session';
 import { formatTicketNumber, parseTicketNumber } from '@/utils/ticket';
@@ -112,7 +112,9 @@ export default async function ManageComplaintPage({
             </DetailItem>
             {complaint.archivedAt && (
               <DetailItem icon={Archive} label='Archived'>
-                {formatDateTime(complaint.archivedAt)}
+                <time dateTime={isoDate(complaint.archivedAt)}>
+                  {formatDateTime(complaint.archivedAt)}
+                </time>
               </DetailItem>
             )}
           </ComplaintSummary>

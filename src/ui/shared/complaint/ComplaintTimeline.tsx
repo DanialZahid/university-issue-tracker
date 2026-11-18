@@ -18,7 +18,7 @@ import {
 import type { AuditAction } from '@/generated/prisma/enums';
 import { cn } from '@/utils/cn';
 import { statusLabel } from '@/utils/complaint-labels';
-import { formatDateTime } from '@/utils/date';
+import { formatDateTime, isoDate } from '@/utils/date';
 import { statusTone } from './status-tone';
 
 export type TimelineEvent = {
@@ -124,7 +124,9 @@ export function ComplaintTimeline({ events, showActor = false }: Props) {
             <div className='min-w-0 flex-1 pt-0.5'>
               <p className='text-base font-medium'>{describe(event)}</p>
               <p className='text-sm text-muted-foreground'>
-                {formatDateTime(event.createdAt)}
+                <time dateTime={isoDate(event.createdAt)}>
+                  {formatDateTime(event.createdAt)}
+                </time>
                 {showActor && actor ? ` · ${actor}` : ''}
               </p>
               {showActor && event.note && !automatic && (

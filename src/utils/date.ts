@@ -24,6 +24,11 @@ export function formatDateTime(date: Date): string {
   return clean(dateTimeFormatter.format(date));
 }
 
+// Machine-readable value for a <time dateTime> attribute.
+export function isoDate(date: Date | string | number): string {
+  return new Date(date).toISOString();
+}
+
 export function formatAge(date: Date, now: Date = new Date()): string {
   const minutes = Math.floor((now.getTime() - date.getTime()) / 60_000);
   if (minutes < 1) return 'Just now';

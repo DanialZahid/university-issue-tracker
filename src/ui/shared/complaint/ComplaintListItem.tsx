@@ -5,7 +5,7 @@ import { PriorityBadge } from './PriorityBadge';
 import { StatusBadge } from './StatusBadge';
 import { statusTone } from './status-tone';
 import { cn } from '@/utils/cn';
-import { formatDateTime, formatRecent } from '@/utils/date';
+import { formatDateTime, formatRecent, isoDate } from '@/utils/date';
 import { formatTicketNumber } from '@/utils/ticket';
 import { Hint } from '@/ui/common/Hint';
 
@@ -57,10 +57,13 @@ export function ComplaintListItem({
               {categoryName}
             </span>
             <Hint label={formatDateTime(createdAt)}>
-              <span className='inline-flex items-center gap-1.5'>
+              <time
+                dateTime={isoDate(createdAt)}
+                className='inline-flex items-center gap-1.5'
+              >
                 <CalendarClock className='size-3.5' />
                 {formatRecent(createdAt)}
-              </span>
+              </time>
             </Hint>
             {status !== 'RESOLVED' && <PriorityBadge priority={priority} />}
           </div>

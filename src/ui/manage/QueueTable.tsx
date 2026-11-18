@@ -19,7 +19,7 @@ import {
 import type { ListView } from '@/ui/shared/complaint/list-view';
 import { TruncatedText } from '@/ui/common/TruncatedText';
 import { DepartmentIcon } from '@/ui/shared/department';
-import { formatAge, formatDateTime } from '@/utils/date';
+import { formatAge, formatDateTime, isoDate } from '@/utils/date';
 import { withQuery } from '@/utils/query';
 import { cn } from '@/utils/cn';
 import { formatTicketNumber } from '@/utils/ticket';
@@ -185,7 +185,9 @@ export function QueueTable({
                   )}
                   <TableCell className='pr-4 text-right text-sm text-muted-foreground tabular-nums'>
                     <Hint label={formatDateTime(c.createdAt)}>
-                      <span>{formatAge(c.createdAt, now)}</span>
+                      <time dateTime={isoDate(c.createdAt)}>
+                        {formatAge(c.createdAt, now)}
+                      </time>
                     </Hint>
                   </TableCell>
                 </TableRow>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Hint } from '@/ui/common/Hint';
 import { TruncatedText } from '@/ui/common/TruncatedText';
 import { cn } from '@/utils/cn';
-import { formatAge, formatDateTime } from '@/utils/date';
+import { formatAge, formatDateTime, isoDate } from '@/utils/date';
 import { formatTicketNumber } from '@/utils/ticket';
 import type { ComplaintRow } from './list-view';
 import { PriorityBadge } from './PriorityBadge';
@@ -44,9 +44,12 @@ export function ComplaintCompactList({ rows }: { rows: ComplaintRow[] }) {
                 <StatusBadge status={c.status} />
               </span>
               <Hint label={formatDateTime(c.createdAt)}>
-                <span className='hidden w-24 shrink-0 text-right whitespace-nowrap text-muted-foreground tabular-nums sm:block'>
+                <time
+                  dateTime={isoDate(c.createdAt)}
+                  className='hidden w-24 shrink-0 text-right whitespace-nowrap text-muted-foreground tabular-nums sm:block'
+                >
                   {formatAge(c.createdAt, now)}
-                </span>
+                </time>
               </Hint>
             </Link>
           </li>

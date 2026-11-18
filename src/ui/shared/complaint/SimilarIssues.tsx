@@ -8,7 +8,8 @@ import {
   type SimilarComplaint,
 } from '@/actions/similar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
-import { formatAge } from '@/utils/date';
+import { formatAge, formatDateTime, isoDate } from '@/utils/date';
+import { Hint } from '@/ui/common/Hint';
 import { StatusBadge } from './StatusBadge';
 
 type Props = {
@@ -80,7 +81,11 @@ export function SimilarIssues({ title, categoryId, locationId, room }: Props) {
               <p className='mt-1.5 font-medium'>{c.title}</p>
               <p className='mt-1 text-xs text-muted-foreground'>
                 {c.room ? `${c.room} · ` : ''}
-                {reportedLabel(c.createdAt)}
+                <Hint label={formatDateTime(new Date(c.createdAt))}>
+                  <time dateTime={isoDate(c.createdAt)}>
+                    {reportedLabel(c.createdAt)}
+                  </time>
+                </Hint>
                 {c.mine && (
                   <>
                     {' · '}

@@ -12,7 +12,7 @@ import {
 import type { ComplaintStatus, Priority } from '@/generated/prisma/enums';
 import { departmentIcon } from '@/ui/shared/department';
 import { cn } from '@/utils/cn';
-import { formatDateTime } from '@/utils/date';
+import { formatDateTime, isoDate } from '@/utils/date';
 import { PriorityBadge } from './PriorityBadge';
 import { StatusBadge } from './StatusBadge';
 import { statusTone } from './status-tone';
@@ -106,11 +106,15 @@ export function ComplaintSummary({ complaint: c, children }: Props) {
             <PriorityBadge priority={c.priority} />
           </DetailItem>
           <DetailItem icon={CalendarClock} label='Submitted'>
-            {formatDateTime(c.createdAt)}
+            <time dateTime={isoDate(c.createdAt)}>
+              {formatDateTime(c.createdAt)}
+            </time>
           </DetailItem>
           {c.resolvedAt && (
             <DetailItem icon={CheckCircle2} label='Resolved'>
-              {formatDateTime(c.resolvedAt)}
+              <time dateTime={isoDate(c.resolvedAt)}>
+                {formatDateTime(c.resolvedAt)}
+              </time>
             </DetailItem>
           )}
           {children}
