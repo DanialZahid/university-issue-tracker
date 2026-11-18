@@ -99,6 +99,16 @@ export default async function MyComplaintsPage({ searchParams }: Props) {
         title='My complaints'
         description='Track the issues you have reported.'
         icon={ClipboardList}
+        actions={
+          !nothingYet && (
+            <Button asChild>
+              <Link href='/complaints/new'>
+                <FilePlus2 />
+                Submit a complaint
+              </Link>
+            </Button>
+          )
+        }
       />
       {nothingYet ? (
         <EmptyState

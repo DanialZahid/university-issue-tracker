@@ -15,6 +15,17 @@ export type NavItem = {
   exact?: boolean;
 };
 
+export const submitItem: NavItem = {
+  label: 'Submit a complaint',
+  href: '/complaints/new',
+  icon: FilePlus2,
+};
+
+// Shown as a filled button above the menu instead of a menu item.
+export const primaryAction: Partial<Record<NavVariant, NavItem>> = {
+  user: submitItem,
+};
+
 export const navItems: Record<NavVariant, NavItem[]> = {
   user: [
     {
@@ -23,7 +34,6 @@ export const navItems: Record<NavVariant, NavItem[]> = {
       icon: ClipboardList,
       exact: true,
     },
-    { label: 'Submit a complaint', href: '/complaints/new', icon: FilePlus2 },
   ],
   manage: [
     { label: 'Dashboard', href: '/manage', icon: LayoutDashboard, exact: true },
@@ -34,6 +44,6 @@ export const navItems: Record<NavVariant, NavItem[]> = {
       icon: ClipboardList,
       exact: true,
     },
-    { label: 'Submit a complaint', href: '/complaints/new', icon: FilePlus2 },
+    submitItem,
   ],
 };

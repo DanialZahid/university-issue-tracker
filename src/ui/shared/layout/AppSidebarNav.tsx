@@ -11,16 +11,38 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/ui/common/sidebar';
+import { Button } from '@/ui/common/button';
 import { cn } from '@/utils/cn';
-import { navItems, type NavVariant } from './nav-items';
+import { navItems, primaryAction, type NavVariant } from './nav-items';
 
 export function AppSidebarNav({ variant }: { variant: NavVariant }) {
   const pathname = usePathname();
   const { setOpenMobile } = useSidebar();
+  const action = primaryAction[variant];
+  const actionActive = action ? pathname === action.href : false;
 
   return (
     <SidebarGroup>
       <SidebarGroupContent>
+        {action && (
+          <Button
+            asChild
+            className={cn(
+              'mb-3 h-10 w-full justify-start gap-3 px-3 text-[15px] shadow-sm [&_svg]:size-5',
+              actionActive &&
+                'ring-2 ring-primary/30 ring-offset-2 ring-offset-sidebar',
+            )}
+          >
+            <Link
+              href={action.href}
+              aria-current={actionActive ? 'page' : undefined}
+              onClick={() => setOpenMobile(false)}
+            >
+              <action.icon />
+              {action.label}
+            </Link>
+          </Button>
+        )}
         <SidebarMenu>
           {navItems[variant].map((item) => {
             const isActive = item.exact
