@@ -251,3 +251,104 @@
   --backdrop-a: oklch(0.72 0.17 25 / 0.26);
   --backdrop-b: oklch(0.78 0.12 25 / 0.18);
 }
+
+/* Sign-in page. All motion stops for people who ask for reduced motion. */
+@layer components {
+  .signin-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(64px);
+    pointer-events: none;
+  }
+  .signin-dots {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(oklch(0.7 0.02 260) 1px, transparent 1px);
+    background-size: 22px 22px;
+    opacity: 0.18;
+    mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, #000, transparent);
+  }
+  .logo-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1.5px solid oklch(0.546 0.245 262.881 / 0.45);
+    animation: logo-ring 2.8s ease-out infinite;
+  }
+  /* Draws the icon's lines, holds, then starts again. */
+  .icon-draw :is(path, circle, line, polyline, rect) {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: icon-draw 3.6s ease-in-out infinite;
+    animation-delay: var(--draw-delay, 0s);
+  }
+  .float-card {
+    animation: float-card 6s ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
+  }
+  .rise-in {
+    animation: rise-in 0.7s ease-out both;
+    animation-delay: var(--rise-delay, 0s);
+  }
+}
+
+@keyframes signin-drift-a {
+  50% {
+    transform: translate(-60px, 40px);
+  }
+}
+@keyframes signin-drift-b {
+  50% {
+    transform: translate(50px, -30px);
+  }
+}
+@keyframes logo-ring {
+  from {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  to {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+@keyframes icon-draw {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  35%,
+  85% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+@keyframes float-card {
+  50% {
+    translate: 0 -10px;
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signin-blob,
+  .logo-ring,
+  .icon-draw :is(path, circle, line, polyline, rect),
+  .float-card,
+  .rise-in {
+    animation: none;
+  }
+  .icon-draw :is(path, circle, line, polyline, rect) {
+    stroke-dashoffset: 0;
+  }
+  .logo-ring {
+    display: none;
+  }
+}
