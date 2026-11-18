@@ -52,7 +52,9 @@ export function AppSidebar({
       <SidebarFooter className='gap-2.5 border-t bg-linear-to-t from-primary/8 to-transparent p-4'>
         <Hint label={userEmail} side='top'>
           <div className='flex min-w-0 items-center gap-3'>
-            <UserButton />
+            <span className='hidden md:flex'>
+              <UserButton />
+            </span>
             <p className='truncate text-sm font-medium'>{userName}</p>
           </div>
         </Hint>

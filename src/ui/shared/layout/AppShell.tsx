@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { UserButton } from '@clerk/nextjs';
 import { getDepartmentName } from '@/db/user';
 import { UserRole } from '@/generated/prisma/enums';
 import {
@@ -49,7 +50,15 @@ export async function AppShell({ user, children }: AppShellProps) {
           <Suspense>
             <Breadcrumbs />
           </Suspense>
-          <ViewAsBar />
+          <div className='ml-auto flex items-center gap-3'>
+            <ViewAsBar />
+            {/* Phones: the sidebar is a modal sheet, and Clerk's account menu
+                opens outside it, where the sheet blocks taps. So on phones the
+                account button lives here instead of in the sidebar. */}
+            <span className='flex md:hidden'>
+              <UserButton />
+            </span>
+          </div>
         </header>
         <main className='relative z-[1] mx-auto w-full max-w-7xl flex-1 p-4 md:p-6'>
           <PageFade>{children}</PageFade>
