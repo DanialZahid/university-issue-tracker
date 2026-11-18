@@ -29,8 +29,7 @@ export function AppSidebarNav({ variant }: { variant: NavVariant }) {
             asChild
             className={cn(
               'mb-3 h-10 w-full justify-start gap-3 px-3 text-[15px] shadow-sm [&_svg]:size-5',
-              actionActive &&
-                'ring-2 ring-primary/30 ring-offset-2 ring-offset-sidebar',
+              actionActive && 'bg-primary/80 shadow-none',
             )}
           >
             <Link
