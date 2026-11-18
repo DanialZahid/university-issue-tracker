@@ -9,7 +9,7 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from 'react';
-import { History, Loader2, Send } from 'lucide-react';
+import { CalendarClock, History, Loader2, Send } from 'lucide-react';
 import {
   submitComplaint,
   type SubmitComplaintState,
@@ -45,7 +45,7 @@ import {
   saveDraft,
   type ComplaintDraft,
 } from '@/utils/complaint-draft';
-import { formatRecent } from '@/utils/date';
+import { formatDateTime, formatRecent, isoDate } from '@/utils/date';
 import { Hint } from '@/ui/common/Hint';
 import { DepartmentIcon } from '@/ui/shared/department';
 import { detectLocation } from '@/automation/location-detection';
@@ -62,6 +62,11 @@ type Props = {
 const initialState: SubmitComplaintState = { status: 'idle' };
 
 const noSubscribe = () => () => {};
+
+function savedLabel(savedAt: number) {
+  const when = formatRecent(new Date(savedAt));
+  return `Saved ${when === 'Just now' ? 'just now' : when}`;
+}
 
 // The draft lives in browser storage, which the server cannot read. The
 // server and the first browser render show an empty form; right after
@@ -245,18 +250,25 @@ function FormBody({
         </p>
 
         {restoredAt !== null && (
-          <div className='flex flex-wrap items-center justify-between gap-2 rounded-lg border bg-muted/40 px-3 py-2 text-sm'>
-            <p className='inline-flex items-center gap-2'>
-              <History className='size-4 shrink-0 text-muted-foreground' />
-              <span>
-                Draft restored. Last saved:{' '}
-                {formatRecent(new Date(restoredAt)).toLowerCase()}.
-              </span>
+          <div className='flex flex-wrap items-center justify-between gap-2 rounded-lg border border-amber-200 bg-amber-50 py-2 pr-2 pl-3 text-sm text-amber-900'>
+            <p className='inline-flex flex-wrap items-center gap-x-2 gap-y-1'>
+              <History className='size-4 shrink-0 text-amber-600' />
+              <span className='font-medium'>Draft restored.</span>
+              <Hint label={formatDateTime(new Date(restoredAt))}>
+                <time
+                  dateTime={isoDate(restoredAt)}
+                  className='inline-flex items-center gap-1 text-amber-800'
+                >
+                  <CalendarClock className='size-3.5' />
+                  {savedLabel(restoredAt)}
+                </time>
+              </Hint>
             </p>
             <Button
               type='button'
               variant='ghost'
               size='sm'
+              className='text-amber-900 hover:bg-amber-100 hover:text-amber-950'
               onClick={discardDraft}
             >
               Discard draft
@@ -400,6 +412,13 @@ function FormBody({
                 ))}
               </SelectContent>
             </Select>
+            {manualLocationId !== null &&
+              suggestedLocationId &&
+              manualLocationId !== suggestedLocationId && (
+                <SuggestionLink onClick={() => setManualLocationId(null)}>
+                  Use suggested location
+                </SuggestionLink>
+              )}
           </FormField>
 
           <FormField
@@ -422,6 +441,13 @@ function FormBody({
               aria-invalid={!!errors['locationDetail']}
               aria-describedby={describedBy('locationDetail')}
             />
+            {manualRoom !== null &&
+              suggestedRoom &&
+              manualRoom !== suggestedRoom && (
+                <SuggestionLink onClick={() => setManualRoom(null)}>
+                  Use suggested room
+                </SuggestionLink>
+              )}
           </FormField>
         </div>
 
@@ -475,6 +501,30 @@ function FormBody({
         />
         {children}
       </div>
+    </div>
+  );
+}
+
+// Your own choice wins over the suggestion while you keep typing. This puts
+// the suggestion back.
+function SuggestionLink({
+  onClick,
+  children,
+}: {
+  onClick: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <div className='flex justify-end'>
+      <Button
+        type='button'
+        variant='link'
+        size='sm'
+        className='h-auto p-0'
+        onClick={onClick}
+      >
+        {children}
+      </Button>
     </div>
   );
 }
