@@ -3,10 +3,13 @@
 import {
   startTransition,
   useActionState,
+  useEffect,
+  useRef,
   useState,
+  useSyncExternalStore,
   type ReactNode,
 } from 'react';
-import { Loader2, Send } from 'lucide-react';
+import { History, Loader2, Send } from 'lucide-react';
 import {
   submitComplaint,
   type SubmitComplaintState,
@@ -35,7 +38,14 @@ import { detectPriority } from '@/automation/priority-detection';
 import { PriorityBadge } from './PriorityBadge';
 import { SimilarIssues } from './SimilarIssues';
 import { ImagePicker } from './ImagePicker';
-import { IMAGE_LIMITS } from '@/schemas/attachment';
+import { IMAGE_LIMITS, type AttachmentInput } from '@/schemas/attachment';
+import {
+  clearDraft,
+  readDraft,
+  saveDraft,
+  type ComplaintDraft,
+} from '@/utils/complaint-draft';
+import { formatRecent } from '@/utils/date';
 import { Hint } from '@/ui/common/Hint';
 import { DepartmentIcon } from '@/ui/shared/department';
 import { detectLocation } from '@/automation/location-detection';
@@ -51,12 +61,36 @@ type Props = {
 
 const initialState: SubmitComplaintState = { status: 'idle' };
 
-export function ComplaintForm({
+const noSubscribe = () => () => {};
+
+// The draft lives in browser storage, which the server cannot read. The
+// server and the first browser render show an empty form; right after
+// hydration the form remounts once with the saved draft, if there is one.
+export function ComplaintForm(props: Props) {
+  const inBrowser = useSyncExternalStore(
+    noSubscribe,
+    () => true,
+    () => false,
+  );
+  return (
+    <FormBody
+      key={inBrowser ? 'browser' : 'server'}
+      {...props}
+      draftEnabled={inBrowser}
+    />
+  );
+}
+
+function FormBody({
   categories,
   locations,
   uploaderId,
   children,
-}: Props) {
+  draftEnabled,
+}: Props & { draftEnabled: boolean }) {
+  const [restored] = useState<ComplaintDraft | null>(() =>
+    draftEnabled ? readDraft(uploaderId) : null,
+  );
   const [state, formAction, pending] = useActionState(
     submitComplaint,
     initialState,
@@ -65,11 +99,87 @@ export function ComplaintForm({
 
   // All fields are controlled so values survive a failed submit
   // (React resets uncontrolled fields after a form action).
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [manualLocationId, setManualLocationId] = useState<string | null>(null);
-  const [manualRoom, setManualRoom] = useState<string | null>(null);
-  const [manualCategoryId, setManualCategoryId] = useState<string | null>(null);
+  const [title, setTitle] = useState(restored?.title ?? '');
+  const [description, setDescription] = useState(restored?.description ?? '');
+  const [manualLocationId, setManualLocationId] = useState<string | null>(
+    restored?.locationId ?? null,
+  );
+  const [manualRoom, setManualRoom] = useState<string | null>(
+    restored?.room ?? null,
+  );
+  const [manualCategoryId, setManualCategoryId] = useState<string | null>(
+    restored?.categoryId ?? null,
+  );
+  const [attachments, setAttachments] = useState<AttachmentInput[]>(
+    restored?.attachments ?? [],
+  );
+
+  // Saved while typing, cleared on submit, and saved again if it fails.
+  const [restoredAt, setRestoredAt] = useState(restored?.savedAt ?? null);
+  const [initialImages, setInitialImages] = useState(
+    restored?.attachments ?? [],
+  );
+  // A new key remounts the picker so it drops discarded images.
+  const [pickerKey, setPickerKey] = useState(0);
+  const submitting = useRef(false);
+
+  const draft = {
+    title,
+    description,
+    categoryId: manualCategoryId,
+    locationId: manualLocationId,
+    room: manualRoom,
+    attachments,
+  };
+  const draftJson = JSON.stringify(draft);
+
+  useEffect(() => {
+    if (!draftEnabled || submitting.current) return;
+    const timer = setTimeout(
+      () => saveDraft(uploaderId, JSON.parse(draftJson)),
+      400,
+    );
+    return () => clearTimeout(timer);
+  }, [draftJson, draftEnabled, uploaderId]);
+
+  useEffect(() => {
+    if (!draftEnabled || state.status !== 'error') return;
+    submitting.current = false;
+    saveDraft(uploaderId, JSON.parse(draftJson));
+    // Only when a new result arrives, not on every keystroke.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state]);
+
+  // Warn before a refresh or closing the tab. Moving between app pages does
+  // not trigger this, which is what the saved draft covers.
+  const hasWork =
+    uploading ||
+    !!title.trim() ||
+    !!description.trim() ||
+    attachments.length > 0;
+  useEffect(() => {
+    if (!hasWork) return;
+    const warn = (e: BeforeUnloadEvent) => {
+      if (submitting.current) return;
+      e.preventDefault();
+      e.returnValue = '';
+    };
+    window.addEventListener('beforeunload', warn);
+    return () => window.removeEventListener('beforeunload', warn);
+  }, [hasWork]);
+
+  function discardDraft() {
+    clearDraft(uploaderId);
+    setTitle('');
+    setDescription('');
+    setManualCategoryId(null);
+    setManualLocationId(null);
+    setManualRoom(null);
+    setInitialImages([]);
+    setAttachments([]);
+    setPickerKey((k) => k + 1);
+    setRestoredAt(null);
+  }
 
   const suggestedCategoryId =
     title.trim().length >= 3
@@ -122,6 +232,8 @@ export function ComplaintForm({
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.currentTarget);
+          submitting.current = true;
+          clearDraft(uploaderId);
           startTransition(() => formAction(formData));
         }}
         noValidate
@@ -131,6 +243,26 @@ export function ComplaintForm({
           Fields marked <span className='text-destructive'>*</span> are
           required.
         </p>
+
+        {restoredAt !== null && (
+          <div className='flex flex-wrap items-center justify-between gap-2 rounded-lg border bg-muted/40 px-3 py-2 text-sm'>
+            <p className='inline-flex items-center gap-2'>
+              <History className='size-4 shrink-0 text-muted-foreground' />
+              <span>
+                Draft restored. Last saved:{' '}
+                {formatRecent(new Date(restoredAt)).toLowerCase()}.
+              </span>
+            </p>
+            <Button
+              type='button'
+              variant='ghost'
+              size='sm'
+              onClick={discardDraft}
+            >
+              Discard draft
+            </Button>
+          </div>
+        )}
 
         {state.status === 'error' && state.message && (
           <Alert variant='destructive'>
@@ -300,9 +432,12 @@ export function ComplaintForm({
           hint={`Up to ${IMAGE_LIMITS.maxFiles} JPG, PNG, or WebP images, ${IMAGE_LIMITS.maxInputBytes / (1024 * 1024)} MB each.`}
         >
           <ImagePicker
+            key={pickerKey}
             uploaderId={uploaderId}
             disabled={pending}
             onBusyChange={setUploading}
+            initial={initialImages}
+            onChange={setAttachments}
           />
         </FormField>
 

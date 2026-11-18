@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, type DragEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type DragEvent } from 'react';
 import { upload } from '@vercel/blob/client';
 import { Camera, CircleAlert, ImagePlus, Info, Loader2, X } from 'lucide-react';
 import { Button } from '@/ui/common/button';
@@ -26,6 +26,10 @@ type Props = {
   uploaderId: string;
   disabled?: boolean;
   onBusyChange: (busy: boolean) => void;
+  // Already uploaded images, for example from a restored draft.
+  initial?: AttachmentInput[];
+  // Must be stable (a state setter or useCallback).
+  onChange?: (attachments: AttachmentInput[]) => void;
 };
 
 const MB = 1024 * 1024;
@@ -39,9 +43,23 @@ function baseName(name: string) {
   );
 }
 
-export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
+export function ImagePicker({
+  uploaderId,
+  disabled,
+  onBusyChange,
+  initial,
+  onChange,
+}: Props) {
   const input = useRef<HTMLInputElement>(null);
-  const [items, setItems] = useState<Item[]>([]);
+  const [items, setItems] = useState<Item[]>(() =>
+    (initial ?? []).map((attachment) => ({
+      key: attachment.sha256 + attachment.url,
+      preview: attachment.url,
+      fileName: attachment.fileName,
+      status: 'done',
+      attachment,
+    })),
+  );
   const [notice, setNotice] = useState<string | null>(null);
   const [dragging, setDragging] = useState(false);
   // dragenter and dragleave fire for every child, so count them.
@@ -176,7 +194,11 @@ export function ImagePicker({ uploaderId, disabled, onBusyChange }: Props) {
     if (canDrop) onPick(e.dataTransfer.files);
   }
 
-  const ready = items.flatMap((i) => (i.attachment ? [i.attachment] : []));
+  const ready = useMemo(
+    () => items.flatMap((i) => (i.attachment ? [i.attachment] : [])),
+    [items],
+  );
+  useEffect(() => onChange?.(ready), [ready, onChange]);
   const full = items.length >= IMAGE_LIMITS.maxFiles;
 
   return (
