@@ -81,35 +81,40 @@ export function SampleComplaints() {
         return (
           <div
             key={s.ticket}
-            ref={i === 1 ? liveCard : undefined}
-            className={cn(
-              'float-card absolute w-[21rem] overflow-hidden rounded-xl border bg-card py-4 pr-4 pl-6 shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)] xl:w-[23rem]',
-              s.place,
-            )}
-            style={
-              {
-                rotate: `${s.tilt}deg`,
-                '--float-delay': `${i * 1.2}s`,
-              } as CSSProperties
-            }
+            className={cn('rise-in absolute', s.place)}
+            style={{ '--rise-delay': `${0.3 + i * 0.15}s` } as CSSProperties}
           >
-            <span
-              className={cn(
-                'absolute inset-y-0 left-0 w-1.5 transition-colors duration-500',
-                statusTone[status].bar,
-              )}
-            />
-            <div className='flex items-center justify-between gap-3 text-sm text-muted-foreground'>
-              <span>{s.ticket}</span>
-              <StatusBadge status={status} />
+            <div
+              ref={i === 1 ? liveCard : undefined}
+              className='float-card relative w-[21rem] overflow-hidden rounded-xl border bg-card py-4 pr-4 pl-6 shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)] xl:w-[23rem]'
+              style={
+                {
+                  rotate: `${s.tilt}deg`,
+                  '--float-delay': `${i * 1.2}s`,
+                } as CSSProperties
+              }
+            >
+              <span
+                className={cn(
+                  'absolute inset-y-0 left-0 w-1.5 transition-colors duration-500',
+                  statusTone[status].bar,
+                )}
+              />
+              <div className='flex items-center justify-between gap-3 text-sm text-muted-foreground'>
+                <span>{s.ticket}</span>
+                {/* New key on each change, so the badge fades in again. */}
+                <span key={status} className='status-swap'>
+                  <StatusBadge status={status} />
+                </span>
+              </div>
+              <p className='mt-1.5 font-medium'>{s.title}</p>
+              <p className='mt-1.5 text-sm text-muted-foreground'>
+                {s.category} · Sent to {s.department}
+              </p>
+              <p className='mt-1 text-xs text-muted-foreground'>
+                Reported {s.reported}
+              </p>
             </div>
-            <p className='mt-1.5 font-medium'>{s.title}</p>
-            <p className='mt-1.5 text-sm text-muted-foreground'>
-              {s.category} · Sent to {s.department}
-            </p>
-            <p className='mt-1 text-xs text-muted-foreground'>
-              Reported {s.reported}
-            </p>
           </div>
         );
       })}

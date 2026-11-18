@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import { SignIn } from '@clerk/nextjs';
+import { ClerkLoaded, ClerkLoading, SignIn } from '@clerk/nextjs';
 import {
   CircleCheck,
   CopyCheck,
@@ -19,6 +19,12 @@ const FEATURES: { icon: LucideIcon; label: string; color: string }[] = [
   { icon: CircleCheck, label: 'Track every step', color: 'text-green-600' },
 ];
 
+// Clerk shows a "Development mode" strip with test keys; the placeholder
+// matches it so the card does not jump when it loads.
+const clerkTestKeys =
+  process.env['NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY']?.startsWith('pk_test') ??
+  false;
+
 const rise = (delay: number) =>
   ({ '--rise-delay': `${delay}s` }) as CSSProperties;
 
@@ -34,7 +40,7 @@ export default function SignInPage() {
       </div>
 
       <div className='mx-auto flex min-h-svh max-w-7xl flex-col px-6 sm:px-10'>
-        <header className='flex items-center gap-4 py-7'>
+        <header className='rise-in flex items-center gap-4 py-7'>
           <span className='relative grid size-11 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground shadow-[0_10px_30px_-10px_rgb(21_93_252/0.6)]'>
             <span aria-hidden='true' className='logo-ring' />
             <span
@@ -49,14 +55,19 @@ export default function SignInPage() {
           </span>
         </header>
 
-        <div className='grid flex-1 items-center gap-12 pb-16 lg:grid-cols-2 xl:gap-24'>
+        <div className='grid flex-1 items-center gap-12 pb-16 lg:grid-cols-[1.15fr_1fr] xl:gap-20'>
           <section aria-labelledby='signin-heading'>
             <h1
               id='signin-heading'
-              className='rise-in text-4xl leading-tight font-bold tracking-tight text-balance sm:text-5xl xl:text-6xl'
+              className='rise-in text-4xl leading-tight font-bold tracking-tight sm:text-5xl lg:text-4xl xl:text-5xl'
             >
-              Report campus issues.{' '}
-              <span className='block text-primary'>Track them to done.</span>
+              {/* One line each from tablet width up. */}
+              <span className='block sm:whitespace-nowrap'>
+                Report campus issues.
+              </span>{' '}
+              <span className='block text-primary sm:whitespace-nowrap'>
+                Track them to done.
+              </span>
             </h1>
             <p
               className='rise-in mt-5 max-w-lg text-lg text-muted-foreground xl:text-xl'
@@ -67,35 +78,53 @@ export default function SignInPage() {
             </p>
 
             <div className='rise-in mt-8 w-full max-w-xl' style={rise(0.2)}>
-              <SignIn
-                appearance={{
-                  elements: {
-                    rootBox: { width: '100%' },
-                    cardBox: {
-                      width: '100%',
-                      border: '1px solid var(--border)',
-                      boxShadow:
-                        '0 1px 2px rgb(0 0 0 / 0.04), 0 18px 40px -18px rgb(21 93 252 / 0.3)',
-                    },
-                    card: {
-                      boxShadow: 'none',
-                      borderRadius: 0,
-                      borderBottom: '1px solid var(--border)',
-                    },
-                    header: { display: 'none' },
-                    footerAction: { display: 'none' },
-                  },
-                }}
-              />
+              <ClerkLoading>
+                <div
+                  aria-hidden='true'
+                  className='overflow-hidden rounded-xl border bg-card shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)]'
+                >
+                  <div className='px-10 py-8'>
+                    <div className='h-10 animate-pulse rounded-md border bg-muted/50' />
+                  </div>
+                  {clerkTestKeys && (
+                    <div className='h-11 border-t bg-muted/40' />
+                  )}
+                </div>
+              </ClerkLoading>
+              <ClerkLoaded>
+                <div className='fade-in'>
+                  <SignIn
+                    appearance={{
+                      elements: {
+                        rootBox: { width: '100%' },
+                        cardBox: {
+                          width: '100%',
+                          border: '1px solid var(--border)',
+                          boxShadow:
+                            '0 1px 2px rgb(0 0 0 / 0.04), 0 18px 40px -18px rgb(21 93 252 / 0.3)',
+                        },
+                        card: {
+                          boxShadow: 'none',
+                          borderRadius: 0,
+                          borderBottom: '1px solid var(--border)',
+                        },
+                        header: { display: 'none' },
+                        footerAction: { display: 'none' },
+                      },
+                    }}
+                  />
+                </div>
+              </ClerkLoaded>
               {/* Outside the card: Clerk does not allow custom text inside it. */}
               <p className='mt-4 text-center text-sm text-muted-foreground'>
                 Use your university email. Other accounts are not accepted.
               </p>
             </div>
 
-            {/* Equal widths; a chip left alone on a row stretches to fill it. */}
+            {/* Wide screens: one row, every chip as wide as the widest.
+                Narrower: they wrap, and a chip alone on a row stretches. */}
             <ul
-              className='rise-in mt-8 flex max-w-xl flex-wrap gap-2'
+              className='rise-in mt-8 flex flex-wrap gap-2 xl:inline-grid xl:auto-cols-fr xl:grid-flow-col'
               style={rise(0.3)}
             >
               {FEATURES.map(({ icon: Icon, label, color }, i) => (
