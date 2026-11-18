@@ -74,3 +74,16 @@ export function clearDraft(userId: string): void {
     // Nothing to clear.
   }
 }
+
+// Removes every user's draft from this browser. Runs on the sign-in page, so
+// signing out (or an expired session) leaves nothing behind on a shared computer.
+export function clearAllDrafts(): void {
+  try {
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const key = localStorage.key(i);
+      if (key?.startsWith('complaint-draft:')) localStorage.removeItem(key);
+    }
+  } catch {
+    // Storage blocked: nothing was saved either.
+  }
+}
