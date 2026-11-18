@@ -34,6 +34,13 @@ export function formatAge(date: Date, now: Date = new Date()): string {
   return days === 1 ? '1 day' : `${days} days`;
 }
 
+// Relative for the last 24 hours, then the date.
+export function formatRecent(date: Date, now: Date = new Date()): string {
+  if (now.getTime() - date.getTime() >= 86_400_000) return formatDate(date);
+  const age = formatAge(date, now);
+  return age === 'Just now' ? age : `${age} ago`;
+}
+
 export function toYmd(date: Date): string {
   const m = String(date.getMonth() + 1).padStart(2, '0');
   const d = String(date.getDate()).padStart(2, '0');

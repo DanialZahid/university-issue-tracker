@@ -44,7 +44,7 @@ export function ComplaintCompactList({ rows }: { rows: ComplaintRow[] }) {
                 <StatusBadge status={c.status} />
               </span>
               <Hint label={formatDateTime(c.createdAt)}>
-                <span className='hidden w-16 shrink-0 text-right text-muted-foreground tabular-nums sm:block'>
+                <span className='hidden w-24 shrink-0 text-right whitespace-nowrap text-muted-foreground tabular-nums sm:block'>
                   {formatAge(c.createdAt, now)}
                 </span>
               </Hint>

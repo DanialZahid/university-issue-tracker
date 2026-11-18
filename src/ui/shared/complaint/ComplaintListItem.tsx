@@ -5,7 +5,7 @@ import { PriorityBadge } from './PriorityBadge';
 import { StatusBadge } from './StatusBadge';
 import { statusTone } from './status-tone';
 import { cn } from '@/utils/cn';
-import { formatDate, formatDateTime } from '@/utils/date';
+import { formatDateTime, formatRecent } from '@/utils/date';
 import { formatTicketNumber } from '@/utils/ticket';
 import { Hint } from '@/ui/common/Hint';
 
@@ -59,7 +59,7 @@ export function ComplaintListItem({
             <Hint label={formatDateTime(createdAt)}>
               <span className='inline-flex items-center gap-1.5'>
                 <CalendarClock className='size-3.5' />
-                {formatDate(createdAt)}
+                {formatRecent(createdAt)}
               </span>
             </Hint>
             {status !== 'RESOLVED' && <PriorityBadge priority={priority} />}

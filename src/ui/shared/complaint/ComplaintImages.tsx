@@ -44,9 +44,12 @@ export function ComplaintImages({ images }: { images: ComplaintImage[] }) {
       <CardHeader>
         <CardTitle className='flex items-center gap-2'>
           <Images className='size-5' />
-          Images
-          <span className='text-sm font-normal text-muted-foreground'>
-            ({count})
+          {/* Baseline, so the smaller count sits on the same line as the title. */}
+          <span className='flex items-baseline gap-2'>
+            Images
+            <span className='text-sm font-normal text-muted-foreground'>
+              ({count})
+            </span>
           </span>
         </CardTitle>
       </CardHeader>
