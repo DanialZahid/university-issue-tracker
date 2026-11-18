@@ -140,7 +140,7 @@ export function SampleComplaints() {
   ];
 
   return (
-    <div aria-hidden='true' className='relative h-[34rem] xl:h-[38rem]'>
+    <div aria-hidden='true' className='relative h-136 xl:h-152'>
       {cards.map((c, i) => (
         <div
           key={c.key}
@@ -149,7 +149,7 @@ export function SampleComplaints() {
         >
           <div
             ref={c.isLive ? liveCard : undefined}
-            className='float-card relative w-[21rem] overflow-hidden rounded-xl border bg-card py-4 pr-4 pl-6 shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)] xl:w-[23rem]'
+            className='float-card relative w-84 overflow-hidden rounded-xl border bg-card py-4 pr-4 pl-6 shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)] xl:w-92'
             style={
               {
                 rotate: `${c.tilt}deg`,

@@ -34,8 +34,8 @@ export default function SignInPage() {
       <ClearDrafts />
 
       <div aria-hidden='true' className='absolute inset-0 -z-10'>
-        <div className='signin-blob top-28 right-[4%] size-[35rem] animate-[signin-drift-a_14s_ease-in-out_infinite] bg-[oklch(0.72_0.14_260/0.32)]' />
-        <div className='signin-blob -bottom-40 left-[4%] size-[26rem] animate-[signin-drift-b_16s_ease-in-out_infinite] bg-[oklch(0.78_0.12_340/0.22)]' />
+        <div className='signin-blob top-28 right-[4%] size-140 animate-[signin-drift-a_14s_ease-in-out_infinite] bg-[oklch(0.72_0.14_260/0.32)]' />
+        <div className='signin-blob -bottom-40 left-[4%] size-104 animate-[signin-drift-b_16s_ease-in-out_infinite] bg-[oklch(0.78_0.12_340/0.22)]' />
         <div className='signin-dots' />
       </div>
 

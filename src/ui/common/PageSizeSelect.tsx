@@ -50,7 +50,7 @@ export function PageSizeSelect({ value, sizes, fallback, cookie }: Props) {
       <SelectTrigger
         aria-label='Rows per page'
         size='sm'
-        className='w-[4.5rem] bg-card'
+        className='w-18 bg-card'
       >
         <SelectValue />
       </SelectTrigger>
