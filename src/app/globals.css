@@ -298,6 +298,34 @@
     display: inline-flex;
     animation: status-swap 0.45s ease-out both;
   }
+  /* Sample card status icons: the clock and check draw on a loop, the
+     in-progress icon turns slowly. */
+  .sample-status:is([data-status='PENDING'], [data-status='RESOLVED'])
+    svg
+    :is(path, circle, line, polyline) {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: icon-draw 3.6s ease-in-out infinite;
+  }
+  .sample-status[data-status='IN_PROGRESS'] svg {
+    animation: sample-spin 4s linear infinite;
+  }
+  /* Hidden once Clerk's card is on the page (Clerk adds the cl- classes). */
+  .signin-placeholder {
+    transition: opacity 0.4s ease-out;
+  }
+  .grid:has(.cl-cardBox) > .signin-placeholder {
+    opacity: 0;
+  }
+  .type-caret {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 1px;
+    vertical-align: -0.15em;
+    background: currentColor;
+    animation: caret-blink 1s steps(1) infinite;
+  }
 }
 
 @keyframes signin-drift-a {
@@ -337,6 +365,16 @@
     translate: 0 -10px;
   }
 }
+@keyframes sample-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -362,8 +400,14 @@
   .float-card,
   .rise-in,
   .fade-in,
-  .status-swap {
+  .status-swap,
+  .type-caret,
+  .sample-status svg,
+  .sample-status svg :is(path, circle, line, polyline) {
     animation: none;
+  }
+  .sample-status svg :is(path, circle, line, polyline) {
+    stroke-dashoffset: 0;
   }
   .icon-draw :is(path, circle, line, polyline, rect) {
     stroke-dashoffset: 0;

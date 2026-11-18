@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import { ClerkLoaded, ClerkLoading, SignIn } from '@clerk/nextjs';
+import { SignIn } from '@clerk/nextjs';
 import {
   CircleCheck,
   CopyCheck,
@@ -78,27 +78,29 @@ export default function SignInPage() {
             </p>
 
             <div className='rise-in mt-8 w-full max-w-xl' style={rise(0.2)}>
-              <ClerkLoading>
+              {/* The placeholder and Clerk's card share one grid cell. The
+                  placeholder holds the height from the first paint, so nothing
+                  moves when the real card arrives on top of it and fades in. */}
+              <div className='grid'>
                 <div
                   aria-hidden='true'
-                  className='overflow-hidden rounded-xl border bg-card shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)]'
+                  className='signin-placeholder col-start-1 row-start-1 overflow-hidden rounded-xl border bg-card shadow-[0_18px_40px_-18px_rgb(21_93_252/0.3)]'
                 >
-                  <div className='px-10 py-8'>
+                  <div className='px-10 py-7'>
                     <div className='h-10 animate-pulse rounded-md border bg-muted/50' />
                   </div>
                   {clerkTestKeys && (
                     <div className='h-11 border-t bg-muted/40' />
                   )}
                 </div>
-              </ClerkLoading>
-              <ClerkLoaded>
-                <div className='fade-in'>
+                <div className='relative col-start-1 row-start-1'>
                   <SignIn
                     appearance={{
                       elements: {
                         rootBox: { width: '100%' },
                         cardBox: {
                           width: '100%',
+                          animation: 'fade-in 0.4s ease-out both',
                           border: '1px solid var(--border)',
                           boxShadow:
                             '0 1px 2px rgb(0 0 0 / 0.04), 0 18px 40px -18px rgb(21 93 252 / 0.3)',
@@ -114,7 +116,7 @@ export default function SignInPage() {
                     }}
                   />
                 </div>
-              </ClerkLoaded>
+              </div>
               {/* Outside the card: Clerk does not allow custom text inside it. */}
               <p className='mt-4 text-center text-sm text-muted-foreground'>
                 Use your university email. Other accounts are not accepted.
