@@ -394,6 +394,7 @@ Requirements: Node.js 24, a PostgreSQL database (Neon works), a Clerk applicatio
    | `UNIVERSITY_EMAIL_DOMAIN`                      | Allowed email domain, for example `iqra.edu.pk`     |
    | `SUPERUSER_EMAILS`                             | Comma-separated superuser emails                    |
    | `BLOB_READ_WRITE_TOKEN`                        | Vercel Blob token for image uploads                 |
+   | `GEMINI_API_KEY`                               | Gemini API key for the AI layer (optional)          |
 
 3. Apply migrations, generate the client, and load reference data:
    ```bash

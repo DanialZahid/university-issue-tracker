@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { auth } from '@clerk/nextjs/server';
 import { applyViewAs } from '@/demo/view-as';
 import { getUserByClerkId } from '@/db/user';
+import { isSuperuserEmail } from '@/utils/auth-policy';
 import { UserRole } from '@/generated/prisma/enums';
 import { isManager } from '@/utils/role';
 
@@ -31,4 +32,14 @@ export async function requireSuperuser() {
   const user = await requireUser();
   if (user.role !== UserRole.SUPERUSER) redirect('/');
   return user;
+}
+
+// The real account only. "View as" can show anyone as Superuser for demos,
+// so this checks the signed-in email against SUPERUSER_EMAILS instead of the
+// role. Returns null for everyone else, so pages can answer "not found".
+export async function getRealSuperuser() {
+  const { userId } = await auth();
+  if (!userId) return null;
+  const user = await getCurrentUser(userId);
+  return user && isSuperuserEmail(user.email) ? user : null;
 }
