@@ -8,6 +8,7 @@ import {
   type SimilarComplaint,
 } from '@/actions/similar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/ui/common/card';
+import { CopyButton } from '@/ui/common/CopyButton';
 import { formatAge, formatDateTime, isoDate } from '@/utils/date';
 import { Hint } from '@/ui/common/Hint';
 import { StatusBadge } from './StatusBadge';
@@ -73,8 +74,13 @@ export function SimilarIssues({ title, categoryId, locationId, room }: Props) {
               className='rounded-lg border bg-card p-3 text-sm shadow-xs'
             >
               <div className='flex items-center justify-between gap-2'>
-                <span className='font-medium text-muted-foreground tabular-nums'>
+                <span className='inline-flex items-center gap-1 font-medium text-muted-foreground tabular-nums'>
                   {c.ticket}
+                  <CopyButton
+                    value={c.ticket}
+                    label='Copy ticket number'
+                    className='size-6'
+                  />
                 </span>
                 <StatusBadge status={c.status} />
               </div>

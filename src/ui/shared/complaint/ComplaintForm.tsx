@@ -14,6 +14,7 @@ import {
   submitComplaint,
   type SubmitComplaintState,
 } from '@/actions/complaint';
+import { suggestFields, type FieldSuggestion } from '@/actions/suggest';
 import { detectCategory } from '@/automation/category-detection';
 import { detectRoom } from '@/automation/room-detection';
 import {
@@ -56,8 +57,12 @@ type Props = {
   categories: CategoryOption[];
   locations: Option[];
   uploaderId: string;
+  // True when the AI layer is switched on (AI_FEATURES=on).
+  aiEnabled?: boolean;
   children?: ReactNode;
 };
+
+const AI_PAUSE_MS = 1200;
 
 const initialState: SubmitComplaintState = { status: 'idle' };
 
@@ -90,6 +95,7 @@ function FormBody({
   categories,
   locations,
   uploaderId,
+  aiEnabled = false,
   children,
   draftEnabled,
 }: Props & { draftEnabled: boolean }) {
@@ -186,27 +192,70 @@ function FormBody({
     setRestoredAt(null);
   }
 
-  const suggestedCategoryId =
+  // AI suggestions: asked once typing pauses. The last answer stays until a
+  // newer one arrives, so the fields do not flicker back to the rules.
+  const [ai, setAi] = useState<FieldSuggestion | null>(null);
+  const [aiBusy, setAiBusy] = useState(false);
+  const aiReady =
+    aiEnabled &&
+    title.trim().length >= LIMITS.title.min &&
+    description.trim().length >= LIMITS.description.min;
+  const aiKey = `${title.trim()}\n${description.trim()}`;
+  const lastAsked = useRef('');
+  useEffect(() => {
+    if (!aiReady || lastAsked.current === aiKey) return;
+    let cancelled = false;
+    const timer = setTimeout(async () => {
+      lastAsked.current = aiKey;
+      setAiBusy(true);
+      try {
+        const answer = await suggestFields({ title, description });
+        if (!cancelled && answer) setAi(answer);
+      } catch {
+        // Keep the rule-based suggestions.
+      } finally {
+        if (!cancelled) setAiBusy(false);
+      }
+    }, AI_PAUSE_MS);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [aiReady, aiKey, title, description]);
+  const aiValue = aiReady ? ai : null;
+  const suggestedBy = aiValue
+    ? 'Suggested by AI from your text. You can change it.'
+    : 'Suggested from your text. You can change it.';
+
+  const ruleCategoryId =
     title.trim().length >= 3
       ? (categories.find(
           (c) => c.name === detectCategory(title, description).category,
         )?.id ?? '')
       : '';
+  const suggestedCategoryId =
+    (aiValue && categories.find((c) => c.name === aiValue.category)?.id) ||
+    ruleCategoryId;
   const categoryId = manualCategoryId ?? suggestedCategoryId;
   const department = categories.find(
     (c) => c.id === categoryId,
   )?.departmentName;
   const categoryName = categories.find((c) => c.id === categoryId)?.name ?? '';
-  const priority = detectPriority(title, description, categoryName);
+  const priority =
+    aiValue?.priority ?? detectPriority(title, description, categoryName);
 
-  const suggestedRoom = detectRoom(title, description) ?? '';
+  const suggestedRoom = aiValue
+    ? (aiValue.room ?? '')
+    : (detectRoom(title, description) ?? '');
   const roomDetail = manualRoom ?? suggestedRoom;
 
-  const suggestedLocationName = detectLocation(
-    title,
-    description,
-    locations.map((l) => l.name),
-  );
+  const suggestedLocationName = aiValue
+    ? aiValue.location
+    : detectLocation(
+        title,
+        description,
+        locations.map((l) => l.name),
+      );
   const suggestedLocationId =
     locations.find((l) => l.name === suggestedLocationName)?.id ?? '';
   const locationId = manualLocationId ?? suggestedLocationId;
@@ -327,9 +376,11 @@ function FormBody({
           required
           error={errors['categoryId']}
           hint={
-            manualCategoryId === null && suggestedCategoryId
-              ? 'Suggested from your text. You can change it.'
-              : undefined
+            aiBusy
+              ? 'Checking with AI…'
+              : manualCategoryId === null && suggestedCategoryId
+                ? suggestedBy
+                : undefined
           }
         >
           <Select
@@ -396,7 +447,7 @@ function FormBody({
             }
             hint={
               manualLocationId === null && suggestedLocationId
-                ? 'Suggested from your text. You can change it.'
+                ? suggestedBy
                 : 'Leave empty for website, online, or campus-wide issues.'
             }
           >
@@ -439,7 +490,7 @@ function FormBody({
             }
             hint={
               manualRoom === null && suggestedRoom
-                ? 'Suggested from your text. You can change it.'
+                ? suggestedBy
                 : 'For example: AC-103 or C-Lab 04.'
             }
           >
@@ -479,7 +530,9 @@ function FormBody({
             </span>
           </Hint>
           <span className='text-muted-foreground'>
-            Set automatically. The department may adjust it.
+            {aiValue
+              ? 'Set automatically with AI. The department may adjust it.'
+              : 'Set automatically. The department may adjust it.'}
           </span>
         </div>
 

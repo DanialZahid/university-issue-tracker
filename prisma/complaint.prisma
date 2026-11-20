@@ -6,6 +6,8 @@ model Complaint {
   priority               Priority        @default(MEDIUM)
   status                 ComplaintStatus @default(PENDING)
   locationDetail         String?
+  // One-line summary for department heads, written by the AI layer.
+  aiSummary              String?
   estimatedEffortMinutes Int
 
   categoryId String

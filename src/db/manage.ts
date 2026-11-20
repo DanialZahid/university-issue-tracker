@@ -225,6 +225,7 @@ export async function getComplaintForManager(
       ticketNumber: true,
       title: true,
       description: true,
+      aiSummary: true,
       status: true,
       priority: true,
       locationDetail: true,

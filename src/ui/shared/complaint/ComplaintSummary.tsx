@@ -6,6 +6,7 @@ import {
   DoorOpen,
   Flag,
   MapPin,
+  Sparkles,
   Tag,
   type LucideIcon,
 } from 'lucide-react';
@@ -45,6 +46,8 @@ type Props = {
   complaint: {
     title: string;
     description: string;
+    // Only passed on the management page.
+    aiSummary?: string | null;
     status: ComplaintStatus;
     priority: Priority;
     locationDetail: string | null;
@@ -75,6 +78,16 @@ export function ComplaintSummary({ complaint: c, children }: Props) {
             <StatusBadge status={c.status} />
           </span>
         </div>
+
+        {c.aiSummary && (
+          <p className='flex items-start gap-2 rounded-lg border border-violet-200 bg-violet-50 px-4 py-3 text-sm text-violet-950'>
+            <Sparkles className='mt-0.5 size-4 shrink-0 text-violet-600' />
+            <span>
+              <span className='font-medium'>AI summary: </span>
+              {c.aiSummary}
+            </span>
+          </p>
+        )}
 
         <div className='rounded-xl bg-muted/40 p-5'>
           <p className='mb-2 flex items-center gap-2 text-sm text-muted-foreground'>

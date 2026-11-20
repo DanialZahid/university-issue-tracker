@@ -14,6 +14,13 @@ export function isAiConfigured(): boolean {
   return !!process.env['GEMINI_API_KEY'];
 }
 
+// AI in the live app (form suggestions, priority, summaries) is opt-in, so
+// real complaints are only sent once someone has decided to. The evaluation
+// page only needs the key.
+export function isAiEnabled(): boolean {
+  return isAiConfigured() && process.env['AI_FEATURES'] === 'on';
+}
+
 // Worth retrying later: rate limits (429) and the provider being busy or
 // briefly down (500, 503).
 export class AiRetryableError extends Error {
@@ -27,7 +34,12 @@ export class AiRetryableError extends Error {
 
 export class AiError extends Error {}
 
-async function call<T>(model: string, method: string, body: unknown) {
+async function call<T>(
+  model: string,
+  method: string,
+  body: unknown,
+  timeoutMs = 20_000,
+) {
   const key = process.env['GEMINI_API_KEY'];
   if (!key) throw new AiError('GEMINI_API_KEY is not set.');
 
@@ -36,6 +48,7 @@ async function call<T>(model: string, method: string, body: unknown) {
     headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
     body: JSON.stringify(body),
     cache: 'no-store',
+    signal: AbortSignal.timeout(timeoutMs),
   });
 
   if (res.status === 429 || res.status === 500 || res.status === 503) {
@@ -64,16 +77,22 @@ export async function generateJson(options: {
   system: string;
   prompt: string;
   schema: object;
+  timeoutMs?: number;
 }): Promise<unknown> {
-  const data = await call<GenerateResponse>(AI_MODELS.text, 'generateContent', {
-    systemInstruction: { parts: [{ text: options.system }] },
-    contents: [{ role: 'user', parts: [{ text: options.prompt }] }],
-    generationConfig: {
-      temperature: 0,
-      responseMimeType: 'application/json',
-      responseJsonSchema: options.schema,
+  const data = await call<GenerateResponse>(
+    AI_MODELS.text,
+    'generateContent',
+    {
+      systemInstruction: { parts: [{ text: options.system }] },
+      contents: [{ role: 'user', parts: [{ text: options.prompt }] }],
+      generationConfig: {
+        temperature: 0,
+        responseMimeType: 'application/json',
+        responseJsonSchema: options.schema,
+      },
     },
-  });
+    options.timeoutMs,
+  );
   const text =
     data.candidates?.[0]?.content?.parts?.map((p) => p.text ?? '').join('') ??
     '';

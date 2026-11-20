@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { PageHeader } from '@/ui/shared/layout';
 import { ComplaintForm, SubmitGuide } from '@/ui/shared/complaint';
 import { getComplaintFormOptions } from '@/db/complaint';
+import { isAiEnabled } from '@/ai/gemini';
 import { FilePlus2 } from 'lucide-react';
 import { requireUser } from '@/utils/session';
 
@@ -24,6 +25,7 @@ export default async function SubmitComplaintPage() {
         categories={categories}
         locations={locations}
         uploaderId={user.id}
+        aiEnabled={isAiEnabled()}
       >
         <SubmitGuide />
       </ComplaintForm>

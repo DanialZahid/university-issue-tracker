@@ -33,6 +33,7 @@ export async function classifyComplaint(input: {
   title: string;
   description: string;
   locations: string[];
+  timeoutMs?: number;
 }): Promise<AiClassification> {
   const locations = [...input.locations];
   const schema = {
@@ -65,6 +66,7 @@ export async function classifyComplaint(input: {
       `Description: ${redact(input.description)}`,
     ].join('\n'),
     schema,
+    ...(input.timeoutMs ? { timeoutMs: input.timeoutMs } : {}),
   });
 
   // Never trust the shape: anything outside the lists falls back safely.

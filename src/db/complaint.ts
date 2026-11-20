@@ -3,6 +3,12 @@ import { prisma } from '@/db/client';
 import { NO_PLACE, type ComplaintInput } from '@/schemas/complaint';
 import type { AttachmentInput } from '@/schemas/attachment';
 import { detectPriority } from '@/automation/priority-detection';
+import { analyzeComplaint } from '@/ai/hybrid';
+
+export async function listLocationNames() {
+  const rows = await prisma.location.findMany({ select: { name: true } });
+  return rows.map((r) => r.name);
+}
 
 export async function getComplaintFormOptions() {
   const [categories, locations] = await Promise.all([
@@ -61,11 +67,18 @@ export async function createComplaint(
   ]);
   if (!category || !location) return null;
 
-  const priority = detectPriority(
-    input.title,
-    input.description,
-    category.name,
-  );
+  // Priority and the summary come from the rules and AI combination. The
+  // category is the one the submitter confirmed in the form. Without the AI,
+  // priority uses the rules with that category, as before.
+  const analysis = await analyzeComplaint({
+    title: input.title,
+    description: input.description,
+    locations: await listLocationNames(),
+  });
+  const byAi = analysis.source === 'ai';
+  const priority = byAi
+    ? analysis.priority
+    : detectPriority(input.title, input.description, category.name);
 
   const complaint = await prisma.complaint.create({
     data: {
@@ -73,6 +86,7 @@ export async function createComplaint(
       description: input.description,
       priority: priority,
       locationDetail: input.locationDetail,
+      aiSummary: analysis.summary,
       estimatedEffortMinutes: category.baseEffortMinutes,
       categoryId: input.categoryId,
       locationId: location.id,
@@ -105,7 +119,7 @@ export async function createComplaint(
           {
             action: 'PRIORITY_CHANGED',
             toValue: priority,
-            note: 'Set automatically',
+            note: byAi ? 'Set automatically with AI' : 'Set automatically',
             performedById: submittedById,
           },
         ],
