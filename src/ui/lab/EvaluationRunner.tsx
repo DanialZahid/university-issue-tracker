@@ -404,7 +404,7 @@ function Runner({
             <CardTitle>Quick summary</CardTitle>
           </CardHeader>
           <CardContent className='overflow-x-auto text-sm'>
-            <table className='w-full min-w-[32rem] text-left tabular-nums'>
+            <table className='w-full min-w-lg text-left tabular-nums'>
               <thead className='text-muted-foreground'>
                 <tr>
                   <th className='py-1'>Exact match</th>
