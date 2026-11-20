@@ -448,5 +448,905 @@
     "b": "Website not loading",
     "roomB": null,
     "duplicate": false
+  },
+  {
+    "id": "P51",
+    "set": "original",
+    "a": "Projector not working in AC-115",
+    "roomA": "AC-115",
+    "b": "Projector display blurry",
+    "roomB": "AC-115",
+    "duplicate": true
+  },
+  {
+    "id": "P52",
+    "set": "original",
+    "a": "Projector not working in AC-115",
+    "roomA": "AC-115",
+    "b": "Projector not working in AC-203",
+    "roomB": "AC-203",
+    "duplicate": false
+  },
+  {
+    "id": "P53",
+    "set": "original",
+    "a": "Wi-Fi drops in Block A",
+    "roomA": null,
+    "b": "Wi-Fi disconnecting in Block A",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P54",
+    "set": "original",
+    "a": "Wi-Fi drops in Block A",
+    "roomA": null,
+    "b": "Wi-Fi slow in hostel",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P55",
+    "set": "original",
+    "a": "LMS not loading",
+    "roomA": null,
+    "b": "LMS down before deadline",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P56",
+    "set": "original",
+    "a": "Lights not working in AC-104",
+    "roomA": "AC-104",
+    "b": "Tube lights off in AC-104",
+    "roomB": "AC-104",
+    "duplicate": true
+  },
+  {
+    "id": "P57",
+    "set": "original",
+    "a": "Lights not working in AC-104",
+    "roomA": "AC-104",
+    "b": "Fan not working in AC-104",
+    "roomB": "AC-104",
+    "duplicate": false
+  },
+  {
+    "id": "P58",
+    "set": "original",
+    "a": "Water cooler not cooling in Block A",
+    "roomA": null,
+    "b": "Water cooler not working in Block A",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P59",
+    "set": "original",
+    "a": "No water in hostel washrooms",
+    "roomA": null,
+    "b": "Hostel water supply stopped",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P60",
+    "set": "original",
+    "a": "No water in hostel washrooms",
+    "roomA": null,
+    "b": "No water in Block B washrooms",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P61",
+    "set": "original",
+    "a": "Admit card not issued",
+    "roomA": null,
+    "b": "Admit card missing for finals",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P62",
+    "set": "original",
+    "a": "Admit card not issued",
+    "roomA": null,
+    "b": "Admit card has wrong photo",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P63",
+    "set": "original",
+    "a": "AC not working in AC-402",
+    "roomA": "AC-402",
+    "b": "AC-402 AC broken",
+    "roomB": "AC-402",
+    "duplicate": true
+  },
+  {
+    "id": "P64",
+    "set": "original",
+    "a": "AC not working in AC-402",
+    "roomA": "AC-402",
+    "b": "AC not working in AC-308",
+    "roomB": "AC-308",
+    "duplicate": false
+  },
+  {
+    "id": "P65",
+    "set": "original",
+    "a": "Sparks from UPS in lab",
+    "roomA": "C-Lab 02",
+    "b": "UPS sparking",
+    "roomB": "C-Lab 02",
+    "duplicate": true
+  },
+  {
+    "id": "P66",
+    "set": "original",
+    "a": "UPS beeping in lab",
+    "roomA": "C-Lab 02",
+    "b": "UPS sparking",
+    "roomB": "C-Lab 02",
+    "duplicate": false
+  },
+  {
+    "id": "P67",
+    "set": "original",
+    "a": "Parking lights off at night",
+    "roomA": null,
+    "b": "Parking area dark at night",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P68",
+    "set": "original",
+    "a": "Potholes in parking",
+    "roomA": null,
+    "b": "Parking lights off at night",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P69",
+    "set": "original",
+    "a": "Portal password not working",
+    "roomA": null,
+    "b": "Cannot log in to portal",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P70",
+    "set": "original",
+    "a": "Portal shows wrong GPA",
+    "roomA": null,
+    "b": "Cannot log in to portal",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P71",
+    "set": "original",
+    "a": "MATLAB license expired",
+    "roomA": "C-Lab 05",
+    "b": "MATLAB not opening in lab",
+    "roomB": "C-Lab 05",
+    "duplicate": true
+  },
+  {
+    "id": "P72",
+    "set": "original",
+    "a": "MATLAB license expired",
+    "roomA": "C-Lab 05",
+    "b": "Python missing in lab",
+    "roomB": "C-Lab 05",
+    "duplicate": false
+  },
+  {
+    "id": "P73",
+    "set": "original",
+    "a": "Fee challan link broken",
+    "roomA": null,
+    "b": "Cannot download fee challan",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P74",
+    "set": "original",
+    "a": "Fee challan amount wrong",
+    "roomA": null,
+    "b": "Cannot download fee challan",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P75",
+    "set": "original",
+    "a": "Speakers not working in AC-203",
+    "roomA": "AC-203",
+    "b": "No sound from speakers",
+    "roomB": "AC-203",
+    "duplicate": true
+  },
+  {
+    "id": "P76",
+    "set": "original",
+    "a": "Speakers not working in AC-203",
+    "roomA": "AC-203",
+    "b": "Projector not working in AC-203",
+    "roomB": "AC-203",
+    "duplicate": false
+  },
+  {
+    "id": "P77",
+    "set": "original",
+    "a": "Auditorium double booked",
+    "roomA": null,
+    "b": "Two events booked in auditorium",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P78",
+    "set": "original",
+    "a": "Auditorium mic not working",
+    "roomA": null,
+    "b": "Two events booked in auditorium",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P79",
+    "set": "original",
+    "a": "Route 4 bus late",
+    "roomA": null,
+    "b": "Point bus late every morning",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P80",
+    "set": "original",
+    "a": "Route 2 bus overcrowded",
+    "roomA": null,
+    "b": "Route 4 bus late",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P81",
+    "set": "original",
+    "a": "Door lock jammed in AC-214",
+    "roomA": "AC-214",
+    "b": "AC-214 cannot be locked",
+    "roomB": "AC-214",
+    "duplicate": true
+  },
+  {
+    "id": "P82",
+    "set": "original",
+    "a": "Door lock jammed in AC-214",
+    "roomA": "AC-214",
+    "b": "Door lock jammed in AC-301",
+    "roomB": "AC-301",
+    "duplicate": false
+  },
+  {
+    "id": "P83",
+    "set": "original",
+    "a": "Snake seen in garden",
+    "roomA": null,
+    "b": "Snake near garden benches",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P84",
+    "set": "original",
+    "a": "Grass not cut in garden",
+    "roomA": null,
+    "b": "Snake seen in garden",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P85",
+    "set": "original",
+    "a": "Biometric machine not working",
+    "roomA": null,
+    "b": "Fingerprint machine at gate broken",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P86",
+    "set": "original",
+    "a": "Biometric machine not working",
+    "roomA": null,
+    "b": "Gate left unguarded",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P87",
+    "set": "original",
+    "a": "Exam software missing in lab",
+    "roomA": "C-Lab 07",
+    "b": "Online test software not installed",
+    "roomB": "C-Lab 07",
+    "duplicate": true
+  },
+  {
+    "id": "P88",
+    "set": "original",
+    "a": "Exam software missing in lab",
+    "roomA": "C-Lab 07",
+    "b": "Exam software missing in lab",
+    "roomB": "C-Lab 03",
+    "duplicate": false
+  },
+  {
+    "id": "P89",
+    "set": "original",
+    "a": "Merit list has errors",
+    "roomA": null,
+    "b": "Wrong aggregates in merit list",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P90",
+    "set": "original",
+    "a": "Merit list has errors",
+    "roomA": null,
+    "b": "Faculty list outdated",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P91",
+    "set": "original",
+    "a": "Sewage overflow near washrooms",
+    "roomA": null,
+    "b": "Gutter overflowing near washrooms",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P92",
+    "set": "original",
+    "a": "Sewage overflow near washrooms",
+    "roomA": null,
+    "b": "Washroom tap leaking",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P93",
+    "set": "original",
+    "a": "Exposed wires in AC-207",
+    "roomA": "AC-207",
+    "b": "Live wires hanging in classroom",
+    "roomB": "AC-207",
+    "duplicate": true
+  },
+  {
+    "id": "P94",
+    "set": "original",
+    "a": "Exposed wires in AC-207",
+    "roomA": "AC-207",
+    "b": "Switch not working in AC-207",
+    "roomB": "AC-207",
+    "duplicate": false
+  },
+  {
+    "id": "P95",
+    "set": "original",
+    "a": "Teacher late every class",
+    "roomA": null,
+    "b": "Discrete Math teacher always late",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P96",
+    "set": "original",
+    "a": "Teacher late every class",
+    "roomA": null,
+    "b": "Teacher absent for two weeks",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P97",
+    "set": "original",
+    "a": "Convocation gowns not delivered",
+    "roomA": null,
+    "b": "Gowns missing for convocation",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P98",
+    "set": "original",
+    "a": "Convocation photos not posted",
+    "roomA": null,
+    "b": "Gowns missing for convocation",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P99",
+    "set": "original",
+    "a": "Mice not working in lab",
+    "roomA": "C-Lab 08",
+    "b": "Mouse not responding",
+    "roomB": "C-Lab 08",
+    "duplicate": true
+  },
+  {
+    "id": "P100",
+    "set": "original",
+    "a": "Mice not working in lab",
+    "roomA": "C-Lab 08",
+    "b": "Keyboard not working",
+    "roomB": "C-Lab 08",
+    "duplicate": false
+  },
+  {
+    "id": "P101",
+    "set": "original",
+    "a": "Website hacked",
+    "roomA": null,
+    "b": "Homepage showing strange messages",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P102",
+    "set": "original",
+    "a": "Website slow",
+    "roomA": null,
+    "b": "Homepage showing strange messages",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P103",
+    "set": "original",
+    "a": "No internet in library",
+    "roomA": null,
+    "b": "Library internet down",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P104",
+    "set": "original",
+    "a": "No internet in library",
+    "roomA": null,
+    "b": "Library AC too cold",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P105",
+    "set": "original",
+    "a": "Not enough chairs in AC-311",
+    "roomA": "AC-311",
+    "b": "Chairs short in AC-311",
+    "roomB": "AC-311",
+    "duplicate": true
+  },
+  {
+    "id": "P106",
+    "set": "original",
+    "a": "Not enough chairs in AC-311",
+    "roomA": "AC-311",
+    "b": "Broken chairs in AC-311",
+    "roomB": "AC-311",
+    "duplicate": false
+  },
+  {
+    "id": "P107",
+    "set": "original",
+    "a": "Hostel geyser not heating",
+    "roomA": null,
+    "b": "No hot water in hostel",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P108",
+    "set": "original",
+    "a": "Hostel mess food bad",
+    "roomA": null,
+    "b": "No hot water in hostel",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P109",
+    "set": "original",
+    "a": "Name missing from roll list",
+    "roomA": null,
+    "b": "Not on roll number list for exam",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P110",
+    "set": "original",
+    "a": "Result withheld",
+    "roomA": null,
+    "b": "Not on roll number list for exam",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P111",
+    "set": "meaning",
+    "a": "Bijli ki taarein bahar hain",
+    "roomA": "AC-110",
+    "b": "Exposed wires in classroom",
+    "roomB": "AC-110",
+    "duplicate": true
+  },
+  {
+    "id": "P112",
+    "set": "meaning",
+    "a": "Hostel mein pani nahi",
+    "roomA": null,
+    "b": "No water supply in hostel",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P113",
+    "set": "meaning",
+    "a": "LMS nahi khul raha",
+    "roomA": null,
+    "b": "LMS not loading",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P114",
+    "set": "meaning",
+    "a": "Admit card nahi mila",
+    "roomA": null,
+    "b": "Admit card not issued",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P115",
+    "set": "meaning",
+    "a": "Pankhay band hain",
+    "roomA": "AC-215",
+    "b": "Fans not working",
+    "roomB": "AC-215",
+    "duplicate": true
+  },
+  {
+    "id": "P116",
+    "set": "meaning",
+    "a": "Pankhay band hain",
+    "roomA": "AC-215",
+    "b": "Lights not working",
+    "roomB": "AC-215",
+    "duplicate": false
+  },
+  {
+    "id": "P117",
+    "set": "meaning",
+    "a": "Parking mein andhera hai",
+    "roomA": null,
+    "b": "Parking lights off at night",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P118",
+    "set": "meaning",
+    "a": "Saanp dekha gaya",
+    "roomA": null,
+    "b": "Snake spotted in garden",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P119",
+    "set": "meaning",
+    "a": "Lift phans gayi",
+    "roomA": null,
+    "b": "Elevator stuck between floors",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P120",
+    "set": "meaning",
+    "a": "Lift phans gayi",
+    "roomA": null,
+    "b": "Stair railing loose",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P121",
+    "set": "meaning",
+    "a": "Projector ki picture dhundli",
+    "roomA": "AC-115",
+    "b": "Blurry projector image",
+    "roomB": "AC-115",
+    "duplicate": true
+  },
+  {
+    "id": "P122",
+    "set": "meaning",
+    "a": "Merit list mein galti",
+    "roomA": null,
+    "b": "Wrong aggregates in merit list",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P123",
+    "set": "meaning",
+    "a": "Point bus late aati hai",
+    "roomA": null,
+    "b": "University bus delayed every morning",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P124",
+    "set": "meaning",
+    "a": "Point bus late aati hai",
+    "roomA": null,
+    "b": "Bus fee charged twice",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P125",
+    "set": "meaning",
+    "a": "Computer won't power on",
+    "roomA": "C-Lab 01",
+    "b": "PC dead",
+    "roomB": "C-Lab 01",
+    "duplicate": true
+  },
+  {
+    "id": "P126",
+    "set": "meaning",
+    "a": "Display has no signal",
+    "roomA": "AC-211",
+    "b": "Laptop not connecting to projector",
+    "roomB": "AC-211",
+    "duplicate": true
+  },
+  {
+    "id": "P127",
+    "set": "meaning",
+    "a": "Washroom flooded",
+    "roomA": null,
+    "b": "Water leaking in washroom",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P128",
+    "set": "meaning",
+    "a": "Room is stuffy",
+    "roomA": "AC-106",
+    "b": "Windows stuck shut",
+    "roomB": "AC-106",
+    "duplicate": true
+  },
+  {
+    "id": "P129",
+    "set": "meaning",
+    "a": "Room is stuffy",
+    "roomA": "AC-106",
+    "b": "Room is too cold",
+    "roomB": "AC-106",
+    "duplicate": false
+  },
+  {
+    "id": "P130",
+    "set": "meaning",
+    "a": "Internet bohat slow hai",
+    "roomA": null,
+    "b": "Wi-Fi speed very low",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P131",
+    "set": "meaning",
+    "a": "Internet bohat slow hai",
+    "roomA": null,
+    "b": "Website bohat slow hai",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P132",
+    "set": "meaning",
+    "a": "Burning smell in corridor",
+    "roomA": null,
+    "b": "Smell of melting plastic near panel",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P133",
+    "set": "meaning",
+    "a": "Student behosh ho gaya",
+    "roomA": null,
+    "b": "Student fainted",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P134",
+    "set": "meaning",
+    "a": "Student behosh ho gaya",
+    "roomA": null,
+    "b": "Student lost ID card",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P135",
+    "set": "meaning",
+    "a": "Gate par guard rude tha",
+    "roomA": null,
+    "b": "Security guard misbehaved",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P136",
+    "set": "meaning",
+    "a": "Fee refund nahi mila",
+    "roomA": null,
+    "b": "Refund still pending",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P137",
+    "set": "meaning",
+    "a": "Fee refund nahi mila",
+    "roomA": null,
+    "b": "Scholarship stipend not paid",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P138",
+    "set": "meaning",
+    "a": "Darwaza lock nahi hota",
+    "roomA": "AC-301",
+    "b": "Door lock jammed",
+    "roomB": "AC-301",
+    "duplicate": true
+  },
+  {
+    "id": "P139",
+    "set": "meaning",
+    "a": "Gutter ka pani bahar",
+    "roomA": null,
+    "b": "Sewage overflowing",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P140",
+    "set": "meaning",
+    "a": "Timetable clash",
+    "roomA": null,
+    "b": "Two classes at the same time",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P141",
+    "set": "meaning",
+    "a": "Timetable clash",
+    "roomA": null,
+    "b": "Two exams at the same time",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P142",
+    "set": "meaning",
+    "a": "No teacher for course",
+    "roomA": null,
+    "b": "Course has no instructor assigned",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P143",
+    "set": "meaning",
+    "a": "Certificate par naam galat",
+    "roomA": null,
+    "b": "Name misspelled on certificate",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P144",
+    "set": "meaning",
+    "a": "Certificate par naam galat",
+    "roomA": null,
+    "b": "Certificate not received",
+    "roomB": null,
+    "duplicate": false
+  },
+  {
+    "id": "P145",
+    "set": "meaning",
+    "a": "Lab PCs restart randomly",
+    "roomA": "C-Lab 04",
+    "b": "Computers rebooting on their own",
+    "roomB": "C-Lab 04",
+    "duplicate": true
+  },
+  {
+    "id": "P146",
+    "set": "meaning",
+    "a": "Chingariyan nikal rahi hain",
+    "roomA": "C-Lab 05",
+    "b": "Sparks from socket",
+    "roomB": "C-Lab 05",
+    "duplicate": true
+  },
+  {
+    "id": "P147",
+    "set": "meaning",
+    "a": "Chingariyan nikal rahi hain",
+    "roomA": "C-Lab 05",
+    "b": "Socket not working",
+    "roomB": "C-Lab 05",
+    "duplicate": false
+  },
+  {
+    "id": "P148",
+    "set": "meaning",
+    "a": "Fake page asking for fees",
+    "roomA": null,
+    "b": "Scam account using university name",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P149",
+    "set": "meaning",
+    "a": "Garden ki ghaas lambi hai",
+    "roomA": null,
+    "b": "Grass not mowed in garden",
+    "roomB": null,
+    "duplicate": true
+  },
+  {
+    "id": "P150",
+    "set": "meaning",
+    "a": "Khiladi zakhmi ho gaya",
+    "roomA": null,
+    "b": "Player injured at sports complex",
+    "roomB": null,
+    "duplicate": true
   }
 ]

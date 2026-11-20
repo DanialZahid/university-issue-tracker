@@ -1198,5 +1198,2805 @@
     "priority": "MEDIUM",
     "location": "Computer Labs",
     "room": null
+  },
+  {
+    "id": "C121",
+    "language": "en",
+    "title": "Water cooler not working",
+    "description": "The water cooler on the second floor of Block A is not cooling and the tap leaks.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": null
+  },
+  {
+    "id": "C122",
+    "language": "en",
+    "title": "No water in hostel",
+    "description": "There has been no water supply in the hostel washrooms since last night.",
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C123",
+    "language": "en",
+    "title": "Paint peeling off walls",
+    "description": "Paint is peeling off the corridor walls in Block C.",
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "Block C",
+    "room": null
+  },
+  {
+    "id": "C124",
+    "language": "en",
+    "title": "Broken window latch",
+    "description": "A window latch in the library reading area is broken and the window keeps banging in the wind.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Library",
+    "room": null
+  },
+  {
+    "id": "C125",
+    "language": "en",
+    "title": "Potholes in parking",
+    "description": "There are deep potholes in the parking area that damage bikes.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Parking Area",
+    "room": null
+  },
+  {
+    "id": "C126",
+    "language": "en",
+    "title": "Grass not cut",
+    "description": "The grass in the garden has not been cut for weeks.",
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "Garden",
+    "room": null
+  },
+  {
+    "id": "C127",
+    "language": "en",
+    "title": "Door lock jammed",
+    "description": "The door lock of AC-214 is jammed and the room cannot be locked after class.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-214"
+  },
+  {
+    "id": "C128",
+    "language": "en",
+    "title": "Sewage overflow",
+    "description": "Sewage is overflowing near the Block B washrooms and the smell reaches the classrooms.",
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Block B",
+    "room": null
+  },
+  {
+    "id": "C129",
+    "language": "en",
+    "title": "Shower not working",
+    "description": "The showers in the sports complex changing room have no water pressure.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Sports Complex",
+    "room": null
+  },
+  {
+    "id": "C130",
+    "language": "en",
+    "title": "Dustbins full",
+    "description": "The dustbins in the cafeteria are not emptied and are overflowing.",
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null
+  },
+  {
+    "id": "C131",
+    "language": "en",
+    "title": "Geyser not heating",
+    "description": "The geyser in the hostel has not heated water for three days.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C132",
+    "language": "en",
+    "title": "Ceiling stained by seepage",
+    "description": "Water seepage has stained the ceiling outside the accounts office in the administration building.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Administration Building",
+    "room": null
+  },
+  {
+    "id": "C133",
+    "language": "roman-urdu",
+    "title": "Water cooler kharab hai",
+    "description": "Block A ke doosre floor ka water cooler thanda pani nahi de raha.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": null
+  },
+  {
+    "id": "C134",
+    "language": "roman-urdu",
+    "title": "Hostel ka geyser kharab hai",
+    "description": "Teen din se hostel ke geyser mein garam pani nahi aa raha.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C135",
+    "language": "roman-urdu",
+    "title": "Garden mein ghaas bohat barh gayi hai",
+    "description": "Kaafi hafton se garden ki ghaas nahi kaati gayi.",
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "Garden",
+    "room": null
+  },
+  {
+    "id": "C136",
+    "language": "roman-urdu",
+    "title": "Darwaze ka lock kharab",
+    "description": "AC-301 ka lock atak gaya hai, class ke baad room band nahi hota.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-301"
+  },
+  {
+    "id": "C137",
+    "language": "roman-urdu",
+    "title": "Cafeteria ke dustbin bhare hue hain",
+    "description": "Cafeteria mein koora dan khali nahi kiye jaate, koora bahar gir raha hai.",
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null
+  },
+  {
+    "id": "C138",
+    "language": "roman-urdu",
+    "title": "Gutter ubal raha hai",
+    "description": "Block C ke washroom ke paas gutter ka pani bahar aa raha hai, bohat badboo hai.",
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Block C",
+    "room": null
+  },
+  {
+    "id": "C139",
+    "language": "roman-urdu",
+    "title": "Parking mein gadde hain",
+    "description": "Parking area mein bohat gehre gadde hain, bikes ko nuqsan ho raha hai.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Parking Area",
+    "room": null
+  },
+  {
+    "id": "C140",
+    "language": "roman-urdu",
+    "title": "Library ki khirki toot gayi",
+    "description": "Library mein ek khirki ka latch toota hua hai, hawa mein zor se bajti hai.",
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Library",
+    "room": null
+  },
+  {
+    "id": "C141",
+    "language": "en",
+    "title": "Burning smell in corridor",
+    "description": "There is a strong burning plastic smell coming from the electrical panel in the Block B corridor.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Block B",
+    "room": null
+  },
+  {
+    "id": "C142",
+    "language": "en",
+    "title": "Student fainted in hostel",
+    "description": "A student fainted in the hostel common room and is not responding properly.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C143",
+    "language": "en",
+    "title": "Exposed wires in classroom",
+    "description": "Live wires are hanging out of a broken switchboard in AC-207.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": null,
+    "room": "AC-207"
+  },
+  {
+    "id": "C144",
+    "language": "en",
+    "title": "Parking lights off at night",
+    "description": "All the lights in the parking area are off at night and it is very dark and unsafe.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Parking Area",
+    "room": null
+  },
+  {
+    "id": "C145",
+    "language": "en",
+    "title": "Sparks from UPS",
+    "description": "Sparks are coming out of the UPS in C-Lab 02 and students are moving away.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Computer Labs",
+    "room": "C-Lab 02"
+  },
+  {
+    "id": "C146",
+    "language": "en",
+    "title": "Broken stair railing",
+    "description": "The railing on the Block A staircase is loose and almost came off when a student leaned on it.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Block A",
+    "room": null
+  },
+  {
+    "id": "C147",
+    "language": "en",
+    "title": "Cylinder leaking in kitchen",
+    "description": "A gas cylinder in the cafeteria kitchen is hissing and the staff have left it.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Cafeteria",
+    "room": null
+  },
+  {
+    "id": "C148",
+    "language": "en",
+    "title": "Gate left unguarded",
+    "description": "There was no guard at the main gate for the whole evening and outsiders walked in.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Main Gate",
+    "room": null
+  },
+  {
+    "id": "C149",
+    "language": "en",
+    "title": "Player badly hurt",
+    "description": "A player was badly hurt during football practice at the sports complex and is bleeding.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Sports Complex",
+    "room": null
+  },
+  {
+    "id": "C150",
+    "language": "en",
+    "title": "Fire extinguishers expired",
+    "description": "The fire extinguishers in the library expired last year.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Library",
+    "room": null
+  },
+  {
+    "id": "C151",
+    "language": "en",
+    "title": "Students followed near campus",
+    "description": "Some students were followed by strangers near the campus bus stop in the evening.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C152",
+    "language": "en",
+    "title": "Water dripping on electric board",
+    "description": "Rain water is dripping onto the main electric board in Block C and it is crackling.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Block C",
+    "room": null
+  },
+  {
+    "id": "C153",
+    "language": "en",
+    "title": "Snake seen in garden",
+    "description": "A snake was seen in the garden near the seating area.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Garden",
+    "room": null
+  },
+  {
+    "id": "C154",
+    "language": "en",
+    "title": "Person collapsed at office",
+    "description": "Someone collapsed outside the accounts office in the administration building and needs medical help now.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Administration Building",
+    "room": null
+  },
+  {
+    "id": "C155",
+    "language": "en",
+    "title": "Emergency exit locked",
+    "description": "The emergency exit door in the hostel is chained and locked.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C156",
+    "language": "roman-urdu",
+    "title": "Block A mein dhuan nikal raha hai",
+    "description": "Block A ke switchboard se dhuan aa raha hai, jaldi kisi ko bhejein.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Block A",
+    "room": null
+  },
+  {
+    "id": "C157",
+    "language": "roman-urdu",
+    "title": "Hostel mein larka behosh ho gaya",
+    "description": "Hostel ke common room mein ek student behosh ho gaya hai aur jawab nahi de raha.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C158",
+    "language": "roman-urdu",
+    "title": "Class mein nangi taarein",
+    "description": "AC-110 mein switchboard toota hua hai aur taarein bahar latak rahi hain.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": null,
+    "room": "AC-110"
+  },
+  {
+    "id": "C159",
+    "language": "roman-urdu",
+    "title": "Parking mein raat ko andhera",
+    "description": "Parking area ki saari lights band hain, raat ko bohat andhera aur khatarnak hai.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Parking Area",
+    "room": null
+  },
+  {
+    "id": "C160",
+    "language": "roman-urdu",
+    "title": "Khiladi ko sakht chot lagi",
+    "description": "Sports complex mein practice ke dauran ek khiladi ko chot lagi hai aur khoon beh raha hai.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Sports Complex",
+    "room": null
+  },
+  {
+    "id": "C161",
+    "language": "roman-urdu",
+    "title": "Seerhi ki railing dheeli hai",
+    "description": "Block B ki seerhiyon ki railing dheeli hai, kisi bhi waqt gir sakti hai.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Block B",
+    "room": null
+  },
+  {
+    "id": "C162",
+    "language": "roman-urdu",
+    "title": "Lab mein socket se chingariyan",
+    "description": "C-Lab 05 mein socket se chingariyan nikal rahi hain, sab darr gaye hain.",
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Computer Labs",
+    "room": "C-Lab 05"
+  },
+  {
+    "id": "C163",
+    "language": "roman-urdu",
+    "title": "Garden mein saanp dekha",
+    "description": "Garden mein baithne wali jagah ke paas saanp dekha gaya hai.",
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Garden",
+    "room": null
+  },
+  {
+    "id": "C164",
+    "language": "en",
+    "title": "Projector display blurry",
+    "description": "The projector in AC-115 shows a blurry, yellow image.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-115"
+  },
+  {
+    "id": "C165",
+    "language": "en",
+    "title": "Webcam not detected",
+    "description": "The webcam on PC 5 in C-Lab 03 is not detected.",
+    "category": "IT / Equipment",
+    "priority": "LOW",
+    "location": "Computer Labs",
+    "room": "C-Lab 03"
+  },
+  {
+    "id": "C166",
+    "language": "en",
+    "title": "Half the lab PCs dead",
+    "description": "Fifteen PCs in C-Lab 01 do not turn on and we have a practical exam this week.",
+    "category": "IT / Equipment",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": "C-Lab 01"
+  },
+  {
+    "id": "C167",
+    "language": "en",
+    "title": "Document camera not working",
+    "description": "The document camera in AC-203 does not show anything on the screen.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-203"
+  },
+  {
+    "id": "C168",
+    "language": "en",
+    "title": "Library scanner broken",
+    "description": "The scanner in the library does not turn on.",
+    "category": "IT / Equipment",
+    "priority": "LOW",
+    "location": "Library",
+    "room": null
+  },
+  {
+    "id": "C169",
+    "language": "en",
+    "title": "HDMI cable missing",
+    "description": "There is no HDMI cable in AC-120, teachers cannot connect laptops.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-120"
+  },
+  {
+    "id": "C170",
+    "language": "en",
+    "title": "Monitor stand broken",
+    "description": "The monitor stand at PC 9 in C-Lab 07 is broken and the screen tilts.",
+    "category": "IT / Equipment",
+    "priority": "LOW",
+    "location": "Computer Labs",
+    "room": "C-Lab 07"
+  },
+  {
+    "id": "C171",
+    "language": "en",
+    "title": "Lab PCs keep restarting",
+    "description": "PCs in C-Lab 04 restart on their own every few minutes.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 04"
+  },
+  {
+    "id": "C172",
+    "language": "en",
+    "title": "Projector remote missing",
+    "description": "The remote of the auditorium projector is missing, so it cannot be switched on.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null
+  },
+  {
+    "id": "C173",
+    "language": "en",
+    "title": "Smart board not working",
+    "description": "The smart board in AC-305 is not working and final project presentations are tomorrow.",
+    "category": "IT / Equipment",
+    "priority": "HIGH",
+    "location": null,
+    "room": "AC-305"
+  },
+  {
+    "id": "C174",
+    "language": "en",
+    "title": "Projector fan noisy",
+    "description": "The projector in AC-102 makes a loud fan noise.",
+    "category": "IT / Equipment",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-102"
+  },
+  {
+    "id": "C175",
+    "language": "en",
+    "title": "Mice not working",
+    "description": "The mice on four PCs in C-Lab 08 do not respond.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 08"
+  },
+  {
+    "id": "C176",
+    "language": "en",
+    "title": "Token display off",
+    "description": "The token display screen at the admission office in the administration building is off.",
+    "category": "IT / Equipment",
+    "priority": "LOW",
+    "location": "Administration Building",
+    "room": null
+  },
+  {
+    "id": "C177",
+    "language": "en",
+    "title": "Laptop not connecting to projector",
+    "description": "Laptops do not get display on the AC-211 projector, it says no signal.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-211"
+  },
+  {
+    "id": "C178",
+    "language": "en",
+    "title": "Library PCs very old",
+    "description": "The library computers are very old and slow to open documents.",
+    "category": "IT / Equipment",
+    "priority": "LOW",
+    "location": "Library",
+    "room": null
+  },
+  {
+    "id": "C179",
+    "language": "en",
+    "title": "Headset microphones broken",
+    "description": "The microphones on the headsets in C-Lab 06 do not work for the speaking test.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 06"
+  },
+  {
+    "id": "C180",
+    "language": "en",
+    "title": "Biometric machine not working",
+    "description": "The biometric attendance machine at the main gate is not reading fingerprints and a long queue forms every morning.",
+    "category": "IT / Equipment",
+    "priority": "HIGH",
+    "location": "Main Gate",
+    "room": null
+  },
+  {
+    "id": "C181",
+    "language": "roman-urdu",
+    "title": "Projector ki picture dhundli hai",
+    "description": "AC-115 ke projector ki picture dhundli aur peeli aa rahi hai.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-115"
+  },
+  {
+    "id": "C182",
+    "language": "roman-urdu",
+    "title": "Lab ke aadhe PC band hain",
+    "description": "C-Lab 01 ke pandrah PC on nahi ho rahe aur is hafte practical exam hai.",
+    "category": "IT / Equipment",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": "C-Lab 01"
+  },
+  {
+    "id": "C183",
+    "language": "roman-urdu",
+    "title": "Document camera kaam nahi kar raha",
+    "description": "AC-203 ka document camera screen par kuch nahi dikhata.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-203"
+  },
+  {
+    "id": "C184",
+    "language": "roman-urdu",
+    "title": "HDMI cable nahi hai",
+    "description": "AC-120 mein HDMI cable nahi hai, teacher laptop connect nahi kar sakte.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-120"
+  },
+  {
+    "id": "C185",
+    "language": "roman-urdu",
+    "title": "Lab ke PC khud restart ho rahe hain",
+    "description": "C-Lab 04 ke computers har thori der baad khud hi restart ho jaate hain.",
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 04"
+  },
+  {
+    "id": "C186",
+    "language": "roman-urdu",
+    "title": "Webcam detect nahi ho raha",
+    "description": "C-Lab 03 mein PC 5 ka webcam detect nahi hota.",
+    "category": "IT / Equipment",
+    "priority": "LOW",
+    "location": "Computer Labs",
+    "room": "C-Lab 03"
+  },
+  {
+    "id": "C187",
+    "language": "roman-urdu",
+    "title": "Biometric machine kharab hai",
+    "description": "Main gate ki biometric machine fingerprint nahi le rahi, subah lambi line lagti hai.",
+    "category": "IT / Equipment",
+    "priority": "HIGH",
+    "location": "Main Gate",
+    "room": null
+  },
+  {
+    "id": "C188",
+    "language": "roman-urdu",
+    "title": "Projector bohat shor karta hai",
+    "description": "AC-102 ka projector chalte waqt bohat shor karta hai.",
+    "category": "IT / Equipment",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-102"
+  },
+  {
+    "id": "C189",
+    "language": "en",
+    "title": "LMS down before deadline",
+    "description": "The LMS is not loading and our assignment deadline is tonight.",
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C190",
+    "language": "en",
+    "title": "Hostel Wi-Fi very slow",
+    "description": "The hostel Wi-Fi is extremely slow at night, videos do not load.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C191",
+    "language": "en",
+    "title": "Cannot log in to portal",
+    "description": "The student portal says invalid password even after resetting it.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C192",
+    "language": "en",
+    "title": "No internet in library",
+    "description": "The library has had no internet since morning, nobody can access journals.",
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": "Library",
+    "room": null
+  },
+  {
+    "id": "C193",
+    "language": "en",
+    "title": "Email storage full",
+    "description": "My university email says storage is full and I cannot receive mail.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C194",
+    "language": "en",
+    "title": "MATLAB license expired",
+    "description": "MATLAB on the C-Lab 05 PCs says the license has expired.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 05"
+  },
+  {
+    "id": "C195",
+    "language": "en",
+    "title": "Wi-Fi password not shared",
+    "description": "New students have not been given the campus Wi-Fi password.",
+    "category": "Software and Network",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C196",
+    "language": "en",
+    "title": "Exam software not installed",
+    "description": "The exam software is not installed in C-Lab 07 and the online test is tomorrow morning.",
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": "C-Lab 07"
+  },
+  {
+    "id": "C197",
+    "language": "en",
+    "title": "Wi-Fi drops every few minutes",
+    "description": "The Wi-Fi in Block A disconnects every few minutes.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": null
+  },
+  {
+    "id": "C198",
+    "language": "en",
+    "title": "Microsoft Office not activated",
+    "description": "Office on my university account says the product is not activated.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C199",
+    "language": "en",
+    "title": "No Wi-Fi signal in cafeteria",
+    "description": "The Wi-Fi signal does not reach the cafeteria.",
+    "category": "Software and Network",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null
+  },
+  {
+    "id": "C200",
+    "language": "en",
+    "title": "Verification code not received",
+    "description": "I am not receiving the verification code to sign in to the portal.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C201",
+    "language": "en",
+    "title": "Portal down during course registration",
+    "description": "The student portal is down on the last day of course registration.",
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C202",
+    "language": "en",
+    "title": "Python packages missing",
+    "description": "The PCs in C-Lab 02 do not have NumPy installed and our lab tasks need it.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 02"
+  },
+  {
+    "id": "C203",
+    "language": "en",
+    "title": "No internet for webinar",
+    "description": "The auditorium has no internet connection for the live webinar on Thursday.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null
+  },
+  {
+    "id": "C204",
+    "language": "en",
+    "title": "VPN not connecting",
+    "description": "The university VPN does not connect from home, so I cannot open library databases.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C205",
+    "language": "en",
+    "title": "LAN ports dead in faculty offices",
+    "description": "The LAN ports in the Block C faculty offices are not working.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Block C",
+    "room": null
+  },
+  {
+    "id": "C206",
+    "language": "en",
+    "title": "Teams sign-in error",
+    "description": "Microsoft Teams shows an error when I sign in with my university account.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C207",
+    "language": "en",
+    "title": "Virus on lab computers",
+    "description": "Many lab computers have a virus that deletes files from USB drives.",
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": null
+  },
+  {
+    "id": "C208",
+    "language": "roman-urdu",
+    "title": "LMS nahi khul raha, aaj deadline hai",
+    "description": "LMS load nahi ho raha aur assignment ki deadline aaj raat hai.",
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C209",
+    "language": "roman-urdu",
+    "title": "Hostel ka wifi bohat slow hai",
+    "description": "Raat ko hostel ka wifi bohat slow hota hai, kuch bhi load nahi hota.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C210",
+    "language": "roman-urdu",
+    "title": "Portal par login nahi ho raha",
+    "description": "Password reset karne ke baad bhi portal invalid password keh raha hai.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C211",
+    "language": "roman-urdu",
+    "title": "Library mein internet nahi hai",
+    "description": "Subah se library mein internet band hai, koi bhi journals nahi khol pa raha.",
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": "Library",
+    "room": null
+  },
+  {
+    "id": "C212",
+    "language": "roman-urdu",
+    "title": "MATLAB ka license khatam",
+    "description": "C-Lab 05 ke PCs par MATLAB license expired dikha raha hai.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 05"
+  },
+  {
+    "id": "C213",
+    "language": "roman-urdu",
+    "title": "Wifi baar baar disconnect hota hai",
+    "description": "Block A mein wifi har kuch minute baad band ho jaata hai.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": null
+  },
+  {
+    "id": "C214",
+    "language": "roman-urdu",
+    "title": "Cafeteria mein wifi signal nahi aata",
+    "description": "Cafeteria tak wifi ka signal nahi pohanchta.",
+    "category": "Software and Network",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null
+  },
+  {
+    "id": "C215",
+    "language": "roman-urdu",
+    "title": "Verification code nahi aa raha",
+    "description": "Portal mein sign in ke liye code nahi aa raha.",
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C216",
+    "language": "en",
+    "title": "Lights not working in classroom",
+    "description": "Half the tube lights in AC-104 are not working.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-104"
+  },
+  {
+    "id": "C217",
+    "language": "en",
+    "title": "Curtains torn",
+    "description": "The curtains in AC-206 are torn and sunlight falls on the board.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-206"
+  },
+  {
+    "id": "C218",
+    "language": "en",
+    "title": "Not enough chairs",
+    "description": "AC-311 has 40 chairs but our section has 55 students.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-311"
+  },
+  {
+    "id": "C219",
+    "language": "en",
+    "title": "AC dripping on students",
+    "description": "The AC in AC-308 drips water on the front benches during class.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-308"
+  },
+  {
+    "id": "C220",
+    "language": "en",
+    "title": "Whiteboard stained",
+    "description": "The whiteboard in AC-109 has permanent stains and is hard to read.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-109"
+  },
+  {
+    "id": "C221",
+    "language": "en",
+    "title": "Classroom AC off all week",
+    "description": "The AC in AC-212 has not been turned on all week.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-212"
+  },
+  {
+    "id": "C222",
+    "language": "en",
+    "title": "Library chairs wobble",
+    "description": "Many chairs in the library reading hall wobble.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": "Library",
+    "room": null
+  },
+  {
+    "id": "C223",
+    "language": "en",
+    "title": "Fans not working",
+    "description": "Two of the three fans in AC-215 do not work.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-215"
+  },
+  {
+    "id": "C224",
+    "language": "en",
+    "title": "Clock missing",
+    "description": "There is no wall clock in AC-117.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-117"
+  },
+  {
+    "id": "C225",
+    "language": "en",
+    "title": "Room locked at class time",
+    "description": "AC-302 was locked when our 8:30 class started and nobody had the key.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-302"
+  },
+  {
+    "id": "C226",
+    "language": "en",
+    "title": "Dustbin missing",
+    "description": "There is no dustbin in AC-201.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-201"
+  },
+  {
+    "id": "C227",
+    "language": "en",
+    "title": "Projection screen torn",
+    "description": "The projection screen in AC-209 is torn in the middle.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-209"
+  },
+  {
+    "id": "C228",
+    "language": "en",
+    "title": "No lights in exam hall",
+    "description": "The lights in AC-401 are not working and the midterm is held there tomorrow.",
+    "category": "Classroom Facilities",
+    "priority": "HIGH",
+    "location": null,
+    "room": "AC-401"
+  },
+  {
+    "id": "C229",
+    "language": "en",
+    "title": "Windows stuck",
+    "description": "The windows in AC-106 are stuck and the room gets stuffy.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-106"
+  },
+  {
+    "id": "C230",
+    "language": "en",
+    "title": "Library lights dim",
+    "description": "The lights in the library study corner are too dim for reading.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": "Library",
+    "room": null
+  },
+  {
+    "id": "C231",
+    "language": "en",
+    "title": "Broken chairs in class",
+    "description": "Several chairs in AC-213 have broken backs.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-213"
+  },
+  {
+    "id": "C232",
+    "language": "en",
+    "title": "Classroom AC rattling",
+    "description": "The AC unit in AC-205 makes a rattling noise that disrupts lectures.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-205"
+  },
+  {
+    "id": "C233",
+    "language": "en",
+    "title": "Podium broken",
+    "description": "The teacher's podium in AC-310 is broken.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-310"
+  },
+  {
+    "id": "C234",
+    "language": "en",
+    "title": "No working sockets",
+    "description": "None of the wall sockets in AC-216 work, students cannot charge laptops.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-216"
+  },
+  {
+    "id": "C235",
+    "language": "en",
+    "title": "AC not working in exam hall",
+    "description": "The AC in AC-402 is not working and the final exams start there on Monday.",
+    "category": "Classroom Facilities",
+    "priority": "HIGH",
+    "location": null,
+    "room": "AC-402"
+  },
+  {
+    "id": "C236",
+    "language": "roman-urdu",
+    "title": "Class ki lights band hain",
+    "description": "AC-104 ki aadhi tube lights kaam nahi kar rahi.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-104"
+  },
+  {
+    "id": "C237",
+    "language": "roman-urdu",
+    "title": "Kursiyan kam hain",
+    "description": "AC-311 mein sirf 40 kursiyan hain jab ke hamare section mein 55 students hain.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-311"
+  },
+  {
+    "id": "C238",
+    "language": "roman-urdu",
+    "title": "AC se pani tapak raha hai",
+    "description": "AC-308 ka AC class ke dauran agle benches par pani tapkata hai.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-308"
+  },
+  {
+    "id": "C239",
+    "language": "roman-urdu",
+    "title": "Parday phatay hue hain",
+    "description": "AC-206 ke parday phatay hue hain, board par dhoop aati hai.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-206"
+  },
+  {
+    "id": "C240",
+    "language": "roman-urdu",
+    "title": "Pankhay nahi chal rahe",
+    "description": "AC-215 ke teen mein se do pankhay band hain.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-215"
+  },
+  {
+    "id": "C241",
+    "language": "roman-urdu",
+    "title": "Exam hall mein lights nahi hain",
+    "description": "AC-401 ki lights band hain aur kal wahan midterm hai.",
+    "category": "Classroom Facilities",
+    "priority": "HIGH",
+    "location": null,
+    "room": "AC-401"
+  },
+  {
+    "id": "C242",
+    "language": "roman-urdu",
+    "title": "Class ka room band tha",
+    "description": "Subah 8:30 ki class ke waqt AC-302 band tha aur chaabi kisi ke paas nahi thi.",
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-302"
+  },
+  {
+    "id": "C243",
+    "language": "roman-urdu",
+    "title": "Whiteboard par daagh hain",
+    "description": "AC-109 ke whiteboard par pakke daagh hain, likha hua parhna mushkil hai.",
+    "category": "Classroom Facilities",
+    "priority": "LOW",
+    "location": null,
+    "room": "AC-109"
+  },
+  {
+    "id": "C244",
+    "language": "en",
+    "title": "Admit card not issued",
+    "description": "My admit card for the final exams has not been issued and exams start in two days.",
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C245",
+    "language": "en",
+    "title": "Wrong course on transcript",
+    "description": "My transcript lists a course I never registered for.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C246",
+    "language": "en",
+    "title": "Two exams at same time",
+    "description": "My Database and Statistics final exams are scheduled at the same time on Monday.",
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C247",
+    "language": "en",
+    "title": "Rechecking request pending",
+    "description": "I applied for paper rechecking a month ago and have not heard back.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C248",
+    "language": "en",
+    "title": "Request past papers",
+    "description": "Can past papers for the midterms be shared on the LMS?",
+    "category": "Exams and Results",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C249",
+    "language": "en",
+    "title": "Supplementary result not updated",
+    "description": "My supplementary exam result is still not updated.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C250",
+    "language": "en",
+    "title": "Exam seating mixed up",
+    "description": "Seat numbers in AC-401 do not match the seating plan and the exam starts in an hour.",
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": "AC-401"
+  },
+  {
+    "id": "C251",
+    "language": "en",
+    "title": "GPA calculated wrong",
+    "description": "My semester GPA on the portal is calculated wrong.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C252",
+    "language": "en",
+    "title": "Answer sheets not shown",
+    "description": "Teachers did not show us our checked midterm answer sheets.",
+    "category": "Exams and Results",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C253",
+    "language": "en",
+    "title": "Stopped from exam over fee",
+    "description": "I was told I cannot sit the final exam because of a fee record that I already cleared.",
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C254",
+    "language": "en",
+    "title": "Assignment marks not added",
+    "description": "My assignment marks are not added to the final result.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C255",
+    "language": "en",
+    "title": "Degree verification delayed",
+    "description": "My degree verification request has been pending for six weeks.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C256",
+    "language": "en",
+    "title": "Exam timings announced late",
+    "description": "The exam timings are announced too late every semester.",
+    "category": "Exams and Results",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C257",
+    "language": "en",
+    "title": "Paper from wrong outline",
+    "description": "The Operating Systems final paper had questions from a different course outline.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C258",
+    "language": "en",
+    "title": "Practical marks missing",
+    "description": "My practical exam marks for Physics lab are missing.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C259",
+    "language": "en",
+    "title": "Result withheld before deadline",
+    "description": "My result is withheld and I need the transcript for a scholarship deadline this Friday.",
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C260",
+    "language": "en",
+    "title": "Grade change not reflected",
+    "description": "My grade was changed after rechecking but the portal still shows the old grade.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C261",
+    "language": "en",
+    "title": "Calculator rule unclear",
+    "description": "It is not clear whether scientific calculators are allowed in the Calculus exam.",
+    "category": "Exams and Results",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C262",
+    "language": "en",
+    "title": "Invigilator came late",
+    "description": "The invigilator came 30 minutes late to our midterm and we got no extra time.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C263",
+    "language": "en",
+    "title": "Missing from roll number list",
+    "description": "My name is not on the roll number list for tomorrow's final exam.",
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C264",
+    "language": "en",
+    "title": "Project evaluation marks pending",
+    "description": "My final year project evaluation marks have not been uploaded.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C265",
+    "language": "roman-urdu",
+    "title": "Admit card abhi tak nahi mila",
+    "description": "Final exams do din baad hain aur mera admit card abhi tak nahi aaya.",
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C266",
+    "language": "roman-urdu",
+    "title": "Transcript mein ghalat course",
+    "description": "Mere transcript mein aisa course likha hai jo maine kabhi register nahi kiya.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C267",
+    "language": "roman-urdu",
+    "title": "Do papers ek hi time par hain",
+    "description": "Mere Database aur Statistics ke final papers Monday ko ek hi waqt par hain.",
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C268",
+    "language": "roman-urdu",
+    "title": "Rechecking ka jawab nahi aaya",
+    "description": "Ek mahina pehle paper rechecking ke liye apply kiya tha, ab tak koi jawab nahi.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C269",
+    "language": "roman-urdu",
+    "title": "GPA galat calculate hua hai",
+    "description": "Portal par mera semester GPA galat calculate hua hai.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C270",
+    "language": "roman-urdu",
+    "title": "Roll number list mein naam nahi",
+    "description": "Kal ke final exam ki roll number list mein mera naam nahi hai.",
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C271",
+    "language": "roman-urdu",
+    "title": "Past papers share karein",
+    "description": "Kya midterm ke purane papers LMS par daal sakte hain?",
+    "category": "Exams and Results",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C272",
+    "language": "roman-urdu",
+    "title": "Assignment ke marks result mein nahi",
+    "description": "Mere assignment ke marks final result mein shamil nahi kiye gaye.",
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C273",
+    "language": "en",
+    "title": "Lab and lecture overlap",
+    "description": "My Physics lab overlaps with the Calculus lecture on Thursday.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C274",
+    "language": "en",
+    "title": "Teacher always late",
+    "description": "Our Discrete Math teacher comes 20 minutes late to every class.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C275",
+    "language": "en",
+    "title": "Too many classes on Monday",
+    "description": "Our section has six classes on Monday and none on Friday, can it be balanced?",
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C276",
+    "language": "en",
+    "title": "No teacher assigned",
+    "description": "No teacher has been assigned to our Compiler Construction course and it is the fourth week.",
+    "category": "Classes and Timetable",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C277",
+    "language": "en",
+    "title": "Two sections in one room",
+    "description": "Two sections were scheduled in AC-303 at the same time on Tuesday.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-303"
+  },
+  {
+    "id": "C278",
+    "language": "en",
+    "title": "Timetable PDF unclear",
+    "description": "The timetable PDF has tiny text and room numbers are cut off.",
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C279",
+    "language": "en",
+    "title": "Course outline not shared",
+    "description": "The teacher has not shared the course outline for Software Engineering.",
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C280",
+    "language": "en",
+    "title": "Class moved to another building",
+    "description": "Our class was moved to another building with only five minutes between lectures.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C281",
+    "language": "en",
+    "title": "Classes not held before midterm",
+    "description": "Four Probability classes were not held and the midterm is next week.",
+    "category": "Classes and Timetable",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C282",
+    "language": "en",
+    "title": "Elective not offered",
+    "description": "The AI elective listed in the scheme of studies is not offered this semester.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C283",
+    "language": "en",
+    "title": "Recorded lectures request",
+    "description": "Can recorded lectures be uploaded for students who miss class due to illness?",
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C284",
+    "language": "en",
+    "title": "Last lecture ends late",
+    "description": "Our last lecture always ends 30 minutes late and we miss the point bus.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C285",
+    "language": "en",
+    "title": "Registration closed early",
+    "description": "Course registration closed before the date that was announced.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C286",
+    "language": "en",
+    "title": "No break between classes",
+    "description": "There is no break between our 11:30 and 1:00 classes.",
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C287",
+    "language": "en",
+    "title": "Lab instructor absent",
+    "description": "The lab instructor for Digital Logic has been absent for two labs.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C288",
+    "language": "en",
+    "title": "Makeup class clashes with midterm",
+    "description": "The makeup class for Algorithms is scheduled at the same time as our Physics midterm tomorrow.",
+    "category": "Classes and Timetable",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C289",
+    "language": "en",
+    "title": "Timetable lists missing room",
+    "description": "The timetable lists a room for our class that does not exist.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C290",
+    "language": "en",
+    "title": "Office hours not posted",
+    "description": "Teachers have not posted their office hours this semester.",
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C291",
+    "language": "en",
+    "title": "Section too large",
+    "description": "Our section has 70 students and the teacher cannot manage the class.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C292",
+    "language": "en",
+    "title": "Course outline not covered",
+    "description": "Half of the Networks course outline has not been covered and the semester is ending.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C293",
+    "language": "en",
+    "title": "Move 8 am class",
+    "description": "Can the 8:00 class be moved to 9:00 for day scholars?",
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C294",
+    "language": "en",
+    "title": "Online class link not shared",
+    "description": "The link for today's online class was not shared on the LMS.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C295",
+    "language": "roman-urdu",
+    "title": "Lab aur lecture ka time takra raha hai",
+    "description": "Mera Physics lab Thursday ko Calculus lecture ke time par hai.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C296",
+    "language": "roman-urdu",
+    "title": "Teacher roz late aate hain",
+    "description": "Hamare Discrete Math ke teacher har class mein bees minute late aate hain.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C297",
+    "language": "roman-urdu",
+    "title": "Course ke liye teacher nahi hai",
+    "description": "Chautha hafta hai aur Compiler Construction ke liye koi teacher assign nahi hua.",
+    "category": "Classes and Timetable",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C298",
+    "language": "roman-urdu",
+    "title": "Midterm se pehle classes nahi hui",
+    "description": "Probability ki chaar classes nahi hui aur agle hafte midterm hai.",
+    "category": "Classes and Timetable",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C299",
+    "language": "roman-urdu",
+    "title": "Lectures record kar ke upload karein",
+    "description": "Jo students bimari ki wajah se class miss karte hain un ke liye lectures upload kar dein.",
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C300",
+    "language": "roman-urdu",
+    "title": "Akhri lecture roz late khatam hota hai",
+    "description": "Hamara akhri lecture roz aadha ghanta late khatam hota hai aur point nikal jaata hai.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C301",
+    "language": "roman-urdu",
+    "title": "Online class ka link nahi mila",
+    "description": "Aaj ki online class ka link LMS par share nahi kiya gaya.",
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C302",
+    "language": "roman-urdu",
+    "title": "Classes ke beech break nahi hai",
+    "description": "11:30 aur 1:00 wali classes ke beech koi break nahi hai.",
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C303",
+    "language": "en",
+    "title": "Standees for career fair",
+    "description": "We need four standees printed for the career fair next Wednesday.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C304",
+    "language": "en",
+    "title": "Auditorium double booked",
+    "description": "The auditorium has been booked for two events at the same time tomorrow.",
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": "Auditorium",
+    "room": null
+  },
+  {
+    "id": "C305",
+    "language": "en",
+    "title": "Name misspelled on certificate",
+    "description": "My name is misspelled on the workshop certificate.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C306",
+    "language": "en",
+    "title": "Stage for cultural night",
+    "description": "We need a stage and lights set up in the garden for cultural night on Saturday.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "Garden",
+    "room": null
+  },
+  {
+    "id": "C307",
+    "language": "en",
+    "title": "Flyers for society",
+    "description": "The robotics society needs 200 flyers printed for recruitment.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C308",
+    "language": "en",
+    "title": "No chairs for seminar",
+    "description": "Chairs have not been arranged in the auditorium and the seminar starts in two hours.",
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": "Auditorium",
+    "room": null
+  },
+  {
+    "id": "C309",
+    "language": "en",
+    "title": "Event approval pending",
+    "description": "Our society event request has been pending approval for two weeks.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C310",
+    "language": "en",
+    "title": "More student events",
+    "description": "Please arrange more coding and sports events this semester.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C311",
+    "language": "en",
+    "title": "Sound system for sports gala",
+    "description": "We need a sound system at the sports complex for the sports gala.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "Sports Complex",
+    "room": null
+  },
+  {
+    "id": "C312",
+    "language": "en",
+    "title": "Convocation gowns not delivered",
+    "description": "Convocation is the day after tomorrow and the gowns have not been delivered.",
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C313",
+    "language": "en",
+    "title": "Posters printed faded",
+    "description": "The posters printed for our event came out faded.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C314",
+    "language": "en",
+    "title": "Photographer for workshop",
+    "description": "We need a photographer for the IEEE workshop next week.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C315",
+    "language": "en",
+    "title": "Event budget not released",
+    "description": "The budget for the sports week has not been released yet.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C316",
+    "language": "en",
+    "title": "Name badges for conference",
+    "description": "Please print 150 name badges for the student conference.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C317",
+    "language": "en",
+    "title": "Tent not set up",
+    "description": "The tent for tonight's dinner in the garden has not been set up.",
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": "Garden",
+    "room": null
+  },
+  {
+    "id": "C318",
+    "language": "en",
+    "title": "Food stalls permission",
+    "description": "We want permission to set up food stalls near the cafeteria for charity week.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null
+  },
+  {
+    "id": "C319",
+    "language": "en",
+    "title": "Debate registrations not opened",
+    "description": "Registrations for the debate competition have not been opened.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C320",
+    "language": "en",
+    "title": "Shield for guest speaker",
+    "description": "We need an engraved shield for the guest speaker next month.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C321",
+    "language": "en",
+    "title": "Auditorium for orientation",
+    "description": "We need the auditorium arranged for the freshers' orientation on Monday.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null
+  },
+  {
+    "id": "C322",
+    "language": "en",
+    "title": "Banners printed with wrong date",
+    "description": "The banners for tomorrow's job fair were printed with the wrong date.",
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C323",
+    "language": "en",
+    "title": "Room for society meetings",
+    "description": "Our society needs a room for weekly meetings.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C324",
+    "language": "en",
+    "title": "Trophies not ordered",
+    "description": "Trophies for the sports week finals on Friday have not been ordered.",
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": "Sports Complex",
+    "room": null
+  },
+  {
+    "id": "C325",
+    "language": "en",
+    "title": "Volunteers not briefed",
+    "description": "Volunteers for the open house have not been told their duties.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C326",
+    "language": "roman-urdu",
+    "title": "Career fair ke liye standees",
+    "description": "Agle Wednesday career fair ke liye chaar standees print karwane hain.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C327",
+    "language": "roman-urdu",
+    "title": "Auditorium do events ke liye book hai",
+    "description": "Kal ek hi time par auditorium do events ke liye book ho gaya hai.",
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": "Auditorium",
+    "room": null
+  },
+  {
+    "id": "C328",
+    "language": "roman-urdu",
+    "title": "Certificate par naam galat hai",
+    "description": "Workshop ke certificate par mera naam galat likha hai.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C329",
+    "language": "roman-urdu",
+    "title": "Seminar ke liye kursiyan nahi lagi",
+    "description": "Auditorium mein kursiyan nahi lagayi gayi aur do ghante mein seminar hai.",
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": "Auditorium",
+    "room": null
+  },
+  {
+    "id": "C330",
+    "language": "roman-urdu",
+    "title": "Society ke flyers print karne hain",
+    "description": "Robotics society ko recruitment ke liye 200 flyers chahiye.",
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C331",
+    "language": "roman-urdu",
+    "title": "Convocation ke gown nahi aaye",
+    "description": "Parson convocation hai aur gowns abhi tak nahi aaye.",
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C332",
+    "language": "roman-urdu",
+    "title": "Event ki approval ruki hui hai",
+    "description": "Do hafte se hamari society ke event ki approval pending hai.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C333",
+    "language": "roman-urdu",
+    "title": "Cultural night ke liye stage chahiye",
+    "description": "Saturday ko cultural night ke liye garden mein stage aur lights lagani hain.",
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "Garden",
+    "room": null
+  },
+  {
+    "id": "C334",
+    "language": "en",
+    "title": "Admission form not submitting",
+    "description": "The online admission form on the website gives an error on submit.",
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C335",
+    "language": "en",
+    "title": "Faculty page outdated",
+    "description": "The faculty directory on the website lists teachers who left years ago.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C336",
+    "language": "en",
+    "title": "Fee challan link broken",
+    "description": "The fee challan download link on the website is broken.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C337",
+    "language": "en",
+    "title": "Spelling mistakes on homepage",
+    "description": "The homepage has several spelling mistakes.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C338",
+    "language": "en",
+    "title": "Fake university page",
+    "description": "There is a fake Facebook page using the university name and asking for fees.",
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C339",
+    "language": "en",
+    "title": "Website slow",
+    "description": "The university website takes a long time to load.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C340",
+    "language": "en",
+    "title": "Wrong merit list posted",
+    "description": "The merit list posted on the website has wrong aggregates.",
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C341",
+    "language": "en",
+    "title": "No Urdu version",
+    "description": "The website has no Urdu version for parents.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C342",
+    "language": "en",
+    "title": "Wrong winners tagged",
+    "description": "The Instagram post about the hackathon tagged the wrong winners.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C343",
+    "language": "en",
+    "title": "Website search not working",
+    "description": "The search bar on the website returns no results.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C344",
+    "language": "en",
+    "title": "Wrong contact numbers",
+    "description": "The contact numbers for the admissions office on the website are wrong.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C345",
+    "language": "en",
+    "title": "Website hacked",
+    "description": "The university homepage is showing strange messages and looks hacked.",
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C346",
+    "language": "en",
+    "title": "LinkedIn page inactive",
+    "description": "The university LinkedIn page has not posted anything in months.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C347",
+    "language": "en",
+    "title": "Scholarship deadline not announced",
+    "description": "The scholarship deadline was not announced on the website or social media.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C348",
+    "language": "en",
+    "title": "Old logo on website",
+    "description": "Some pages on the website still use the old university logo.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C349",
+    "language": "en",
+    "title": "YouTube lectures private",
+    "description": "The recorded lectures on the university YouTube channel are set to private.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C350",
+    "language": "en",
+    "title": "Broken images on news page",
+    "description": "Images on the news page of the website do not load.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C351",
+    "language": "en",
+    "title": "Academic calendar not uploaded",
+    "description": "The academic calendar for this semester is not on the website.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C352",
+    "language": "en",
+    "title": "Results page shows others' data",
+    "description": "The results page on the website shows other students' personal details.",
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C353",
+    "language": "en",
+    "title": "Dark mode for website",
+    "description": "Please add a dark mode to the website.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C354",
+    "language": "en",
+    "title": "Offensive comments not removed",
+    "description": "Offensive comments under the university Facebook posts are not removed.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C355",
+    "language": "en",
+    "title": "Campus map outdated",
+    "description": "The campus map on the website shows the old parking location.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C356",
+    "language": "en",
+    "title": "Closed jobs still listed",
+    "description": "Closed job openings are still shown on the careers page of the website.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C357",
+    "language": "en",
+    "title": "Wrong holiday announced",
+    "description": "The university Instagram announced a holiday on a day the notice board says is a working day.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C358",
+    "language": "en",
+    "title": "Admission portal down on last date",
+    "description": "The admission portal on the website is down on the last date to apply.",
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C359",
+    "language": "roman-urdu",
+    "title": "Admission form submit nahi ho raha",
+    "description": "Website par online admission form submit karte waqt error aata hai.",
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C360",
+    "language": "roman-urdu",
+    "title": "Website par purane teachers ke naam",
+    "description": "Website ki faculty list mein woh teachers bhi hain jo saalon pehle chale gaye.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C361",
+    "language": "roman-urdu",
+    "title": "Fee challan ka link kaam nahi karta",
+    "description": "Website par fee challan download karne ka link toota hua hai.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C362",
+    "language": "roman-urdu",
+    "title": "University ke naam se fake page",
+    "description": "Facebook par university ke naam se fake page hai jo fees maang raha hai.",
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C363",
+    "language": "roman-urdu",
+    "title": "Website bohat slow hai",
+    "description": "University ki website khulne mein bohat waqt leti hai.",
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C364",
+    "language": "roman-urdu",
+    "title": "Merit list mein galti hai",
+    "description": "Website par lagayi gayi merit list mein aggregates galat hain.",
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C365",
+    "language": "roman-urdu",
+    "title": "Academic calendar upload nahi hua",
+    "description": "Is semester ka academic calendar website par nahi hai.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C366",
+    "language": "roman-urdu",
+    "title": "Instagram par galat chutti ka elaan",
+    "description": "University ke Instagram ne aisi chutti ka elaan kiya jo notice board ke mutabiq working day hai.",
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C367",
+    "language": "en",
+    "title": "Lost water bottle",
+    "description": "I lost my water bottle in class, is there a lost and found?",
+    "category": "Other",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C368",
+    "language": "en",
+    "title": "Cafeteria prices increased",
+    "description": "Cafeteria prices were increased twice this semester.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null
+  },
+  {
+    "id": "C369",
+    "language": "en",
+    "title": "Transport bus always late",
+    "description": "The university bus on Route 4 is late every morning.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C370",
+    "language": "en",
+    "title": "Fee refund pending",
+    "description": "My fee refund after dropping a course has been pending for two months.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C371",
+    "language": "en",
+    "title": "More benches in garden",
+    "description": "Please add more benches in the garden.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Garden",
+    "room": null
+  },
+  {
+    "id": "C372",
+    "language": "en",
+    "title": "No staff at counter",
+    "description": "Nobody is available at the student affairs counter in the administration building during working hours.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": "Administration Building",
+    "room": null
+  },
+  {
+    "id": "C373",
+    "language": "en",
+    "title": "Prayer area too small",
+    "description": "The prayer area is too small for the number of students.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C374",
+    "language": "en",
+    "title": "Hostel mess food bad",
+    "description": "The hostel mess food is cold and the same every day.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C375",
+    "language": "en",
+    "title": "Parking sticker",
+    "description": "How can I get a parking sticker for my bike?",
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Parking Area",
+    "room": null
+  },
+  {
+    "id": "C376",
+    "language": "en",
+    "title": "Scholarship stipend delayed",
+    "description": "My scholarship stipend for this semester has not been paid.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C377",
+    "language": "en",
+    "title": "Hostel room change",
+    "description": "I want to change my hostel room to one closer to the stairs.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C378",
+    "language": "en",
+    "title": "Guard rude at gate",
+    "description": "The guard at the main gate was rude and did not let me in without reason.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null
+  },
+  {
+    "id": "C379",
+    "language": "en",
+    "title": "Lockers for day scholars",
+    "description": "Please provide lockers for day scholars to keep their bags.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C380",
+    "language": "en",
+    "title": "Fee challan amount wrong",
+    "description": "My fee challan shows a higher amount than my fee structure.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C381",
+    "language": "en",
+    "title": "Cafeteria closes early",
+    "description": "The cafeteria closes at 3 pm but evening classes run till 8.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null
+  },
+  {
+    "id": "C382",
+    "language": "en",
+    "title": "Character certificate delayed",
+    "description": "My character certificate request has been pending for three weeks.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C383",
+    "language": "en",
+    "title": "Separate gym timings",
+    "description": "Please add separate gym timings for female students at the sports complex.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Sports Complex",
+    "room": null
+  },
+  {
+    "id": "C384",
+    "language": "en",
+    "title": "Bus overcrowded",
+    "description": "The Route 2 bus is so crowded that students stand all the way.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C385",
+    "language": "en",
+    "title": "Vending machine request",
+    "description": "Please install a vending machine in Block C.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Block C",
+    "room": null
+  },
+  {
+    "id": "C386",
+    "language": "en",
+    "title": "Warden not responding",
+    "description": "The hostel warden does not respond to our complaints about noise at night.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C387",
+    "language": "en",
+    "title": "Career counselling sessions",
+    "description": "Please arrange career counselling sessions for final year students.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C388",
+    "language": "en",
+    "title": "Long queue at accounts office",
+    "description": "There is a long queue at the accounts office in the administration building and only one counter is open.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": "Administration Building",
+    "room": null
+  },
+  {
+    "id": "C389",
+    "language": "en",
+    "title": "Society fee unclear",
+    "description": "It is not clear why a society fee was added to my challan.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C390",
+    "language": "en",
+    "title": "Internship letter not issued",
+    "description": "The internship recommendation letter I requested has not been issued.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C391",
+    "language": "en",
+    "title": "No vegetarian food",
+    "description": "The cafeteria has no vegetarian food options.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null
+  },
+  {
+    "id": "C392",
+    "language": "en",
+    "title": "Transport fee charged twice",
+    "description": "Transport fee was charged twice on my challan.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C393",
+    "language": "roman-urdu",
+    "title": "Point bus roz late aati hai",
+    "description": "Route 4 ki university bus har subah late aati hai.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C394",
+    "language": "roman-urdu",
+    "title": "Fee refund nahi mila",
+    "description": "Course drop karne ke baad do mahine se fee refund pending hai.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C395",
+    "language": "roman-urdu",
+    "title": "Hostel mess ka khana kharab hai",
+    "description": "Hostel mess ka khana thanda hota hai aur roz ek jaisa hota hai.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+  },
+  {
+    "id": "C396",
+    "language": "roman-urdu",
+    "title": "Garden mein benches barhaein",
+    "description": "Garden mein aur benches laga dein.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Garden",
+    "room": null
+  },
+  {
+    "id": "C397",
+    "language": "roman-urdu",
+    "title": "Scholarship ka wazifa nahi mila",
+    "description": "Is semester ka scholarship stipend abhi tak nahi mila.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C398",
+    "language": "roman-urdu",
+    "title": "Gate par guard ne bad tameezi ki",
+    "description": "Main gate ke guard ne bina wajah andar nahi aane diya aur rude tha.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null
+  },
+  {
+    "id": "C399",
+    "language": "roman-urdu",
+    "title": "Lockers ki suhulat chahiye",
+    "description": "Day scholars ke liye lockers ka intezam kar dein.",
+    "category": "Other",
+    "priority": "LOW",
+    "location": null,
+    "room": null
+  },
+  {
+    "id": "C400",
+    "language": "roman-urdu",
+    "title": "Challan par fee zyada hai",
+    "description": "Mere fee challan par fee structure se zyada amount likha hai.",
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
   }
 ]
