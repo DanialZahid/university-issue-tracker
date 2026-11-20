@@ -39,6 +39,32 @@ export const LOCATIONS = [
   'No specific place',
 ];
 
+// A provider request that hangs would otherwise run until the hosting
+// platform's time limit and come back as a bare 504. Giving up earlier turns
+// it into a normal retry that the runner can show and log.
+const AI_STEP_TIMEOUT_MS = 45_000;
+
+async function withTimeout<T>(work: Promise<T>): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(
+      () =>
+        reject(
+          new AiRetryableError(
+            5_000,
+            `no reply from the AI within ${AI_STEP_TIMEOUT_MS / 1000}s`,
+          ),
+        ),
+      AI_STEP_TIMEOUT_MS,
+    );
+  });
+  try {
+    return await Promise.race([work, timeout]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 function outcome<T>(error: unknown): StepOutcome<T> | null {
   if (error instanceof AiRetryableError) {
     return {
@@ -75,11 +101,13 @@ export async function evaluateComplaint(
   }
   const start = performance.now();
   try {
-    const ai = await classifyComplaint({
-      title: t.title,
-      description: t.description,
-      locations: LOCATIONS,
-    });
+    const ai = await withTimeout(
+      classifyComplaint({
+        title: t.title,
+        description: t.description,
+        locations: LOCATIONS,
+      }),
+    );
     const aiMs = Math.round(performance.now() - start);
     return {
       status: 'ok',
@@ -126,7 +154,7 @@ export async function evaluatePair(
   }
   const start = performance.now();
   try {
-    const [a, b] = await Promise.all([embed(p.a), embed(p.b)]);
+    const [a, b] = await withTimeout(Promise.all([embed(p.a), embed(p.b)]));
     return {
       status: 'ok',
       result: {

@@ -9,6 +9,10 @@ import { getRealSuperuser } from '@/utils/session';
 
 export const metadata: Metadata = { title: 'Evaluation' };
 
+// Each step is one short AI request. If one hangs, fail after a minute
+// instead of the platform default, so the runner can retry it.
+export const maxDuration = 60;
+
 // Developer tool, not linked anywhere. Only the real superuser account can
 // open it; "View as" does not count, and everyone else gets a 404.
 export default async function EvaluationPage() {
