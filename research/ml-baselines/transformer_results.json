@@ -1,0 +1,84 @@
+{
+ "model": "distilbert-base-uncased",
+ "epochs": 8,
+ "category": {
+  "groupedCV": {
+   "accuracy": 0.8225,
+   "macroF1": 0.8224688329686372,
+   "romanUrdu": 0.76,
+   "foldSD": 0.03391164991562633
+  },
+  "smallHistory": {
+   "accuracy": 0.5607142857142857,
+   "macroF1": 0.5304364648790496,
+   "romanUrdu": 0.5125
+  }
+ },
+ "priority": {
+  "groupedCV": {
+   "accuracy": 0.6,
+   "macroF1": 0.46968061373521436,
+   "romanUrdu": 0.5,
+   "within1": 0.9425,
+   "criticalFound": 1,
+   "falseCritical": 4,
+   "foldSD": 0.020014209812528713
+  },
+  "smallHistory": {
+   "accuracy": 0.5535714285714286,
+   "macroF1": 0.3139194139194139,
+   "romanUrdu": 0.4875,
+   "within1": 0.9392857142857143,
+   "criticalFound": 0,
+   "falseCritical": 0
+  },
+  "groupedCVSafetyRule": {
+   "accuracy": 0.61,
+   "macroF1": 0.5470528265111233,
+   "romanUrdu": 0.5,
+   "within1": 0.9525,
+   "criticalFound": 6,
+   "falseCritical": 5
+  },
+  "smallHistorySafetyRule": {
+   "accuracy": 0.5571428571428572,
+   "macroF1": 0.3560582010582011,
+   "romanUrdu": 0.4875,
+   "within1": 0.9428571428571428,
+   "criticalFound": 1,
+   "falseCritical": 0
+  }
+ },
+ "sbert": {
+  "threshold": 0.43,
+  "either": [
+   0.5,
+   0.56
+  ],
+  "dev": [
+   0.818,
+   0.844,
+   0.831
+  ],
+  "test": [
+   0.645,
+   0.656,
+   0.65
+  ],
+  "testMeaning": [
+   0.769,
+   0.333,
+   0.465
+  ],
+  "eitherTest": [
+   0.651,
+   0.672,
+   0.661
+  ],
+  "eitherTestMeaning": [
+   0.786,
+   0.367,
+   0.5
+  ]
+ }
+}

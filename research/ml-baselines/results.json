@@ -1,0 +1,447 @@
+{
+ "n": 400,
+ "folds": 5,
+ "repeats": 5,
+ "groups": 310,
+ "category": {
+  "Rules": {
+   "accuracy": 0.6625,
+   "macroF1": 0.6665217812823048,
+   "romanUrdu": 0.63
+  },
+  "LLM": {
+   "accuracy": 0.875,
+   "macroF1": 0.8786055478275923,
+   "romanUrdu": 0.86
+  },
+  "Hybrid": {
+   "accuracy": 0.8825,
+   "macroF1": 0.8858673029942628,
+   "romanUrdu": 0.86
+  },
+  "LR": {
+   "accuracy": {
+    "mean": 0.7535,
+    "sd": 0.018479718612576315
+   },
+   "macroF1": {
+    "mean": 0.7493083761967039,
+    "sd": 0.019353634278856387
+   },
+   "romanUrdu": {
+    "mean": 0.718,
+    "sd": 0.027129319932501058
+   }
+  },
+  "SVM": {
+   "accuracy": {
+    "mean": 0.7484999999999999,
+    "sd": 0.016477257053284063
+   },
+   "macroF1": {
+    "mean": 0.7414680958910901,
+    "sd": 0.016079058405912852
+   },
+   "romanUrdu": {
+    "mean": 0.732,
+    "sd": 0.022271057451320107
+   }
+  },
+  "XGBoost": {
+   "accuracy": {
+    "mean": 0.5895,
+    "sd": 0.025069902273443363
+   },
+   "macroF1": {
+    "mean": 0.5821966315254672,
+    "sd": 0.02538663754432065
+   },
+   "romanUrdu": {
+    "mean": 0.566,
+    "sd": 0.03611094017053556
+   }
+  },
+  "LR (plain CV)": {
+   "accuracy": {
+    "mean": 0.8095,
+    "sd": 0.013266499161421573
+   },
+   "macroF1": {
+    "mean": 0.8079560460111055,
+    "sd": 0.01368553806711859
+   },
+   "romanUrdu": {
+    "mean": 0.876,
+    "sd": 0.019595917942265444
+   }
+  },
+  "SVM (plain CV)": {
+   "accuracy": {
+    "mean": 0.8095,
+    "sd": 0.012288205727444473
+   },
+   "macroF1": {
+    "mean": 0.8066315351722851,
+    "sd": 0.012719431801847923
+   },
+   "romanUrdu": {
+    "mean": 0.886,
+    "sd": 0.030066592756745843
+   }
+  },
+  "XGBoost (plain CV)": {
+   "accuracy": {
+    "mean": 0.6485,
+    "sd": 0.012103718436910214
+   },
+   "macroF1": {
+    "mean": 0.6414493535669812,
+    "sd": 0.01161358327201767
+   },
+   "romanUrdu": {
+    "mean": 0.6779999999999999,
+    "sd": 0.02712931993250105
+   }
+  }
+ },
+ "priority": {
+  "Rules": {
+   "accuracy": 0.5075,
+   "macroF1": 0.3772329411866004,
+   "romanUrdu": 0.48,
+   "within1": 0.965,
+   "criticalFound": 6,
+   "falseCritical": 3
+  },
+  "LLM": {
+   "accuracy": 0.735,
+   "macroF1": 0.7455630290838992,
+   "romanUrdu": 0.76,
+   "within1": 0.995,
+   "criticalFound": 20,
+   "falseCritical": 8
+  },
+  "Hybrid": {
+   "accuracy": 0.7325,
+   "macroF1": 0.7397409766448331,
+   "romanUrdu": 0.76,
+   "within1": 0.995,
+   "criticalFound": 20,
+   "falseCritical": 9
+  },
+  "LR": {
+   "accuracy": {
+    "mean": 0.5985,
+    "sd": 0.01270826502713886
+   },
+   "macroF1": {
+    "mean": 0.518595423442421,
+    "sd": 0.01503185901613909
+   },
+   "romanUrdu": {
+    "mean": 0.5539999999999999,
+    "sd": 0.025768197453450225
+   },
+   "within1": {
+    "mean": 0.929,
+    "sd": 0.00930053761886913
+   },
+   "criticalFound": {
+    "mean": 5.4,
+    "sd": 1.019803902718557
+   },
+   "falseCritical": {
+    "mean": 2.4,
+    "sd": 0.8
+   }
+  },
+  "SVM": {
+   "accuracy": {
+    "mean": 0.6,
+    "sd": 0.020186629238186357
+   },
+   "macroF1": {
+    "mean": 0.5448443603618038,
+    "sd": 0.027771263381110054
+   },
+   "romanUrdu": {
+    "mean": 0.566,
+    "sd": 0.0440908153700972
+   },
+   "within1": {
+    "mean": 0.9275,
+    "sd": 0.007905694150420969
+   },
+   "criticalFound": {
+    "mean": 7,
+    "sd": 1.4142135623730951
+   },
+   "falseCritical": {
+    "mean": 2.8,
+    "sd": 0.4
+   }
+  },
+  "XGBoost": {
+   "accuracy": {
+    "mean": 0.5235,
+    "sd": 0.015540270267920084
+   },
+   "macroF1": {
+    "mean": 0.38314431620898337,
+    "sd": 0.019786004163332767
+   },
+   "romanUrdu": {
+    "mean": 0.528,
+    "sd": 0.019390719429665332
+   },
+   "within1": {
+    "mean": 0.9055,
+    "sd": 0.004301162633521302
+   },
+   "criticalFound": {
+    "mean": 0.4,
+    "sd": 0.4898979485566356
+   },
+   "falseCritical": {
+    "mean": 1.4,
+    "sd": 0.8
+   }
+  },
+  "XGBoost + safety rule": {
+   "accuracy": {
+    "mean": 0.5345,
+    "sd": 0.015033296378372927
+   },
+   "macroF1": {
+    "mean": 0.4695234909461172,
+    "sd": 0.011404656616132774
+   },
+   "romanUrdu": {
+    "mean": 0.528,
+    "sd": 0.019390719429665332
+   },
+   "within1": {
+    "mean": 0.917,
+    "sd": 0.004000000000000012
+   },
+   "criticalFound": {
+    "mean": 5.2,
+    "sd": 0.4
+   },
+   "falseCritical": {
+    "mean": 2.4,
+    "sd": 0.8
+   }
+  },
+  "LR (plain CV)": {
+   "accuracy": {
+    "mean": 0.6745,
+    "sd": 0.01208304597359457
+   },
+   "macroF1": {
+    "mean": 0.5793330298382416,
+    "sd": 0.020379194082924004
+   },
+   "romanUrdu": {
+    "mean": 0.688,
+    "sd": 0.03429285639896448
+   },
+   "within1": {
+    "mean": 0.9405,
+    "sd": 0.0029154759474226376
+   },
+   "criticalFound": {
+    "mean": 4.6,
+    "sd": 1.019803902718557
+   },
+   "falseCritical": {
+    "mean": 1.6,
+    "sd": 0.4898979485566356
+   }
+  },
+  "SVM (plain CV)": {
+   "accuracy": {
+    "mean": 0.6920000000000001,
+    "sd": 0.007810249675906644
+   },
+   "macroF1": {
+    "mean": 0.6366324110625824,
+    "sd": 0.022128578989869738
+   },
+   "romanUrdu": {
+    "mean": 0.738,
+    "sd": 0.02638181191654586
+   },
+   "within1": {
+    "mean": 0.9485,
+    "sd": 0.006041522986797276
+   },
+   "criticalFound": {
+    "mean": 8,
+    "sd": 1.4142135623730951
+   },
+   "falseCritical": {
+    "mean": 3.2,
+    "sd": 0.9797958971132712
+   }
+  },
+  "XGBoost (plain CV)": {
+   "accuracy": {
+    "mean": 0.575,
+    "sd": 0.0052440442408507515
+   },
+   "macroF1": {
+    "mean": 0.42279842754293273,
+    "sd": 0.010004277694282472
+   },
+   "romanUrdu": {
+    "mean": 0.62,
+    "sd": 0.04049691346263321
+   },
+   "within1": {
+    "mean": 0.9095,
+    "sd": 0.010295630140986995
+   },
+   "criticalFound": {
+    "mean": 0.4,
+    "sd": 0.4898979485566356
+   },
+   "falseCritical": {
+    "mean": 0.6,
+    "sd": 0.4898979485566356
+   }
+  },
+  "XGBoost + safety rule (plain CV)": {
+   "accuracy": {
+    "mean": 0.586,
+    "sd": 0.006244997998398415
+   },
+   "macroF1": {
+    "mean": 0.5120853441067812,
+    "sd": 0.014469316216729944
+   },
+   "romanUrdu": {
+    "mean": 0.62,
+    "sd": 0.04049691346263321
+   },
+   "within1": {
+    "mean": 0.9205,
+    "sd": 0.011113055385446463
+   },
+   "criticalFound": {
+    "mean": 5.2,
+    "sd": 0.4
+   },
+   "falseCritical": {
+    "mean": 1.6,
+    "sd": 0.4898979485566356
+   }
+  }
+ },
+ "smallHistory": {
+  "category": {
+   "Rules": {
+    "accuracy": 0.6642857142857143,
+    "macroF1": 0.652659213108403,
+    "romanUrdu": 0.6375
+   },
+   "LLM": {
+    "accuracy": 0.8785714285714286,
+    "macroF1": 0.876186623969647,
+    "romanUrdu": 0.85
+   },
+   "Hybrid": {
+    "accuracy": 0.8821428571428571,
+    "macroF1": 0.8807196385247167,
+    "romanUrdu": 0.85
+   },
+   "LR": {
+    "accuracy": 0.6428571428571429,
+    "macroF1": 0.6195365738474129,
+    "romanUrdu": 0.5375
+   },
+   "SVM": {
+    "accuracy": 0.6785714285714286,
+    "macroF1": 0.6536511372823739,
+    "romanUrdu": 0.625
+   },
+   "XGBoost": {
+    "accuracy": 0.5071428571428571,
+    "macroF1": 0.4878355243063405,
+    "romanUrdu": 0.5125
+   }
+  },
+  "priority": {
+   "Rules": {
+    "accuracy": 0.4928571428571429,
+    "macroF1": 0.3484241513653278,
+    "romanUrdu": 0.4875,
+    "within1": 0.9714285714285714,
+    "criticalFound": 2,
+    "falseCritical": 1
+   },
+   "LLM": {
+    "accuracy": 0.7321428571428571,
+    "macroF1": 0.7538219510161719,
+    "romanUrdu": 0.75,
+    "within1": 0.9928571428571429,
+    "criticalFound": 11,
+    "falseCritical": 4
+   },
+   "Hybrid": {
+    "accuracy": 0.7321428571428571,
+    "macroF1": 0.7538219510161719,
+    "romanUrdu": 0.75,
+    "within1": 0.9928571428571429,
+    "criticalFound": 11,
+    "falseCritical": 4
+   },
+   "LR": {
+    "accuracy": 0.5714285714285714,
+    "macroF1": 0.46199823631477244,
+    "romanUrdu": 0.55,
+    "within1": 0.9428571428571428,
+    "criticalFound": 2,
+    "falseCritical": 0
+   },
+   "SVM": {
+    "accuracy": 0.5535714285714286,
+    "macroF1": 0.4908750020723217,
+    "romanUrdu": 0.55,
+    "within1": 0.9392857142857143,
+    "criticalFound": 4,
+    "falseCritical": 3
+   },
+   "XGBoost": {
+    "accuracy": 0.48928571428571427,
+    "macroF1": 0.3450796022060011,
+    "romanUrdu": 0.475,
+    "within1": 0.9357142857142857,
+    "criticalFound": 1,
+    "falseCritical": 3
+   }
+  }
+ },
+ "learningCurve": {
+  "40": {
+   "mean": 0.433,
+   "sd": 0.06372597586541927
+  },
+  "80": {
+   "mean": 0.5475,
+   "sd": 0.05086747487343951
+  },
+  "160": {
+   "mean": 0.671,
+   "sd": 0.04792181131802094
+  },
+  "240": {
+   "mean": 0.7135,
+   "sd": 0.04567822238222497
+  },
+  "320": {
+   "mean": 0.7485,
+   "sd": 0.04320300915445589
+  }
+ }
+}
