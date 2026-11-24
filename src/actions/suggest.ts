@@ -9,11 +9,8 @@ import { requireUser } from '@/utils/session';
 
 const inputSchema = z.object({
   title: z.string().trim().min(LIMITS.title.min).max(LIMITS.title.max),
-  description: z
-    .string()
-    .trim()
-    .min(LIMITS.description.min)
-    .max(LIMITS.description.max),
+  // Empty while the description is still too short: the title is used alone.
+  description: z.string().trim().max(LIMITS.description.max),
 });
 
 export type FieldSuggestion = {
@@ -24,7 +21,7 @@ export type FieldSuggestion = {
 };
 
 // Live suggestions while the form is typed. Returns null when the AI is off,
-// the input is too short, or the AI did not answer, so the form keeps the
+// the title is too short, or the AI did not answer, so the form keeps the
 // suggestions from its own rules.
 export async function suggestFields(
   input: z.infer<typeof inputSchema>,

@@ -35,10 +35,10 @@ const NEUTRAL = 'bg-slate-100 text-slate-700';
 const SUBMITTED = 'bg-blue-100 text-blue-700';
 const ROUTED = 'bg-sky-100 text-sky-700';
 const NOTE = 'bg-amber-100 text-amber-800';
-const AI_NOTE = 'Set automatically with AI';
 const AUTOMATIC_NOTES = new Set([
   'Set automatically',
-  AI_NOTE,
+  // Stored for AI-set priorities; shown the same as the others.
+  'Set automatically with AI',
   'Auto-assigned from category',
 ]);
 
@@ -105,11 +105,7 @@ export function ComplaintTimeline({ events, showActor = false }: Props) {
         const { icon: Icon, tone } = visual(event);
         const isLast = index === events.length - 1;
         const automatic = !!event.note && AUTOMATIC_NOTES.has(event.note);
-        const actor = automatic
-          ? event.note === AI_NOTE
-            ? 'Automatic, with AI'
-            : 'Automatic'
-          : event.performedBy?.name;
+        const actor = automatic ? 'Automatic' : event.performedBy?.name;
 
         return (
           <li key={event.id} className='relative flex gap-4 pb-7 last:pb-0'>

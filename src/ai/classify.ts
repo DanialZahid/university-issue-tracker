@@ -63,7 +63,7 @@ export async function classifyComplaint(input: {
       `Locations: ${locations.join(', ')}.`,
       '',
       `Title: ${redact(input.title)}`,
-      `Description: ${redact(input.description)}`,
+      `Description: ${input.description ? redact(input.description) : '(none yet)'}`,
     ].join('\n'),
     schema,
     ...(input.timeoutMs ? { timeoutMs: input.timeoutMs } : {}),

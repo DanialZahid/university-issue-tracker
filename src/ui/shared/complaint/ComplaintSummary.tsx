@@ -83,7 +83,7 @@ export function ComplaintSummary({ complaint: c, children }: Props) {
           <p className='flex items-start gap-2 rounded-lg border border-violet-200 bg-violet-50 px-4 py-3 text-sm text-violet-950'>
             <Sparkles className='mt-0.5 size-4 shrink-0 text-violet-600' />
             <span>
-              <span className='font-medium'>AI summary: </span>
+              <span className='font-medium'>Summary: </span>
               {c.aiSummary}
             </span>
           </p>

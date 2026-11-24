@@ -192,15 +192,19 @@ function FormBody({
     setRestoredAt(null);
   }
 
-  // AI suggestions: asked once typing pauses. The last answer stays until a
-  // newer one arrives, so the fields do not flicker back to the rules.
+  // AI suggestions: asked once typing pauses, from the title alone or the
+  // title and a long enough description. The last answer stays until a newer
+  // one arrives, so the fields do not flicker back to the rules.
   const [ai, setAi] = useState<FieldSuggestion | null>(null);
   const [aiBusy, setAiBusy] = useState(false);
-  const aiReady =
-    aiEnabled &&
-    title.trim().length >= LIMITS.title.min &&
-    description.trim().length >= LIMITS.description.min;
-  const aiKey = `${title.trim()}\n${description.trim()}`;
+  const aiReady = aiEnabled && title.trim().length >= LIMITS.title.min;
+  // A description still too short adds little, so it is left out and does
+  // not trigger a new request on every key press.
+  const aiDescription =
+    description.trim().length >= LIMITS.description.min
+      ? description.trim()
+      : '';
+  const aiKey = `${title.trim()}\n${aiDescription}`;
   const lastAsked = useRef('');
   useEffect(() => {
     if (!aiReady || lastAsked.current === aiKey) return;
@@ -209,7 +213,10 @@ function FormBody({
       lastAsked.current = aiKey;
       setAiBusy(true);
       try {
-        const answer = await suggestFields({ title, description });
+        const answer = await suggestFields({
+          title,
+          description: aiDescription,
+        });
         if (!cancelled && answer) setAi(answer);
       } catch {
         // Keep the rule-based suggestions.
@@ -221,11 +228,9 @@ function FormBody({
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [aiReady, aiKey, title, description]);
+  }, [aiReady, aiKey, title, aiDescription]);
   const aiValue = aiReady ? ai : null;
-  const suggestedBy = aiValue
-    ? 'Suggested by AI from your text. You can change it.'
-    : 'Suggested from your text. You can change it.';
+  const suggestedBy = 'Suggested from your text. You can change it.';
 
   const ruleCategoryId =
     title.trim().length >= 3
@@ -377,7 +382,7 @@ function FormBody({
           error={errors['categoryId']}
           hint={
             aiBusy
-              ? 'Checking with AI…'
+              ? 'Checking your text…'
               : manualCategoryId === null && suggestedCategoryId
                 ? suggestedBy
                 : undefined
@@ -530,9 +535,7 @@ function FormBody({
             </span>
           </Hint>
           <span className='text-muted-foreground'>
-            {aiValue
-              ? 'Set automatically with AI. The department may adjust it.'
-              : 'Set automatically. The department may adjust it.'}
+            Set automatically. The department may adjust it.
           </span>
         </div>
 
