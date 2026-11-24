@@ -73,6 +73,11 @@ function outcome<T>(error: unknown): StepOutcome<T> | null {
       reason: error.message,
     };
   }
+  // A single request that timed out is retried too, so a slow provider
+  // never leaves a complaint without an AI answer in the results.
+  if (error instanceof Error && error.name === 'TimeoutError') {
+    return { status: 'retry', waitMs: 8_000, reason: 'request timed out' };
+  }
   return null;
 }
 
