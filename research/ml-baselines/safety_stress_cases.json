@@ -1,0 +1,77 @@
+[
+ {
+  "id": "C006",
+  "kind": "upper case",
+  "text": "SMOKE COMING FROM SWITCHBOARD. THERE IS SMOKE COMING FROM THE SWITCHBOARD NEAR THE STAIRS IN BLOCK C. PLEASE SEND SOMEONE IMMEDIATELY."
+ },
+ {
+  "id": "C006",
+  "kind": "typo",
+  "text": "smok coming from switchboard. There is smok coming from the switchboard near the stairs in Block C. Please send someone immediately."
+ },
+ {
+  "id": "C006",
+  "kind": "Roman Urdu word",
+  "text": "dhuan coming from switchboard. There is dhuan coming from the switchboard near the stairs in Block C. Please send someone immediately."
+ },
+ {
+  "id": "C024",
+  "kind": "upper case",
+  "text": "SOMEONE INJURED ON STAIRS. A STUDENT FELL ON THE STAIRS NEAR THE MAIN GATE AND IS INJURED. FIRST AID NEEDED."
+ },
+ {
+  "id": "C024",
+  "kind": "typo",
+  "text": "Someone injred on stairs. A student fell on the stairs near the main gate and is injred. First aid needed."
+ },
+ {
+  "id": "C024",
+  "kind": "Roman Urdu word",
+  "text": "Someone zakhmi on stairs. A student fell on the stairs near the main gate and is zakhmi. First aid needed."
+ },
+ {
+  "id": "C031",
+  "kind": "upper case",
+  "text": "SHORT CIRCUIT IN LAB. THERE WAS A SHORT CIRCUIT IN LAB 5 AND SPARKS CAME OUT OF THE SOCKET."
+ },
+ {
+  "id": "C031",
+  "kind": "typo",
+  "text": "Short circuit in lab. There was a short circuit in lab 5 and sprks came out of the socket."
+ },
+ {
+  "id": "C031",
+  "kind": "Roman Urdu word",
+  "text": "Short circuit in lab. There was a short circuit in lab 5 and chingariyan came out of the socket."
+ },
+ {
+  "id": "C048",
+  "kind": "upper case",
+  "text": "ELECTRIC SHOCK FROM SOCKET. I GOT AN ELECTRIC SHOCK FROM THE SOCKET IN AC-112 WHEN PLUGGING IN MY CHARGER."
+ },
+ {
+  "id": "C048",
+  "kind": "typo",
+  "text": "electric shok from socket. I got an electric shok from the socket in AC-112 when plugging in my charger."
+ },
+ {
+  "id": "C048",
+  "kind": "Roman Urdu word",
+  "text": "current laga from socket. I got an current laga from the socket in AC-112 when plugging in my charger."
+ },
+ {
+  "id": "C145",
+  "kind": "upper case",
+  "text": "SPARKS FROM UPS. SPARKS ARE COMING OUT OF THE UPS IN C-LAB 02 AND STUDENTS ARE MOVING AWAY."
+ },
+ {
+  "id": "C145",
+  "kind": "typo",
+  "text": "sprks from UPS. sprks are coming out of the UPS in C-Lab 02 and students are moving away."
+ },
+ {
+  "id": "C145",
+  "kind": "Roman Urdu word",
+  "text": "chingariyan from UPS. chingariyan are coming out of the UPS in C-Lab 02 and students are moving away."
+ }
+]

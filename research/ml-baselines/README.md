@@ -1,23 +1,30 @@
-# Supervised baselines (research only)
+# Supervised baselines and statistics (research only)
 
 Offline study for the research paper. Nothing in this folder is used by the platform.
 
-It trains logistic regression, a linear SVM, and XGBoost on the 400 labeled test complaints in `src/eval` and compares them with the rules, the LLM, and the hybrid from the evaluation run (`run3.json`, exported from `/lab/evaluation`).
+All scripts read the labeled test set in `src/eval` (400 complaints and 150 title pairs). They also read the evaluation run exported from `/lab/evaluation`: `run3.json` (Nov. 20, 2026), plus `run2.json` (Nov. 19, 2026) for the repeatability check.
 
-- **Grouped CV:** stratified 5-fold cross-validation, repeated five times. A Roman Urdu complaint and the English complaint it paraphrases always land in the same fold (`groups.py`).
-- **Plain CV:** the same without grouping, for comparison.
-- **Small history:** trained on the first 120 complaints, tested on the other 280.
-- **Learning curve:** SVM category accuracy by training size.
+| Script | What it does | Writes |
+|---|---|---|
+| `baselines.py` | Logistic regression, linear SVM, and XGBoost with fixed settings. Runs grouped and plain 5-fold CV (five repeats), the small-history split (train on the first 120, test on the other 280), and an SVM learning curve. | `results.json` |
+| `supervised_tuned.py` | The same models tuned by nested, grouped CV: three repeats, or one for XGBoost. | `tuned_results.json` |
+| `transformer_baselines.py` | DistilBERT fine-tuned for category and priority, and Sentence-BERT on the title pairs. | `transformer_results.json` |
+| `local_lowlabel.py` | SetFit with 8 examples per class, and zero-shot NLI, on the 280 held-out complaints. | `lowlabel_results.json` |
+| `pair_encoders.py` | TF-IDF, English Sentence-BERT, multilingual MiniLM, and LaBSE similarity for the title pairs. | `pair_scores.json` |
+| `stats.py` | Wilson and Clopper–Pearson intervals, macro-F1, quadratic-weighted kappa, exact McNemar with Holm correction, critical and safety precision and recall, the ablation with a simulated LLM outage, and duplicate metrics (accuracy, MCC, Fisher test, ROC-AUC, PR-AUC). | `stats_results.json` |
+| `pii_cases.py` | Sentences with planted identifiers in Pakistani formats. Run the platform's `redact()` over them to get `pii_redacted.json`. | `pii_cases.json` |
+| `safety_stress_cases.py` | Upper-case, typo, and Roman Urdu variants of critical complaints. Run the platform's `hasEmergency()` over them to get `safety_stress_results.json`. | `safety_stress_cases.json` |
+
+`groups.py` links each Roman Urdu complaint to the English complaint it paraphrases, so cross-validation keeps the two in the same fold.
 
 ```bash
 pip install -r requirements.txt
 python3 baselines.py
-```
-
-The results are written to `results.json`. A full run takes about 15 minutes on two CPU cores.
-
-`transformer_baselines.py` fine-tunes DistilBERT (`distilbert-base-uncased`) for category and priority with the same grouped split and small-history split. It also scores Sentence-BERT (`all-MiniLM-L6-v2`) on the 150 title pairs, with the threshold chosen on the first 50 pairs and tested on the other 100. The models download from Hugging Face on first run. It takes about an hour on two CPU cores and writes `transformer_results.json`.
-
-```bash
+python3 supervised_tuned.py
 python3 transformer_baselines.py
+python3 local_lowlabel.py
+python3 pair_encoders.py
+python3 stats.py
 ```
+
+The transformer and encoder models download from Hugging Face on first run. Everything runs on a CPU. The slowest steps are DistilBERT, which takes about an hour on two cores, and the XGBoost search.

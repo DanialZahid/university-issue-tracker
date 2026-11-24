@@ -155,88 +155,93 @@ def summarize(runs):
                 'sd': st.pstdev(r[k] for r in runs)} for k in runs[0]}
 
 
-# ------------------------------------------------- zero-training systems
-NO_PLACE = 'No specific place'
+def main():
+    # ------------------------------------------------- zero-training systems
+    NO_PLACE = 'No specific place'
 
 
-def hybrid_out(c):
-    r, a = c['rules'], c['ai']
-    return r if r['emergency'] else a
+    def hybrid_out(c):
+        r, a = c['rules'], c['ai']
+        return r if r['emergency'] else a
 
 
-systems = {
-    'Rules': lambda c: c['rules'],
-    'LLM': lambda c: c['ai'],
-    'Hybrid': hybrid_out,
-}
+    systems = {
+        'Rules': lambda c: c['rules'],
+        'LLM': lambda c: c['ai'],
+        'Hybrid': hybrid_out,
+    }
 
-results = {'n': len(COMPLAINTS), 'folds': FOLDS, 'repeats': REPEATS,
-           'groups': int(len(set(groups))), 'category': {}, 'priority': {},
-           'smallHistory': {'category': {}, 'priority': {}},
-           'learningCurve': {}}
+    results = {'n': len(COMPLAINTS), 'folds': FOLDS, 'repeats': REPEATS,
+               'groups': int(len(set(groups))), 'category': {}, 'priority': {},
+               'smallHistory': {'category': {}, 'priority': {}},
+               'learningCurve': {}}
 
-for name, f in systems.items():
-    out = [RUN_BY_ID[c['id']] for c in COMPLAINTS]
-    pc = [f(o)['category'] for o in out]
-    pp = [f(o)['priority'] for o in out]
-    results['category'][name] = score(y_cat, pc)
-    results['priority'][name] = score(y_pri, pp, priority=True)
-    results['smallHistory']['category'][name] = score(y_cat, pc, ~dev)
-    results['smallHistory']['priority'][name] = score(y_pri, pp, ~dev, True)
+    for name, f in systems.items():
+        out = [RUN_BY_ID[c['id']] for c in COMPLAINTS]
+        pc = [f(o)['category'] for o in out]
+        pp = [f(o)['priority'] for o in out]
+        results['category'][name] = score(y_cat, pc)
+        results['priority'][name] = score(y_pri, pp, priority=True)
+        results['smallHistory']['category'][name] = score(y_cat, pc, ~dev)
+        results['smallHistory']['priority'][name] = score(y_pri, pp, ~dev, True)
 
-# ------------------------------------------------- supervised baselines
-for grouped, tag in [(True, ''), (False, ' (plain CV)')]:
-    for name in ['LR', 'SVM', 'XGBoost']:
-        runs = [score(y_cat, p) for p in cross_validate(y_cat, name, grouped)]
-        results['category'][name + tag] = summarize(runs)
+    # ------------------------------------------------- supervised baselines
+    for grouped, tag in [(True, ''), (False, ' (plain CV)')]:
+        for name in ['LR', 'SVM', 'XGBoost']:
+            runs = [score(y_cat, p) for p in cross_validate(y_cat, name, grouped)]
+            results['category'][name + tag] = summarize(runs)
+            runs = [score(y_pri, p, priority=True)
+                    for p in cross_validate(y_pri, name, grouped, True)]
+            results['priority'][name + tag] = summarize(runs)
         runs = [score(y_pri, p, priority=True)
-                for p in cross_validate(y_pri, name, grouped, True)]
-        results['priority'][name + tag] = summarize(runs)
-    runs = [score(y_pri, p, priority=True)
-            for p in cross_validate(y_pri, 'XGBoost', grouped, True, True)]
-    results['priority']['XGBoost + safety rule' + tag] = summarize(runs)
+                for p in cross_validate(y_pri, 'XGBoost', grouped, True, True)]
+        results['priority']['XGBoost + safety rule' + tag] = summarize(runs)
 
-# ------------------------------------------------- small labeled history
-tr, te = np.where(dev)[0], np.where(~dev)[0]
-for name in ['LR', 'SVM', 'XGBoost']:
-    for y, task, wr in [(y_cat, 'category', False), (y_pri, 'priority', True)]:
-        full = np.empty(len(y), dtype=object)
-        full[te] = fit_predict(y, name, tr, te, wr, False)
-        results['smallHistory'][task][name] = score(
-            y, full, ~dev, priority=task == 'priority')
+    # ------------------------------------------------- small labeled history
+    tr, te = np.where(dev)[0], np.where(~dev)[0]
+    for name in ['LR', 'SVM', 'XGBoost']:
+        for y, task, wr in [(y_cat, 'category', False), (y_pri, 'priority', True)]:
+            full = np.empty(len(y), dtype=object)
+            full[te] = fit_predict(y, name, tr, te, wr, False)
+            results['smallHistory'][task][name] = score(
+                y, full, ~dev, priority=task == 'priority')
 
-# ------------------------------------------------- learning curve
-# Grouped CV, with each training fold cut down to a fixed size.
-rng = np.random.default_rng(SEED)
-for size in [40, 80, 160, 240, 320]:
-    accs = []
-    for r, tr_i, te_i in splits(y_cat, True):
-        keep = rng.choice(tr_i, size=min(size, len(tr_i)), replace=False)
-        vec = features()
-        m = LinearSVC(C=1.0, random_state=SEED)
-        m.fit(vec.fit_transform([texts[i] for i in keep]), y_cat[keep])
-        p = m.predict(vec.transform([texts[i] for i in te_i]))
-        accs.append(float(np.mean(p == y_cat[te_i])))
-    results['learningCurve'][str(size)] = {'mean': st.mean(accs),
-                                           'sd': st.pstdev(accs)}
+    # ------------------------------------------------- learning curve
+    # Grouped CV, with each training fold cut down to a fixed size.
+    rng = np.random.default_rng(SEED)
+    for size in [40, 80, 160, 240, 320]:
+        accs = []
+        for r, tr_i, te_i in splits(y_cat, True):
+            keep = rng.choice(tr_i, size=min(size, len(tr_i)), replace=False)
+            vec = features()
+            m = LinearSVC(C=1.0, random_state=SEED)
+            m.fit(vec.fit_transform([texts[i] for i in keep]), y_cat[keep])
+            p = m.predict(vec.transform([texts[i] for i in te_i]))
+            accs.append(float(np.mean(p == y_cat[te_i])))
+        results['learningCurve'][str(size)] = {'mean': st.mean(accs),
+                                               'sd': st.pstdev(accs)}
 
-(HERE / 'results.json').write_text(json.dumps(results, indent=1))
+    (HERE / 'results.json').write_text(json.dumps(results, indent=1))
 
 
-def fmt(v):
-    if isinstance(v, dict):
-        return f"{v['mean']:.3f}±{v['sd']:.3f}"
-    return f'{v:.3f}' if isinstance(v, float) else str(v)
+    def fmt(v):
+        if isinstance(v, dict):
+            return f"{v['mean']:.3f}±{v['sd']:.3f}"
+        return f'{v:.3f}' if isinstance(v, float) else str(v)
 
 
-for task in ['category', 'priority']:
-    print(task.upper())
-    for name, d in results[task].items():
-        print(f'  {name:34}', '  '.join(f'{k}={fmt(v)}' for k, v in d.items()))
-for task in ['category', 'priority']:
-    print('SMALL HISTORY', task.upper(), '(train 120, test 280)')
-    for name, d in results['smallHistory'][task].items():
-        print(f'  {name:12}', '  '.join(f'{k}={fmt(v)}' for k, v in d.items()))
-print('LEARNING CURVE (SVM category accuracy, grouped CV)')
-for n, v in results['learningCurve'].items():
-    print(f'  {n:>4}', fmt(v))
+    for task in ['category', 'priority']:
+        print(task.upper())
+        for name, d in results[task].items():
+            print(f'  {name:34}', '  '.join(f'{k}={fmt(v)}' for k, v in d.items()))
+    for task in ['category', 'priority']:
+        print('SMALL HISTORY', task.upper(), '(train 120, test 280)')
+        for name, d in results['smallHistory'][task].items():
+            print(f'  {name:12}', '  '.join(f'{k}={fmt(v)}' for k, v in d.items()))
+    print('LEARNING CURVE (SVM category accuracy, grouped CV)')
+    for n, v in results['learningCurve'].items():
+        print(f'  {n:>4}', fmt(v))
+
+
+if __name__ == '__main__':
+    main()

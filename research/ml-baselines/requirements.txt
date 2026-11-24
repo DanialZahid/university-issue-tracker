@@ -1,7 +1,9 @@
 numpy
-scipy
+scipy==1.18.1
 scikit-learn==1.9.1
 xgboost==3.4.1
 torch==2.15.0
 transformers==5.23.0
 sentence-transformers==6.3.0
+setfit==1.2.0
+datasets==5.2.0
