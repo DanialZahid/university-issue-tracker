@@ -1,0 +1,144 @@
+{
+ "ranAt": "2026-11-25T08:23:11.424Z",
+ "models": {
+  "text": "gemini-3.5-flash-lite",
+  "embedding": "gemini-embedding-2"
+ },
+ "complaints": [
+  {
+   "id": "C061",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null,
+    "language": "english",
+    "summary": "A foul smell is emanating from the drain located near the cafeteria."
+   },
+   "aiError": null,
+   "aiMs": 6219
+  },
+  {
+   "id": "C074",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 2,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-109"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": "AC-109",
+    "language": "english",
+    "summary": "An infestation of ants has been reported near the back benches of room AC-109."
+   },
+   "aiError": null,
+   "aiMs": 970
+  },
+  {
+   "id": "C091",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null,
+    "language": "english",
+    "summary": "The biometric attendance machine located at the main gate is currently out of order."
+   },
+   "aiError": null,
+   "aiMs": 1024
+  },
+  {
+   "id": "C092",
+   "rules": {
+    "category": "Safety",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": "Block C",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Block C",
+    "room": null,
+    "language": "english",
+    "summary": "An expired fire extinguisher was found in the Block C corridor."
+   },
+   "aiError": null,
+   "aiMs": 7147
+  },
+  {
+   "id": "C093",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null,
+    "language": "english",
+    "summary": "Students report that the hostel Wi-Fi password was changed without prior notification."
+   },
+   "aiError": null,
+   "aiMs": 941
+  },
+  {
+   "id": "C100",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": null,
+    "language": "english",
+    "summary": "The language lab lacks working headphones required for upcoming listening tests."
+   },
+   "aiError": null,
+   "aiMs": 1094
+  }
+ ],
+ "pairs": [],
+ "events": [
+  {
+   "at": "2026-11-25T08:22:39.231Z",
+   "step": "Complaint 92 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  }
+ ]
+}

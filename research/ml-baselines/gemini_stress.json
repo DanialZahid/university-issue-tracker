@@ -1,0 +1,563 @@
+{
+ "C006_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "HIGH",
+   "location": "Block C",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block C",
+   "room": null,
+   "language": "english",
+   "summary": "Smoke is coming from a switchboard near the stairs in Block C, requiring immediate assistance."
+  }
+ },
+ "C024_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Main Gate",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Main Gate",
+   "room": null,
+   "language": "english",
+   "summary": "A student fell and got injured on the stairs near the main gate, requiring immediate first aid."
+  }
+ },
+ "C031_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "C-Lab 05",
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Computer Labs",
+   "room": "C-Lab 05",
+   "language": "english",
+   "summary": "A short circuit and sparks occurred at a socket in the computer lab."
+  }
+ },
+ "C041_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Block A",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "HIGH",
+   "location": "Block A",
+   "room": null,
+   "language": "english",
+   "summary": "The fire alarm in Block A is malfunctioning and continuously beeping without any actual fire."
+  }
+ },
+ "C048_typo": {
+  "rules": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-112",
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block A",
+   "room": "AC-112",
+   "language": "english",
+   "summary": "A student received an electric shock from a faulty socket in the classroom."
+  }
+ },
+ "C070_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Administration Building",
+   "room": null,
+   "language": "english",
+   "summary": "An elevator in the administration building is stuck with people trapped inside."
+  }
+ },
+ "C092_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "HIGH",
+   "location": "Block C",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "HIGH",
+   "location": "Block C",
+   "room": null,
+   "language": "english",
+   "summary": "The fire extinguisher in the Block C corridor expired last month and needs replacement."
+  }
+ },
+ "C145_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "C-Lab 02",
+   "emergency": false
+  },
+  "ai": {
+   "category": "IT / Equipment",
+   "priority": "CRITICAL",
+   "location": "Computer Labs",
+   "room": "C-Lab 02",
+   "language": "english",
+   "summary": "Sparks are coming out of a UPS in the computer lab, causing students to move away immediately."
+  }
+ },
+ "C149_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Sports Complex",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Sports Complex",
+   "room": null,
+   "language": "english",
+   "summary": "A student was severely injured and is bleeding during football practice at the sports complex."
+  }
+ },
+ "C150_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "HIGH",
+   "location": "Library",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "HIGH",
+   "location": "Library",
+   "room": null,
+   "language": "english",
+   "summary": "The fire extinguishers in the library expired last year and need immediate replacement."
+  }
+ },
+ "C154_typo": {
+  "rules": {
+   "category": "Other",
+   "priority": "CRITICAL",
+   "location": "Administration Building",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Administration Building",
+   "room": null,
+   "language": "english",
+   "summary": "A person has collapsed outside the accounts office requiring immediate medical assistance."
+  }
+ },
+ "C006_roman_urdu": {
+  "rules": {
+   "category": "Other",
+   "priority": "HIGH",
+   "location": "Block C",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Maintenance",
+   "priority": "CRITICAL",
+   "location": "Block C",
+   "room": null,
+   "language": "roman-urdu",
+   "summary": "Smoke is coming out from a switchboard near the stairs in Block C requiring immediate action."
+  }
+ },
+ "C024_roman_urdu": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Main Gate",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Main Gate",
+   "room": null,
+   "language": "mixed",
+   "summary": "A student was injured on the stairs near the main gate and requires immediate first aid."
+  }
+ },
+ "C031_roman_urdu": {
+  "rules": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": null,
+   "room": "C-Lab 05",
+   "emergency": true
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Computer Labs",
+   "room": "C-Lab 05",
+   "language": "mixed",
+   "summary": "A short circuit with sparks emerged from a socket in the computer lab."
+  }
+ },
+ "C041_roman_urdu": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Block A",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "HIGH",
+   "location": "Block A",
+   "room": null,
+   "language": "mixed",
+   "summary": "The fire alarm in Block A is continuously beeping despite there being no fire."
+  }
+ },
+ "C048_roman_urdu": {
+  "rules": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-112",
+   "emergency": false
+  },
+  "ai": {
+   "category": "Maintenance",
+   "priority": "CRITICAL",
+   "location": "Block A",
+   "room": "AC-112",
+   "language": "mixed",
+   "summary": "An electric shock hazard was reported from a socket in a classroom."
+  }
+ },
+ "C070_roman_urdu": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Administration Building",
+   "room": null,
+   "language": "mixed",
+   "summary": "People are trapped inside the elevator in the administration building."
+  }
+ },
+ "C092_roman_urdu": {
+  "rules": {
+   "category": "Other",
+   "priority": "HIGH",
+   "location": "Block C",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block C",
+   "room": null,
+   "language": "mixed",
+   "summary": "An expired fire extinguisher was found in the Block C corridor."
+  }
+ },
+ "C145_roman_urdu": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "C-Lab 02",
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Computer Labs",
+   "room": "C-Lab 02",
+   "language": "mixed",
+   "summary": "Sparks are emitting from the UPS in the computer lab, causing students to evacuate immediately."
+  }
+ },
+ "C149_roman_urdu": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Sports Complex",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Sports Complex",
+   "room": null,
+   "language": "mixed",
+   "summary": "A student was severely injured during football practice with heavy bleeding."
+  }
+ },
+ "C150_roman_urdu": {
+  "rules": {
+   "category": "Other",
+   "priority": "HIGH",
+   "location": "Library",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Library",
+   "room": null,
+   "language": "mixed",
+   "summary": "Fire occurred and the library fire extinguishers are expired."
+  }
+ },
+ "C154_roman_urdu": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Administration Building",
+   "room": null,
+   "language": "mixed",
+   "summary": "Someone has fallen outside the accounts office and urgently requires medical assistance."
+  }
+ },
+ "C024_mixed_case": {
+  "rules": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Main Gate",
+   "room": null,
+   "emergency": true
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Main Gate",
+   "room": null,
+   "language": "english",
+   "summary": "A student was injured on the stairs near the main gate and requires immediate first aid."
+  }
+ },
+ "C041_mixed_case": {
+  "rules": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block A",
+   "room": null,
+   "emergency": true
+  },
+  "ai": {
+   "category": "Maintenance",
+   "priority": "HIGH",
+   "location": "Block A",
+   "room": null,
+   "language": "english",
+   "summary": "The fire alarm in Block A is malfunctioning and constantly beeping without any actual fire."
+  }
+ },
+ "C070_mixed_case": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Maintenance",
+   "priority": "CRITICAL",
+   "location": "Administration Building",
+   "room": null,
+   "language": "english",
+   "summary": "The elevator in the administration building is stuck with people trapped inside."
+  }
+ },
+ "C092_mixed_case": {
+  "rules": {
+   "category": "Safety",
+   "priority": "HIGH",
+   "location": "Block C",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "HIGH",
+   "location": "Block C",
+   "room": null,
+   "language": "english",
+   "summary": "The fire extinguisher in the Block C corridor expired last month and needs replacement."
+  }
+ },
+ "C145_mixed_case": {
+  "rules": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": null,
+   "room": "C-Lab 02",
+   "emergency": true
+  },
+  "ai": {
+   "category": "IT / Equipment",
+   "priority": "CRITICAL",
+   "location": "Computer Labs",
+   "room": "C-Lab 02",
+   "language": "english",
+   "summary": "Sparks are emitting from the UPS in the computer lab, causing students to evacuate."
+  }
+ },
+ "C149_mixed_case": {
+  "rules": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Sports Complex",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Sports Complex",
+   "room": null,
+   "language": "english",
+   "summary": "A student was severely injured during sports practice and is bleeding."
+  }
+ },
+ "C150_mixed_case": {
+  "rules": {
+   "category": "Safety",
+   "priority": "HIGH",
+   "location": "Library",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Library",
+   "room": null,
+   "language": "english",
+   "summary": "The fire extinguishers in the library expired last year and need urgent replacement."
+  }
+ },
+ "C154_mixed_case": {
+  "rules": {
+   "category": "Other",
+   "priority": "CRITICAL",
+   "location": "Administration Building",
+   "room": null,
+   "emergency": false
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Administration Building",
+   "room": null,
+   "language": "english",
+   "summary": "A person collapsed outside the accounts office requiring immediate medical assistance."
+  }
+ },
+ "C006_mixed_case": {
+  "rules": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block C",
+   "room": null,
+   "emergency": true
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block C",
+   "room": null,
+   "language": "english",
+   "summary": "Smoke is coming from a switchboard near the stairs in Block C, requiring immediate assistance."
+  }
+ },
+ "C031_mixed_case": {
+  "rules": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": null,
+   "room": "C-Lab 05",
+   "emergency": true
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Computer Labs",
+   "room": "C-Lab 05",
+   "language": "english",
+   "summary": "Electrical short circuit and sparks occurred at a socket in computer lab 5, presenting immediate danger."
+  }
+ },
+ "C048_mixed_case": {
+  "rules": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": null,
+   "room": "AC-112",
+   "emergency": true
+  },
+  "ai": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block A",
+   "room": "AC-112",
+   "language": "english",
+   "summary": "A student received an electric shock from a faulty socket in AC-112."
+  }
+ }
+}

@@ -1,0 +1,1137 @@
+{
+ "ranAt": "2026-11-24T16:36:05.571Z",
+ "models": {
+  "text": "gemini-3.5-flash-lite",
+  "embedding": "gemini-embedding-2"
+ },
+ "complaints": [
+  {
+   "id": "C001",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-103"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": "AC-103",
+    "language": "english",
+    "summary": "The air conditioner in room AC-103 is blowing warm air and needs repair."
+   },
+   "aiError": null,
+   "aiMs": 3383
+  },
+  {
+   "id": "C002",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-204"
+   },
+   "ai": {
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-204",
+    "language": "english",
+    "summary": "The projector in room 204 is broken and prevents slide presentations during class."
+   },
+   "aiError": null,
+   "aiMs": 8695
+  },
+  {
+   "id": "C003",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Library",
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "Library",
+    "room": null,
+    "language": "english",
+    "summary": "The library printer repeatedly jams on every page."
+   },
+   "aiError": null,
+   "aiMs": 790
+  },
+  {
+   "id": "C004",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block B",
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Block B",
+    "room": null,
+    "language": "english",
+    "summary": "Wi-Fi in Block B keeps disconnecting every few minutes, preventing students from accessing the LMS."
+   },
+   "aiError": null,
+   "aiMs": 1125
+  },
+  {
+   "id": "C005",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student is unable to log in to the LMS due to an invalid session error."
+   },
+   "aiError": null,
+   "aiMs": 1304
+  },
+  {
+   "id": "C006",
+   "rules": {
+    "category": "Safety",
+    "categoryScore": 100,
+    "emergency": true,
+    "priority": "CRITICAL",
+    "location": "Block C",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Block C",
+    "room": null,
+    "language": "english",
+    "summary": "Smoke is coming from a switchboard near the stairs in Block C, requiring immediate attention."
+   },
+   "aiError": null,
+   "aiMs": 1117
+  },
+  {
+   "id": "C007",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": null,
+    "room": "C-Lab 03"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": null,
+    "language": "english",
+    "summary": "Water is leaking from the ceiling in the corridor outside lab 3, making the floor slippery."
+   },
+   "aiError": null,
+   "aiMs": 1202
+  },
+  {
+   "id": "C008",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-110"
+   },
+   "ai": {
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": "AC-110",
+    "language": "english",
+    "summary": "Three broken chairs in AC-110 need replacement as students are forced to stand."
+   },
+   "aiError": null,
+   "aiMs": 979
+  },
+  {
+   "id": "C009",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 7,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student reports a course schedule clash for Tuesday."
+   },
+   "aiError": null,
+   "aiMs": 1100
+  },
+  {
+   "id": "C010",
+   "rules": {
+    "category": "Exams and Results",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null,
+    "language": "english",
+    "summary": "Midterm result for Data Structures is missing from the student portal."
+   },
+   "aiError": null,
+   "aiMs": 1407
+  },
+  {
+   "id": "C011",
+   "rules": {
+    "category": "Website and Social Media",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "The university website is currently down and displaying a server error to all users."
+   },
+   "aiError": null,
+   "aiMs": 3640
+  },
+  {
+   "id": "C012",
+   "rules": {
+    "category": "Events and Printing",
+    "categoryScore": 6,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Five banners need to be printed for the upcoming coding competition next week."
+   },
+   "aiError": null,
+   "aiMs": 877
+  },
+  {
+   "id": "C013",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 04"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 04",
+    "language": "english",
+    "summary": "Some keyboard keys are not working on PC 12 in lab 4."
+   },
+   "aiError": null,
+   "aiMs": 1232
+  },
+  {
+   "id": "C014",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-201"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "Block A",
+    "room": "AC-201",
+    "language": "english",
+    "summary": "The ceiling fan in room AC-201 is making a loud noise during lectures."
+   },
+   "aiError": null,
+   "aiMs": 3559
+  },
+  {
+   "id": "C015",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 9,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Block A",
+    "room": null,
+    "language": "english",
+    "summary": "A broken washroom tap on the second floor of Block A is continuously leaking water."
+   },
+   "aiError": null,
+   "aiMs": 1169
+  },
+  {
+   "id": "C016",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Cafeteria",
+    "room": null,
+    "language": "english",
+    "summary": "Strong gas smell reported near the cafeteria kitchen causing concern among students."
+   },
+   "aiError": null,
+   "aiMs": 1494
+  },
+  {
+   "id": "C017",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block B",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block B",
+    "room": null,
+    "language": "english",
+    "summary": "Corridor lights on the ground floor of Block B are malfunctioning at night."
+   },
+   "aiError": null,
+   "aiMs": 1467
+  },
+  {
+   "id": "C018",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 7,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": null,
+    "room": "C-Lab 02"
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": "C-Lab 02",
+    "language": "english",
+    "summary": "Visual Studio is missing on lab PCs ahead of tomorrow's exam."
+   },
+   "aiError": null,
+   "aiMs": 2526
+  },
+  {
+   "id": "C019",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null,
+    "language": "english",
+    "summary": "The OOP class was rescheduled to Saturday without prior notice."
+   },
+   "aiError": null,
+   "aiMs": 1413
+  },
+  {
+   "id": "C020",
+   "rules": {
+    "category": "Exams and Results",
+    "categoryScore": 7,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student reports an incorrect grade listed on their transcript for Calculus."
+   },
+   "aiError": null,
+   "aiMs": 904
+  },
+  {
+   "id": "C021",
+   "rules": {
+    "category": "Website and Social Media",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Website and Social Media",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Incorrect admission dates posted on the university Instagram page."
+   },
+   "aiError": null,
+   "aiMs": 1565
+  },
+  {
+   "id": "C022",
+   "rules": {
+    "category": "Events and Printing",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Request to print participation certificates for the seminar held last Friday."
+   },
+   "aiError": null,
+   "aiMs": 2309
+  },
+  {
+   "id": "C023",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 9,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-105"
+   },
+   "ai": {
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-105",
+    "language": "english",
+    "summary": "The whiteboard markers are missing in room AC-105."
+   },
+   "aiError": null,
+   "aiMs": 1589
+  },
+  {
+   "id": "C024",
+   "rules": {
+    "category": "Safety",
+    "categoryScore": 100,
+    "emergency": true,
+    "priority": "CRITICAL",
+    "location": "Main Gate",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Main Gate",
+    "room": null,
+    "language": "english",
+    "summary": "A student fell and got injured on the stairs near the main gate requiring immediate first aid."
+   },
+   "aiError": null,
+   "aiMs": 1128
+  },
+  {
+   "id": "C025",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Parking Area",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Parking Area",
+    "room": null,
+    "language": "english",
+    "summary": "Broken parking lights cause dangerous darkness in the evening."
+   },
+   "aiError": null,
+   "aiMs": 1100
+  },
+  {
+   "id": "C026",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": null
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": null,
+    "language": "english",
+    "summary": "The charging sockets on the benches in the computer lab are not working."
+   },
+   "aiError": null,
+   "aiMs": 1109
+  },
+  {
+   "id": "C027",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student reports not receiving emails on their university account since yesterday."
+   },
+   "aiError": null,
+   "aiMs": 925
+  },
+  {
+   "id": "C028",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Final exam seating plan is missing with exams starting Monday."
+   },
+   "aiError": null,
+   "aiMs": 1099
+  },
+  {
+   "id": "C029",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Library",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "Library",
+    "room": null,
+    "language": "english",
+    "summary": "The library air conditioning is set too cold and needs its temperature raised."
+   },
+   "aiError": null,
+   "aiMs": 1192
+  },
+  {
+   "id": "C030",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": "Hostel",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Hostel",
+    "room": null,
+    "language": "english",
+    "summary": "There is a water shortage in the hostel washrooms since this morning."
+   },
+   "aiError": null,
+   "aiMs": 2528
+  },
+  {
+   "id": "C031",
+   "rules": {
+    "category": "Safety",
+    "categoryScore": 100,
+    "emergency": true,
+    "priority": "CRITICAL",
+    "location": null,
+    "room": "C-Lab 05"
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Computer Labs",
+    "room": "C-Lab 05",
+    "language": "english",
+    "summary": "A short circuit caused sparks to come out of a socket in the computer lab."
+   },
+   "aiError": null,
+   "aiMs": 1968
+  },
+  {
+   "id": "C032",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "The course registration portal displays an error whenever a student attempts to add a course."
+   },
+   "aiError": null,
+   "aiMs": 1674
+  },
+  {
+   "id": "C033",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Students report that the Linear Algebra teacher has been absent for two weeks without replacement."
+   },
+   "aiError": null,
+   "aiMs": 1522
+  },
+  {
+   "id": "C034",
+   "rules": {
+    "category": "Exams and Results",
+    "categoryScore": 9,
+    "emergency": false,
+    "priority": "LOW",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null,
+    "language": "english",
+    "summary": "A student requested a recheck of their final exam paper for the Operating Systems course."
+   },
+   "aiError": null,
+   "aiMs": 13360
+  },
+  {
+   "id": "C035",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-301"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": "AC-301",
+    "language": "english",
+    "summary": "The door lock in room AC-301 is broken and cannot be secured."
+   },
+   "aiError": null,
+   "aiMs": 1979
+  },
+  {
+   "id": "C036",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": "Auditorium",
+    "room": null
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "HIGH",
+    "location": "Auditorium",
+    "room": null,
+    "language": "english",
+    "summary": "The auditorium microphones are malfunctioning prior to tomorrow's scheduled event."
+   },
+   "aiError": null,
+   "aiMs": 1620
+  },
+  {
+   "id": "C037",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 01"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "LOW",
+    "location": "Computer Labs",
+    "room": null,
+    "language": "english",
+    "summary": "A computer mouse is missing from a PC in the lab."
+   },
+   "aiError": null,
+   "aiMs": 1133
+  },
+  {
+   "id": "C038",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 7,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block C",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "Block C",
+    "room": null,
+    "language": "english",
+    "summary": "Washrooms in Block C are not cleaned regularly."
+   },
+   "aiError": null,
+   "aiMs": 1002
+  },
+  {
+   "id": "C039",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Sports Complex",
+    "room": null
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Sports Complex",
+    "room": null,
+    "language": "english",
+    "summary": "The treadmill located in the sports complex is broken and needs repair."
+   },
+   "aiError": null,
+   "aiMs": 1671
+  },
+  {
+   "id": "C040",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Student reports that the online portal incorrectly shows absences for attended classes."
+   },
+   "aiError": null,
+   "aiMs": 2564
+  },
+  {
+   "id": "C041",
+   "rules": {
+    "category": "Safety",
+    "categoryScore": 100,
+    "emergency": true,
+    "priority": "CRITICAL",
+    "location": "Block A",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": null,
+    "language": "english",
+    "summary": "The fire alarm in Block A is malfunctioning and constantly beeping without any fire present."
+   },
+   "aiError": null,
+   "aiMs": 2150
+  }
+ ],
+ "pairs": [],
+ "events": [
+  {
+   "at": "2026-11-24T15:56:55.021Z",
+   "step": "Complaint 1 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T15:57:07.986Z",
+   "step": "Complaint 1 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T15:57:36.243Z",
+   "step": "Complaint 2 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T15:57:49.221Z",
+   "step": "Complaint 2 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T15:59:07.478Z",
+   "step": "Complaint 8 of 400",
+   "kind": "retry",
+   "message": "request timed out"
+  },
+  {
+   "at": "2026-11-24T15:59:48.639Z",
+   "step": "Complaint 11 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:00:05.319Z",
+   "step": "Complaint 11 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:00:45.326Z",
+   "step": "Complaint 11 of 400",
+   "kind": "retry",
+   "message": "request timed out"
+  },
+  {
+   "at": "2026-11-24T16:01:22.986Z",
+   "step": "Complaint 11 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:02:07.776Z",
+   "step": "Complaint 12 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:02:20.627Z",
+   "step": "Complaint 12 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:02:41.887Z",
+   "step": "Complaint 12 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:03:34.779Z",
+   "step": "Complaint 13 of 400",
+   "kind": "retry",
+   "message": "request timed out"
+  },
+  {
+   "at": "2026-11-24T16:03:47.713Z",
+   "step": "Complaint 13 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:04:08.719Z",
+   "step": "Complaint 13 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:04:56.730Z",
+   "step": "Complaint 13 of 400",
+   "kind": "retry",
+   "message": "request timed out"
+  },
+  {
+   "at": "2026-11-24T16:05:33.636Z",
+   "step": "Complaint 13 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:06:42.898Z",
+   "step": "Complaint 14 of 400",
+   "kind": "retry",
+   "message": "request timed out"
+  },
+  {
+   "at": "2026-11-24T16:07:14.907Z",
+   "step": "Complaint 14 of 400",
+   "kind": "retry",
+   "message": "request timed out"
+  },
+  {
+   "at": "2026-11-24T16:07:53.815Z",
+   "step": "Complaint 17 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:08:36.827Z",
+   "step": "Complaint 22 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:09:17.330Z",
+   "step": "Complaint 27 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:09:35.536Z",
+   "step": "Complaint 28 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:09:57.476Z",
+   "step": "Complaint 29 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:11:06.830Z",
+   "step": "Complaint 35 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:11:20.628Z",
+   "step": "Complaint 35 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:11:53.786Z",
+   "step": "Complaint 35 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:12:28.868Z",
+   "step": "Complaint 36 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:12:42.684Z",
+   "step": "Complaint 36 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:13:08.587Z",
+   "step": "Complaint 37 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:13:32.948Z",
+   "step": "Complaint 37 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:14:17.256Z",
+   "step": "Complaint 37 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:25:40.016Z",
+   "step": "Complaint 38 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:26:06.425Z",
+   "step": "Complaint 38 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:26:52.809Z",
+   "step": "Complaint 38 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:27:59.212Z",
+   "step": "Complaint 38 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:29:26.257Z",
+   "step": "Complaint 38 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-24T16:30:32.289Z",
+   "step": "Complaint 38 of 400",
+   "kind": "retry",
+   "message": "request timed out"
+  },
+  {
+   "at": "2026-11-24T16:31:46.341Z",
+   "step": "Complaint 38 of 400",
+   "kind": "retry",
+   "message": "request timed out"
+  },
+  {
+   "at": "2026-11-24T16:32:55.727Z",
+   "step": "Complaint 39 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:33:29.765Z",
+   "step": "Complaint 40 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:33:56.115Z",
+   "step": "Complaint 40 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:34:50.961Z",
+   "step": "Complaint 41 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  },
+  {
+   "at": "2026-11-24T16:35:17.410Z",
+   "step": "Complaint 41 of 400",
+   "kind": "retry",
+   "message": "rate limited"
+  }
+ ]
+}

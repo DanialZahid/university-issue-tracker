@@ -1,0 +1,453 @@
+{
+ "ranAt": "2026-11-25T08:22:09.427Z",
+ "models": {
+  "text": "gemini-3.5-flash-lite",
+  "embedding": "gemini-embedding-2"
+ },
+ "complaints": [
+  {
+   "id": "C044",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null,
+    "language": "english",
+    "summary": "A projector and screen are needed in the auditorium for an upcoming society event."
+   },
+   "aiError": null,
+   "aiMs": 1246
+  },
+  {
+   "id": "C053",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student complains that the scheduled makeup class at 8 PM is too late for day scholars."
+   },
+   "aiError": null,
+   "aiMs": 962
+  },
+  {
+   "id": "C061",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null,
+    "language": "english",
+    "summary": "A bad odor is reported coming from the drain near the cafeteria."
+   },
+   "aiError": null,
+   "aiMs": 869
+  },
+  {
+   "id": "C070",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Administration Building",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Administration Building",
+    "room": null,
+    "language": "english",
+    "summary": "An elevator in the administration building is stuck with people trapped inside."
+   },
+   "aiError": null,
+   "aiMs": 5766
+  },
+  {
+   "id": "C072",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-215"
+   },
+   "ai": {
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": "AC-215",
+    "language": "english",
+    "summary": "The speakers in room AC-215 are not working for listening practice."
+   },
+   "aiError": null,
+   "aiMs": 1186
+  },
+  {
+   "id": "C074",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 2,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-109"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": "AC-109",
+    "language": "english",
+    "summary": "An ant infestation has been reported near the back benches of room AC-109."
+   },
+   "aiError": null,
+   "aiMs": 4946
+  },
+  {
+   "id": "C080",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-118"
+   },
+   "ai": {
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-118",
+    "language": "english",
+    "summary": "Multiple desks in room 118 feature broken writing pads needing repair."
+   },
+   "aiError": null,
+   "aiMs": 2100
+  },
+  {
+   "id": "C082",
+   "rules": {
+    "category": "Exams and Results",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null,
+    "language": "english",
+    "summary": "Student reports an incorrect GPA calculation on their result card."
+   },
+   "aiError": null,
+   "aiMs": 1339
+  },
+  {
+   "id": "C091",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null,
+    "language": "english",
+    "summary": "The biometric attendance machine located at the main gate is currently not working."
+   },
+   "aiError": null,
+   "aiMs": 2315
+  },
+  {
+   "id": "C092",
+   "rules": {
+    "category": "Safety",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": "Block C",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Block C",
+    "room": null,
+    "language": "english",
+    "summary": "The fire extinguisher located in the Block C corridor expired last month and needs replacement."
+   },
+   "aiError": null,
+   "aiMs": 2889
+  },
+  {
+   "id": "C093",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null,
+    "language": "english",
+    "summary": "Students complain that the hostel Wi-Fi password was changed without prior notification."
+   },
+   "aiError": null,
+   "aiMs": 866
+  },
+  {
+   "id": "C096",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null,
+    "language": "english",
+    "summary": "Several benches are broken in the cafeteria and need repair."
+   },
+   "aiError": null,
+   "aiMs": 999
+  },
+  {
+   "id": "C097",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Library",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Library",
+    "room": null,
+    "language": "english",
+    "summary": "The glass door at the library entrance is cracked and poses a hazard."
+   },
+   "aiError": null,
+   "aiMs": 972
+  },
+  {
+   "id": "C098",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Students are unable to download fee vouchers from the online portal."
+   },
+   "aiError": null,
+   "aiMs": 1031
+  },
+  {
+   "id": "C100",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": null,
+    "language": "english",
+    "summary": "The language lab lacks working headphones for upcoming listening tests."
+   },
+   "aiError": null,
+   "aiMs": 1083
+  },
+  {
+   "id": "C102",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-210"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": "AC-210",
+    "language": "roman-urdu",
+    "summary": "The projector in room AC-210 is not turning on, preventing presentation of slides."
+   },
+   "aiError": null,
+   "aiMs": 1116
+  },
+  {
+   "id": "C110",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-202"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "No specific place",
+    "room": "AC-202",
+    "language": "roman-urdu",
+    "summary": "The ceiling fan in room AC-202 makes too much noise during lectures."
+   },
+   "aiError": null,
+   "aiMs": 8957
+  }
+ ],
+ "pairs": [],
+ "events": [
+  {
+   "at": "2026-11-25T08:16:10.639Z",
+   "step": "Complaint 44 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:16:24.388Z",
+   "step": "Complaint 44 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:17:01.046Z",
+   "step": "Complaint 61 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:17:31.536Z",
+   "step": "Complaint 72 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:17:46.221Z",
+   "step": "Complaint 72 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:18:24.044Z",
+   "step": "Complaint 80 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:18:44.630Z",
+   "step": "Complaint 82 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:19:31.955Z",
+   "step": "Complaint 97 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:19:45.807Z",
+   "step": "Complaint 97 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:20:16.956Z",
+   "step": "Complaint 98 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:20:30.785Z",
+   "step": "Complaint 98 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:21:05.221Z",
+   "step": "Complaint 102 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:21:19.382Z",
+   "step": "Complaint 102 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:21:47.465Z",
+   "step": "Complaint 110 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  }
+ ]
+}

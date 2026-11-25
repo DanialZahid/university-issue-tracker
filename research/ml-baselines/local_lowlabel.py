@@ -41,6 +41,9 @@ def score(task, pred):
             'macroF1': float(f1_score(y, p, average='macro', zero_division=0)),
             'romanUrdu': float(np.mean(p[ru] == y[ru])),
             'criticalFound': int(np.sum((p == 'CRITICAL') & (y == 'CRITICAL')))
+            if task == 'priority' else None,
+            # Non-critical complaints raised to Critical.
+            'falseCritical': int(np.sum((p == 'CRITICAL') & (y != 'CRITICAL')))
             if task == 'priority' else None}
 
 

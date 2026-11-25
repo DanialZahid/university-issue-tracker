@@ -1,0 +1,14 @@
+{
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "dtype": "bfloat16",
+ "decoding": "greedy",
+ "hardware": "x86_64, 2 CPU threads, no GPU",
+ "n": 280,
+ "categoryAccuracy": 0.4357142857142857,
+ "priorityAccuracy": 0.3142857142857143,
+ "romanUrduCategory": 0.45,
+ "criticalFound": 11,
+ "falseCritical": 58,
+ "validJson": 277,
+ "medianSeconds": 11.439944546000334
+}

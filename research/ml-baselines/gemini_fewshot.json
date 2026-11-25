@@ -1,0 +1,1999 @@
+{
+ "run1": {
+  "C121": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Block A",
+   "room": null,
+   "ms": 1223
+  },
+  "C122": {
+   "category": "Maintenance",
+   "priority": "HIGH",
+   "location": "Hostel",
+   "room": null,
+   "ms": 2033
+  },
+  "C123": {
+   "category": "Maintenance",
+   "priority": "LOW",
+   "location": "Block C",
+   "room": null,
+   "ms": 1139
+  },
+  "C124": {
+   "category": "Maintenance",
+   "priority": "LOW",
+   "location": "Library",
+   "room": null,
+   "ms": 18303
+  },
+  "C125": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Parking Area",
+   "room": null,
+   "ms": 913
+  },
+  "C126": {
+   "category": "Maintenance",
+   "priority": "LOW",
+   "location": "Garden",
+   "room": null,
+   "ms": 1991
+  },
+  "C127": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": "AC-214",
+   "ms": 930
+  },
+  "C128": {
+   "category": "Maintenance",
+   "priority": "HIGH",
+   "location": "Block B",
+   "room": null,
+   "ms": 2002
+  },
+  "C129": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Sports Complex",
+   "room": null,
+   "ms": 1946
+  },
+  "C130": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Cafeteria",
+   "room": null,
+   "ms": 71224
+  },
+  "C131": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Hostel",
+   "room": null,
+   "ms": 4650
+  },
+  "C132": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "ms": 769
+  },
+  "C133": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Block A",
+   "room": null,
+   "ms": 16731
+  },
+  "C134": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Hostel",
+   "room": null,
+   "ms": 5414
+  },
+  "C135": {
+   "category": "Maintenance",
+   "priority": "LOW",
+   "location": "Garden",
+   "room": null,
+   "ms": 4824
+  },
+  "C136": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": "AC-301",
+   "ms": 6881
+  },
+  "C137": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Cafeteria",
+   "room": null,
+   "ms": 927
+  },
+  "C138": {
+   "category": "Maintenance",
+   "priority": "HIGH",
+   "location": "Block C",
+   "room": null,
+   "ms": 832
+  },
+  "C139": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "Parking Area",
+   "room": null,
+   "ms": 854
+  },
+  "C140": {
+   "category": "Maintenance",
+   "priority": "LOW",
+   "location": "Library",
+   "room": null,
+   "ms": 10135
+  },
+  "C141": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block B",
+   "room": null,
+   "ms": 6097
+  },
+  "C142": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Hostel",
+   "room": null,
+   "ms": 47263
+  },
+  "C143": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "No specific place",
+   "room": "AC-207",
+   "ms": 5504
+  },
+  "C144": {
+   "category": "Maintenance",
+   "priority": "HIGH",
+   "location": "Parking Area",
+   "room": null,
+   "ms": 1022
+  },
+  "C145": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Computer Labs",
+   "room": "C-Lab 02",
+   "ms": 1608
+  },
+  "C146": {
+   "category": "Maintenance",
+   "priority": "HIGH",
+   "location": "Block A",
+   "room": null,
+   "ms": 2397
+  },
+  "C147": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Cafeteria",
+   "room": null,
+   "ms": 17109
+  },
+  "C148": {
+   "category": "Safety",
+   "priority": "HIGH",
+   "location": "Main Gate",
+   "room": null,
+   "ms": 21479
+  },
+  "C149": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Sports Complex",
+   "room": null,
+   "ms": 1880
+  },
+  "C150": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Library",
+   "room": null,
+   "ms": 22296
+  },
+  "C151": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Main Gate",
+   "room": null,
+   "ms": 1327
+  },
+  "C152": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block C",
+   "room": null,
+   "ms": 6513
+  },
+  "C153": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Garden",
+   "room": null,
+   "ms": 8009
+  },
+  "C154": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Administration Building",
+   "room": null,
+   "ms": 18168
+  },
+  "C155": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Hostel",
+   "room": null,
+   "ms": 774
+  },
+  "C156": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Block A",
+   "room": null,
+   "ms": 967
+  },
+  "C157": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Hostel",
+   "room": null,
+   "ms": 971
+  },
+  "C158": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "No specific place",
+   "room": "AC-110",
+   "ms": 911
+  },
+  "C159": {
+   "category": "Maintenance",
+   "priority": "HIGH",
+   "location": "Parking Area",
+   "room": null,
+   "ms": 889
+  },
+  "C160": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Sports Complex",
+   "room": null,
+   "ms": 1365
+  },
+  "C161": {
+   "category": "Maintenance",
+   "priority": "HIGH",
+   "location": "Block B",
+   "room": null,
+   "ms": 890
+  },
+  "C162": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Computer Labs",
+   "room": "C-Lab 05",
+   "ms": 4880
+  },
+  "C163": {
+   "category": "Safety",
+   "priority": "CRITICAL",
+   "location": "Garden",
+   "room": null,
+   "ms": 5961
+  },
+  "C164": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": "AC-115",
+   "ms": 16677
+  },
+  "C165": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Computer Labs",
+   "room": "C-Lab 03",
+   "ms": 857
+  },
+  "C166": {
+   "category": "IT / Equipment",
+   "priority": "HIGH",
+   "location": "Computer Labs",
+   "room": "C-Lab 01",
+   "ms": 856
+  },
+  "C167": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-203",
+   "ms": 851
+  },
+  "C168": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Library",
+   "room": null,
+   "ms": 1023
+  },
+  "C169": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": "AC-120",
+   "ms": 853
+  },
+  "C170": {
+   "category": "IT / Equipment",
+   "priority": "LOW",
+   "location": "Computer Labs",
+   "room": "C-Lab 07",
+   "ms": 5937
+  },
+  "C171": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Computer Labs",
+   "room": "C-Lab 04",
+   "ms": 7115
+  },
+  "C172": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Auditorium",
+   "room": null,
+   "ms": 871
+  },
+  "C173": {
+   "category": "IT / Equipment",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": "AC-305",
+   "ms": 1336
+  },
+  "C174": {
+   "category": "Classroom Facilities",
+   "priority": "LOW",
+   "location": null,
+   "room": "AC-102",
+   "ms": 17702
+  },
+  "C175": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Computer Labs",
+   "room": "C-Lab 08",
+   "ms": 2239
+  },
+  "C176": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "ms": 956
+  },
+  "C177": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": "AC-211",
+   "ms": 22492
+  },
+  "C178": {
+   "category": "IT / Equipment",
+   "priority": "LOW",
+   "location": "Library",
+   "room": null,
+   "ms": 971
+  },
+  "C179": {
+   "category": "IT / Equipment",
+   "priority": "HIGH",
+   "location": "Computer Labs",
+   "room": "C-Lab 06",
+   "ms": 874
+  },
+  "C180": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Main Gate",
+   "room": null,
+   "ms": 7674
+  },
+  "C181": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-115",
+   "ms": 17027
+  },
+  "C182": {
+   "category": "IT / Equipment",
+   "priority": "HIGH",
+   "location": "Computer Labs",
+   "room": "C-Lab 01",
+   "ms": 1228
+  },
+  "C183": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-203",
+   "ms": 1413
+  },
+  "C184": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-120",
+   "ms": 5683
+  },
+  "C185": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Computer Labs",
+   "room": "C-Lab 04",
+   "ms": 1040
+  },
+  "C186": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Computer Labs",
+   "room": "C-Lab 03",
+   "ms": 1073
+  },
+  "C187": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": "Main Gate",
+   "room": null,
+   "ms": 1094
+  },
+  "C188": {
+   "category": "Classroom Facilities",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": "AC-102",
+   "ms": 933
+  },
+  "C189": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 988
+  },
+  "C190": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": "Hostel",
+   "room": null,
+   "ms": 872
+  },
+  "C191": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 884
+  },
+  "C192": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "Library",
+   "room": null,
+   "ms": 1088
+  },
+  "C193": {
+   "category": "IT / Equipment",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 5139
+  },
+  "C194": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": "Computer Labs",
+   "room": "C-Lab 05",
+   "ms": 1116
+  },
+  "C195": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 806
+  },
+  "C196": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "Computer Labs",
+   "room": "C-Lab 07",
+   "ms": 1204
+  },
+  "C197": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "Block A",
+   "room": null,
+   "ms": 5344
+  },
+  "C198": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 16836
+  },
+  "C199": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": "Cafeteria",
+   "room": null,
+   "ms": 4489
+  },
+  "C200": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 1566
+  },
+  "C201": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 742
+  },
+  "C202": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "Computer Labs",
+   "room": "C-Lab 02",
+   "ms": 1106
+  },
+  "C203": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "Auditorium",
+   "room": null,
+   "ms": 22192
+  },
+  "C204": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "Library",
+   "room": null,
+   "ms": 820
+  },
+  "C205": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": "Block C",
+   "room": null,
+   "ms": 2030
+  },
+  "C206": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 906
+  },
+  "C207": {
+   "category": "IT / Equipment",
+   "priority": "HIGH",
+   "location": "Computer Labs",
+   "room": null,
+   "ms": 1623
+  },
+  "C208": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 813
+  },
+  "C209": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": "Hostel",
+   "room": null,
+   "ms": 832
+  },
+  "C210": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 1442
+  },
+  "C211": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "Library",
+   "room": null,
+   "ms": 7740
+  },
+  "C212": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": "Computer Labs",
+   "room": "C-Lab 05",
+   "ms": 6271
+  },
+  "C213": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": "Block A",
+   "room": null,
+   "ms": 868
+  },
+  "C214": {
+   "category": "Software and Network",
+   "priority": "MEDIUM",
+   "location": "Cafeteria",
+   "room": null,
+   "ms": 1159
+  },
+  "C215": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 5304
+  },
+  "C216": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-104",
+   "ms": 1212
+  },
+  "C217": {
+   "category": "Classroom Facilities",
+   "priority": "LOW",
+   "location": null,
+   "room": "AC-206",
+   "ms": 5019
+  },
+  "C218": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-311",
+   "ms": 1682
+  },
+  "C219": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-308",
+   "ms": 1953
+  },
+  "C220": {
+   "category": "Classroom Facilities",
+   "priority": "LOW",
+   "location": null,
+   "room": "AC-109",
+   "ms": 941
+  },
+  "C221": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-212",
+   "ms": 46845
+  },
+  "C222": {
+   "category": "Maintenance",
+   "priority": "LOW",
+   "location": "Library",
+   "room": null,
+   "ms": 916
+  },
+  "C223": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": "AC-215",
+   "ms": 1051
+  },
+  "C224": {
+   "category": "Classroom Facilities",
+   "priority": "LOW",
+   "location": null,
+   "room": "AC-117",
+   "ms": 1061
+  },
+  "C225": {
+   "category": "Classroom Facilities",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": "AC-302",
+   "ms": 1365
+  },
+  "C226": {
+   "category": "Classroom Facilities",
+   "priority": "LOW",
+   "location": null,
+   "room": "AC-201",
+   "ms": 1291
+  },
+  "C227": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-209",
+   "ms": 860
+  },
+  "C228": {
+   "category": "Classroom Facilities",
+   "priority": "HIGH",
+   "location": null,
+   "room": "AC-401",
+   "ms": 888
+  },
+  "C229": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-106",
+   "ms": 910
+  },
+  "C230": {
+   "category": "Maintenance",
+   "priority": "LOW",
+   "location": "Library",
+   "room": null,
+   "ms": 1415
+  },
+  "C231": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-213",
+   "ms": 1065
+  },
+  "C232": {
+   "category": "Classroom Facilities",
+   "priority": "LOW",
+   "location": null,
+   "room": "AC-205",
+   "ms": 4710
+  },
+  "C233": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-310",
+   "ms": 969
+  },
+  "C234": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-216",
+   "ms": 1138
+  },
+  "C235": {
+   "category": "Classroom Facilities",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": "AC-402",
+   "ms": 872
+  },
+  "C236": {
+   "category": "Maintenance",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": "AC-104",
+   "ms": 2027
+  },
+  "C237": {
+   "category": "Classroom Facilities",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": "AC-311",
+   "ms": 4727
+  },
+  "C238": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-308",
+   "ms": 4732
+  },
+  "C239": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": "AC-206",
+   "ms": 17897
+  },
+  "C240": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-215",
+   "ms": 5089
+  },
+  "C241": {
+   "category": "Maintenance",
+   "priority": "HIGH",
+   "location": null,
+   "room": "AC-401",
+   "ms": 842
+  },
+  "C242": {
+   "category": "Classroom Facilities",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": "AC-302",
+   "ms": 6271
+  },
+  "C243": {
+   "category": "Classroom Facilities",
+   "priority": "LOW",
+   "location": null,
+   "room": "AC-109",
+   "ms": 5775
+  },
+  "C244": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1255
+  },
+  "C245": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 5754
+  },
+  "C246": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 4428
+  },
+  "C247": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 6677
+  },
+  "C248": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 21388
+  },
+  "C249": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 4448
+  },
+  "C250": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": null,
+   "room": "AC-401",
+   "ms": 1573
+  },
+  "C251": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1601
+  },
+  "C252": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 6229
+  },
+  "C253": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 4846
+  },
+  "C254": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 4646
+  },
+  "C255": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1159
+  },
+  "C256": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 4429
+  },
+  "C257": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 16924
+  },
+  "C258": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 2238
+  },
+  "C259": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 5861
+  },
+  "C260": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 993
+  },
+  "C261": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 5310
+  },
+  "C262": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 5717
+  },
+  "C263": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 34088
+  },
+  "C264": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 833
+  },
+  "C265": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 13184
+  },
+  "C266": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1254
+  },
+  "C267": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1931
+  },
+  "C268": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 5372
+  },
+  "C269": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1136
+  },
+  "C270": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 949
+  },
+  "C271": {
+   "category": "Exams and Results",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 6413
+  },
+  "C272": {
+   "category": "Exams and Results",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 20670
+  },
+  "C273": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 726
+  },
+  "C274": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1008
+  },
+  "C275": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 5172
+  },
+  "C276": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 4450
+  },
+  "C277": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": "AC-303",
+   "ms": 6467
+  },
+  "C278": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1156
+  },
+  "C279": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 16463
+  },
+  "C280": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 4769
+  },
+  "C281": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 959
+  },
+  "C282": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1853
+  },
+  "C283": {
+   "category": "Classes and Timetable",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 5091
+  },
+  "C284": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1001
+  },
+  "C285": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 918
+  },
+  "C286": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1026
+  },
+  "C287": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": "Computer Labs",
+   "room": null,
+   "ms": 3245
+  },
+  "C288": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 1056
+  },
+  "C289": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1387
+  },
+  "C290": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 5677
+  },
+  "C291": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1389
+  },
+  "C292": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 4707
+  },
+  "C293": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1437
+  },
+  "C294": {
+   "category": "Software and Network",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 44873
+  },
+  "C295": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 906
+  },
+  "C296": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 4013
+  },
+  "C297": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 997
+  },
+  "C298": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 21178
+  },
+  "C299": {
+   "category": "Classes and Timetable",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 917
+  },
+  "C300": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1010
+  },
+  "C301": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 5678
+  },
+  "C302": {
+   "category": "Classes and Timetable",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 826
+  },
+  "C303": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 1133
+  },
+  "C304": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "Auditorium",
+   "room": null,
+   "ms": 883
+  },
+  "C305": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 1125
+  },
+  "C306": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "Garden",
+   "room": null,
+   "ms": 861
+  },
+  "C307": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 882
+  },
+  "C308": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "Auditorium",
+   "room": null,
+   "ms": 16415
+  },
+  "C309": {
+   "category": "Events and Printing",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 4190
+  },
+  "C310": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1168
+  },
+  "C311": {
+   "category": "Events and Printing",
+   "priority": "MEDIUM",
+   "location": "Sports Complex",
+   "room": null,
+   "ms": 17357
+  },
+  "C312": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 1075
+  },
+  "C313": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 1181
+  },
+  "C314": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 17184
+  },
+  "C315": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "Sports Complex",
+   "room": null,
+   "ms": 803
+  },
+  "C316": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 880
+  },
+  "C317": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "Garden",
+   "room": null,
+   "ms": 5261
+  },
+  "C318": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": "Cafeteria",
+   "room": null,
+   "ms": 5345
+  },
+  "C319": {
+   "category": "Events and Printing",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1136
+  },
+  "C320": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 22071
+  },
+  "C321": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "Auditorium",
+   "room": null,
+   "ms": 955
+  },
+  "C322": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 5195
+  },
+  "C323": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 5726
+  },
+  "C324": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "Sports Complex",
+   "room": null,
+   "ms": 1029
+  },
+  "C325": {
+   "category": "Events and Printing",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 1426
+  },
+  "C326": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 977
+  },
+  "C327": {
+   "category": "Classes and Timetable",
+   "priority": "HIGH",
+   "location": "Auditorium",
+   "room": null,
+   "ms": 3555
+  },
+  "C328": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 4095
+  },
+  "C329": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "Auditorium",
+   "room": null,
+   "ms": 5381
+  },
+  "C330": {
+   "category": "Events and Printing",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 5202
+  },
+  "C331": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 987
+  },
+  "C332": {
+   "category": "Events and Printing",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 4631
+  },
+  "C333": {
+   "category": "Events and Printing",
+   "priority": "MEDIUM",
+   "location": "Garden",
+   "room": null,
+   "ms": 16781
+  },
+  "C334": {
+   "category": "Website and Social Media",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 901
+  },
+  "C335": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 19965
+  },
+  "C336": {
+   "category": "Website and Social Media",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 879
+  },
+  "C337": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 903
+  },
+  "C338": {
+   "category": "Website and Social Media",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 5466
+  },
+  "C339": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1063
+  },
+  "C340": {
+   "category": "Website and Social Media",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1087
+  },
+  "C341": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 3631
+  },
+  "C342": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 872
+  },
+  "C343": {
+   "category": "Website and Social Media",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 46229
+  },
+  "C344": {
+   "category": "Website and Social Media",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "ms": 18237
+  },
+  "C345": {
+   "category": "Website and Social Media",
+   "priority": "CRITICAL",
+   "location": "No specific place",
+   "room": null,
+   "ms": 964
+  },
+  "C346": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 18173
+  },
+  "C347": {
+   "category": "Website and Social Media",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 2236
+  },
+  "C348": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 3022
+  },
+  "C349": {
+   "category": "Website and Social Media",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1330
+  },
+  "C350": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 862
+  },
+  "C351": {
+   "category": "Website and Social Media",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 867
+  },
+  "C352": {
+   "category": "Exams and Results",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 908
+  },
+  "C353": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 20171
+  },
+  "C354": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 2289
+  },
+  "C355": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 946
+  },
+  "C356": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 3885
+  },
+  "C357": {
+   "category": "Website and Social Media",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 17574
+  },
+  "C358": {
+   "category": "Website and Social Media",
+   "priority": "HIGH",
+   "location": null,
+   "room": null,
+   "ms": 4367
+  },
+  "C359": {
+   "category": "Website and Social Media",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1113
+  },
+  "C360": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 885
+  },
+  "C361": {
+   "category": "Website and Social Media",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 3977
+  },
+  "C362": {
+   "category": "Website and Social Media",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 4357
+  },
+  "C363": {
+   "category": "Website and Social Media",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 4201
+  },
+  "C364": {
+   "category": "Website and Social Media",
+   "priority": "HIGH",
+   "location": "No specific place",
+   "room": null,
+   "ms": 768
+  },
+  "C365": {
+   "category": "Website and Social Media",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1303
+  },
+  "C366": {
+   "category": "Website and Social Media",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 3033
+  },
+  "C367": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1040
+  },
+  "C368": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Cafeteria",
+   "room": null,
+   "ms": 1005
+  },
+  "C369": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Parking Area",
+   "room": null,
+   "ms": 872
+  },
+  "C370": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 999
+  },
+  "C371": {
+   "category": "Classroom Facilities",
+   "priority": "LOW",
+   "location": "Garden",
+   "room": null,
+   "ms": 908
+  },
+  "C372": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "ms": 802
+  },
+  "C373": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 905
+  },
+  "C374": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Hostel",
+   "room": null,
+   "ms": 19337
+  },
+  "C375": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "Parking Area",
+   "room": null,
+   "ms": 766
+  },
+  "C376": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 879
+  },
+  "C377": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "Hostel",
+   "room": null,
+   "ms": 1973
+  },
+  "C378": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Main Gate",
+   "room": null,
+   "ms": 917
+  },
+  "C379": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 1370
+  },
+  "C380": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 2633
+  },
+  "C381": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Cafeteria",
+   "room": null,
+   "ms": 751
+  },
+  "C382": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 875
+  },
+  "C383": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "Sports Complex",
+   "room": null,
+   "ms": 3137
+  },
+  "C384": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 854
+  },
+  "C385": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "Block C",
+   "room": null,
+   "ms": 2264
+  },
+  "C386": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Hostel",
+   "room": null,
+   "ms": 1322
+  },
+  "C387": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 923
+  },
+  "C388": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "ms": 4462
+  },
+  "C389": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": null,
+   "room": null,
+   "ms": 3790
+  },
+  "C390": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 2676
+  },
+  "C391": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "Cafeteria",
+   "room": null,
+   "ms": 879
+  },
+  "C392": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "ms": 2214
+  },
+  "C393": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Main Gate",
+   "room": null,
+   "ms": 1462
+  },
+  "C394": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Administration Building",
+   "room": null,
+   "ms": 914
+  },
+  "C395": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Hostel",
+   "room": null,
+   "ms": 3549
+  },
+  "C396": {
+   "category": "Maintenance",
+   "priority": "LOW",
+   "location": "Garden",
+   "room": null,
+   "ms": 4168
+  },
+  "C397": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "No specific place",
+   "room": null,
+   "ms": 1098
+  },
+  "C398": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": "Main Gate",
+   "room": null,
+   "ms": 1108
+  },
+  "C399": {
+   "category": "Other",
+   "priority": "LOW",
+   "location": "No specific place",
+   "room": null,
+   "ms": 940
+  },
+  "C400": {
+   "category": "Other",
+   "priority": "MEDIUM",
+   "location": null,
+   "room": null,
+   "ms": 922
+  }
+ },
+ "meta": {
+  "shots": 3,
+  "examples": [
+   "C002",
+   "C003",
+   "C013",
+   "C004",
+   "C005",
+   "C018",
+   "C007",
+   "C015",
+   "C017",
+   "C001",
+   "C008",
+   "C014",
+   "C006",
+   "C016",
+   "C024",
+   "C009",
+   "C019",
+   "C033",
+   "C010",
+   "C020",
+   "C028",
+   "C011",
+   "C021",
+   "C054",
+   "C012",
+   "C022",
+   "C036",
+   "C046",
+   "C047",
+   "C084"
+  ]
+ }
+}

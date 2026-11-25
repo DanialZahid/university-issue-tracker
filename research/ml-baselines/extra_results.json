@@ -1,0 +1,250 @@
+{
+ "fiveRuns": {
+  "runs": 5,
+  "n": 120,
+  "dates": [
+   "2026-11-19",
+   "2026-11-20",
+   "2026-11-24",
+   "2026-11-25"
+  ],
+  "critical": 9,
+  "llm": {
+   "category": {
+    "mean": 0.8616666666666667,
+    "sd": 0.017950549357115,
+    "min": 0.8333333333333334,
+    "max": 0.8833333333333333
+   },
+   "priority": {
+    "mean": 0.715,
+    "sd": 0.02068278940998475,
+    "min": 0.6833333333333333,
+    "max": 0.7416666666666667
+   },
+   "location": {
+    "mean": 0.9233333333333333,
+    "sd": 0.013333333333333336,
+    "min": 0.9083333333333333,
+    "max": 0.9416666666666667
+   },
+   "criticalFound": {
+    "mean": 9,
+    "sd": 0.0,
+    "min": 9,
+    "max": 9
+   },
+   "falseCritical": {
+    "mean": 2.8,
+    "sd": 0.7483314773547883,
+    "min": 2,
+    "max": 4
+   }
+  },
+  "hybrid": {
+   "category": {
+    "mean": 0.8766666666666667,
+    "sd": 0.014337208778404392,
+    "min": 0.85,
+    "max": 0.8916666666666667
+   },
+   "priority": {
+    "mean": 0.7066666666666667,
+    "sd": 0.020682789409984737,
+    "min": 0.675,
+    "max": 0.7333333333333333
+   },
+   "location": {
+    "mean": 0.9233333333333333,
+    "sd": 0.013333333333333336,
+    "min": 0.9083333333333333,
+    "max": 0.9416666666666667
+   },
+   "criticalFound": {
+    "mean": 9,
+    "sd": 0.0,
+    "min": 9,
+    "max": 9
+   },
+   "falseCritical": {
+    "mean": 3.8,
+    "sd": 0.7483314773547883,
+    "min": 3,
+    "max": 5
+   }
+  },
+  "fleiss": {
+   "category": 0.9175307821150478,
+   "priority": 0.8181200224134922
+  },
+  "hybridMinusLlm": {
+   "category": {
+    "mean": 0.01499999999999999,
+    "sd": 0.006236095644623225,
+    "min": 0.008333333333333304,
+    "max": 0.025000000000000022
+   },
+   "priority": {
+    "mean": -0.00833333333333337,
+    "sd": 5.438959822042073e-17,
+    "min": -0.008333333333333415,
+    "max": -0.008333333333333304
+   }
+  }
+ },
+ "stress": {
+  "sourceComplaints": 40,
+  "critical": 20,
+  "changed": {
+   "typo": 11,
+   "roman_urdu": 11,
+   "mixed_case": 11
+  },
+  "changedCritical": {
+   "typo": 8,
+   "roman_urdu": 8,
+   "mixed_case": 8
+  },
+  "missing": [],
+  "table": {
+   "Original": {
+    "Rules": {
+     "found": 6,
+     "false": 3
+    },
+    "Rules + RU terms": {
+     "found": 11,
+     "false": 3
+    },
+    "LLM": {
+     "found": 20,
+     "false": 8
+    },
+    "Hybrid": {
+     "found": 20,
+     "false": 9
+    }
+   },
+   "typo": {
+    "Rules": {
+     "found": 1,
+     "false": 2
+    },
+    "Rules + RU terms": {
+     "found": 6,
+     "false": 2
+    },
+    "LLM": {
+     "found": 20,
+     "false": 8
+    },
+    "Hybrid": {
+     "found": 20,
+     "false": 8
+    }
+   },
+   "roman_urdu": {
+    "Rules": {
+     "found": 1,
+     "false": 2
+    },
+    "Rules + RU terms": {
+     "found": 10,
+     "false": 5
+    },
+    "LLM": {
+     "found": 20,
+     "false": 10
+    },
+    "Hybrid": {
+     "found": 20,
+     "false": 10
+    }
+   },
+   "mixed_case": {
+    "Rules": {
+     "found": 6,
+     "false": 3
+    },
+    "Rules + RU terms": {
+     "found": 11,
+     "false": 3
+    },
+    "LLM": {
+     "found": 20,
+     "false": 9
+    },
+    "Hybrid": {
+     "found": 20,
+     "false": 10
+    }
+   }
+  },
+  "falseAllVariants": {
+   "Rules": 7,
+   "Rules + RU terms": 10,
+   "LLM": 27,
+   "Hybrid": 28
+  }
+ },
+ "fewShot": {
+  "runs": 1,
+  "category": {
+   "mean": 0.9142857142857143,
+   "sd": 0.0,
+   "min": 0.9142857142857143,
+   "max": 0.9142857142857143
+  },
+  "priority": {
+   "mean": 0.7464285714285714,
+   "sd": 0.0,
+   "min": 0.7464285714285714,
+   "max": 0.7464285714285714
+  },
+  "romanUrdu": {
+   "mean": 0.8875,
+   "sd": 0.0,
+   "min": 0.8875,
+   "max": 0.8875
+  },
+  "categoryF1": {
+   "mean": 0.909353432859208,
+   "sd": 0.0,
+   "min": 0.909353432859208,
+   "max": 0.909353432859208
+  },
+  "criticalFound": {
+   "mean": 11,
+   "sd": 0.0,
+   "min": 11,
+   "max": 11
+  },
+  "falseCritical": {
+   "mean": 8,
+   "sd": 0.0,
+   "min": 8,
+   "max": 8
+  },
+  "medianMs": {
+   "mean": 1431.5,
+   "sd": 0.0,
+   "min": 1431.5,
+   "max": 1431.5
+  },
+  "shots": 3
+ },
+ "localLlm": {
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "dtype": "bfloat16",
+  "decoding": "greedy",
+  "hardware": "x86_64, 2 CPU threads, no GPU",
+  "n": 280,
+  "categoryAccuracy": 0.4357142857142857,
+  "priorityAccuracy": 0.3142857142857143,
+  "romanUrduCategory": 0.45,
+  "criticalFound": 11,
+  "falseCritical": 58,
+  "validJson": 277,
+  "medianSeconds": 11.439944546000334
+ }
+}

@@ -1,0 +1,1569 @@
+{
+ "ranAt": "2026-11-25T08:16:04.432Z",
+ "models": {
+  "text": "gemini-3.5-flash-lite",
+  "embedding": "gemini-embedding-2"
+ },
+ "complaints": [
+  {
+   "id": "C042",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Main Gate",
+    "room": null,
+    "language": "english",
+    "summary": "Stray dogs near the main gate are posing a threat by chasing students."
+   },
+   "aiError": null,
+   "aiMs": 4783
+  },
+  {
+   "id": "C044",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null,
+    "language": "english",
+    "summary": "A projector and screen are requested for a society event in the auditorium on Friday."
+   },
+   "aiError": null,
+   "aiMs": 4495
+  },
+  {
+   "id": "C045",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Students report a seating shortage because the room only has 50 chairs for 70 students."
+   },
+   "aiError": null,
+   "aiMs": 5079
+  },
+  {
+   "id": "C046",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null
+   },
+   "ai": {
+    "category": "Other",
+    "priority": "LOW",
+    "location": "Cafeteria",
+    "room": null,
+    "language": "english",
+    "summary": "The food provided at the cafeteria is reported to be stale and expensive."
+   },
+   "aiError": null,
+   "aiMs": 1153
+  },
+  {
+   "id": "C050",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 06"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 06",
+    "language": "english",
+    "summary": "The monitor at PC 7 in C-Lab 06 is currently flickering and needs repair."
+   },
+   "aiError": null,
+   "aiMs": 6326
+  },
+  {
+   "id": "C051",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null,
+    "language": "english",
+    "summary": "Rainwater is seeping through the roof of a hostel room."
+   },
+   "aiError": null,
+   "aiMs": 3488
+  },
+  {
+   "id": "C052",
+   "rules": {
+    "category": "Exams and Results",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student reports that their quiz 2 marks are missing from the gradebook."
+   },
+   "aiError": null,
+   "aiMs": 1398
+  },
+  {
+   "id": "C053",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null,
+    "language": "english",
+    "summary": "A student complains that the scheduled 8 PM makeup class is too late for day scholars."
+   },
+   "aiError": null,
+   "aiMs": 4899
+  },
+  {
+   "id": "C055",
+   "rules": {
+    "category": "Events and Printing",
+    "categoryScore": 7,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Admission brochures need urgent printing for tomorrow's open house event."
+   },
+   "aiError": null,
+   "aiMs": 2178
+  },
+  {
+   "id": "C059",
+   "rules": {
+    "category": "Exams and Results",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student reports a scheduling conflict with two final exams occurring simultaneously."
+   },
+   "aiError": null,
+   "aiMs": 913
+  },
+  {
+   "id": "C060",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "The online class link provided by the department is currently not working."
+   },
+   "aiError": null,
+   "aiMs": 4198
+  },
+  {
+   "id": "C061",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null,
+    "language": "english",
+    "summary": "A bad odor is reported coming from the drain near the cafeteria."
+   },
+   "aiError": null,
+   "aiMs": 1016
+  },
+  {
+   "id": "C062",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 03"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 03",
+    "language": "english",
+    "summary": "The uninterruptible power supply in lab 3 is beeping continuously and requires attention."
+   },
+   "aiError": null,
+   "aiMs": 1127
+  },
+  {
+   "id": "C063",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 2,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-302"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-302",
+    "language": "english",
+    "summary": "Half of the tube lights are fused in room 302, making it too dark."
+   },
+   "aiError": null,
+   "aiMs": 998
+  },
+  {
+   "id": "C064",
+   "rules": {
+    "category": "Safety",
+    "categoryScore": 3,
+    "emergency": false,
+    "priority": "CRITICAL",
+    "location": "Parking Area",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Parking Area",
+    "room": null,
+    "language": "english",
+    "summary": "Outsiders were reported harassing students near the parking area in the evening."
+   },
+   "aiError": null,
+   "aiMs": 1005
+  },
+  {
+   "id": "C065",
+   "rules": {
+    "category": "Events and Printing",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null,
+    "language": "english",
+    "summary": "Students want to book the auditorium for an upcoming seminar next month."
+   },
+   "aiError": null,
+   "aiMs": 900
+  },
+  {
+   "id": "C066",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 7,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 07"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": "C-Lab 07",
+    "language": "english",
+    "summary": "All computers in C-Lab 07 are extremely slow and hang during practicals."
+   },
+   "aiError": null,
+   "aiMs": 1159
+  },
+  {
+   "id": "C067",
+   "rules": {
+    "category": "Website and Social Media",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Messages sent to the official Facebook page are going unanswered."
+   },
+   "aiError": null,
+   "aiMs": 5276
+  },
+  {
+   "id": "C068",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "The instructor has not uploaded lecture slides on the LMS this semester."
+   },
+   "aiError": null,
+   "aiMs": 8312
+  },
+  {
+   "id": "C069",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Student final exam admit card was not generated despite paid fees."
+   },
+   "aiError": null,
+   "aiMs": 6408
+  },
+  {
+   "id": "C070",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Administration Building",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "CRITICAL",
+    "location": "Administration Building",
+    "room": null,
+    "language": "english",
+    "summary": "The elevator in the administration building is stuck with people trapped inside."
+   },
+   "aiError": null,
+   "aiMs": 4606
+  },
+  {
+   "id": "C071",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block C",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block C",
+    "room": null,
+    "language": "english",
+    "summary": "The water cooler on the first floor of Block C is empty and non-functional."
+   },
+   "aiError": null,
+   "aiMs": 1245
+  },
+  {
+   "id": "C072",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-215"
+   },
+   "ai": {
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": "AC-215",
+    "language": "english",
+    "summary": "The speakers in room AC-215 are not working for listening practice."
+   },
+   "aiError": null,
+   "aiMs": 3896
+  },
+  {
+   "id": "C073",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "University email fails to synchronize on the user's mobile device."
+   },
+   "aiError": null,
+   "aiMs": 1134
+  },
+  {
+   "id": "C074",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 2,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-109"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": "AC-109",
+    "language": "english",
+    "summary": "There are numerous ants reported near the back benches of room AC-109 requiring pest control."
+   },
+   "aiError": null,
+   "aiMs": 1115
+  },
+  {
+   "id": "C075",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "LOW",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student is requesting to change their assigned section for Software Engineering."
+   },
+   "aiError": null,
+   "aiMs": 1272
+  },
+  {
+   "id": "C076",
+   "rules": {
+    "category": "Events and Printing",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Website and Social Media",
+    "priority": "LOW",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Graduation photos have not been uploaded to the university website yet."
+   },
+   "aiError": null,
+   "aiMs": 939
+  },
+  {
+   "id": "C077",
+   "rules": {
+    "category": "Website and Social Media",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Request for a banner and standees for the upcoming sports week."
+   },
+   "aiError": null,
+   "aiMs": 1326
+  },
+  {
+   "id": "C078",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 08"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 08",
+    "language": "english",
+    "summary": "A computer in the lab fails to boot and displays a blue screen."
+   },
+   "aiError": null,
+   "aiMs": 4203
+  },
+  {
+   "id": "C079",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Block A",
+    "room": null,
+    "language": "english",
+    "summary": "Loose electrical wires are hanging dangerously in the corridor."
+   },
+   "aiError": null,
+   "aiMs": 1987
+  },
+  {
+   "id": "C080",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-118"
+   },
+   "ai": {
+    "category": "Classroom Facilities",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": "AC-118",
+    "language": "english",
+    "summary": "Multiple desks in room 118 have broken writing pads needing repair."
+   },
+   "aiError": null,
+   "aiMs": 3570
+  },
+  {
+   "id": "C081",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "The timetable for BSCS 3 has been changed three times this week."
+   },
+   "aiError": null,
+   "aiMs": 1221
+  },
+  {
+   "id": "C082",
+   "rules": {
+    "category": "Exams and Results",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student reported an incorrect GPA calculation on their result card."
+   },
+   "aiError": null,
+   "aiMs": 1661
+  },
+  {
+   "id": "C083",
+   "rules": {
+    "category": "Website and Social Media",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null,
+    "language": "english",
+    "summary": "The campus website menu fails to open on mobile phones."
+   },
+   "aiError": null,
+   "aiMs": 1038
+  },
+  {
+   "id": "C084",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": null,
+    "language": "english",
+    "summary": "A lab assistant was reported for being rude to students during a practical session."
+   },
+   "aiError": null,
+   "aiMs": 1099
+  },
+  {
+   "id": "C085",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null,
+    "language": "english",
+    "summary": "The main gate barrier is broken, allowing cars to enter without security checks."
+   },
+   "aiError": null,
+   "aiMs": 4640
+  },
+  {
+   "id": "C086",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": "Library",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Library",
+    "room": null,
+    "language": "english",
+    "summary": "A pipe is leaking inside the washroom located near the library."
+   },
+   "aiError": null,
+   "aiMs": 1004
+  },
+  {
+   "id": "C087",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-220"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": "AC-220",
+    "language": "english",
+    "summary": "The smart board in room AC-220 is unresponsive to touch."
+   },
+   "aiError": null,
+   "aiMs": 946
+  },
+  {
+   "id": "C088",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 06"
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": "C-Lab 06",
+    "language": "english",
+    "summary": "The network cable for lab switch 6 is cut, causing a complete internet outage for all connected PCs."
+   },
+   "aiError": null,
+   "aiMs": 1082
+  },
+  {
+   "id": "C089",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block B",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block B",
+    "room": null,
+    "language": "english",
+    "summary": "Excessive construction noise near Block B is disrupting ongoing classes."
+   },
+   "aiError": null,
+   "aiMs": 6517
+  },
+  {
+   "id": "C090",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Administration Building",
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "LOW",
+    "location": "Administration Building",
+    "room": null,
+    "language": "english",
+    "summary": "The notice board outside the admin block displays outdated semester schedules."
+   },
+   "aiError": null,
+   "aiMs": 5404
+  },
+  {
+   "id": "C091",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Main Gate",
+    "room": null,
+    "language": "english",
+    "summary": "The biometric attendance machine located at the main gate is currently not working."
+   },
+   "aiError": null,
+   "aiMs": 1744
+  },
+  {
+   "id": "C092",
+   "rules": {
+    "category": "Safety",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": "Block C",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "HIGH",
+    "location": "Block C",
+    "room": null,
+    "language": "english",
+    "summary": "An expired fire extinguisher was found in the Block C corridor."
+   },
+   "aiError": null,
+   "aiMs": 3340
+  },
+  {
+   "id": "C093",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null,
+    "language": "english",
+    "summary": "Students complain that the hostel Wi-Fi password was changed without prior notification."
+   },
+   "aiError": null,
+   "aiMs": 5401
+  },
+  {
+   "id": "C094",
+   "rules": {
+    "category": "Exams and Results",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": null,
+    "room": null,
+    "language": "english",
+    "summary": "The final exam date sheet contains an incorrect room assignment for the Database examination."
+   },
+   "aiError": null,
+   "aiMs": 1342
+  },
+  {
+   "id": "C095",
+   "rules": {
+    "category": "Events and Printing",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "LOW",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A request has been made to design an event poster for the IEEE student branch."
+   },
+   "aiError": null,
+   "aiMs": 1029
+  },
+  {
+   "id": "C096",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null,
+    "language": "english",
+    "summary": "Several benches in the cafeteria are broken and require repair."
+   },
+   "aiError": null,
+   "aiMs": 940
+  },
+  {
+   "id": "C097",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Library",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Library",
+    "room": null,
+    "language": "english",
+    "summary": "The glass door at the library entrance is cracked and poses a hazard."
+   },
+   "aiError": null,
+   "aiMs": 1502
+  },
+  {
+   "id": "C098",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "A student reports that the online portal fee voucher is not downloading."
+   },
+   "aiError": null,
+   "aiMs": 1407
+  },
+  {
+   "id": "C099",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "english",
+    "summary": "Three statistics classes were cancelled without any makeup classes announced."
+   },
+   "aiError": null,
+   "aiMs": 1377
+  },
+  {
+   "id": "C100",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": null,
+    "language": "english",
+    "summary": "The language lab requires working headphones for conducting upcoming listening tests."
+   },
+   "aiError": null,
+   "aiMs": 1050
+  },
+  {
+   "id": "C101",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-105"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": "AC-105",
+    "language": "roman-urdu",
+    "summary": "The air conditioning in room AC-105 is not working since morning, causing discomfort."
+   },
+   "aiError": null,
+   "aiMs": 1064
+  },
+  {
+   "id": "C102",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-210"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": "AC-210",
+    "language": "roman-urdu",
+    "summary": "The projector in room AC-210 is not turning on, preventing the instructor from showing slides."
+   },
+   "aiError": null,
+   "aiMs": 1911
+  },
+  {
+   "id": "C103",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 5,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block B",
+    "room": null
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "MEDIUM",
+    "location": "Block B",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "The WiFi is not working in Block B and the LMS is inaccessible since morning."
+   },
+   "aiError": null,
+   "aiMs": 1117
+  },
+  {
+   "id": "C104",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 7,
+    "emergency": false,
+    "priority": "HIGH",
+    "location": "Library",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Library",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "Water is leaking from a pipe in the washroom near the library, making the floor wet."
+   },
+   "aiError": null,
+   "aiMs": 4845
+  },
+  {
+   "id": "C105",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 04"
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Computer Labs",
+    "room": "C-Lab 04",
+    "language": "roman-urdu",
+    "summary": "Smoke and fire are coming from a PC in the computer lab requiring immediate assistance."
+   },
+   "aiError": null,
+   "aiMs": 5541
+  },
+  {
+   "id": "C106",
+   "rules": {
+    "category": "Software and Network",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "A student reports that their midterm exam result is missing from the university portal."
+   },
+   "aiError": null,
+   "aiMs": 5553
+  },
+  {
+   "id": "C107",
+   "rules": {
+    "category": "Classes and Timetable",
+    "categoryScore": 7,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Classes and Timetable",
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "A student reports a scheduling conflict with two courses on Wednesday at the same time."
+   },
+   "aiError": null,
+   "aiMs": 943
+  },
+  {
+   "id": "C108",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Cafeteria",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Cafeteria",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "Strong gas smell reported near the cafeteria kitchen causing concern."
+   },
+   "aiError": null,
+   "aiMs": 4749
+  },
+  {
+   "id": "C109",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Hostel",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Hostel",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "There is a complete water outage in the hostel washrooms since this morning."
+   },
+   "aiError": null,
+   "aiMs": 5587
+  },
+  {
+   "id": "C110",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "AC-202"
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "LOW",
+    "location": "No specific place",
+    "room": "AC-202",
+    "language": "roman-urdu",
+    "summary": "The ceiling fan in room AC-202 makes too much noise during lectures."
+   },
+   "aiError": null,
+   "aiMs": 4956
+  },
+  {
+   "id": "C111",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 06"
+   },
+   "ai": {
+    "category": "IT / Equipment",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": "C-Lab 06",
+    "language": "roman-urdu",
+    "summary": "Computers in the computer lab are hanging and very slow, hindering practical work."
+   },
+   "aiError": null,
+   "aiMs": 928
+  },
+  {
+   "id": "C112",
+   "rules": {
+    "category": "Website and Social Media",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Website and Social Media",
+    "priority": "MEDIUM",
+    "location": "No specific place",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "The university website is showing a server error, preventing fee challan downloads."
+   },
+   "aiError": null,
+   "aiMs": 1025
+  },
+  {
+   "id": "C113",
+   "rules": {
+    "category": "Website and Social Media",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Auditorium",
+    "room": null
+   },
+   "ai": {
+    "category": "Events and Printing",
+    "priority": "HIGH",
+    "location": "Auditorium",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "Banners need to be printed for the society event happening this Friday in the auditorium."
+   },
+   "aiError": null,
+   "aiMs": 5306
+  },
+  {
+   "id": "C114",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Parking Area",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "HIGH",
+    "location": "Parking Area",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "The lights in the parking area are broken, causing complete darkness in the evening."
+   },
+   "aiError": null,
+   "aiMs": 3363
+  },
+  {
+   "id": "C115",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block A",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Block A",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "Exposed electrical wires hanging near the stairs in Block A pose an immediate electrocution hazard."
+   },
+   "aiError": null,
+   "aiMs": 1102
+  },
+  {
+   "id": "C116",
+   "rules": {
+    "category": "Classroom Facilities",
+    "categoryScore": 4,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Exams and Results",
+    "priority": "HIGH",
+    "location": "No specific place",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "Students are requesting the final exam seating plan as exams start on Monday."
+   },
+   "aiError": null,
+   "aiMs": 1037
+  },
+  {
+   "id": "C117",
+   "rules": {
+    "category": "IT / Equipment",
+    "categoryScore": 1,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": "C-Lab 02"
+   },
+   "ai": {
+    "category": "Software and Network",
+    "priority": "HIGH",
+    "location": "Computer Labs",
+    "room": "C-Lab 02",
+    "language": "roman-urdu",
+    "summary": "Visual Studio is missing from the lab PCs ahead of tomorrow's exam."
+   },
+   "aiError": null,
+   "aiMs": 5060
+  },
+  {
+   "id": "C118",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block C",
+    "room": null
+   },
+   "ai": {
+    "category": "Safety",
+    "priority": "CRITICAL",
+    "location": "Block C",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "The lift in Block C is stuck between floors with people trapped inside."
+   },
+   "aiError": null,
+   "aiMs": 1141
+  },
+  {
+   "id": "C119",
+   "rules": {
+    "category": "Maintenance",
+    "categoryScore": 8,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": "Block C",
+    "room": null
+   },
+   "ai": {
+    "category": "Maintenance",
+    "priority": "MEDIUM",
+    "location": "Block C",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "The water cooler on the first floor of Block C is not working."
+   },
+   "aiError": null,
+   "aiMs": 978
+  },
+  {
+   "id": "C120",
+   "rules": {
+    "category": "Other",
+    "categoryScore": 0,
+    "emergency": false,
+    "priority": "MEDIUM",
+    "location": null,
+    "room": null
+   },
+   "ai": {
+    "category": "Other",
+    "priority": "MEDIUM",
+    "location": "Computer Labs",
+    "room": null,
+    "language": "roman-urdu",
+    "summary": "A student reported that a lab assistant was rude during the practical session."
+   },
+   "aiError": null,
+   "aiMs": 853
+  }
+ ],
+ "pairs": [],
+ "events": [
+  {
+   "at": "2026-11-25T08:05:10.306Z",
+   "step": "Complaint 51 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:05:48.939Z",
+   "step": "Complaint 55 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:06:10.098Z",
+   "step": "Complaint 59 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:06:51.440Z",
+   "step": "Complaint 63 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:08:20.223Z",
+   "step": "Complaint 72 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:08:55.467Z",
+   "step": "Complaint 75 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:09:58.698Z",
+   "step": "Complaint 82 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:12:36.201Z",
+   "step": "Complaint 102 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:13:40.007Z",
+   "step": "Complaint 108 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:15:17.047Z",
+   "step": "Complaint 118 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  },
+  {
+   "at": "2026-11-25T08:15:30.442Z",
+   "step": "Complaint 118 of 400",
+   "kind": "retry",
+   "message": "model busy"
+  }
+ ]
+}

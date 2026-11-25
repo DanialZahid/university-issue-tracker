@@ -32,6 +32,10 @@
    "criticalFound": {
     "mean": 8,
     "sd": 1.4142135623730951
+   },
+   "falseCritical": {
+    "mean": 23,
+    "sd": 11.775681155103795
    }
   }
  },
@@ -40,13 +44,15 @@
    "accuracy": 0.26785714285714285,
    "macroF1": 0.27201534346802225,
    "romanUrdu": 0.35,
-   "criticalFound": null
+   "criticalFound": null,
+   "falseCritical": null
   },
   "priority": {
    "accuracy": 0.2392857142857143,
    "macroF1": 0.22430353389446994,
    "romanUrdu": 0.25,
-   "criticalFound": 7
+   "criticalFound": 7,
+   "falseCritical": 115
   }
  }
 }

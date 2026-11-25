@@ -1,0 +1,1962 @@
+{
+ "C121": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.975011883000207,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Block A\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The water cooler on the second floor of Block A is malfunctioning.\"\n}\n```"
+ },
+ "C122": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 15.68906310300008,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"No specific place\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"There is no water supply in the hostel washrooms, causing immediate concern.\"\n}\n```"
+ },
+ "C123": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 16.07818363599972,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block C\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Peeling paint on corridor walls in Block C requires urgent attention.\"\n}\n```"
+ },
+ "C124": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 21.236307170000146,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Library\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A broken window latch in the library's reading area poses a safety risk due to frequent wind-induced movement.\"\n}\n```"
+ },
+ "C125": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.051407318000201,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Parking Area\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Deep potholes in the parking area cause significant safety hazards.\"\n}\n```"
+ },
+ "C126": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.90495639000028,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Garden\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The grass in the garden has not been cut for weeks.\"\n}\n```"
+ },
+ "C127": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 27.625850768999953,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-214\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The door lock of classroom AC-214 is jammed, preventing locking after class.\"\n}\n```"
+ },
+ "C128": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 14.768228292999993,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block B\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Sewage overflow near Block B washrooms causing severe odor that affects nearby classrooms.\"\n}\n```"
+ },
+ "C129": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.728080850000424,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Sports Complex\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The shower in the sports complex's changing room has no water pressure.\"\n}\n```"
+ },
+ "C130": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.924828145999982,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Cafeteria\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The dustbins in the cafeteria are not emptied and are overflowing.\"\n}\n```"
+ },
+ "C131": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.895285215000058,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Hostel\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The geyser in the hostel has not been working for three days.\"\n}\n```"
+ },
+ "C132": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.895508513000095,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Administration Building\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Ceiling stained by seepage outside accounts office in administration building.\"\n}\n```"
+ },
+ "C133": {
+  "category": "Maintenance",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.410529236000002,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block A\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Water cooler on second floor of Block A stopped dispensing cold water.\"\n}\n```"
+ },
+ "C134": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 13.065331457999946,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Hostel\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A critical issue reported about water leakage in the hostel's bathroom.\"\n}\n```"
+ },
+ "C135": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.721993265000037,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Garden\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The garden has a strong odor due to insufficient watering over several weeks.\"\n}\n```"
+ },
+ "C136": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 14.600503889000265,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-301\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Lock on AC-301 has been broken after class; no access to room.\"\n}\n```"
+ },
+ "C137": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.85130912600016,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Cafeteria\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Cafeteria has overflowing trash bins.\"\n}\n```"
+ },
+ "C138": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 13.54770088000032,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block C\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A gutter has leaked into the washrooms at Block C, causing significant damage.\"\n}\n```"
+ },
+ "C139": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 13.300263433000055,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Parking Area\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"There are too many cars parked in the parking area, blocking bike lanes.\"\n}\n```"
+ },
+ "C140": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.919461580000188,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Library\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A fire alarm sounded in the library, causing panic among students.\"\n}\n```"
+ },
+ "C141": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.67730285000016,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block B\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Strong burning plastic smell detected in Block B corridor.\"\n}\n```"
+ },
+ "C142": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.407576657999925,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Hostel\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A student fainted in the hostel common room and is not responding properly.\"\n}\n```"
+ },
+ "C143": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 14.601759297999706,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-207\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Exposed live wires in a broken switchboard causing immediate danger.\"\n}\n```"
+ },
+ "C144": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.415543077000166,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Parking Area\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The parking area's lights are off at night, making it unsafe.\"\n}\n```"
+ },
+ "C145": {
+  "category": "Maintenance",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 13.906009224000172,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"C-Lab 02\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Sparks are detected from the UPS in C-Lab 02, causing students to evacuate.\"\n}\n```"
+ },
+ "C146": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.762243662999936,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block A\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The broken stair railing poses a significant safety risk on the Block A staircase.\"\n}\n```"
+ },
+ "C147": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 14.687457444999836,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Cafeteria\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A gas cylinder in the cafeteria kitchen is hissing due to a leak.\"\n}\n```"
+ },
+ "C148": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.942223588999695,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The main gate was left unattended throughout the night, allowing unauthorized access.\"\n}\n```"
+ },
+ "C149": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.512311540000155,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Sports Complex\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A player was badly injured during football practice at the sports complex, causing significant blood loss.\"\n}\n```"
+ },
+ "C150": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.13625839300039,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Library\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Fire extinguishers in the library have expired.\"\n}\n```"
+ },
+ "C151": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.57651166200003,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"No specific place\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Students reported being followed by strangers near the campus bus stop at night.\"\n}\n```"
+ },
+ "C152": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.985527825999725,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block C\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Water dripping on the main electric board in Block C has caused electrical hazards.\"\n}\n```"
+ },
+ "C153": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.736478357000124,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Garden\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A snake was seen in the garden near the seating area.\"\n}\n```"
+ },
+ "C154": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.7600331499998,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Administration Building\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Someone collapsed outside the accounts office in the administration building and requires immediate medical attention.\"\n}\n```"
+ },
+ "C155": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.187183300000015,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Hostel\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Emergency exit door in hostel is chained and locked.\"\n}\n```"
+ },
+ "C156": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.445964740999898,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block A\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Fire detected at Block A's switchboard, threatening immediate safety.\"\n}\n```"
+ },
+ "C157": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 13.877778391999982,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Hostel\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A student's bed has been damaged in the hostel common room, but there is no response from management.\"\n}\n```"
+ },
+ "C158": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.568930570999783,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-110\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Switchboard at AC-110 damaged, causing smoke outside.\"\n}\n```"
+ },
+ "C159": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.404940170999907,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Parking Area\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Lights in parking area are dimming at night, causing safety concerns.\"\n}\n```"
+ },
+ "C160": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.317059900999993,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Sports Complex\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A student has collapsed on the field during sports complex practice.\"\n}\n```"
+ },
+ "C161": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 10.841086939999968,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block B\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Railing damage on stairs at Block B.\"\n}\n```"
+ },
+ "C162": {
+  "category": "Maintenance",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.395009175000268,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Computer Labs\",\n  \"room\": \"null\",\n  \"language\": \"English\",\n  \"summary\": \"Students report that sockets are on fire in Lab 05.\"\n}\n```"
+ },
+ "C163": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.583110217000012,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Garden\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A person saw someone playing in the garden.\"\n}\n```"
+ },
+ "C164": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.0232466450002,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-115\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The projector in classroom AC-115 displays a blurry, yellow image.\"\n}\n```"
+ },
+ "C165": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.93618275200015,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"C-Lab 03\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The webcam on PC 5 in C-Lab 03 is not detected.\"\n}\n```"
+ },
+ "C166": {
+  "category": "Maintenance",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.632786503999796,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Computer Labs\",\n  \"room\": \"C-Lab 01\",\n  \"language\": \"English\",\n  \"summary\": \"Half of the lab computers are out of service, impacting upcoming exams.\"\n}\n```"
+ },
+ "C167": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.950645214999895,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-203\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Document camera in classroom AC-203 not showing any content.\"\n}\n```"
+ },
+ "C168": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": false,
+  "seconds": 10.013889975999973,
+  "raw": "```json\n{\n  \"category\": \"Equipment\",\n  \"priority\": \"LOW\",\n  \"location\": \"Library\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The library scanner is malfunctioning.\"\n}\n```"
+ },
+ "C169": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.187999652000144,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-120\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"HDMI cable missing from classroom AC-120; teachers unable to connect laptops.\"\n}\n```"
+ },
+ "C170": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.696303051000086,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"C-Lab 07\",\n  \"room\": \"null\",\n  \"language\": \"English\",\n  \"summary\": \"Monitor stand at PC 9 in C-Lab 07 is broken and screen tilts.\"\n}\n```"
+ },
+ "C171": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.291499298999952,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Computer Labs\",\n  \"room\": \"C-Lab 04\",\n  \"language\": \"English\",\n  \"summary\": \"Lab PCs are frequently restarting.\"\n}\n```"
+ },
+ "C172": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.366719617999934,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Auditorium\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The auditorium projector's remote control is missing.\"\n}\n```"
+ },
+ "C173": {
+  "category": "Maintenance",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 14.037643205000222,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-305\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The smart board in classroom AC-305 is malfunctioning, preventing students from completing their final project presentations on time.\"\n}\n```"
+ },
+ "C174": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.622755588000018,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-102\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The projector in classroom AC-102 has a noisy fan.\"\n}\n```"
+ },
+ "C175": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.079111176999959,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"C-Lab 08\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Mice have disabled four PCs in C-Lab 08.\"\n}\n```"
+ },
+ "C176": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.837520648999998,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Administration Building\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The token display screen at the admission office in the administration building is off.\"\n}\n```"
+ },
+ "C177": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.484689496999636,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-211\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Laptop cannot connect to projector at AC-211.\"\n}\n```"
+ },
+ "C178": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.929381554999964,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Library\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The library computers are outdated and slow.\"\n}\n```"
+ },
+ "C179": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.891566207000324,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"C-Lab 06\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Microphones on headsets in C-Lab 06 are malfunctioning during the speaking test.\"\n}\n```"
+ },
+ "C180": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.483074796999972,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The biometric attendance machine at the main gate is malfunctioning, causing a significant delay and inconvenience.\"\n}\n```"
+ },
+ "C181": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.34085571300011,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"null\",\n  \"room\": \"AC-115\",\n  \"language\": \"English\",\n  \"summary\": \"The projector's picture is dimming in Room AC-115.\"\n}\n```"
+ },
+ "C182": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.404485431000012,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Computer Labs\",\n  \"room\": \"C-Lab 01\",\n  \"language\": \"English\",\n  \"summary\": \"PCs not working in C-Lab 01 during this week's practical exam.\"\n}\n```"
+ },
+ "C183": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.144237487999817,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-203\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Document camera not working in classroom AC-203.\"\n}\n```"
+ },
+ "C184": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.266004417000204,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-120\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"HDMI cable not available in classroom AC-120.\"\n}\n```"
+ },
+ "C185": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.839013115999933,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Computer Labs\",\n  \"room\": \"C-Lab 04\",\n  \"language\": \"English\",\n  \"summary\": \"Lab's PCs are restarting on their own.\"\n}\n```"
+ },
+ "C186": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.204378542000086,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"C-Lab 03\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The webcam on PC 5 in Lab 03 does not work.\"\n}\n```"
+ },
+ "C187": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.871740948000024,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Biometric machine at main gate not recognizing fingerprints; system seems to be down.\"\n}\n```"
+ },
+ "C188": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.267241161000129,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-102\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The projector in classroom AC-102 is not working properly.\"\n}\n```"
+ },
+ "C189": {
+  "category": "Software and Network",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 13.380189290999624,
+  "raw": "```json\n{\n  \"category\": \"Software and Network\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"null\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The Learning Management System (LMS) is not loading, causing significant delays for assignments due to the upcoming deadline.\"\n}\n```"
+ },
+ "C190": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.195071023999844,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Hostel\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The hostel Wi-Fi is very slow during nighttime.\"\n}\n```"
+ },
+ "C191": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.554745022000134,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student cannot log in to portal due to invalid password.\"\n}\n```"
+ },
+ "C192": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.5224963390001,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Library\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No internet connection in the library, preventing students from accessing journals.\"\n}\n```"
+ },
+ "C193": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.290774243000214,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Email storage is full; unable to receive new emails.\"\n}\n```"
+ },
+ "C194": {
+  "category": "Software and Network",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.916361152999798,
+  "raw": "```json\n{\n  \"category\": \"Software and Network\",\n  \"priority\": \"LOW\",\n  \"location\": \"C-Lab 05\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"MATLAB license on C-Lab 05 PCs has expired.\"\n}\n```"
+ },
+ "C195": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.455803166999885,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"New students need their campus Wi-Fi password.\"\n}\n```"
+ },
+ "C196": {
+  "category": "Software and Network",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.500346355000147,
+  "raw": "```json\n{\n  \"category\": \"Software and Network\",\n  \"priority\": \"LOW\",\n  \"location\": \"C-Lab 07\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Exam software not installed in C-Lab 07; online test scheduled for tomorrow.\"\n}\n```"
+ },
+ "C197": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.88834342500013,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Block A\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Wi-Fi connection frequently drops in Block A.\"\n}\n```"
+ },
+ "C198": {
+  "category": "Software and Network",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.001514771000075,
+  "raw": "```json\n{\n  \"category\": \"Software and Network\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student reports that their Microsoft Office account is not activated.\"\n}\n```"
+ },
+ "C199": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.692318074000013,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Cafeteria\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No Wi-Fi signal in cafeteria.\"\n}\n```"
+ },
+ "C200": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.010303569999905,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student reports missing verification code to access portal.\"\n}\n```"
+ },
+ "C201": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.499416570999983,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The student portal is down on the last day of course registration.\"\n}\n```"
+ },
+ "C202": {
+  "category": "Software and Network",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.866749678999895,
+  "raw": "```json\n{\n  \"category\": \"Software and Network\",\n  \"priority\": \"LOW\",\n  \"location\": \"C-Lab 02\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"NumPy package missing on PCs in C-Lab 02.\"\n}\n```"
+ },
+ "C203": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.730761448000067,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Auditorium\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No internet connection for the live webinar on Thursday.\"\n}\n```"
+ },
+ "C204": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": false,
+  "seconds": 10.609343812000134,
+  "raw": "```json\n{\n  \"category\": \"IT/Equipment\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"VPN connection issue preventing access to library databases.\"\n}\n```"
+ },
+ "C205": {
+  "category": "Maintenance",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.988616846999776,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Block C\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The LAN ports in the faculty offices at Block C are malfunctioning.\"\n}\n```"
+ },
+ "C206": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.459854432000157,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Teams sign-in error - University account issue.\"\n}\n```"
+ },
+ "C207": {
+  "category": "Software and Network",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.455662188000133,
+  "raw": "```json\n{\n  \"category\": \"Software and Network\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Computer Labs\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Many lab computers are infected with a virus that erases data from USB drives.\"\n}\n```"
+ },
+ "C208": {
+  "category": "Software and Network",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.080463176000194,
+  "raw": "```json\n{\n  \"category\": \"Software and Network\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"LMS not loading and assignment deadline today.\"\n}\n```"
+ },
+ "C209": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 13.041987345000052,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Hostel\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Hostel's internet speed is very slow at night, causing some websites not to load.\"\n}\n```"
+ },
+ "C210": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.52278755999987,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Portal not working after password reset.\"\n}\n```"
+ },
+ "C211": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 10.832169172999784,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Library\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Internet not working at the library; no access to journals.\"\n}\n```"
+ },
+ "C212": {
+  "category": "Software and Network",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.261011035999672,
+  "raw": "```json\n{\n  \"category\": \"Software and Network\",\n  \"priority\": \"LOW\",\n  \"location\": \"Computer Labs\",\n  \"room\": \"null\",\n  \"language\": \"English\",\n  \"summary\": \"MATLAB license on computers in Lab 05 has expired.\"\n}\n```"
+ },
+ "C213": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.29104433900011,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Block A\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Wifi connection frequently drops in Block A.\"\n}\n```"
+ },
+ "C214": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.247034113000154,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Cafeteria\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Wifi signal not working at cafeteria.\"\n}\n```"
+ },
+ "C215": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.540116448999925,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No verification code received for portal login.\"\n}\n```"
+ },
+ "C216": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.011176277999766,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"null\",\n  \"room\": \"AC-104\",\n  \"language\": \"English\",\n  \"summary\": \"Half of the tube lights in classroom AC-104 are not functioning.\"\n}\n```"
+ },
+ "C217": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.659424747999765,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-206\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Curtains in classroom AC-206 are torn, exposing board to direct sunlight.\"\n}\n```"
+ },
+ "C218": {
+  "category": "Classroom Facilities",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.657615577999877,
+  "raw": "```json\n{\n  \"category\": \"Classroom Facilities\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-311\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Not enough chairs in classroom AC-311.\"\n}\n```"
+ },
+ "C219": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.086546128999998,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-308\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The air conditioning unit in classroom AC-308 is leaking water onto the desks during classes.\"\n}\n```"
+ },
+ "C220": {
+  "category": "Classroom Facilities",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.589209185000072,
+  "raw": "```json\n{\n  \"category\": \"Classroom Facilities\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-109\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The whiteboard in classroom AC-109 has permanent stains that make reading difficult.\"\n}\n```"
+ },
+ "C221": {
+  "category": "Classroom Facilities",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.997016603000247,
+  "raw": "```json\n{\n  \"category\": \"Classroom Facilities\",\n  \"priority\": \"LOW\",\n  \"location\": \"null\",\n  \"room\": \"AC-212\",\n  \"language\": \"English\",\n  \"summary\": \"The air conditioning system in classroom AC-212 has been off for the entire week.\"\n}\n```"
+ },
+ "C222": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.06929541999989,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Library\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Many library chairs are wobbling, posing safety concerns.\"\n}\n```"
+ },
+ "C223": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.95193926500042,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-215\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Two of the three fans in classroom AC-215 are not working.\"\n}\n```"
+ },
+ "C224": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.642698668999856,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": null,\n  \"summary\": \"Clock missing in classroom AC-117.\"\n}\n```"
+ },
+ "C225": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.205463169000268,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"null\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A student's class was disrupted due to a locked classroom.\"\n}\n```"
+ },
+ "C226": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.691469362000134,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-201\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Dustbin missing from classroom AC-201.\"\n}\n```"
+ },
+ "C227": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.946388408000075,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-209\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The projection screen in classroom AC-209 is torn.\"\n}\n```"
+ },
+ "C228": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 13.527469277000364,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-401\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The lights in AC-401, where the midterm is scheduled, are out, posing a safety risk.\"\n}\n```"
+ },
+ "C229": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.154652066999915,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-106\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Windows in classroom AC-106 are stuck, causing discomfort.\"\n}\n```"
+ },
+ "C230": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.05995965000011,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Library\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The lights in the library study corner are too dim for reading.\"\n}\n```"
+ },
+ "C231": {
+  "category": "Classroom Facilities",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.329062690000228,
+  "raw": "```json\n{\n  \"category\": \"Classroom Facilities\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-213\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Several broken chairs in classroom AC-213 need repair.\"\n}\n```"
+ },
+ "C232": {
+  "category": "Classroom Facilities",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.626066403000095,
+  "raw": "```json\n{\n  \"category\": \"Classroom Facilities\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-205\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The classroom's air conditioning unit is making a rattling noise, disrupting classes.\"\n}\n```"
+ },
+ "C233": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.537133306999749,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-310\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The teacher's podium in classroom AC-310 is broken.\"\n}\n```"
+ },
+ "C234": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.661539226000059,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-216\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No working sockets in classroom AC-216.\"\n}\n```"
+ },
+ "C235": {
+  "category": "Maintenance",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.89437229899977,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-402\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The air conditioning system in AC-402, where final exams are scheduled, is malfunctioning.\"\n}\n```"
+ },
+ "C236": {
+  "category": "Classroom Facilities",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.83509205900009,
+  "raw": "```json\n{\n  \"category\": \"Classroom Facilities\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-104\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Classroom AC-104 has stopped working.\"\n}\n```"
+ },
+ "C237": {
+  "category": "Classroom Facilities",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 14.024567288000071,
+  "raw": "```json\n{\n  \"category\": \"Classroom Facilities\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-311\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"There are only 40 seats available in AC-311 while there are 55 students in our section.\"\n}\n```"
+ },
+ "C238": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.710926822999681,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-308\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Ac-308 classroom's air conditioning system has leaked water on the first bench.\"\n}\n```"
+ },
+ "C239": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.269890080000096,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Computer Labs\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Fire alarm sounds at AC-206 in Computer Labs.\"\n}\n```"
+ },
+ "C240": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.61145191200012,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-215\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Two panickers found dead inside AC-215.\"\n}\n```"
+ },
+ "C241": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.50197938600013,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Exam Hall\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Lights are off in the exam hall where the midterm is scheduled.\"\n}\n```"
+ },
+ "C242": {
+  "category": "Classroom Facilities",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.729689333999886,
+  "raw": "```json\n{\n  \"category\": \"Classroom Facilities\",\n  \"priority\": \"LOW\",\n  \"location\": \"AC-302\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The classroom AC-302 was scheduled at 8:30 AM but there was no air conditioning.\"\n}\n```"
+ },
+ "C243": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.560218306000024,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"AC-109\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Whiteboard at AC-109 has stains on it; writing difficult due to mess.\"\n}\n```"
+ },
+ "C244": {
+  "category": "Exams and Results",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.523679056999754,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"null\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Admit card not issued; exams start in two days.\"\n}\n```"
+ },
+ "C245": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.075019820999842,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student reports incorrect course registration on their transcript.\"\n}\n```"
+ },
+ "C246": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.115081373000066,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Two exams at the same time.\"\n}\n```"
+ },
+ "C247": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.499187727999924,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student has been waiting for a month for a recheck request.\"\n}\n```"
+ },
+ "C248": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.917677807000018,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Requesting access to midterm past papers via LMS.\"\n}\n```"
+ },
+ "C249": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.309995694999998,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The student's supplementary exam result has not been updated yet.\"\n}\n```"
+ },
+ "C250": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.990718218999973,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": \"null\",\n  \"room\": \"AC-401\",\n  \"language\": \"English\",\n  \"summary\": \"Exam seating at AC-401 does not match the plan; exam will start in an hour.\"\n}\n```"
+ },
+ "C251": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.797773989000234,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"GPA calculation error reported by student.\"\n}\n```"
+ },
+ "C252": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.645206536999922,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Students are requesting that their midterm answer sheets be shown.\"\n}\n```"
+ },
+ "C253": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.419191927000156,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student unable to take final exam due to outstanding fee.\"\n}\n```"
+ },
+ "C254": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.01754898199988,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Assignment marks not added - need clarification on how results will be calculated.\"\n}\n```"
+ },
+ "C255": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.771530772999995,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Degree verification request has been pending for six weeks.\"\n}\n```"
+ },
+ "C256": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.180440037000153,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The exam timings are announced too late every semester.\"\n}\n```"
+ },
+ "C257": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.107516598000075,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student found discrepancies between their final paper's outline and the correct course material.\"\n}\n```"
+ },
+ "C258": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.17244469599973,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The student's practical exam marks for Physics lab are missing.\"\n}\n```"
+ },
+ "C259": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.79482203400039,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Result withheld; needs transcript for scholarship deadline next week.\"\n}\n```"
+ },
+ "C260": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.787975449999976,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student's grade change not updated on portal.\"\n}\n```"
+ },
+ "C261": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.34976563400005,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Calculator rule unclear - need clarification on whether scientific calculators are allowed in the Calculus exam.\"\n}\n```"
+ },
+ "C262": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.05573272499987,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The invigilator arrived 30 minutes late for the midterm, resulting in no additional time.\"\n}\n```"
+ },
+ "C263": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.009957558999758,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student's name missing from roll number list for their final exam.\"\n}\n```"
+ },
+ "C264": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.824055845000203,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Final year project evaluation marks are overdue.\"\n}\n```"
+ },
+ "C265": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.825242175999847,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Admit card not received yet before final exams.\"\n}\n```"
+ },
+ "C266": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.127006675000302,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student found error in their transcript.\"\n}\n```"
+ },
+ "C267": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.476947636000205,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": \"null\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Final database and statistics papers are due on Monday at one hour.\"\n}\n```"
+ },
+ "C268": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.341340915000274,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No exam result update received after applying.\"\n}\n```"
+ },
+ "C269": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.22462127000017,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The student's semester GPA calculation on the portal seems incorrect.\"\n}\n```"
+ },
+ "C270": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.361703202000172,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Roll number list not found for my name in final exam results.\"\n}\n```"
+ },
+ "C271": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.77806334800016,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Students are asking how past midterm papers can be shared on the Learning Management System.\"\n}\n```"
+ },
+ "C272": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.483366075000049,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Assignment's final results not mentioned.\"\n}\n```"
+ },
+ "C273": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.774476671999764,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Lab and lecture overlap - Physics lab overlaps with Calculus lecture on Thursday.\"\n}\n```"
+ },
+ "C274": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.95455850099961,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Teacher always arrives 20 minutes late to classes.\"\n}\n```"
+ },
+ "C275": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.747792867999578,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Too many classes on Monday; none on Friday.\"\n}\n```"
+ },
+ "C276": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.90293885300025,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No teacher assigned for Compiler Construction course.\"\n}\n```"
+ },
+ "C277": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.295176143999925,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Two sections scheduled in AC-303 at the same time on Tuesday.\"\n}\n```"
+ },
+ "C278": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.558538117000353,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": null,\n  \"summary\": \"Timetable PDF unclear - small font and truncated room numbers.\"\n}\n```"
+ },
+ "C279": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.606131109999751,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": null,\n  \"summary\": \"Course outline not shared for Software Engineering.\"\n}\n```"
+ },
+ "C280": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.204731612999694,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Class moved to another building with only five minutes between lectures.\"\n}\n```"
+ },
+ "C281": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.887708594999822,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": \"null\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Four Probability classes are missing from the schedule; midterm is next week.\"\n}\n```"
+ },
+ "C282": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.044966797000143,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": null,\n  \"summary\": \"The AI elective listed in the scheme of studies is not offered this semester.\"\n}\n```"
+ },
+ "C283": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.229208859999744,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Request for uploading recorded lectures for students unable to attend classes.\"\n}\n```"
+ },
+ "C284": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.277381713999603,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The last lecture at our campus ends 30 minutes late, causing inconvenience.\"\n}\n```"
+ },
+ "C285": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.371379753999463,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Registration for course has been closed earlier than expected.\"\n}\n```"
+ },
+ "C286": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.807007659000192,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No break between classes at 11:30 and 1:00.\"\n}\n```"
+ },
+ "C287": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.382956702999763,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": \"Computer Labs\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Lab instructor absent for two labs.\"\n}\n```"
+ },
+ "C288": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.964799788000164,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Makeup class clash with midterm due tomorrow.\"\n}\n```"
+ },
+ "C289": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.368787405999683,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Timetable lists missing room for class.\"\n}\n```"
+ },
+ "C290": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.738816042000508,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Office hours not posted - teachers need to update their schedule.\"\n}\n```"
+ },
+ "C291": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.095542052999917,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": null,\n  \"summary\": \"Section too large - 70 students exceed capacity.\"\n}\n```"
+ },
+ "C292": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.960395574999893,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Half of the Networks course outline not covered, nearing end of semester.\"\n}\n```"
+ },
+ "C293": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.559366190000219,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Can the 8:00 class be moved to 9:00 for day scholars?\"\n}\n```"
+ },
+ "C294": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.351645212000221,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The link for today's online class was not shared on the Learning Management System.\"\n}\n```"
+ },
+ "C295": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.313536542999827,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": \"Computer Labs\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Physics lab on Thursday clashes with Calculus lecture.\"\n}\n```"
+ },
+ "C296": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.648050097000123,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Teacher Roz Late at Class\"\n}\n```"
+ },
+ "C297": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.016664966999997,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No teacher assigned for Compilers course.\"\n}\n```"
+ },
+ "C298": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.625759477999964,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Midterm exams not scheduled yet.\"\n}\n```"
+ },
+ "C299": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.200700692000282,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Students are missing their classes; lectures should be uploaded.\"\n}\n```"
+ },
+ "C300": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.27635416099929,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Akhri lecture has ended early.\"\n}\n```"
+ },
+ "C301": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.718726964999405,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No link shared for today's online class on Learning Management System.\"\n}\n```"
+ },
+ "C302": {
+  "category": "Classes and Timetable",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.405120807999992,
+  "raw": "```json\n{\n  \"category\": \"Classes and Timetable\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Classes at 11:30 and 1:00 are missing breaks.\"\n}\n```"
+ },
+ "C303": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.060225172999708,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A request for printing four standees for the upcoming career fair.\"\n}\n```"
+ },
+ "C304": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.852296285000193,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Auditorium\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The auditorium is double-booked for two events on the same day.\"\n}\n```"
+ },
+ "C305": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.240461582000535,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Name misspelled on workshop certificate\"\n}\n```"
+ },
+ "C306": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.853132137000102,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Garden\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A request for setting up a stage and lighting equipment in the garden for a cultural night event.\"\n}\n```"
+ },
+ "C307": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.642805380000027,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Robotics society needs 200 flyers printed for recruitment.\"\n}\n```"
+ },
+ "C308": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.457547433999935,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Auditorium\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No chairs available for the upcoming seminar in the auditorium.\"\n}\n```"
+ },
+ "C309": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.486821123000482,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Event approval pending - our society's event request has been pending approval for two weeks.\"\n}\n```"
+ },
+ "C310": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.096119740000177,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student requests additional coding and sports events for the upcoming semester.\"\n}\n```"
+ },
+ "C311": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.448733893999815,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Sports Complex\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Need a sound system for the sports gala at the sports complex.\"\n}\n```"
+ },
+ "C312": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.854300824000347,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Convocation gowns are overdue.\"\n}\n```"
+ },
+ "C313": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.085068859000785,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The posters for the event are fading.\"\n}\n```"
+ },
+ "C314": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.814335138999922,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Need a photographer for the IEEE workshop next week.\"\n}\n```"
+ },
+ "C315": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.830822215000808,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Event budget not released\"\n}\n```"
+ },
+ "C316": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.522715387000062,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student conference needs 150 name badges printed.\"\n}\n```"
+ },
+ "C317": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.423788400000376,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Garden\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The tent for tonight's dinner in the garden has not been set up.\"\n}\n```"
+ },
+ "C318": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.993323523000072,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Cafeteria\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Request for permission to set up food stalls near the cafeteria for charity week.\"\n}\n```"
+ },
+ "C319": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.300650815999688,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Debate registration system not accessible.\"\n}\n```"
+ },
+ "C320": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.504734578999887,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A request for an engraved shield for a guest speaker.\"\n}\n```"
+ },
+ "C321": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.40325679200032,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Auditorium\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Freshers' orientation needs urgent arrangement in the auditorium.\"\n}\n```"
+ },
+ "C322": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 10.561872851999397,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Banner printing error at job fair scheduled for tomorrow.\"\n}\n```"
+ },
+ "C323": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.132205795000118,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Our society needs a room for weekly meetings.\"\n}\n```"
+ },
+ "C324": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.978775936000602,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Trophies for the sports week finals on Friday have not been ordered.\"\n}\n```"
+ },
+ "C325": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.494540720999794,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Volunteers for the open house are unaware of their roles.\"\n}\n```"
+ },
+ "C326": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.133873239999957,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A student has requested that four career fair stands be printed.\"\n}\n```"
+ },
+ "C327": {
+  "category": "Events and Printing",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.570108478000293,
+  "raw": "```json\n{\n  \"category\": \"Events and Printing\",\n  \"priority\": \"LOW\",\n  \"location\": \"Auditorium\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Auditorium booked for two events at 1 PM.\"\n}\n```"
+ },
+ "C328": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.849000547999822,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Certificate has been issued but my name was incorrectly entered.\"\n}\n```"
+ },
+ "C329": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.048330657000406,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Auditorium\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Seminar chairs not available after two hours due to ongoing seminar.\"\n}\n```"
+ },
+ "C330": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.930019100999743,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Robotics society needs 200 flyers for recruitment.\"\n}\n```"
+ },
+ "C331": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 10.998930307999217,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Parson's convocation gown not delivered yet.\"\n}\n```"
+ },
+ "C332": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.753617968000071,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Event approval request from society.\"\n}\n```"
+ },
+ "C333": {
+  "category": "Events and Printing",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.426761746000011,
+  "raw": "```json\n{\n  \"category\": \"Events and Printing\",\n  \"priority\": \"LOW\",\n  \"location\": \"Garden\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Cultural night event scheduled in the garden on Saturday.\"\n}\n```"
+ },
+ "C334": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.407386589999987,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The online admission form on the website does not allow submission.\"\n}\n```"
+ },
+ "C335": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.271976408999762,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Faculty page outdated\"\n}\n```"
+ },
+ "C336": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 13.46273404799922,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The fee challan download link on the university's website is broken.\"\n}\n```"
+ },
+ "C337": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.73042866600008,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Homepage contains spelling mistakes.\"\n}\n```"
+ },
+ "C338": {
+  "category": "Website and Social Media",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.296868937999534,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A fake university Facebook page requesting fees at the main gate.\"\n}\n```"
+ },
+ "C339": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.807322480999574,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The university's website is experiencing slow loading times.\"\n}\n```"
+ },
+ "C340": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.014016296999216,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The merit list posted on the website has wrong aggregates.\"\n}\n```"
+ },
+ "C341": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.477808282000296,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No Urdu version available on the website.\"\n}\n```"
+ },
+ "C342": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.3143182849999,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"A student complaint about incorrect tagging of winners at a hackathon.\"\n}\n```"
+ },
+ "C343": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.077995456999815,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Website search not working - check your internet connection.\"\n}\n```"
+ },
+ "C344": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.82516300899988,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The contact numbers for the admissions office on the website are incorrect.\"\n}\n```"
+ },
+ "C345": {
+  "category": "Website and Social Media",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.362388518999978,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The university's main gate website has been hacked, displaying strange messages.\"\n}\n```"
+ },
+ "C346": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.236931802000072,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The university's LinkedIn page remains inactive, impacting communication with alumni and students.\"\n}\n```"
+ },
+ "C347": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.902129676000186,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Scholarship deadline not announced.\"\n}\n```"
+ },
+ "C348": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.853228099999797,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Old logo remains on some university website pages.\"\n}\n```"
+ },
+ "C349": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.611053913000433,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": null,\n  \"summary\": \"YouTube lectures on the university's YouTube channel are set to private.\"\n}\n```"
+ },
+ "C350": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.49291409899979,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Broken images on the news page of the university's website.\"\n}\n```"
+ },
+ "C351": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.346605676999388,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Academic calendar not available online.\"\n}\n```"
+ },
+ "C352": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.884664118999353,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The results page on the website displays personal information of other students.\"\n}\n```"
+ },
+ "C353": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.651507729000514,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Add a dark mode feature to the university's website.\"\n}\n```"
+ },
+ "C354": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.9251402459995,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Offensive comments on university Facebook posts remain unaddressed.\"\n}\n```"
+ },
+ "C355": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.888217672999417,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The campus map's outdated information about the parking location.\"\n}\n```"
+ },
+ "C356": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.03420998799993,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": null,\n  \"summary\": \"Closed job openings remain accessible via the careers page.\"\n}\n```"
+ },
+ "C357": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.038247988999501,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"University Instagram incorrectly announced a holiday on a working day.\"\n}\n```"
+ },
+ "C358": {
+  "category": "Website and Social Media",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.339560917999734,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"null\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The admission portal on the website is down on the last date to apply.\"\n}\n```"
+ },
+ "C359": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.096188966000227,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Admission form submission issue on website.\"\n}\n```"
+ },
+ "C360": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.820496247999472,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Website description about teachers who visited classrooms.\"\n}\n```"
+ },
+ "C361": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.18339332100004,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Fee challan download link not working on website.\"\n}\n```"
+ },
+ "C362": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.65439818699997,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"University's official website has been hacked; students are being charged extra fees.\"\n}\n```"
+ },
+ "C363": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.35321676500007,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"University's website loading takes too long.\"\n}\n```"
+ },
+ "C364": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.308999650999795,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Merit list on website has errors.\"\n}\n```"
+ },
+ "C365": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.37932206000005,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Academic calendar not uploaded for current semester.\"\n}\n```"
+ },
+ "C366": {
+  "category": "Website and Social Media",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.459787148999567,
+  "raw": "```json\n{\n  \"category\": \"Website and Social Media\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"University's Instagram has been hacked, causing confusion on working days.\"\n}\n```"
+ },
+ "C367": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.821784599000239,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Lost water bottle - check local areas.\"\n}\n```"
+ },
+ "C368": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.451263773999926,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Cafeteria\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Cafeteria prices increased twice this semester.\"\n}\n```"
+ },
+ "C369": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": false,
+  "seconds": 11.849807588999283,
+  "raw": "```json\n{\n  \"category\": \"Transport Bus\",\n  \"priority\": \"LOW\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The transport bus on Route 4 is consistently late at the main gate.\"\n}\n```"
+ },
+ "C370": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.83576290199926,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Fee refund request from student.\"\n}\n```"
+ },
+ "C371": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.132644684000297,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"More benches needed in the garden.\"\n}\n```"
+ },
+ "C372": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.79522941399955,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Administration Building\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No staff member available at the student affairs counter.\"\n}\n```"
+ },
+ "C373": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.124384387999271,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"No specific place\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The prayer area on the campus is too small for the number of students.\"\n}\n```"
+ },
+ "C374": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.637387110999953,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Hostel mess food is cold and consistent.\"\n}\n```"
+ },
+ "C375": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.434304705000613,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"How do I obtain a parking sticker for my bicycle?\"\n}\n```"
+ },
+ "C376": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.426964723999845,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Scholarship stipend delay affects student's financial aid.\"\n}\n```"
+ },
+ "C377": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.936983756999325,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Hostel resident wants to change their room due to proximity issue.\"\n}\n```"
+ },
+ "C378": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.445584387000054,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Guard at main gate was rude and denied entry without cause.\"\n}\n```"
+ },
+ "C379": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.94702654899993,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Request for lockers for day scholars.\"\n}\n```"
+ },
+ "C380": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.658577340000193,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Fee charge discrepancy - incorrect fee amount shown on payment receipt.\"\n}\n```"
+ },
+ "C381": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.066367374000038,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Cafeteria\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The cafeteria closes early, impacting evening classes.\"\n}\n```"
+ },
+ "C382": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.02890914100044,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"My character certificate request has been pending for three weeks.\"\n}\n```"
+ },
+ "C383": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.014613282999562,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Sports Complex\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Please add separate gym timings for female students at the sports complex.\"\n}\n```"
+ },
+ "C384": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.803721047999716,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"null\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"The Route 2 bus is overcrowded, posing safety risks for students.\"\n}\n```"
+ },
+ "C385": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 12.337259265999819,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Vending machine request - please install a vending machine in Block C.\"\n}\n```"
+ },
+ "C386": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.536337679000098,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Hostel\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Complaints about persistent noise at night in the hostel.\"\n}\n```"
+ },
+ "C387": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.308776367999599,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Career counseling sessions requested by final year students.\"\n}\n```"
+ },
+ "C388": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.157049911000286,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": \"Administration Building\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Long queue at single counter in accounts office.\"\n}\n```"
+ },
+ "C389": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.922856287000286,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Society fee unclear - need clarification on purpose.\"\n}\n```"
+ },
+ "C390": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.511156868000398,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Internship letter request not responded to.\"\n}\n```"
+ },
+ "C391": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.995299682999757,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No vegetarian food available at the cafeteria.\"\n}\n```"
+ },
+ "C392": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.802479582999695,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Student complains about double transport fee charge.\"\n}\n```"
+ },
+ "C393": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 12.359871326999382,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"University bus route 4 frequently arrives late at Main Gate.\"\n}\n```"
+ },
+ "C394": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 11.656515172000582,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Fee refund not received after two years since course was dropped.\"\n}\n```"
+ },
+ "C395": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.637332906000665,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Hostel food is scarce and unhygienic.\"\n}\n```"
+ },
+ "C396": {
+  "category": "Safety",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.267041794999386,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"LOW\",\n  \"location\": \"Garden\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"No benches in the garden.\"\n}\n```"
+ },
+ "C397": {
+  "category": "Exams and Results",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.882240778999403,
+  "raw": "```json\n{\n  \"category\": \"Exams and Results\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Semester scholarship stipend not received yet.\"\n}\n```"
+ },
+ "C398": {
+  "category": "Safety",
+  "priority": "CRITICAL",
+  "valid": true,
+  "seconds": 11.50807129199984,
+  "raw": "```json\n{\n  \"category\": \"Safety\",\n  \"priority\": \"CRITICAL\",\n  \"location\": \"Main Gate\",\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Guard at main gate did not show up and was rude.\"\n}\n```"
+ },
+ "C399": {
+  "category": "Maintenance",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 10.432979149999483,
+  "raw": "```json\n{\n  \"category\": \"Maintenance\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Day scholars need their lockers fixed.\"\n}\n```"
+ },
+ "C400": {
+  "category": "Other",
+  "priority": "LOW",
+  "valid": true,
+  "seconds": 9.693000352000126,
+  "raw": "```json\n{\n  \"category\": \"Other\",\n  \"priority\": \"LOW\",\n  \"location\": null,\n  \"room\": null,\n  \"language\": \"English\",\n  \"summary\": \"Fee amount on charge exceeds expected.\"\n}\n```"
+ }
+}
