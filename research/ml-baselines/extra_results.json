@@ -187,6 +187,11 @@
    "Hybrid": 28
   }
  },
+ "fewShotMcNemarCategory": {
+  "fewShotOnly": 18,
+  "zeroShotOnly": 8,
+  "p": 0.07551869750022888
+ },
  "fewShot": {
   "runs": 1,
   "category": {

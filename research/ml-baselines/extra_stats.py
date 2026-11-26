@@ -173,6 +173,14 @@ if F.exists():
                     'criticalFound': found, 'falseCritical': false,
                     'medianMs': st.median(p[i]['ms'] for i in test)})
     if per:
+        # Exact McNemar test against the zero-shot run (run3.json), category.
+        from scipy.stats import binomtest
+        p1 = fs[sorted(k for k in fs if k.startswith('run'))[0]]
+        only_fs = sum(p1[i].get('category') == G[i]['category'] != R3[i]['ai']['category'] for i in test)
+        only_zs = sum(p1[i].get('category') != G[i]['category'] == R3[i]['ai']['category'] for i in test)
+        mcnemar = {'fewShotOnly': only_fs, 'zeroShotOnly': only_zs,
+                   'p': binomtest(only_fs, only_fs + only_zs, 0.5).pvalue}
+        out['fewShotMcNemarCategory'] = mcnemar
         out['fewShot'] = {'runs': len(per), **{k: summary([r[k] for r in per]) for k in per[0]},
                           'shots': fs.get('meta', {}).get('shots')}
 
